@@ -1,0 +1,22 @@
+import os
+import re
+import json
+import sys
+
+class PDFScraper:
+    def __init__(self, file_path, password=None):
+        self.file_path = file_path
+        self.password = password
+        self.doc = None
+        self.pages_data = []
+
+# Checks if the PDF file can be accessed, returns file path. 
+def open(self):
+    if not os.path.exists(self.file_path):
+        raise FileNotFoundError(f"File not found: {self.file_path}")
+    return self
+
+def getText(self, pageNum):
+    return 
+
+    
