@@ -1,0 +1,1677 @@
+{
+  "edusperience_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+  "edusperience_title": "Resume V2",
+  "source_file": "edusperiences/resume.json",
+  "inferred_grade_bands": [
+    "9-10",
+    "11-12"
+  ],
+  "standards_db": "categorized-standards/California/CA-ELA.json",
+  "retrieval": {
+    "method": "tfidf_1-2grams_sublinear",
+    "reranker": "grade_band + keyword_strand heuristics"
+  },
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "section_title": "File Setup",
+      "objective_title": "Headings",
+      "objective_description": "Leave line #1 blank. Then insert five section headings in the following order. You must style as heading3 and capitalize the first letter. Watch the task video(s) for step-by-step instructions and common errors . Summary Education Experience Skills You pick this one. Leadership / Extracurriculars / Projects / Certifications / Volunteer / Achievements / Languages",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.06148583562641487,
+          "code": "SL.9-10.4",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Present information, findings, and supporting evidence clearly, concisely, and logically (using appropriate eye contact, adequate volume, and clear pronunciation) such that listeners can follow the line of reasoning and the organization, development, substance, and style are appropriate to purpose (e.g., argument, narrative, informative, response to literature presentations), audience, and task.",
+          "base_score": 0.06148583562641487,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.31148583562641485
+        },
+        {
+          "score": 0.061209545646498414,
+          "code": "RST.11-12.7",
+          "strand": "RST",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., quantitative data, video, multimedia) in order to address a question or solve a problem.",
+          "base_score": 0.061209545646498414,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3112095456464984
+        },
+        {
+          "score": 0.08720859440492235,
+          "code": "CCRA.SL.4",
+          "strand": "CCRA.SL",
+          "grade": null,
+          "grade_band": null,
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": true,
+          "text": "Present information, findings, and supporting evidence such that listeners can follow the line of reasoning and the organization, development, and style are appropriate to task, purpose, and audience.",
+          "base_score": 0.08720859440492235,
+          "grade_bonus": 0.1,
+          "keyword_bonus": 0.0,
+          "final_score": 0.18720859440492235
+        },
+        {
+          "score": 0.12957867219133715,
+          "code": "WHST.6-8.7",
+          "strand": "WHST",
+          "grade": "6-8",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Conduct short research projects to answer a question (including a self-generated question), drawing on several sources and generating additional related, focused questions that allow for multiple avenues of exploration. 1 Note: Students’ narrative skills continue to grow in these grades. The history/social studies, students must be able to incorporate narrative precise enough descriptions of the step-by-step procedures they use",
+          "base_score": 0.12957867219133715,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.020421327808662848
+        },
+        {
+          "score": 0.12299615419025926,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.12299615419025926,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.02700384580974073
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "SL.9-10.4",
+            "grade": "9-10",
+            "final_score": 0.311,
+            "text": "Present information, findings, and supporting evidence clearly, concisely, and logically (using appropriate eye contact, adequate volume, and clear pronunciation) such that listeners can follow the line of reasoning and the organization, development, substance, and style are appropriate to purpose (e.g., argument, narrative, informative, response to literature presentations), audience, and task."
+          },
+          {
+            "code": "RST.11-12.7",
+            "grade": "11-12",
+            "final_score": 0.311,
+            "text": "Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., quantitative data, video, multimedia) in order to address a question or solve a problem."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[0].objectives[1]",
+      "section_title": "File Setup",
+      "objective_title": "File Name",
+      "objective_description": "Rename your file using this naming convention: Last, First | Assignment Name | Period Example : Benrud, Todd | Resume | Period #5",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.1247774323964186,
+          "code": "L.11-12.1.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Apply the understanding that usage is a matter of convention, can change over time, and is sometimes contested.",
+          "base_score": 0.1247774323964186,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3747774323964186
+        },
+        {
+          "score": 0.11860686673721721,
+          "code": "RL.11-12.9",
+          "strand": "RL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth- century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics.",
+          "base_score": 0.11860686673721721,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3686068667372172
+        },
+        {
+          "score": 0.10716406148530054,
+          "code": "W.11-12.9.a",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Apply grades 11–12 Reading standards to literature (e.g., “Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth-century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics”).",
+          "base_score": 0.10716406148530054,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.35716406148530055
+        },
+        {
+          "score": 0.039478388585686815,
+          "code": "W.9-10.1",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning and relevant and sufficient evidence.",
+          "base_score": 0.039478388585686815,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.2894783885856868
+        },
+        {
+          "score": 0.039478388585686815,
+          "code": "W.11-12.1",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning and relevant and sufficient evidence.",
+          "base_score": 0.039478388585686815,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.2894783885856868
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "L.11-12.1.a",
+            "grade": "11-12",
+            "final_score": 0.375,
+            "text": "Apply the understanding that usage is a matter of convention, can change over time, and is sometimes contested."
+          },
+          {
+            "code": "RL.11-12.9",
+            "grade": "11-12",
+            "final_score": 0.369,
+            "text": "Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth- century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics."
+          },
+          {
+            "code": "W.11-12.9.a",
+            "grade": "11-12",
+            "final_score": 0.357,
+            "text": "Apply grades 11–12 Reading standards to literature (e.g., “Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth-century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics”)."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "section_title": "Contact Information",
+      "objective_title": "Your Name",
+      "objective_description": "Add your full name to the first line of your Google Doc. Capitalize your First and Last name. The font must be 20 sizes or larger and bold .",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.1154228108942596,
+          "code": "SL.9-10.4",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Present information, findings, and supporting evidence clearly, concisely, and logically (using appropriate eye contact, adequate volume, and clear pronunciation) such that listeners can follow the line of reasoning and the organization, development, substance, and style are appropriate to purpose (e.g., argument, narrative, informative, response to literature presentations), audience, and task.",
+          "base_score": 0.1154228108942596,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3654228108942596
+        },
+        {
+          "score": 0.09859504651759601,
+          "code": "SL.11-12.4",
+          "strand": "SL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Present information, findings, and supporting evidence (e.g., reflective, historical investigation, response to literature presentations), conveying a clear and distinct perspective and a logical argument, such that listeners can follow the line of reasoning, alternative or opposing perspectives are addressed, and the organization, development, substance, and style are appropriate to purpose, audience, and a range of formal and informal tasks. Use appropriate eye contact, adequate volume, and clear pronunciation.",
+          "base_score": 0.09859504651759601,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.348595046517596
+        },
+        {
+          "score": 0.0675143784162902,
+          "code": "RI.9-10.5",
+          "strand": "RI",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, or larger portions of a text (e.g., a section or chapter).",
+          "base_score": 0.0675143784162902,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3175143784162902
+        },
+        {
+          "score": 0.06747797608662741,
+          "code": "RH.11-12.5",
+          "strand": "RH",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Analyze in detail how a complex primary source is structured, including how key sentences, paragraphs, and larger portions of the text contribute to the whole.",
+          "base_score": 0.06747797608662741,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3174779760866274
+        },
+        {
+          "score": 0.09469760934024159,
+          "code": "CCRA.SL.4",
+          "strand": "CCRA.SL",
+          "grade": null,
+          "grade_band": null,
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": true,
+          "text": "Present information, findings, and supporting evidence such that listeners can follow the line of reasoning and the organization, development, and style are appropriate to task, purpose, and audience.",
+          "base_score": 0.09469760934024159,
+          "grade_bonus": 0.1,
+          "keyword_bonus": 0.0,
+          "final_score": 0.1946976093402416
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "SL.9-10.4",
+            "grade": "9-10",
+            "final_score": 0.365,
+            "text": "Present information, findings, and supporting evidence clearly, concisely, and logically (using appropriate eye contact, adequate volume, and clear pronunciation) such that listeners can follow the line of reasoning and the organization, development, substance, and style are appropriate to purpose (e.g., argument, narrative, informative, response to literature presentations), audience, and task."
+          },
+          {
+            "code": "SL.11-12.4",
+            "grade": "11-12",
+            "final_score": 0.349,
+            "text": "Present information, findings, and supporting evidence (e.g., reflective, historical investigation, response to literature presentations), conveying a clear and distinct perspective and a logical argument, such that listeners can follow the line of reasoning, alternative or opposing perspectives are addressed, and the organization, development, substance, and style are appropriate to purpose, audience, and a range of formal and informal tasks. Use appropriate eye contact, adequate volume, and clear pronunciation."
+          },
+          {
+            "code": "RI.9-10.5",
+            "grade": "9-10",
+            "final_score": 0.318,
+            "text": "Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, or larger portions of a text (e.g., a section or chapter)."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "section_title": "Contact Information",
+      "objective_title": "Contact Details",
+      "objective_description": "Add you phone number, email address, and location. Separate each element with a delimiter like a pipe, slash, etc.... Phone number must use the Common Display Format for North American, 3-3-4 split for the 10 digits to maintain readability. Email address must be hyperlinked and be the one associated with your GradeFlow profile. Location must be in the City, State format. State must be the official 2-letter abbreviation. EXAMPLE : (123) 456-7890 / email@address.com / City, ST",
+      "matched_keyword_rules": [
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.1200422039936853,
+          "code": "RI.9-10.9",
+          "strand": "RI",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Analyze seminal U.S. documents of historical and literary significance (e.g., Washington’s Farewell Address, the Gettysburg Address, Roosevelt’s Four Freedoms speech, King’s “Letter from Birmingham Jail”), including how they address related themes and concepts.",
+          "base_score": 0.1200422039936853,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3700422039936853
+        },
+        {
+          "score": 0.0713212899292733,
+          "code": "RI.11-12.7",
+          "strand": "RI",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Integrate and evaluate multiple sources of information presented in different media or formats (e.g., visually, quantitatively) as well as in words in order to address a question or solve a problem.",
+          "base_score": 0.0713212899292733,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3213212899292733
+        },
+        {
+          "score": 0.06925970134098308,
+          "code": "RH.11-12.7",
+          "strand": "RH",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem.",
+          "base_score": 0.06925970134098308,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3192597013409831
+        },
+        {
+          "score": 0.10445207099757534,
+          "code": "L.5.2.b",
+          "strand": "L",
+          "grade": "5",
+          "grade_band": "K-5",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Use a comma to separate an introductory element from the rest of the sentence.",
+          "base_score": 0.10445207099757534,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.04554792900242466
+        },
+        {
+          "score": 0.09992236204015481,
+          "code": "L.1.1.b",
+          "strand": "L",
+          "grade": "1",
+          "grade_band": "K-5",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Use common, proper, and possessive nouns.",
+          "base_score": 0.09992236204015481,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.050077637959845184
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "RI.9-10.9",
+            "grade": "9-10",
+            "final_score": 0.37,
+            "text": "Analyze seminal U.S. documents of historical and literary significance (e.g., Washington’s Farewell Address, the Gettysburg Address, Roosevelt’s Four Freedoms speech, King’s “Letter from Birmingham Jail”), including how they address related themes and concepts."
+          },
+          {
+            "code": "RI.11-12.7",
+            "grade": "11-12",
+            "final_score": 0.321,
+            "text": "Integrate and evaluate multiple sources of information presented in different media or formats (e.g., visually, quantitatively) as well as in words in order to address a question or solve a problem."
+          },
+          {
+            "code": "RH.11-12.7",
+            "grade": "11-12",
+            "final_score": 0.319,
+            "text": "Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "section_title": "Summary Section",
+      "objective_title": "Insert Section: {{var:OBJECTIVE}}",
+      "objective_description": "Insert a horizontal line and Insert a Section Break (continuous) before the \" {{var:OBJECTIVE}} \" heading3. Both must be styled as \"normal\". Watch the task video(s) for step-by-step instructions and common errors .",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.08426315591401945,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08426315591401945,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33426315591401945
+        },
+        {
+          "score": 0.08426315591401945,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08426315591401945,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33426315591401945
+        },
+        {
+          "score": 0.13341254686413315,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.13341254686413315,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.016587453135866848
+        },
+        {
+          "score": 0.11881617943846805,
+          "code": "SL.K.2.a",
+          "strand": "SL",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Understand and follow one- and two- step oral directions.",
+          "base_score": 0.11881617943846805,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.031183820561531947
+        },
+        {
+          "score": 0.11767924084928044,
+          "code": "W.3.2.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.11767924084928044,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.03232075915071955
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "section_title": "Summary Section",
+      "objective_title": "Write Summary Section",
+      "objective_description": "Write a clear and concise summary statement between the \" SUMMARY \" and \" EDUCATION \" headings. It must be between 10 and 25 words in length.",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.14362910983099703,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.14362910983099703,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.393629109830997
+        },
+        {
+          "score": 0.14362910983099703,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.14362910983099703,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.393629109830997
+        },
+        {
+          "score": 0.20058784204589142,
+          "code": "W.3.2.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.20058784204589142,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": 0.050587842045891424
+        },
+        {
+          "score": 0.20058784204589142,
+          "code": "W.3.1.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.20058784204589142,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": 0.050587842045891424
+        },
+        {
+          "score": 0.14951209450827077,
+          "code": "W.6.1.e",
+          "strand": "W",
+          "grade": "6",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from the argument presented.",
+          "base_score": 0.14951209450827077,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.0004879054917292236
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.11-12.1.e",
+            "grade": "11-12",
+            "final_score": 0.394,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          },
+          {
+            "code": "W.9-10.1.e",
+            "grade": "9-10",
+            "final_score": 0.394,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "section_title": "Education Section",
+      "objective_title": "Insert Section: {{var:EDUCATION}}",
+      "objective_description": "Insert a horizontal line and Insert a Section Break (continuous) before the \" {{var:EDUCATION}} \" heading3. Both must be styled as \"normal\". Watch the task video(s) for step-by-step instructions and common errors .",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.09164870535264867,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.09164870535264867,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3416487053526487
+        },
+        {
+          "score": 0.09164870535264867,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.09164870535264867,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3416487053526487
+        },
+        {
+          "score": 0.14510597265516217,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.14510597265516217,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.00489402734483782
+        },
+        {
+          "score": 0.1292302537492766,
+          "code": "SL.K.2.a",
+          "strand": "SL",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Understand and follow one- and two- step oral directions.",
+          "base_score": 0.1292302537492766,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.020769746250723392
+        },
+        {
+          "score": 0.1279936640602928,
+          "code": "W.3.2.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.1279936640602928,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.02200633593970719
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    },
+    {
+      "path": "sections[3].objectives[1]",
+      "section_title": "Education Section",
+      "objective_title": "High School",
+      "objective_description": "Add the following to your \" {{var:EDUCATION}} \" section. Your high school's full name. Location in the City, State format Year attended in the four-digit year hyphen four-digit format 2020-2024 Two bullet points: The first, relavant courses and/or projects related to the type of work you are interested in. The second, your GPA in the one decimal format. GPA: 3.5",
+      "matched_keyword_rules": [
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.11015461042878873,
+          "code": "L.K.5.c",
+          "strand": "L",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Identify real-life connections between words and their use (e.g., note places at school that are colorful).",
+          "base_score": 0.11015461042878873,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.03984538957121127
+        },
+        {
+          "score": 0.10295727784329282,
+          "code": "RI.8.10",
+          "strand": "RI",
+          "grade": "8",
+          "grade_band": "6-12",
+          "subgroup": "Range of Reading and Level of Text Complexity",
+          "is_anchor": false,
+          "text": "By the end of the year, read and comprehend literary nonfiction at the high end of the grades 6–8 text complexity band independently and proficiently.",
+          "base_score": 0.10295727784329282,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.04704272215670717
+        },
+        {
+          "score": 0.10064951252350471,
+          "code": "W.5.1.d",
+          "strand": "W",
+          "grade": "5",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section related to the opinion presented.",
+          "base_score": 0.10064951252350471,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.049350487476495286
+        },
+        {
+          "score": 0.10064951252350471,
+          "code": "W.4.1.d",
+          "strand": "W",
+          "grade": "4",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section related to the opinion presented.",
+          "base_score": 0.10064951252350471,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.049350487476495286
+        },
+        {
+          "score": 0.09933150545852154,
+          "code": "W.4.2.e",
+          "strand": "W",
+          "grade": "4",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section related to the information or explanation presented.",
+          "base_score": 0.09933150545852154,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.050668494541478454
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[4].objectives[0]",
+      "section_title": "Experience Section",
+      "objective_title": "Insert Section: {{var:EXPERIENCE}}",
+      "objective_description": "Insert a horizontal line and Insert a Section Break (continuous) before the \" {{var:EXPERIENCE}} \" heading3. Both must be styled as \"normal\". Watch the task video(s) for step-by-step instructions and common errors .",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.08140735806344335,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08140735806344335,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33140735806344335
+        },
+        {
+          "score": 0.08140735806344335,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08140735806344335,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33140735806344335
+        },
+        {
+          "score": 0.14538316442594168,
+          "code": "RL.6.7",
+          "strand": "RL",
+          "grade": "6",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Compare and contrast the experience of reading a story, drama, or poem to listening to or viewing an audio, video, or live version of the text, including contrasting what they “see” and “hear” when reading the text to what they perceive when they listen or watch.",
+          "base_score": 0.14538316442594168,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.0046168355740583145
+        },
+        {
+          "score": 0.12889100645371657,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.12889100645371657,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.021108993546283428
+        },
+        {
+          "score": 0.11478933061974743,
+          "code": "SL.K.2.a",
+          "strand": "SL",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Understand and follow one- and two- step oral directions.",
+          "base_score": 0.11478933061974743,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.035210669380252566
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    },
+    {
+      "path": "sections[4].objectives[1]",
+      "section_title": "Experience Section",
+      "objective_title": "Experience #1",
+      "objective_description": "Add the following to your \" {{var:EXPERIENCE}} \" section. A role or position you had that provided you with some type of experience. After the role, include the word ' at ' then include the name of the company, organization, etc... Location in the City, State format Years of experience in the four-digit year hyphen four-digit format EXAMPLE : 2020-2024 At least one bullet point: Describe your responsibilities in a clear, concise statement.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.0860770322081886,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.0860770322081886,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5360770322081887
+        },
+        {
+          "score": 0.0860770322081886,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.0860770322081886,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5360770322081887
+        },
+        {
+          "score": 0.09167064160073009,
+          "code": "WHST.11-12.2.e",
+          "strand": "WHST",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the information or explanation provided (e.g., articulating implications or the significance of the topic).",
+          "base_score": 0.09167064160073009,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3416706416007301
+        },
+        {
+          "score": 0.0899239243010685,
+          "code": "RL.9-10.6",
+          "strand": "RL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Analyze a particular point of view or cultural experience reflected in a work of literature from outside the United States, drawing on a wide reading of world literature.",
+          "base_score": 0.0899239243010685,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3399239243010685
+        },
+        {
+          "score": 0.12021244273303304,
+          "code": "W.3.1.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.12021244273303304,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.17021244273303304
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.11-12.1.e",
+            "grade": "11-12",
+            "final_score": 0.536,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          },
+          {
+            "code": "W.9-10.1.e",
+            "grade": "9-10",
+            "final_score": 0.536,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[4].objectives[2]",
+      "section_title": "Experience Section",
+      "objective_title": "Experience #2",
+      "objective_description": "Add a 2nd experience. A role or position you had that provided you with some type of experience. Location in the City, State format Years of experience in the four-digit year hyphen four-digit format EXAMPLE : 2020-2024 At least one bullet point: Describe your responsibilities in a clear, concise statement.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.1076175273303346,
+          "code": "RL.9-10.6",
+          "strand": "RL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Analyze a particular point of view or cultural experience reflected in a work of literature from outside the United States, drawing on a wide reading of world literature.",
+          "base_score": 0.1076175273303346,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3576175273303346
+        },
+        {
+          "score": 0.09207269553193273,
+          "code": "WHST.11-12.2.e",
+          "strand": "WHST",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the information or explanation provided (e.g., articulating implications or the significance of the topic).",
+          "base_score": 0.09207269553193273,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.34207269553193276
+        },
+        {
+          "score": 0.10626359118964043,
+          "code": "W.3.1.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.10626359118964043,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.15626359118964045
+        },
+        {
+          "score": 0.07920565836237926,
+          "code": "W.6.1.e",
+          "strand": "W",
+          "grade": "6",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from the argument presented.",
+          "base_score": 0.07920565836237926,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.1292056583623793
+        },
+        {
+          "score": 0.07664852665122425,
+          "code": "W.3.1.c",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use linking words and phrases (e.g., because, therefore, since, for example) to connect opinion and reasons.",
+          "base_score": 0.07664852665122425,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.12664852665122428
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "RL.9-10.6",
+            "grade": "9-10",
+            "final_score": 0.358,
+            "text": "Analyze a particular point of view or cultural experience reflected in a work of literature from outside the United States, drawing on a wide reading of world literature."
+          },
+          {
+            "code": "WHST.11-12.2.e",
+            "grade": "11-12",
+            "final_score": 0.342,
+            "text": "Provide a concluding statement or section that follows from and supports the information or explanation provided (e.g., articulating implications or the significance of the topic)."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[5].objectives[0]",
+      "section_title": "Skills Section",
+      "objective_title": "Insert Section: {{var:SKILLS}}",
+      "objective_description": "Insert a horizontal line and Insert a Section Break (continuous) before the \" {{var:SKILLS}} \" heading3. Both must be styled as \"normal\". Watch the task video(s) for step-by-step instructions and common errors .",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.08709284179230582,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08709284179230582,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3370928417923058
+        },
+        {
+          "score": 0.08709284179230582,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08709284179230582,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3370928417923058
+        },
+        {
+          "score": 0.13789274459412168,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.13789274459412168,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.012107255405878314
+        },
+        {
+          "score": 0.13671145186251749,
+          "code": "WHST.6-8.7",
+          "strand": "WHST",
+          "grade": "6-8",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Conduct short research projects to answer a question (including a self-generated question), drawing on several sources and generating additional related, focused questions that allow for multiple avenues of exploration. 1 Note: Students’ narrative skills continue to grow in these grades. The history/social studies, students must be able to incorporate narrative precise enough descriptions of the step-by-step procedures they use",
+          "base_score": 0.13671145186251749,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.013288548137482509
+        },
+        {
+          "score": 0.12280620878666904,
+          "code": "SL.K.2.a",
+          "strand": "SL",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Understand and follow one- and two- step oral directions.",
+          "base_score": 0.12280620878666904,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.02719379121333096
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    },
+    {
+      "path": "sections[5].objectives[1]",
+      "section_title": "Skills Section",
+      "objective_title": "Table",
+      "objective_description": "Watch the task video(s) for step-by-step instructions and common errors . Insert a 1-row 2-column table below the \" {{var:SKILLS}} \" heading3. Add at least six skills, one bullet point per skill, three skills per column. Bullets should be one to three words, not sentences or long statements.",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.12474587344375138,
+          "code": "WHST.6-8.7",
+          "strand": "WHST",
+          "grade": "6-8",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Conduct short research projects to answer a question (including a self-generated question), drawing on several sources and generating additional related, focused questions that allow for multiple avenues of exploration. 1 Note: Students’ narrative skills continue to grow in these grades. The history/social studies, students must be able to incorporate narrative precise enough descriptions of the step-by-step procedures they use",
+          "base_score": 0.12474587344375138,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.02525412655624862
+        },
+        {
+          "score": 0.12341164966053676,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.12341164966053676,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.026588350339463232
+        },
+        {
+          "score": 0.10990945795972804,
+          "code": "SL.K.2.a",
+          "strand": "SL",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Understand and follow one- and two- step oral directions.",
+          "base_score": 0.10990945795972804,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.04009054204027196
+        },
+        {
+          "score": 0.1072399595535887,
+          "code": "SL.1.2.a",
+          "strand": "SL",
+          "grade": "1",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give, restate, and follow simple two-step directions.",
+          "base_score": 0.1072399595535887,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.042760040446411296
+        },
+        {
+          "score": 0.1069656327167551,
+          "code": "RF.1.3.c",
+          "strand": "RF",
+          "grade": "1",
+          "grade_band": "K-5",
+          "subgroup": "Phonics and Word Recognition",
+          "is_anchor": false,
+          "text": "Know final -e and common vowel team conventions for representing long vowel sounds.",
+          "base_score": 0.1069656327167551,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.04303436728324489
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[6].objectives[0]",
+      "section_title": "Custom Section",
+      "objective_title": "Insert Section: Custom",
+      "objective_description": "Insert a horizontal line and Insert a Section Break (continuous) before your custom heading3. Both must be styled as \"normal\". Watch the task video(s) for step-by-step instructions and common errors .",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.09164870535264867,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.09164870535264867,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3416487053526487
+        },
+        {
+          "score": 0.09164870535264867,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.09164870535264867,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3416487053526487
+        },
+        {
+          "score": 0.14510597265516217,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.14510597265516217,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.00489402734483782
+        },
+        {
+          "score": 0.1292302537492766,
+          "code": "SL.K.2.a",
+          "strand": "SL",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Understand and follow one- and two- step oral directions.",
+          "base_score": 0.1292302537492766,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.020769746250723392
+        },
+        {
+          "score": 0.1279936640602928,
+          "code": "W.3.2.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.1279936640602928,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.02200633593970719
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    },
+    {
+      "path": "sections[6].objectives[1]",
+      "section_title": "Custom Section",
+      "objective_title": "Custom Section Content",
+      "objective_description": "Watch the task video(s) for step-by-step instructions and common errors . Use AI and/or the internet to learn about what belongs in your custom section. Using only text and bullets, construct your custom section. It must consist of at least 20 words and 2 bullet points.",
+      "matched_keyword_rules": [
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.10750409857941413,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.10750409857941413,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3575040985794141
+        },
+        {
+          "score": 0.10750409857941413,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.10750409857941413,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3575040985794141
+        },
+        {
+          "score": 0.15013680144997782,
+          "code": "W.3.1.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.15013680144997782,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": 0.00013680144997782473
+        },
+        {
+          "score": 0.15013680144997782,
+          "code": "W.3.2.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.15013680144997782,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": 0.00013680144997782473
+        },
+        {
+          "score": 0.14034362374169188,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.14034362374169188,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.00965637625830812
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.11-12.1.e",
+            "grade": "11-12",
+            "final_score": 0.358,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          },
+          {
+            "code": "W.9-10.1.e",
+            "grade": "9-10",
+            "final_score": 0.358,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[7].objectives[0]",
+      "section_title": "Teacher Grader",
+      "objective_title": "Summary and Formatting",
+      "objective_description": "Review your Summary section. Verify it includes all required elements: your current grade level, one standout trait or strength, one or two relevant skills, and one concrete achievement with numbers (GPA, certification, or measurable result). Your statement should be 20-30 words, avoid generic buzzwords, and maintain a professional tone.",
+      "matched_keyword_rules": [
+        "\\b(word choice|figurative|imagery|tone|mood|diction|connotat"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.08613653839530128,
+          "code": "SL.9-10.1.c",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Propel conversations by posing and responding to questions that relate the current discussion to broader themes or larger ideas; actively incorporate others into the discussion; and clarify, verify, or challenge ideas and conclusions.",
+          "base_score": 0.08613653839530128,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3361365383953013
+        },
+        {
+          "score": 0.08234541362762707,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08234541362762707,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33234541362762704
+        },
+        {
+          "score": 0.13697771405057674,
+          "code": "RF.5.3",
+          "strand": "RF",
+          "grade": "5",
+          "grade_band": "K-5",
+          "subgroup": "Phonics and Word Recognition",
+          "is_anchor": false,
+          "text": "Know and apply grade-level phonics and word analysis skills in decoding words.",
+          "base_score": 0.13697771405057674,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.013022285949423257
+        },
+        {
+          "score": 0.13697771405057674,
+          "code": "RF.4.3",
+          "strand": "RF",
+          "grade": "4",
+          "grade_band": "K-5",
+          "subgroup": "Phonics and Word Recognition",
+          "is_anchor": false,
+          "text": "Know and apply grade-level phonics and word analysis skills in decoding words.",
+          "base_score": 0.13697771405057674,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.013022285949423257
+        },
+        {
+          "score": 0.12681589366831042,
+          "code": "RF.K.3",
+          "strand": "RF",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Phonics and Word Recognition",
+          "is_anchor": false,
+          "text": "Know and apply grade-level phonics and word analysis skills in decoding words both in isolation and in text.",
+          "base_score": 0.12681589366831042,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.023184106331689575
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "SL.9-10.1.c",
+            "grade": "9-10",
+            "final_score": 0.336,
+            "text": "Propel conversations by posing and responding to questions that relate the current discussion to broader themes or larger ideas; actively incorporate others into the discussion; and clarify, verify, or challenge ideas and conclusions."
+          },
+          {
+            "code": "W.11-12.1.e",
+            "grade": "11-12",
+            "final_score": 0.332,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[7].objectives[1]",
+      "section_title": "Teacher Grader",
+      "objective_title": "Education and Experience",
+      "objective_description": "Review your Summary section. Verify it includes all required elements: your current grade level, one standout trait or strength, one or two relevant skills, and one concrete achievement with numbers (GPA, certification, or measurable result). Your statement should be 20-30 words, avoid generic buzzwords, and maintain a professional tone. Review your Education section. Verify it includes your school name, years attended, and location in City, State format. Confirm you have two bullet points: one describing your coursework or academics, and one stating your GPA in X.X format (e.g., \"GPA: 3.5\").",
+      "matched_keyword_rules": [
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter",
+        "\\b(word choice|figurative|imagery|tone|mood|diction|connotat"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.08274322924225613,
+          "code": "W.9-10.1.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08274322924225613,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33274322924225613
+        },
+        {
+          "score": 0.08274322924225613,
+          "code": "W.11-12.1.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section that follows from and supports the argument presented.",
+          "base_score": 0.08274322924225613,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33274322924225613
+        },
+        {
+          "score": 0.11555655964965636,
+          "code": "W.3.1.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.11555655964965636,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.034443440350343635
+        },
+        {
+          "score": 0.11555655964965636,
+          "code": "W.3.2.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.11555655964965636,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.034443440350343635
+        },
+        {
+          "score": 0.10166472115611597,
+          "code": "RF.4.3",
+          "strand": "RF",
+          "grade": "4",
+          "grade_band": "K-5",
+          "subgroup": "Phonics and Word Recognition",
+          "is_anchor": false,
+          "text": "Know and apply grade-level phonics and word analysis skills in decoding words.",
+          "base_score": 0.10166472115611597,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.04833527884388403
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.1.e",
+            "grade": "9-10",
+            "final_score": 0.333,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          },
+          {
+            "code": "W.11-12.1.e",
+            "grade": "11-12",
+            "final_score": 0.333,
+            "text": "Provide a concluding statement or section that follows from and supports the argument presented."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[7].objectives[2]",
+      "section_title": "Teacher Grader",
+      "objective_title": "Skills",
+      "objective_description": "Review your Skills section. Verify you have a properly formatted 1-row, 2-column table positioned directly below the \"Skills\" heading. Confirm the table includes at least six skills total with three skills per column, each as a separate bullet point. Check that each skill is concise (1-3 words only), uses professional terminology, and avoids complete sentences or lengthy descriptions. Review your custom section. Verify you selected one allowed heading (Leadership, Extracurriculars, Projects, Certifications, Volunteer, Achievements, or Languages). Confirm your section contains at least 20 words total and includes at least one bullet point. Check that your content is relevant to the section type you chose, demonstrates appropriate research, and uses only text and bullets (no tables, graphics, or special formatting).",
+      "matched_keyword_rules": [
+        "\\b(research|investigat|sources|gather(ing)?)\\b"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.0841563006798561,
+          "code": "RI.9-10.6",
+          "strand": "RI",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Determine an author’s point of view or purpose in a text and analyze how an author uses rhetoric to advance that point of view or purpose.",
+          "base_score": 0.0841563006798561,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33415630067985613
+        },
+        {
+          "score": 0.10197856311914315,
+          "code": "SL.1.6",
+          "strand": "SL",
+          "grade": "1",
+          "grade_band": "K-5",
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Produce complete sentences when appropriate to task and situation. (See grade 1 Language standards 1 and 3 for specific expectations.)",
+          "base_score": 0.10197856311914315,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.048021436880856846
+        },
+        {
+          "score": 0.09473736951489553,
+          "code": "L.K.1.f",
+          "strand": "L",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Produce and expand complete sentences in shared language activities.",
+          "base_score": 0.09473736951489553,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.055262630485104464
+        },
+        {
+          "score": 0.09028741997159996,
+          "code": "W.3.1.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.09028741997159996,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.059712580028400034
+        },
+        {
+          "score": 0.09028741997159996,
+          "code": "W.3.2.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.09028741997159996,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.059712580028400034
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    }
+  ]
+}

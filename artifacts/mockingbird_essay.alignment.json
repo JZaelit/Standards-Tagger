@@ -1,0 +1,610 @@
+{
+  "edusperience_id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
+  "edusperience_title": "Mockingbird Essay",
+  "source_file": "edusperiences/mockingbird_essay.json",
+  "inferred_grade_bands": [
+    "9-10",
+    "11-12"
+  ],
+  "standards_db": "categorized-standards/California/CA-ELA.json",
+  "retrieval": {
+    "method": "tfidf_1-2grams_sublinear",
+    "reranker": "grade_band + keyword_strand heuristics"
+  },
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "section_title": "File Name",
+      "objective_title": "Naming Convention",
+      "objective_description": "Follow the file naming convention of: Your Name | Period # | Assignment Name",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.22015825221666413,
+          "code": "L.11-12.1.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Apply the understanding that usage is a matter of convention, can change over time, and is sometimes contested.",
+          "base_score": 0.22015825221666413,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.47015825221666413
+        },
+        {
+          "score": 0.07299940726737052,
+          "code": "RL.11-12.9",
+          "strand": "RL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth- century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics.",
+          "base_score": 0.07299940726737052,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32299940726737053
+        },
+        {
+          "score": 0.06595666156600583,
+          "code": "W.11-12.9.a",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Apply grades 11–12 Reading standards to literature (e.g., “Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth-century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics”).",
+          "base_score": 0.06595666156600583,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3159566615660058
+        },
+        {
+          "score": 0.07781273142066733,
+          "code": "SL.2.2.a",
+          "strand": "SL",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Give and follow three- and four-step oral directions.",
+          "base_score": 0.07781273142066733,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.07218726857933266
+        },
+        {
+          "score": 0.07451822533133136,
+          "code": "RL.7.9",
+          "strand": "RL",
+          "grade": "7",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means of understanding how authors of fiction use or alter history.",
+          "base_score": 0.07451822533133136,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.07548177466866864
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "L.11-12.1.a",
+            "grade": "11-12",
+            "final_score": 0.47,
+            "text": "Apply the understanding that usage is a matter of convention, can change over time, and is sometimes contested."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "section_title": "Essay Objectives",
+      "objective_title": "Essay Length",
+      "objective_description": "Your essay must be 500-1000 words and contain at least five paragraphs.",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.16741922148287247,
+          "code": "RI.9-10.5",
+          "strand": "RI",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, or larger portions of a text (e.g., a section or chapter).",
+          "base_score": 0.16741922148287247,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.41741922148287247
+        },
+        {
+          "score": 0.16732895256778701,
+          "code": "RH.11-12.5",
+          "strand": "RH",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Analyze in detail how a complex primary source is structured, including how key sentences, paragraphs, and larger portions of the text contribute to the whole.",
+          "base_score": 0.16732895256778701,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.417328952567787
+        },
+        {
+          "score": 0.1568529443310949,
+          "code": "CCRA.R.5",
+          "strand": "CCRA.R",
+          "grade": null,
+          "grade_band": null,
+          "subgroup": "Craft and Structure",
+          "is_anchor": true,
+          "text": "Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the text (e.g., a section, chapter, scene, or stanza) relate to each other and the whole.",
+          "base_score": 0.1568529443310949,
+          "grade_bonus": 0.1,
+          "keyword_bonus": 0.0,
+          "final_score": 0.2568529443310949
+        },
+        {
+          "score": 0.19922843366575707,
+          "code": "RI.2.2",
+          "strand": "RI",
+          "grade": "2",
+          "grade_band": "K-5",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text.",
+          "base_score": 0.19922843366575707,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": 0.049228433665757076
+        },
+        {
+          "score": 0.17728617056173002,
+          "code": "RI.3.8",
+          "strand": "RI",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Describe the logical connection between particular sentences and paragraphs in a text (e.g., comparison, cause/effect, first/second/ third in a sequence).",
+          "base_score": 0.17728617056173002,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": 0.027286170561730022
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "RI.9-10.5",
+            "grade": "9-10",
+            "final_score": 0.417,
+            "text": "Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, or larger portions of a text (e.g., a section or chapter)."
+          },
+          {
+            "code": "RH.11-12.5",
+            "grade": "11-12",
+            "final_score": 0.417,
+            "text": "Analyze in detail how a complex primary source is structured, including how key sentences, paragraphs, and larger portions of the text contribute to the whole."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "section_title": "Essay Objectives",
+      "objective_title": "Essay Elements",
+      "objective_description": "Include two hyperlinks and two images that are relevant information this essay.",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.08554696454179683,
+          "code": "W.9-10.8",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and following a standard format for citation including footnotes and endnotes.",
+          "base_score": 0.08554696454179683,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33554696454179683
+        },
+        {
+          "score": 0.08430565614827017,
+          "code": "WHST.9-10.8",
+          "strand": "WHST",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Gather relevant information from multiple authoritative print and digital sources (primary and secondary), using advanced searches effectively; assess the usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and following a standard format for citation.",
+          "base_score": 0.08430565614827017,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3343056561482702
+        },
+        {
+          "score": 0.08126704443682978,
+          "code": "WHST.11-12.8",
+          "strand": "WHST",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limitations of each source in terms of the specific task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and overreliance on any one source and following a standard format for citation.",
+          "base_score": 0.08126704443682978,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33126704443682975
+        },
+        {
+          "score": 0.08117029765273356,
+          "code": "W.11-12.8",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limitations of each source in terms of the task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and overreliance on any one source and following a standard format for citation including footnotes and endnotes.",
+          "base_score": 0.08117029765273356,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33117029765273354
+        },
+        {
+          "score": 0.12322885150120305,
+          "code": "CCRA.W.8",
+          "strand": "CCRA.W",
+          "grade": null,
+          "grade_band": null,
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": true,
+          "text": "Gather relevant information from multiple print and digital sources, assess the credibility and accuracy of each source, and integrate the information while avoiding plagiarism.",
+          "base_score": 0.12322885150120305,
+          "grade_bonus": 0.1,
+          "keyword_bonus": 0.0,
+          "final_score": 0.22322885150120306
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.8",
+            "grade": "9-10",
+            "final_score": 0.336,
+            "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and following a standard format for citation including footnotes and endnotes."
+          },
+          {
+            "code": "WHST.9-10.8",
+            "grade": "9-10",
+            "final_score": 0.334,
+            "text": "Gather relevant information from multiple authoritative print and digital sources (primary and secondary), using advanced searches effectively; assess the usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and following a standard format for citation."
+          },
+          {
+            "code": "WHST.11-12.8",
+            "grade": "11-12",
+            "final_score": 0.331,
+            "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limitations of each source in terms of the specific task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and overreliance on any one source and following a standard format for citation."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[2]",
+      "section_title": "Essay Objectives",
+      "objective_title": "Essay Content",
+      "objective_description": "Include character names, locations, scenes, etc... in your text.",
+      "matched_keyword_rules": [
+        "\\b(character|protagonist|antagonist|setting|plot|scene)\\b"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.07790740464196973,
+          "code": "WHST.9-10.1",
+          "strand": "WHST",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Write arguments focused on discipline-specific content.",
+          "base_score": 0.07790740464196973,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3279074046419697
+        },
+        {
+          "score": 0.07790740464196973,
+          "code": "WHST.11-12.1",
+          "strand": "WHST",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Write arguments focused on discipline-specific content.",
+          "base_score": 0.07790740464196973,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3279074046419697
+        },
+        {
+          "score": 0.13187251481856654,
+          "code": "RL.4.3",
+          "strand": "RL",
+          "grade": "4",
+          "grade_band": "K-5",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Describe in depth a character, setting, or event in a story or drama, drawing on specific details in the text (e.g., a character’s thoughts, words, or actions).",
+          "base_score": 0.13187251481856654,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.18187251481856656
+        },
+        {
+          "score": 0.06770045562541764,
+          "code": "CCRA.R.6",
+          "strand": "CCRA.R",
+          "grade": null,
+          "grade_band": null,
+          "subgroup": "Craft and Structure",
+          "is_anchor": true,
+          "text": "Assess how point of view or purpose shapes the content and style of a text.",
+          "base_score": 0.06770045562541764,
+          "grade_bonus": 0.1,
+          "keyword_bonus": 0.0,
+          "final_score": 0.16770045562541763
+        },
+        {
+          "score": 0.0674488925097912,
+          "code": "RL.8.3",
+          "strand": "RL",
+          "grade": "8",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Analyze how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision.",
+          "base_score": 0.0674488925097912,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.11744889250979122
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "WHST.9-10.1",
+            "grade": "9-10",
+            "final_score": 0.328,
+            "text": "Write arguments focused on discipline-specific content."
+          },
+          {
+            "code": "WHST.11-12.1",
+            "grade": "11-12",
+            "final_score": 0.328,
+            "text": "Write arguments focused on discipline-specific content."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "section_title": "AI Evaluations",
+      "objective_title": "Subjective AI",
+      "objective_description": "Subjective AI Evaluations covering Depth of Analysis, Clarity and Coherence, Engagement and Originality, Use of Textual Evidence, and Emotional and Intellectual Impact.",
+      "matched_keyword_rules": [
+        "\\b(text(ual)? evidence|cite|quotation|support(ing)? evidence"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.14532307217186044,
+          "code": "RL.9-10.1",
+          "strand": "RL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "base_score": 0.14532307217186044,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5953230721718605
+        },
+        {
+          "score": 0.14398781600711777,
+          "code": "RI.9-10.1",
+          "strand": "RI",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "base_score": 0.14398781600711777,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5939878160071177
+        },
+        {
+          "score": 0.11680334992660707,
+          "code": "RL.11-12.1",
+          "strand": "RL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+          "base_score": 0.11680334992660707,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5668033499266071
+        },
+        {
+          "score": 0.12769506208408155,
+          "code": "RST.9-10.1",
+          "strand": "RST",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite specific textual evidence to support analysis of science and technical texts, attending to the precise details of explanations or descriptions.",
+          "base_score": 0.12769506208408155,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.37769506208408155
+        },
+        {
+          "score": 0.12357806254714065,
+          "code": "RH.9-10.1",
+          "strand": "RH",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite specific textual evidence to support analysis of primary and secondary sources, attending to such features as the date and origin of the information.",
+          "base_score": 0.12357806254714065,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.37357806254714065
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "RL.9-10.1",
+            "grade": "9-10",
+            "final_score": 0.595,
+            "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+          },
+          {
+            "code": "RI.9-10.1",
+            "grade": "9-10",
+            "final_score": 0.594,
+            "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+          },
+          {
+            "code": "RL.11-12.1",
+            "grade": "11-12",
+            "final_score": 0.567,
+            "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "section_title": "AI Evaluations",
+      "objective_title": "Objective AI",
+      "objective_description": "Objective: Spelling, Grammar and Syntax, Formatting, Organized Ideas into Paragraphs, and LEngth.",
+      "matched_keyword_rules": [
+        "\\b(grammar|syntax|punctuation|spelling|capitaliz|conventions"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.10141108629165926,
+          "code": "W.9-10.1.d",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "base_score": 0.10141108629165926,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3514110862916593
+        },
+        {
+          "score": 0.10141108629165926,
+          "code": "W.11-12.2.e",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "base_score": 0.10141108629165926,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3514110862916593
+        },
+        {
+          "score": 0.10141108629165926,
+          "code": "W.9-10.2.e",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "base_score": 0.10141108629165926,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3514110862916593
+        },
+        {
+          "score": 0.10141108629165926,
+          "code": "W.11-12.1.d",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "base_score": 0.10141108629165926,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3514110862916593
+        },
+        {
+          "score": 0.09831610433546557,
+          "code": "L.11-12.3.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Knowledge of Language",
+          "is_anchor": false,
+          "text": "Vary syntax for effect, consulting references (e.g., Tufte’s Artful Sentences) for guidance as needed; apply an understanding of syntax to the study of complex texts when reading.",
+          "base_score": 0.09831610433546557,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.34831610433546556
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.1.d",
+            "grade": "9-10",
+            "final_score": 0.351,
+            "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          },
+          {
+            "code": "W.11-12.2.e",
+            "grade": "11-12",
+            "final_score": 0.351,
+            "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          },
+          {
+            "code": "W.9-10.2.e",
+            "grade": "9-10",
+            "final_score": 0.351,
+            "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    }
+  ]
+}

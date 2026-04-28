@@ -1,0 +1,769 @@
+=== PAGE 1 ===
+Grade-Level Standards:  
+Grades Nine through Twelve 
+Physical Science
+=== PAGE 2 ===
+Grades Nine through Twelve Grade-Level Standards | 255  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS1 Matter and Its Interactions
+HS-PS1 Matter and Its Interactions
+Students who demonstrate understanding can:
+HS-PS1-1. Use the periodic table as a model to predict the relative properties of elements based on the patterns of electrons in the outermost energy level of atoms. [Clarification Statement: Examples of properties that could be predicted from patterns could include reactivity of metals, types of bonds formed, numbers of bonds formed, and reactions with oxygen.] [Assessment Boundary: Assessment is limited to main group elements. Assessment does not include quantita-tive understanding of ionization energy beyond r elative tr
+ends.]
+HS-PS1-2.  Construct and revise an explanation for the outcome of a simple chemical reaction based on the outermost electron states of atoms, trends in the periodic table, and knowledge of the patterns of chemical properties. [Clarification Statement: Examples of chemical reactions could include the reaction of sodium and chlorine, of carbon and oxygen, or of carbon and hydrogen.] [Assessment Boundary: Assessment is limited to chemical reactions involving main group elements and combustion reactions.]
+HS-PS1-3.  Plan and conduct an investigation to gather evidence to compare the str ucture of substances at the bulk scale to inf
+er the strength of electrical forces 
+between particles. [Clarification Statement: Emphasis is on understanding the strengths of forces between particles, not on naming specific intermolecular forces (such as dipole-dipole). Examples of particles could include ions, atoms, molecules, and networked materials (such as graphite). Examples of bulk properties of substances could include the melting point and boiling point, v apor pressure,
+ and surface tension.] [Assessment Boundary: Assessment does 
+not include Raoult’s law calculations of vapor pressure.]
+HS-PS1-4.  Develop a model to illustrate that the release or absorption of energy from a chemical reaction system depends upon the changes in total bond energy. [Clarification Statement: Emphasis is on the idea that a chemical reaction is a system that affects the energy change. Examples of models could include molecular-level drawings and diagrams of reactions, graphs showing the relative energies of reactants and products, and representations showing energy is conserved.] [Assessment Boundar y: 
+Assessment does not include calculating the total bond energy changes during a chemical reaction from the bond 
+energies of reactants and products.]
+HS-PS1-5.  Apply scientific principles and evidence to provide an explanation about the effects of changing the temperature or concentration of the reacting particles on the rate at which a reaction occurs. [Clarification Statement: Emphasis is on student reasoning that focuses on the number and energy of collisions between molecules.] [Assessment Boundary: Assessment is limited to simple reactions in which there are only two reactants; evidence from temperature, concentration, and rate data; and qualitative relationships between rate and temperature. ]
+HS-PS1-6.  Refine the design of a chemical system by specifying a change in conditions that would produce increased amounts of products at
+ equilibrium.*  [Clarifi-
+cation Statement: Emphasis is on the application of Le Chatlier’s Principle and on refining designs of chemical reaction systems, including descriptions of the connection between changes made at the macroscopic level and what happens at the molecular level. Examples of designs could include different ways to increase product formation including adding reactants or removing products.] [Assessment Boundary: Assessment is limited to specifying the change in only one v ariable at a time.
+ Assessment does not include calculating equilibrium constants and concentrations. ]
+=== PAGE 3 ===
+256 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS1 Matter and Its Interactions
+HS-PS1-7. Use mathematical representations to support the claim that atoms, and therefore mass, are conserved during a chemical reaction.  [Clarification State-
+ment: Emphasis is on using mathematical ideas to communicate the proportional relationships between masses of atoms in the reactants and the products, 
+and the translation of these relationships to the macroscopic scale using the mole as the conversion from the atomic to the macroscopic scale. Emphasis is on assessing students’ use of mathematical thinking and not on memorization and rote application of problem-solving techniques.] [ Assessment Boundary: 
+Assessment does not include complex chemical reactions.]
+HS-PS1-8.  Develop models to illustrate the changes in the composition of the nucleus of the atom and the energy released during the processes of fission, fu-sion, and radioactive decay. [Clarification Statement: Emphasis is on simple qualitative models, such as pictures or diagrams, and on the scale of energy released in nuclear processes relative to other kinds of transformations.] [Assessment Boundary: Assessment does not include quantitative calculation of energy released. Assessment is limited to alpha, beta, and gamma radioactive decays.]
+The performance expectation(s) abo v
+e were developed using the following elements from the NRC document  A Framework for K–12 Science Education:
+Science and Engineering Practices
+Developing and Using ModelsModeling in 9–12 builds on K–8 and progresses to using, synthesizing, and developing models to predict and show relationships among variables between systems and their components in the natural and designed worlds.
+§Dev
+elop a model based on evidence to illustrate the
+relationships between systems or between compo-
+nents of a system. (HS-PS1-4), (HS-PS1-8)
+§Use a model to predict the relationships betweensystems or between components of a system.
+ (HS-
+PS1-1)
+Planning and Carrying Out InvestigationsPlanning and carrying out investigations in 9–12 builds on K–8 experiences and progresses to include investi-gations that provide evidence for and test conceptual,  
+mathematical,
+ physical,
+ and empirical models.
+§Plan and conduct an inv estig
+ation individually and
+collaboratively to produce data to serve as the basisDisciplinary Core Ideas
+PS1.A: Structure and Properties of Matter
+§Each atom has a charged substr
+ucture consisting of
+a nucleus, which is made of protons and neutrons,surrounded by electrons. (HS-PS1-1)
+§The periodic table orders elements horizontally by thenumber of protons in the atom’
+s nucleus and places
+those with similar chemical properties in columns.The repeating patterns of this table reflect patterns ofouter electron states. (HS-PS1-1), (HS-PS1-2)
+§The structure and interactions of matter at the bulkscale are determined by electrical forces within andbetween atoms.
+ (HS-PS1-3), (secondary to HS-
+PS2-6)
+§Stable forms of matter are those in which the electricand magnetic field energy is minimized.  
+A stable
+molecule has less energy than the same set of atomsseparated; one must provide at least this energy inorder to take the molecule apar
+t. (HS-PS1-4)Crosscutting Concepts
+Patterns
+§Different patterns ma
+y be observed at each of the
+scales at which a system is studied and can provideevidence for causality in explanations of phenomena.(HS-PS1-1), (HS-PS1-2), (HS-PS1-3), (HS-PS1-5)
+Energy and Matter
+§In nuclear processes, atoms are not conser
+ved,
+but the total number of protons plus neutrons isconserved.
+ (HS-PS1-8)
+§The total amount of energy and matter in closedsystems is conser v
+ed. (HS-PS1-7)
+§Changes of energ
+y and matter in a system can be
+described in terms of energy and matter flows into,out of, and within that system. (HS-PS1-4)
+Stability and Change
+§Much of science deals with constructing explana-tions of how things chang
+e and how they remain
+stable.  (HS-PS1-6)
+=== PAGE 4 ===
+Grades Nine through Twelve Grade-Level Standards | 257  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS1 Matter and Its Interactions
+for evidence, and in the design: decide on types, 
+how much, and accuracy of data needed to produce reliable measurements and consider limitations on the precision of the data (e.g., number of trials, cost, risk, time), and refine the design accordingly. (HS-PS1-3)
+Using Mathematics and Computational ThinkingMathematical and computational thinking at the 9–12 level builds on K–8 and progresses to using algebraic thinking and analysis, a range of linear and nonlinear functions including trigonometric functions, expo-nentials and logarithms, and computational tools for statistical analysis to analyze, represent, and model data. Simple computational simulations are created and used based on mathematical models of basic assumptions.
+§Use mathematical representations of phenomena tosupport claims.
+ (HS-PS1-7)
+Constructing Explanations and Designing SolutionsConstructing explanations and designing solutions in 9–12 builds on K–8 experiences and progresses to explanations and designs that are supported by 
+multiple and independent student-generated sources of evidence consistent with scientific ideas, principles, and theories.
+§Apply scientific principles and evidence to providean explanation of phenomena and solve designproblems,  taking into account possible unanticipat-
+ed effects.
+ (HS-PS1-5)
+§Construct and re
+vise an explanation based on valid
+and reliable evidence obtained from a variety ofPS1.B: Chemical Reactions
+§Chemical processes, their rates,
+ and whether or
+not energy is stored or released can be understoodin terms of the collisions of molecules and therearrang
+ements of atoms into new molecules, with
+consequent changes in the sum of all bond energiesin the set of molecules that are matched by changesin kinetic energ y
+. (HS-PS1-4), (HS-PS1-5)
+§In many situations,
+ a dynamic and condition-depen-
+dent balance between a reaction and the reversereaction determines the numbers of all types ofmolecules present. (HS-PS1-6)
+§The fact that atoms are conserv
+ed, together with
+knowledge of the chemical proper ties of the ele-
+ments in
+volved, can be used to describe and predict
+chemical reactions. (HS-PS1-2),  (HS-PS1-7)
+PS1.C: Nuclear Processes
+§Nuclear processes, including fusion,
+ fission, and ra-
+dioactive decays of unstable nuclei, involve releaseor absorption of energy. The total number of neu-
+trons plus protons does not chang
+e in any nuclear
+process. (HS-PS1-8)
+PS2.B: Types of Interactions
+§Attraction and repulsion between electric charg
+es
+at the atomic scale explain the structure, proper-ties, and transformations of matter, as well as thecontact forces between material objects. (secondaryto HS-PS1-1),(secondar y to HS-PS1-3)
+ETS1.C: Optimizing the Design Solution
+§Criteria may need to be brok
+en down into simpler
+ones that can be approached systematically, andConnections to Nature of Science
+Scientific Knowledge Assumes an Order and Consistency in Natural Systems
+§Science assumes the universe is a v
+ast single sys-
+tem in which basic laws are consistent. (HS-PS1-7)
+=== PAGE 5 ===
+258 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS1 Matter and Its Interactions
+sources (including students’ own investigations, 
+models, theories, simulations, peer review) and the assumption that theories and laws that describe the natural world operate today as they did in the past and will continue to do so in the future. (HS-PS1-2)
+§Refine a solution to a complex real-wor
+ld problem,
+based on scientific knowledge, student-generatedsources of evidence, prioritized criteria, and tradeoffconsiderations. (HS-PS1-6)decisions about the priority of certain criteria ov er 
+others (trade-offs) ma
+y be needed. (secondary to 
+HS-PS1-6)
+Connections to other DCIs in this grade-band: HS.LS1.C (HS-PS1-1), (HS-PS1-2), (HS-PS1-4), (HS-PS1-7); HS.LS2.B (HS-PS1-7); HS.PS3.A (HS-PS1-4), (HS-PS1-5), (HS-PS1-8); HS.PS3.B (HS-PS1-4), (HS-PS1-6), (HS-PS1-7), (HS-PS1-8); HS.PS3.C (HS-PS1-8); HS.PS3.D (HS-PS1-4), (HS-PS1-8); HS.ESS1.A (HS-PS1-8); HS.ESS1.C (HS-PS1-8); HS.ESS2.C (HS-PS1-2), (HS-PS1-3); HS.ESS3.A (HS-PS1-8); HS.ESS3.C (HS-PS1-8)
+Articulation to DCIs across grade-bands: MS.PS1.A (HS-PS1-1), (HS-PS1-2), (HS-PS1-3), (HS-PS1-4), (HS-PS1-5), (HS-PS1-7), (HS-PS1-8); MS.PS1.B (HS-PS1-1), (HS-
+PS1-2), (HS-PS1-4), (HS-PS1-5), (HS-PS1-6), (HS-PS1-7), (HS-PS1-8); MS.PS1.C (HS-PS1-8); MS.PS2.B (HS-PS1-3), (HS-PS1-4), (HS-PS1-5); MS.PS2.C (HS-PS1-6); 
+MS.PS3.A (HS-PS1-5); MS.PS3.B (HS-PS1-5); MS.PS3.D (HS-PS1-4); MS.LS1.C (HS-PS1-4), (HS-PS1-7); MS.LS2.B (HS-PS1-7); MS.ESS2.A (HS-PS1-7), (HS-PS1-8)
+California Common Core State Standards Connections:
+ELA/Literacy –RST.9–10.7  Translate quantitative or technical information expressed in words in a text into visual form (e.g., a table or chart) and translate information expressed visually or mathematically (e.g., in an equation) into words. (HS-PS1-1)
+RST.11–12.1  Cite specific textual evidence to support analysis of science and technical texts, attending to important distinctions the author makes and to any gaps or inconsistencies in the account. (HS-PS1-3),  (HS-PS1-5)
+WHST
+.11–12.2.a-e  Write informative/explanatory texts, including the narration of historical events, scientific procedures/experiments, or technical processes. (HS-PS1-2),  
+(HS-PS1-5)
+WHST
+.11–12.5  Develop and strengthen writing as needed by planning, revising, editing, rewriting,  or tr
+ying a new approach, focusing on addressing what is most sig-
+nificant for a specific purpose and audience. (HS-PS1-2)
+WHST.11–12.7  Conduct short as well as more sustained research projects to answer a question (including a self-generated question) or solve a problem; narrow or broaden the inquiry when appropriate; synthesize multiple sources on the subject, demonstrating understanding of the subject under in v
+estigation. 
+(HS-PS1-3), (HS-PS1-6)
+=== PAGE 6 ===
+Grades Nine through Twelve Grade-Level Standards | 259  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS1 Matter and Its Interactions
+WHST.11–12.8 Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limita-
+tions of each source in terms of the specific task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and overreliance on any one source and following a standard format for citation. (HS-PS1-3)
+WHST.11–12.9  Draw evidence from informational texts to support analysis, reflection, and research. (HS-PS1-3)
+SL.11–12.5 Make strategic use of digital media (e.g., textual, graphical, audio, visual, and interactive elements) in presentations to enhance understanding of findings, reasoning, and evidence and to add interest. (HS-PS1-4)
+Mathematics –MP .2 Reason abstractly and quantitatively. (HS-PS1-5), (HS-PS1-7)
+MP .4 Model with mathematics.
+ (HS-PS1-4), (HS-PS1-8)
+N-Q.1–3 Reason quantitatively and use units to solv
+e problems.« (HS-PS1-2), (HS-PS1-3), (HS-PS1-4), (HS-PS1-5), (HS-PS1-7),  (HS-PS1-8)
+=== PAGE 7 ===
+260 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS2 Motion and Stability: Forces and Interactions  
+HS-PS2 Motion and Stability: Forces and Interactions
+Students who demonstrate understanding can:
+HS-PS2-1. Analyze data to support the claim that Newton’s second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration. [Clarification Statement: Examples of data could include tables or graphs of position or velocity as a function of time for objects subject to a net unbalanced force, such as a falling object, an object rolling down a ramp, or a moving object being pulled b y a constant force.] 
+[
+Assessment Boundary: Assessment is limited to one-dimensional motion and to macroscopic objects moving at non-relativistic speeds. ]
+HS-PS2-2.  Use mathematical representations to support the claim that the total momentum of a system of objects is conserved when there is no net force on the system. [Clarification Statement: Emphasis is on the quantitative conservation of momentum in interactions and the qualitative meaning of this principle.] [Assessment Boundary: Assessment is limited to systems of two macroscopic bodies moving in one dimension. ]
+HS-PS2-3.  Apply scientific and engineering ideas to design, evaluate,  and refine a de
+vice that minimizes the force on a macroscopic object during a collision.*  [Clar-
+ification Statement: Examples of evaluation and refinement could include determining the success of the device at protecting an object from damage and modifying the design to improve it. Examples of a device could include a football helmet or a parachute.] [Assessment Boundar y: 
+Assessment is limited to 
+qualitative evaluations and/or algebraic manipulations.]
+HS-PS2-4.  Use mathematical representations of Newton’s Law of Gravitation and Coulomb’s Law to describe and predict the gravitational and electrostatic forces between objects. [Clarification Statement: Emphasis is on both quantitative and conceptual descriptions of gravitational and electric fields.] [Assessment Boundary: Assessment is limited to systems with two objects.]
+HS-PS2-5.  Plan and conduct an investigation to pro vide e
+vidence that an electric current can produce a magnetic field and that a changing magnetic field can pro-
+duce an electric current. [Assessment Boundary: Assessment is limited to designing and conducting investigations with provided materials and tools. ]
+HS-PS2-6.  Communicate scientific and technical information about why the molecular-level structure is important in the functioning of designed materials.*  [Clarifi-
+cation Statement: Emphasis is on the attractiv e and repulsiv
+e forces that determine the functioning of the material. Examples could include why electrically 
+conductive materials are often made of metal, flexible but durable materials are made up of long chained molecules, and pharmaceuticals are designed to interact with specific receptors.] [ Assessment Boundar
+y: Assessment is limited to provided molecular structures of specific designed materials. ]
+The performance expectation(s) above were developed using the following elements from the NRC document  A Framework for K–12 Science Education:
+=== PAGE 8 ===
+Grades Nine through Twelve Grade-Level Standards | 261  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS2 Motion and Stability: Forces and Interactions
+Science and Engineering Practices
+Planning and Carrying Out Investigations
+Planning and carrying out investigations to answer questions or test solutions to problems in 9–12 builds on K–8 experiences and progresses to include investi-gations that provide evidence for and test conceptual, mathematical, physical, and empirical models.
+§Plan and conduct an inv
+estigation individually and
+collaboratively to produce data to ser
+ve as the basis
+for evidence, and in the design: decide on types,how much, and accuracy of data needed to producereliable measurements and consider limitationson the precision of the data (e.g., number of trials,cost, risk,
+ time), and refine the design accordingly.
+(HS-PS2-5)
+Analyzing and Interpreting DataAnalyzing data in 9–12 builds on K–8 and prog
+resses 
+to introducing more detailed statistical analysis, the comparison of data sets for consistency, and the use of models to generate and analyze data.
+§Analyze data using tools, technologies,
+ and/or mod-
+els (e.g., computational,
+ mathematical) in order to
+make valid and reliable scientific claims or deter-mine an optimal design solution. (HS-PS2-1)
+Using Mathematics and Computational ThinkingMathematical and computational thinking at the 9–12 le
+vel builds on K–8 and progresses to using algebraic 
+thinking and analysis, a rang e of linear and nonlinear 
+functions including trig
+onometric functions, exponen-
+tials and logarithms, and computational tools forDisciplinary Core Ideas
+PS1.A: Structure and Properties of Matter
+§The structure and interactions of matter at the bulkscale are determined b
+y electrical forces within and
+between atoms. (secondary to HS-PS2-6)
+PS2.A: Forces and Motion
+§Newton’
+s second law accurately predicts changes in
+the motion of macroscopic objects. (HS-PS2-1)
+§Momentum is defined for a particular frame of refer-ence; it is the mass times the v elocity of the object.
+In an
+y system, total momentum is always conserved.
+(HS-PS2-2)
+§If a system interacts with objects outside itself, thetotal momentum of the system can change; ho
+wev
+er,
+any such change is balanced by changes in the mo-mentum of objects outside the system. (HS-PS2-2),(HS-PS2-3)
+PS2.B: Types of Interactions
+§Newton’
+s law of universal gravitation and Coulomb’s
+law provide the mathematical models to describeand predict the effects of gra
+vitational and electro-
+static forces between distant objects. (HS-PS2-4)
+§Forces at a distance are explained by fields (g
+ravi-
+tational, electric, and magnetic) permeating spacethat can transfer energ y through space.
+ Magnets
+or electric currents cause magnetic fields; electriccharges or changing magnetic fields cause electricfields. (HS-PS2-4), (HS-PS2-5)
+§Attraction and repulsion between electric charges atthe atomic scale explain the str ucture,
+ properties,Crosscutting Concepts
+Patterns
+§Different patterns ma
+y be observed at each of the
+scales at which a system is studied and can provideevidence for causality in explanations of phenome-na. (HS-PS2-4)
+Cause and Effect
+§Empirical evidence is required to differentiatebetween cause and cor
+relation and make claims
+about specific causes and effects.  (HS-PS2-1),
+ (HS-
+PS2-5)
+§Systems can be designed to cause a desired effect.(HS-PS2-3)
+Systems and System Models
+§When inv
+estigating or describing a system, the
+boundaries and initial conditions of the system needto be defined. (HS-PS2-2)
+Structure and Function
+§Inv
+estigating or designing new systems or structures
+requires a detailed examination of the properties of
+different materials, the structures of different com-ponents, and connections of components to revealits function and/or solv e a problem.
+ (HS-PS2-6)
+=== PAGE 9 ===
+262 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS2 Motion and Stability: Forces and Interactions
+statistical analysis to analyze, represent, and model 
+data. Simple computational simulations are created and used based on mathematical models of basic assumptions.
+§Use mathematical representations of phenomena todescribe explanations. (HS-PS2-2),
+ (HS-PS2-4)
+Constructing Explanations and Designing SolutionsConstructing explanations and designing solutions in 9–12 builds on K–8 experiences and progresses to explanations and designs that are supported by 
+multiple and independent student-generated sources of evidence consistent with scientific ideas, principles, and theories.
+§Apply scientific ideas to solve a design problem,taking into account possible unanticipated effects.(HS-PS2-3)
+Obtaining ,
+ Evaluating, and Communicating Information
+Obtaining, evaluating,  and communicating infor
+mation 
+in 9–12 builds on K–8 and progresses to evaluating the validity and reliability of the claims, methods, and designs.
+§Communicate scientific and technical information
+(e.g.,
+ about the process of development and the
+design and performance of a proposed process orsystem) in multiple formats (including orally, graphi-cally, textually
+, and mathematically). (HS-PS2-6)and transformations of matter, as well as the con-tact forces between material objects. (HS-PS2-6), (secondary to HS-PS1-1), (secondary to HS-PS1-3)
+PS3.A: Definitions of Energy
+§“Electrical energy”
+ may mean energy stored in a
+battery or energy transmitted by electric currents.(secondary to HS-PS2-5)
+ETS1.A: Defining and Delimiting Engineering Problems
+§Criteria and constraints also include satisfying anyrequirements set b y society
+, such as taking issues
+of risk mitigation into account, and they shouldbe quantified to the extent possible and stated insuch a way that one can tell if a given design meetsthem. (secondary to HS-PS2-3)
+ETS1.C: Optimizing the Design Solution
+§Criteria may need to be brok
+en down into simpler
+ones that can be approached systematically, anddecisions about the priority of certain criteria overothers (trade-offs) may be needed. (secondary toHS-PS2-3)
+=== PAGE 10 ===
+Grades Nine through Twelve Grade-Level Standards | 263  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS2 Motion and Stability: Forces and Interactions
+Connections to Nature of Science
+Science Models, Laws, Mechanisms, and Theories 
+Explain Natural Phenomena
+§Theories and laws pro
+vide explanations in science.
+(HS-PS2-1), (HS-PS2-4)
+§Laws are statements or descriptions of the relation-ships among obser
+vable phenomena. (HS-PS2-1),
+(HS-PS2-4)
+HS.PS3.A (HS-PS2-4),(HS-PS2-5); HS.PS3.C (HS-PS2-1); HS.PS4.B (HS-PS2-5); HS.ESS1.A (HS-PS2-1),(HS-PS2-2),(HS-PS2-4); HS.ESS1.B (HS-PS2-4); HS.ESS1.C (HS-PS2-1),(HS-PS2-2),(HS-PS2-4); HS.ESS2.A (HS-PS2-5); HS.ESS2.C (HS-PS2-1),(HS-PS2-4); HS.ESS3.A (HS-PS2-4),(HS-PS2-5)
+Articulation to DCIs across grade-bands: MS.PS1.A (HS-PS2-6); MS.PS2.A (HS-PS2-1), (HS-PS2-2), (HS-PS2-3); MS.PS2.B (HS-PS2-4), (HS-PS2-5), (HS-PS2-6); 
+MS.PS3.C (HS-PS2-1), (HS-PS2-2), (HS-PS2-3); MS.ESS1.B (HS-PS2-4), (HS-PS2-5)
+California Common Core State Standards Connections:
+ELA/Literacy –RST.11–12.1  Cite specific textual evidence to support analysis of science and technical texts, attending to important distinctions the author makes and to any gaps or inconsistencies in the account. (HS-PS2-1), (HS-PS2-6)
+RST.11–12.7  Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., quantitativ e data,
+ video, multimedia) in order to 
+address a question or solve a problem. (HS-PS2-1)
+WHST.9–10.2.a–f  Write informative/explanatory texts, including the narration of historical events, scientific procedures/experiments,  or technical processes.
+ (HS-PS2-6)
+WHST.11–12.2.a–e Write informative/explanatory texts, including the narration of historical events, scientific procedures/experiments, or technical processes. (HS-PS2-6)
+WHST .9–12.7
+ Conduct short as well as more sustained research projects to answer a question (including a self-generated question) or solve a problem; narrow or broaden the inquiry when appropriate; synthesize multiple sources on the subject,  demonstrating understanding of the subject under in
+vestigation. 
+(HS-PS2-3), (HS-PS2-5)
+WHST.11–12.8  Gather relevant infor mation from multiple authoritativ
+e print and digital sources, using advanced searches effectively; assess the strengths and limita-
+tions of each source in terms of the specific task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and ov er
+reliance on any one source and following a standard format for citation. (HS-PS2-5)
+WHST.9–12.9  Draw evidence from informational texts to support analysis, reflection, and research. (HS-PS2-1), (HS-PS2-5)
+Mathematics –MP .2 Reason abstractly and quantitatively. (HS-PS2-1), (HS-PS2-2), (HS-PS2-4)
+=== PAGE 11 ===
+264 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS2 Motion and Stability: Forces and Interactions
+MP .4 Model with mathematics. (HS-PS2-1), (HS-PS2-2), (HS-PS2-4)
+N-Q.1–3 Reason quantitatively and use units to solve problems.« (HS-PS2-1), (HS-PS2-2), (HS-PS2-4), (HS-PS2-5), (HS-PS2-6)
+A-SSE.1.a–b Interpret expressions that represent a quantity in terms of its context. « (HS-PS2-1), (HS-PS2-4)
+A-SSE.3.a–c Choose and produce an equivalent form of an expression to reveal and explain properties of the quantity represented by the expression.« (HS-
+PS2-1), (HS-PS2-4)
+A-CED.1 Create equations and inequalities in one variable including ones with absolute value and use them to solve problems. Include equations arising from linear and quadratic functions, and simple rational and exponential functions. CA« (HS-PS2-1), (HS-PS2-2)
+A-CED.2 Create equations in two or more variables to represent relationships between quantities; graph equations on coordinate axes with labels and scales. « 
+(HS-PS2-1), (HS-PS2-2)
+A-CED.4 Rearrang
+e formulas to highlight a quantity of interest, using the same reasoning as in solving equations. For example, rearrange Ohm’s law V = IR to 
+highlight resistance R.« (HS-PS2-1), (HS-PS2-2)
+F-IF .7.a–e Graph functions expressed symbolically and show ke y features of the g
+raph, by hand in simple cases and using technology for more complicated cas-
+es.« (HS-PS2-1)
+S-ID.1 Represent data with plots on the real number line (dot plots, histog
+rams, and box plots).«  (HS-PS2-1)
+=== PAGE 12 ===
+Grades Nine through Twelve Grade-Level Standards | 265  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS3 Energy
+HS-PS3 Energy
+Students who demonstrate understanding can:
+HS-PS3-1. Create a computational model to calculate the change in the energy of one component in a system when the change in energy of the other component(s) and energy flows in and out of the system are known. [Clarification Statement: Emphasis is on explaining the meaning of mathematical expressions used in the model.] [Assessment Boundary: Assessment is limited to basic algebraic expressions or computations; to systems of two or three components; and to thermal energ
+y, kinetic energy, and/or the energies in gravitational, magnetic, or electric fields. ]
+HS-PS3-2.  Develop and use models to illustrate that energy at the macroscopic scale can be accounted for as a combination of energy associated with the motions of particles (objects) and energy associated with the relative positions of particles (objects). [Clarification Statement: Examples of phenomena at the macroscopic scale could include the conversion of kinetic energy to thermal energy , 
+ the energy stored due to position of an object above the earth, and the 
+energy stored between two electrically charged plates. Examples of models could include diagrams, drawings, descriptions, and computer simulations.]
+HS-PS3-3.  Design, build, and refine a device that works within given constraints to convert one form of energy into another form of energy.* [Clarification Statement: Emphasis is on both qualitative and quantitative evaluations of devices. Examples of devices could include Rube Goldberg devices, wind turbines,  solar cells, 
+ 
+solar ovens, and generators. Examples of constraints could include use of renewable energy forms and efficiency.] [ Assessment Boundary: Assessment for 
+quantitative evaluations is limited to total output for a given input. Assessment is limited to devices constructed with materials provided to students. ]
+HS-PS3-4.  Plan and conduct an investigation to provide evidence that the transfer of thermal energy when two components of different temperature are combined within a closed system results in a more uniform energy distribution among the components in the system (second law of thermodynamics). [Clarification Statement: Emphasis is on analyzing data from student investigations and using mathematical thinking to describe the energy chang es both quantitativ 
+ely 
+and conceptually. Examples of investigations could include mixing liquids at different initial temperatures or adding objects at different temperatures to water.] [Assessment Boundary: Assessment is limited to investigations based on materials and tools provided to students.]
+HS-PS3–5.  Develop and use a model of two objects interacting through electric or magnetic fields to illustrate the forces between objects and the changes in energy of the objects due to the interaction. [Clarification Statement: Examples of models could include drawings, diagrams, and texts, such as drawings of what happens when tw o charg
+es of opposite polarity are near each other.] [Assessment Boundary: Assessment is limited to systems containing two objects.]
+The performance expectation(s) above were developed using the following elements from the NRC document  A Framework for K–12 Science Education:
+Science and Engineering Practices
+Developing and Using ModelsModeling in 9–12 builds on K–8 and progresses to using, synthesizing, and developing models to predict and show relationships among variables between systems and their components in the natural and designed worlds.Disciplinary Core Ideas
+PS3.A: Definitions of Energy
+§Energy is a quantitativ
+e property of a system that
+depends on the motion and interactions of matterand radiation within that system. That there is asingle quantity called energy is due to the fact thatCrosscutting Concepts
+Cause and Effect
+§Cause and effect relationships can be suggested andpredicted for complex natural and human designedsystems b
+y examining what is known about smaller
+scale mechanisms within the system. (HS-PS3–5)
+=== PAGE 13 ===
+266 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS3 Energy
+§Develop and use a model based on evidence to
+illustrate the relationships between systems or
+between components of a system. (HS-PS3-2), (HS-
+PS3–5)
+Planning and Carrying Out InvestigationsPlanning and carr
+ying out inv
+estigations to answer 
+questions or test solutions to problems in 9–12 builds on K–8 experiences and progresses to include investi-gations that provide evidence for and test conceptual, mathematical, physical, and empirical models.
+§Plan and conduct an inv
+estigation individually and
+collaboratively to produce data to serve as the basisfor evidence, and in the design: decide on types,how much,
+ and accuracy of data needed to produce
+reliable measurements and consider limitationson the precision of the data (e.g .,
+ number of trials,
+cost, risk, time), and refine the design accordingly.(HS-PS3-4)
+Using Mathematics and Computational ThinkingMathematical and computational thinking at the 9–12 level builds on K–8 and progresses to using algebraic thinking and analysis, a range of linear and nonlinear functions including trigonometric functions, expo-nentials and logarithms, and computational tools for statistical analysis to analyze, represent, and model data. Simple computational simulations are created and used based on mathematical models of basic assumptions.
+§Create a computational model or simulation of aphenomenon, designed de
+vice, process, or system.
+(HS-PS3-1)a system’s total energy is conserv
+ed, ev
+en as, within 
+the system, energy is continually transferred from one object to another and between its various possi-ble forms. (HS-PS3-1), (HS-PS3-2)
+§At the macroscopic scale, energ
+y manifests itself in
+multiple ways, such as in motion, sound, light, andthermal energ
+y. (HS-PS3-2),
+ (HS-PS3-3)
+§These relationships are better understood at themicroscopic scale, at w
+hich all of the different
+manifestations of energy can be modeled as acombination of energy associated with the motionof particles and energy associated with the config-uration (relative position of the particles).
+ In some
+cases the relative position energy can be thoughtof as stored in fields (which mediate interactionsbetween par
+ticles). This last concept includes radia-
+tion, a phenomenon in which energy stored in fieldsmoves across space. (HS-PS3-2)
+PS3.B: Conservation of Energy and Energy Transfer
+§Conserv
+ation of energy means that the total change
+of energy in any system is always equal to the totalenergy transferred into or out of the system. (HS-PS3-1)
+§Energy cannot be created or destro
+yed, but it can be
+transpor ted from one place to another and trans-
+fer
+red between systems. (HS-PS3-1), (HS-PS3-4)
+§Mathematical expressions, w
+hich quantify how the
+stored energy in a system depends on its configu-ration (e.g .,
+ relative positions of charged par
+ticles,
+compression of a spring) and ho w kinetic energ
+y
+depends on mass and speed, allow the concept ofSystems and System Models
+§When inv
+estigating or describing a system, the
+boundaries and initial conditions of the system needto be defined and their inputs and outputs analyzedand described using models. (HS-PS3-4)
+§Models can be used to predict the behavior of asystem, but these predictions ha
+ve limited precision
+and reliability due to the assumptions and approxi-mations inherent in models. (HS-PS3-1)
+Energy and Matter
+§Changes of energy and matter in a system can bedescribed in terms of energy and matter flo ws into,
+out of,
+ and within that system. (HS-PS3-3)
+§Energy cannot be created or destro
+yed—only mo v
+es
+between one place and another place, between ob-jects and/or fields, or between systems. (HS-PS3-2)
+Conn e
+ctions to Engineering, Technology, and 
+Applications of Science
+Influence of Science, Engineering, and Technology on Society and the Natural World
+§Modern civilization depends on major technologicalsystems. Engineers continuously modify these tech-nological systems b
+y applying scientific knowledge
+and engineering design practices to increase bene-fits while decreasing costs and risks. (HS-PS3-3)
+=== PAGE 14 ===
+Grades Nine through Twelve Grade-Level Standards | 267  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS3 Energy
+Constructing Explanations and Designing Solutions
+Constructing explanations and designing solutions in 9–12 builds on K–8 experiences and progresses to explanations and designs that are supported by multiple and independent student-generated sources of evidence consistent with scientific ideas, principles, and theories.
+§Design, e
+valuate, and/or refine a solution to a
+complex real-world problem, based on scientific
+knowledge, student-generated sources of evidence,prioritized criteria, and tradeoff considerations. (HS-PS3-3)conservation of energy to be used to predict and describe system beha vior
+. (HS-PS3-1)
+§The av
+ailability of energy limits what can occur in
+any system. (HS-PS3-1)
+§Uncontrolled systems always e
+volve toward more
+stable states—that is, toward more uniform energydistribution (e.g., water flows do wnhill,
+ objects hotter
+than their surrounding en vironment cool do
+wn).
+(HS-PS3-4)
+PS3.C: Relationship Between Energy and Forces
+§When two objects interacting through a field chang
+e
+relative position, the energy stored in the field ischanged. (HS-PS3–5)
+PS3.D: Energy in Chemical Processes
+§Although energy cannot be destro
+yed, it can be con-
+verted to less useful forms—for example, to thermalenerg y in the sur
+rounding environment. (HS-PS3-3),
+(HS-PS3-4)
+ETS1.A: Defining and Delimiting Engineering Problems
+§Criteria and constraints also include satisfying anyrequirements set b y society
+, such as taking issues
+of risk mitigation into account, and they shouldbe quantified to the extent possible and stated insuch a way that one can tell if a given design meetsthem. (secondary to HS-PS3-3)Connections to Nature of Science
+Scientific Knowledge Assumes an Order and Consistency in Natural Systems
+§Science assumes the universe is a v
+ast single sys-
+tem in which basic laws are consistent. (HS-PS3-1)
+Connections to other DCIs in this grade-band: HS.PS1.A (HS-PS3-2); HS.PS1.B (HS-PS3-1), (HS-PS3-2); HS.PS2.B (HS-PS3-2), (HS-PS3–5); HS.LS2.B (HS-PS3-1); HS-ESS1.A (HS-PS3-1), (HS-PS3-4); HS.ESS2.A (HS-PS3-1), (HS-PS3-2), (HS-PS3-4); HS.ESS2.D (HS-PS3-4); HS.ESS3.A 
+ (HS-PS3-3)
+Articulation to DCIs across grade-bands: MS.PS1.A (HS-PS3-2); MS.PS2.B (HS-PS3-2), (HS-PS3–5); MS.PS3.A (HS-PS3-1), (HS-PS3-2), (HS-PS3-3); MS.PS3.B (HS-PS3-1), (HS-PS3-3), (HS-PS3-4); MS.PS3.C (HS-PS3-2), (HS-PS3–5); MS.ESS2.A (HS-PS3-1), (HS-PS3-3)
+=== PAGE 15 ===
+268 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS3 Energy
+California Common Core State Standards Connections:
+ELA/Literacy –RST.11–12.1  Cite specific textual evidence to support analysis of science and technical texts, attending to important distinctions the author makes and to any gaps or inconsistencies in the account. (HS-PS3-4)
+WHST.9–12.7  Conduct short as well as more sustained research projects to answer a question (including a self-generated question) or solve a problem; narrow or broaden the inquir y w
+hen appropriate; synthesize multiple sources on the subject, demonstrating understanding of the subject under investigation. (HS-
+PS3-3), (HS-PS3-4), (HS-PS3–5)
+WHST .9–10.8  Gather rele
+vant information from multiple authoritative print and digital sources (primary and secondary), using advanced searches effectively; assess the 
+usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagia -
+rism and follo
+wing a standard format for citation. CA (HS-PS3-4), (HS-PS3-5)
+WHST.11–12.8  Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limitations of each source in terms of the specific task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, av oiding 
+plagiarism and o
+verreliance on any one source and following a standard format for citation. (HS-PS3-4), (HS-PS3-5)
+WHST.9–12.9  Draw evidence from informational texts to support analysis, reflection, and research. (HS-PS3-4), (HS-PS3-5)
+SL.11–12.5 Make strategic use of digital media (e.g., textual, graphical, audio, visual, and interactive elements) in presentations to enhance understanding of findings, reasoning, and evidence and to add interest. (HS-PS3-1), (HS-PS3-2), (HS-PS3-5)
+Mathematics –MP .2 Reason abstractly and quantitatively.  (HS-PS3-1),
+ (HS-PS3-2), (HS-PS3-3), (HS-PS3-4), (HS-PS3-5)
+MP .4 Model with mathematics. (HS-PS3-1), (HS-PS3-2), (HS-PS3-3), (HS-PS3-4), (HS-PS3-5)
+N-Q.1–3 Reason quantitatively and use units to solv
+e problems.« (HS-PS3-1), (HS-PS3-3)
+=== PAGE 16 ===
+Grades Nine through Twelve Grade-Level Standards | 269  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS4 Waves and Their Applications in Technologies for Information Transfer  
+HS-PS4 Waves and Their Applications in Technologies for Information Transfer
+Students who demonstrate understanding can:
+HS-PS4-1. Use mathematical representations to support a claim regarding relationships among the frequency, wavelength, and speed of waves traveling in various media. [Clarification Statement: Examples of data could include electromagnetic radiation traveling in a vacuum and glass, sound waves trav eling through 
+air and water
+, and seismic waves traveling through the Earth.] [Assessment Boundary: Assessment is limited to algebraic relationships and describing those 
+relationships qualitatively.]
+HS-PS4-2.  Evaluate questions about the advantages of using a digital transmission and storage of information. [Clarification Statement: Examples of advantages 
+could include that digital information is stable because it can be stored reliably in computer memory, transferred easily,  and copied and shared rapidly
+. 
+Disadvantages could include issues of easy deletion, security, and theft.]
+HS-PS4-3.  Evaluate the claims, evidence, and reasoning behind the idea that electromagnetic radiation can be described either by a wave model or a particle model, and that for some situations one model is more useful than the other. [Clarification Statement: Emphasis is on how the experimental evidence supports the claim and how a theory is generally modified in light of new evidence.  Examples of a phenomenon could include resonance, 
+ interference, diffraction, and 
+photoelectric effect.] [Assessment Boundary: Assessment does not include using quantum theory.]
+HS-PS4-4.  Evaluate the validity and reliability of claims in published materials of the effects that different frequencies of electromagnetic radiation have when ab-sorbed by matter. [Clarification Statement: Emphasis is on the idea that photons associated with different frequencies of light have different energies, and the damage to living tissue from electromagnetic radiation depends on the energy of the radiation. Examples of published materials could include trade books, mag azines,
+ web resources, videos, and other passages that may reflect bias.] [Assessment Boundary: Assessment is limited to qualitative descrip-
+tions.]
+HS-PS4-5.  Communicate technical information about how some technological devices use the principles of wave behavior and wave interactions with matter to trans-mit and capture information and energy.* [Clarification Statement: Examples could include solar cells capturing light and converting it to electricity; medicalimaging; and communications technology .] [ 
+Assessment Boundary: Assessments are limited to qualitative information. Assessments do not include band 
+theory.] 
+The performance expectation(s) above were developed using the following elements from the NRC document  A Framework for K–12 Science Education:
+=== PAGE 17 ===
+270 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS4 Waves and Their Applications in Technologies for Information Transfer
+Science and Engineering Practices
+Asking Questions and Defining Problems
+Asking questions and defining problems in grades 9–12 builds from grades K–8 experiences and progresses to formulating, refining, and evaluating empirically 
+testable questions and design problems using models and simulations.
+§Evaluate questions that challenge the premise(s) ofan argument, the interpretation of a data set, or thesuitability of a design. (HS-PS4-2)
+Using Mathematics and Computational ThinkingMathematical and computational thinking at the 9–12 level builds on K–8 and progresses to using algebraic thinking and analysis, a rang e of linear and nonlinear 
+functions including trig
+onometric functions, expo-
+nentials and logarithms, and computational tools for statistical analysis to analyze, represent, and model data. Simple computational simulations are created and used based on mathematical models of basic assumptions.
+§Use mathematical representations of phenomena ordesign solutions to describe and/or support claimsand/or explanations. (HS-PS4-1)
+Engaging in Argument from EvidenceEng
+aging in argument from evidence in 9–12 builds 
+on K–8 experiences and progresses to using appropri-ate and sufficient evidence and scientific reasoning to defend and critique claims and explanations about natural and designed worlds.  
+Arguments may also  come 
+from current scientific or historical episodes in science.Disciplinary Core Ideas
+PS3.D: Energy in Chemical Processes
+§Solar cells are human-made devices that lik
+ewise
+capture the sun’s energy and produce electricalenergy. (secondar y to HS-PS4-5)
+PS4.A: W
+ave Properties
+§The wav
+elength and frequency of a wave are related
+to one another by the speed of travel of the wave,which depends on the type of wa v
+e and the medium
+through which it is passing. (HS-PS4-1)
+§Information can be digitized (e.g
+., a picture stored
+as the values of an array of pixels); in this form, itcan be stored reliably in computer memory and sentover long distances as a series of wa
+ve pulses. (HS-
+PS4-2), (HS-PS4-5)
+§[From the 3–5 grade band endpoints] 
+Waves can
+add or cancel one another as they cross, depend-ing on their relative phase (i.e.,  relativ
+e position of
+peaks and troughs of the waves), but they emergeunaffected by each other. (Boundary: The discus-sion at this grade level is qualitative only; it can bebased on the fact that two different sounds canpass a location in different directions without gettingmixed up.) (HS-PS4-3)
+PS4.B: Electromagnetic Radiation
+§Electromagnetic radiation (e.g.,
+ radio, microwaves,
+light) can be modeled as a wave of changingelectric and magnetic fields or as particles calledphotons.  
+The wave model is useful for explaining
+many features of electromagnetic radiation, and theCrosscutting Concepts
+Cause and Effect
+§Empirical evidence is required to differentiate be-tw
+een cause and correlation and make claims about
+specific causes and effects. (HS-PS4-1)
+§Cause-and-effect relationships can be suggestedand predicted for complex natural and humandesigned systems by examining what is knownabout smaller scale mechanisms within the system.(HS-PS4-4)
+§Systems can be designed to cause a desired effect.(HS-PS4-5)
+Systems and System Models
+§Models (e.g., ph ysical,
+ mathematical, computer
+models) can be used to simulate systems andinteractions—including energy, matter ,
+ and informa-
+tion flows—within and between systems at differentscales. (HS-PS4-3)
+Stability and Change
+§Systems can be designed for greater or lesser stabil -
+ity
+. (HS-PS4-2)
+Connec t
+ions to Engineering, Technology, and 
+Applications of Science
+Interdependence of Science, Engineering, and Technology
+§Science and engineering complement each otherin the cycle known as research and de
+velopment
+(R&D). (HS-PS4-5)
+=== PAGE 18 ===
+Grades Nine through Twelve Grade-Level Standards | 271  
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.
+HS-PS4 Waves and Their Applications in Technologies for Information Transfer
+§Evaluate the claims, evidence, and reasoning behind
+currently accepted explanations or solutions to determine the merits of arguments. (HS-PS4-3)
+Obtaining, Evaluating, and Communicating InformationObtaining, evaluating, and communicating information in 9–12 builds on K–8 and progresses to evaluating the validity and reliability of the claims, methods, and designs.
+§Evaluate the v
+alidity and reliability of multiple
+claims that appear in scientific and technical textsor media reports, verifying the data when possible.(HS-PS4-4)
+§Communicate technical information or ideas (e.g .,
+about phenomena and/or the process of de
+vel-
+opment and the design and performance of aproposed process or system) in multiple formats(including orally ,
+ graphically, textually, and mathe-
+matically). (HS-PS4-5)
+Connections to Nature of Science
+Science Models, Laws, Mechanisms, and Theories Explain Natural Phenomena
+§A scientific theory is a substantiated explanationof some aspect of the natural wor
+ld, based on a
+body of facts that have been repeatedly confirmedthrough obser v
+ation and experiment and the sci-
+ence community validates each theory before it isaccepted. If new evidence is discovered that the the -
+ory does not accommodate, the theory is generallymodified in light of this new evidence. (HS-PS4-3)particle model explains other features. (HS-PS4-3)
+§When light or longer wa
+velength electromagnetic ra-
+diation is absorbed in matter, it is generally conv er
+t-
+ed into thermal energy (heat). Shorter wavelengthelectromagnetic radiation (ultraviolet, X-rays, gammarays) can ionize atoms and cause damage to livingcells. (HS-PS4-4)
+§Photov
+oltaic materials emit electrons when they
+absorb light of a high-enough frequency. (HS-PS4-5)
+PS4.C: Information Technologies and Instrumentation
+§Multiple technologies based on the understandingof wav es and their interactions with matter are par
+t
+of everyday experiences in the moder n w
+orld (e.g.,
+medical imaging, communications, scanners) and inscientific research. They are essential tools for pro-ducing, transmitting, and capturing signals and forstoring and interpreting the information contained inthem. (HS-PS4-5)Influence of Engineering, Technology, and Science on Society and the Natural World
+§Modern civilization depends on major technologicalsystems. (HS-PS4-2),
+ (HS-PS4-5)
+§Engineers continuously modify these technologicalsystems by applying scientific kno
+wledge and engi-
+neering design practices to increase benefits whiledecreasing costs and risks.  (HS-PS4-2)
+=== PAGE 19 ===
+272 | Grade-Level Standards Grades Nine through Twelve
+* The performance expectations marked with an asterisk integrate traditional science content with engineering through a Practice or Disciplinary Core Idea.
+** California clarification statements, marked with double asterisks, were incorporated by the California Science Expert Review Panel.
+The star symbol ( «) following the standard indicates that it is also a Modeling standard. Modeling is best interpreted not as a collection of isolated topics but in relation to other standards.
+Making mathematical models is a Standard for Mathematical Practice, and modeling standards appear throughout the higher mathematics standards indicated by a « symbol.
+The section titled “Disciplinary Core Ideas” is reproduced verbatim from A Framework for K–12 Science Education: Practices, Crosscutting Concepts, and Core Ideas.HS-PS4 Waves and Their Applications in Technologies for Information Transfer
+Connections to other DCIs in this grade-band: HS.PS1.C (HS-PS4-4), (HS-PS3-1); HS-LS1.C (HS-PS4-4); HS.PS3.A (HS-PS4-4), (HS-PS4-5); HS.PS3.D (HS-PS4-3), (HS-
+PS4-4); HS.ESS1.A (HS-PS4-3); HS.ESS2.A (HS-PS4-1); HS.ESS2.D (HS-PS4-3)
+Articulation to DCIs across grade-bands: MS.PS3.D (HS-PS4-4); MS.PS4.A (HS-PS4-1), (HS-PS4-2), (HS-PS4-5); MS.PS4.B (HS-PS4-1), (HS-PS4-2), (HS-PS4-3), (HS-
+PS4-4), (HS-PS4-5); MS.PS4.C (HS-PS4-2), (HS-PS4-5); MS.LS1.C (HS-PS4-4); MS.ESS2.D (HS-PS4-4)
+California Common Core State Standards Connections:
+ELA/Literacy –RST.11–12.1  Cite specific textual evidence to support analysis of science and technical texts, attending to important distinctions the author makes and to any gaps or inconsistencies in the account. (HS-PS4-2), (HS-PS4-3), (HS-PS4-4)
+RST.11–12.7  Integrate and evaluate multiple sources of information presented in diverse for mats and media (e.g 
+., quantitative data, video, multimedia) in order to 
+address a question or solve a problem. (HS-PS4-1), (HS-PS4-4)
+RST.9–10.8  Assess the extent to which the reasoning and evidence in a text support the author’s claim or a recommendation for solving a scientific or technical problem. (HS-PS4-2),  (HS-PS4-3),
+ (HS-PS4-4)
+RST.11–12.8  Evaluate the hypotheses, data, analysis, and conclusions in a science or technical text,  v
+erifying the data when possible and corroborating or challeng-
+ing conclusions with other sources of information. (HS-PS4-2), (HS-PS4-3), (HS-PS4-4)
+WHST.9–10.2.a–f  Write informative/explanatory texts, including the nar ration of historical e
+vents, scientific procedures/experiments, or technical processes. (HS-PS4-5)
+WHST.11–12.2.a–e Write informative/explanatory texts, including the narration of historical events, scientific procedures/experiments,  or technical processes.
+ (HS-PS4-5)
+WHST.11–12.8 Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limita -
+tions of each source in ter
+ms of the specific task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, 
+avoiding plagiarism and o
+verreliance on any one source and following a standard format for citation. (HS-PS4-4)
+Mathematics –MP .2 Reason abstractly and quantitatively. (HS-PS4-1), (HS-PS4-3)
+MP .4 Model with mathematics. (HS-PS4-1)
+A-SSE.1.a–b
+Interpret expressions that represent a quantity in terms of its context. « (HS-PS4-1),
+ (HS-PS4-3)
+A-SSE.3.a–c Choose and produce an equivalent for
+m of an expression to reveal and explain properties of the quantity represented by the expression.« (HS-
+PS4-1),  (HS-PS4-3)
+A.CED
+.4 Rearrang
+e formulas to highlight a quantity of interest, using the same reasoning as in solving equations. « (HS-PS4-1), (HS-PS4-3)

@@ -1,0 +1,2379 @@
+{
+    "id": "3970fd49-5dbb-4660-88d4-304534353897",
+    "rubric_id": "46e1387e-4d5e-40d7-b9d4-3a97ec644e85",
+    "title": "WWII Data Analysis: UPDATE",
+    "description": "<p>Explore wartime figures to master core spreadsheet and AI skills. You'll create graphs, write powerful formulas and functions, use AI to analyze data and develop infographics, and reflect on experience. </p>",
+    "user_id": "6ae5c814-5b21-4ac5-9481-936a535bc9e2",
+    "deleted_at": null,
+    "created_at": "2025-12-20T22:50:52.424Z",
+    "updated_at": "2026-01-26T23:07:29.198Z",
+    "status": "active",
+    "version": 2,
+    "content_hash": "e2373830558c1c470f04349432f5e692d87a1b49ab07ace7b97e848423688d67",
+    "tags": [
+      "Geo",
+      "UPDATE"
+    ],
+    "rubric_variables": [],
+    "template": {
+      "id": "b08ef1e4-11b3-4f4c-9d92-e75dcf8d5238",
+      "attachable_id": "3970fd49-5dbb-4660-88d4-304534353897",
+      "attachable_type": "RubricVersion",
+      "order": 0,
+      "provider_slug": "google/sheets",
+      "title": null,
+      "description": null,
+      "file_id": "803e37e7-6387-42b3-89c6-2bfc3694b810",
+      "file": {
+        "id": "803e37e7-6387-42b3-89c6-2bfc3694b810",
+        "url": "https://docs.google.com/spreadsheets/d/1Ho5og9IzOMReq-DHHOE-SqhQy0EZBJ-yF1CYUxcYc7Y/edit"
+      },
+      "created_at": "2025-12-20T22:51:06.221Z",
+      "updated_at": "2025-12-20T22:51:15.212Z",
+      "deleted_at": null,
+      "use_case": "live"
+    },
+    "test_template": {
+      "id": "3c714f55-ff88-4478-b991-68568449cbb9",
+      "attachable_id": "3970fd49-5dbb-4660-88d4-304534353897",
+      "attachable_type": "RubricVersion",
+      "order": 0,
+      "provider_slug": "google/sheets",
+      "title": null,
+      "description": null,
+      "file_id": "ea4afd61-36fe-4abe-8e11-669f74cb1e07",
+      "file": {
+        "id": "ea4afd61-36fe-4abe-8e11-669f74cb1e07",
+        "url": "https://docs.google.com/spreadsheets/d/1p-DtLTYx58Ine2rM_7rNhqT0l5qz0UTp11XlHG9EdBs/edit"
+      },
+      "created_at": "2025-12-20T22:51:06.248Z",
+      "updated_at": "2025-12-20T22:51:15.338Z",
+      "deleted_at": null,
+      "use_case": "test"
+    },
+    "resource_attachments": [],
+    "resources": [],
+    "resource_file_links": [],
+    "sections": [
+      {
+        "id": "c44696ef-0161-4c6a-9f46-62c4ca762d4e",
+        "rubric_version_id": "3970fd49-5dbb-4660-88d4-304534353897",
+        "title": "V1 Project Setup",
+        "order": 0,
+        "description": "<p><strong style=\"color: rgb(230, 0, 0);\">**Do not continue past the \"Project Setup\" section until all tasks in this section are complete.**</strong></p><p>Open the \"Data Test\" task and follow the instructions.</p>",
+        "created_at": "2025-12-20T22:50:52.444Z",
+        "updated_at": "2025-12-20T22:50:52.444Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "118e82b8-4ff8-4668-9146-188f611622db",
+            "section_id": "c44696ef-0161-4c6a-9f46-62c4ca762d4e",
+            "title": "Data Test",
+            "description": "<p><strong style=\"color: rgb(230, 0, 0);\">**Do not continue until this task passes with all points earned. **</strong></p><p><br></p><p>This task ensures your project is set up correctly and always has the correct data in the correct location. Press the evaluate button and only continue if you earn all points for this task. <span style=\"color: rgb(230, 0, 0);\">If you do not, watch the \"Recover Video\" and follow the steps. </span></p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-12-20T22:50:52.489Z",
+            "updated_at": "2025-12-20T22:50:52.489Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "15b47bd5-1232-4686-8ead-878067538ccd",
+                "objective_id": "118e82b8-4ff8-4668-9146-188f611622db",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 16,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!C3:D10",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "number_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:52.554Z",
+                "updated_at": "2025-12-20T22:50:52.554Z",
+                "failure_message": "<p>One or more cells in the range of <strong style=\"color: rgb(255, 153, 0);\">C3:D10</strong> do not contain a numeric value. <strong style=\"color: rgb(230, 0, 0);\">Watch the recovery video to correct this. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "3fdd7017-16a2-4160-8644-28450211f061",
+                "objective_id": "118e82b8-4ff8-4668-9146-188f611622db",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!B2:E2",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:52.619Z",
+                "updated_at": "2025-12-20T22:50:52.619Z",
+                "failure_message": "<p>One or more cells in the range of <strong style=\"color: rgb(255, 153, 0);\">B2:E2</strong> do not contain text values. <strong style=\"color: rgb(230, 0, 0);\">Watch the recovery video to correct this. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "1544bd2b-282f-4450-a783-5e4f5bac240e",
+                "objective_id": "118e82b8-4ff8-4668-9146-188f611622db",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": true,
+                    "match_value": 8800000,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D3:D3",
+                  "evaluator_type": "countif",
+                  "match_operator": "equal_to",
+                  "evaluator_subject": "number_comparison",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:52.683Z",
+                "updated_at": "2025-12-20T22:50:52.683Z",
+                "failure_message": "<p>The data in cell <strong style=\"color: rgb(255, 153, 0);\">D3</strong> is not correct. <strong style=\"color: rgb(230, 0, 0);\">Watch the recovery video to correct this. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "7a64b399-026b-4755-a27d-c45a36e378b6",
+                "objective_id": "118e82b8-4ff8-4668-9146-188f611622db",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": true,
+                    "match_value": 217600,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D9:D9",
+                  "evaluator_type": "countif",
+                  "match_operator": "equal_to",
+                  "evaluator_subject": "number_comparison",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:52.739Z",
+                "updated_at": "2025-12-20T22:50:52.739Z",
+                "failure_message": "<p>The data in cell <strong style=\"color: rgb(255, 153, 0);\">D9</strong> is not correct. <strong style=\"color: rgb(230, 0, 0);\">Watch the recovery video to correct this. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "02cad766-c2a5-4701-9daf-d5e82de18455",
+        "rubric_version_id": "3970fd49-5dbb-4660-88d4-304534353897",
+        "title": "Functions",
+        "order": 1,
+        "description": "<p>Warm-up with core spreadsheet functions. You’ll use <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function to total WWII military personnel and deaths, then copy formulas efficiently. Mastering these basics prevents small math errors from snowballing later.</p>",
+        "created_at": "2025-12-20T22:50:52.802Z",
+        "updated_at": "2025-12-20T22:50:52.802Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "07b061ff-6669-4b0a-897c-8e8fb4cceb34",
+            "section_id": "02cad766-c2a5-4701-9daf-d5e82de18455",
+            "title": "Total Military Personnel",
+            "description": "<p>Use the <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function to calculate the total number of Military Personnel in the cell range <strong style=\"color: rgb(255, 153, 0);\">C3:C10</strong>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Locate cell <strong style=\"color: rgb(255, 153, 0);\">C11</strong> and insert a <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong><span style=\"color: rgb(3, 7, 18);\"> function.</span></li><li data-list=\"ordered\"><span class=\"ql-ui\"></span><span style=\"color: rgb(3, 7, 18);\">Use the cell range </span><strong style=\"color: rgb(255, 153, 0);\">C3:C10 </strong><span style=\"color: rgb(3, 7, 18);\">as the </span><strong style=\"color: rgb(0, 138, 0);\">value1</strong> <span style=\"color: rgb(3, 7, 18);\">argument. </span></li></ol><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">Watch the task video for step-by-step guidance.</span></p><p><br></p><p>You can use <strong>Prompt#01: Understand Instructions In Context</strong> in the project resource file for help with these instructions.</p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-12-20T22:50:52.882Z",
+            "updated_at": "2025-12-20T22:50:52.882Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "608b76fe-6fca-410a-9950-5ba751ba0a3c",
+                "title": "Video",
+                "description": "<p>Video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/zPIJQOVCVpM",
+                "order": 0,
+                "attachable_id": "07b061ff-6669-4b0a-897c-8e8fb4cceb34",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:50:53.312Z",
+                "updated_at": "2025-12-20T22:50:53.312Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              },
+              {
+                "id": "d1274176-7ed2-42da-a3fc-30d5b6086e2f",
+                "title": "VideoB",
+                "description": "<p>Video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/zPIJQOVCVpM?start=163",
+                "order": 1,
+                "attachable_id": "07b061ff-6669-4b0a-897c-8e8fb4cceb34",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:50:53.389Z",
+                "updated_at": "2025-12-20T22:50:53.389Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "0b46256c-04d2-4016-b118-3cc8536da2fb",
+                "objective_id": "07b061ff-6669-4b0a-897c-8e8fb4cceb34",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "sum"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!C11:C11",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:52.956Z",
+                "updated_at": "2025-12-20T22:50:52.956Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Cell </span><strong style=\"color: rgb(255, 153, 0);\">C11</strong><span style=\"color: rgb(3, 7, 18);\"> does not contain a </span><strong style=\"color: rgb(102, 163, 224);\">SUM()</strong><span style=\"color: rgb(3, 7, 18);\"> function. </span><strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p><p><br></p><p>You can use <strong style=\"background-color: transparent; color: rgb(0, 0, 0);\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "055340f6-84c1-48f1-978e-314fdb489068",
+                "objective_id": "07b061ff-6669-4b0a-897c-8e8fb4cceb34",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "C",
+                      "3",
+                      "10"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 3,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!C11:C11",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:53.056Z",
+                "updated_at": "2025-12-20T22:50:53.056Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function does not use the correct <strong style=\"color: rgb(0, 138, 0);\">value1</strong><span style=\"color: rgb(3, 7, 18);\"> argument. The </span><strong style=\"color: rgb(0, 138, 0);\">value1</strong><span style=\"color: rgb(3, 7, 18);\"> argument must reference cells </span><strong style=\"color: rgb(255, 153, 0);\">C3 </strong><span style=\"color: rgb(3, 7, 18);\">and </span><strong style=\"color: rgb(255, 153, 0);\">C10</strong><span style=\"color: rgb(3, 7, 18);\">. </span><strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p><p><br></p><p>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "93155855-f153-473b-9fdb-23eb36db41cd",
+                "objective_id": "07b061ff-6669-4b0a-897c-8e8fb4cceb34",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:(?i)sum\\s*\\(\\s*(?:'(?:[^']+)'|[A-Za-z0-9_]+)?!?\\$?[A-Z]{1,3}\\$?\\d+\\s*:\\s*\\$?[A-Z]{1,3}\\$?\\d+\\s*\\)"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!C11:C11",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:53.152Z",
+                "updated_at": "2025-12-20T22:50:53.152Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function is not structured correctly.</p><p><strong style=\"color: rgb(0, 138, 0);\">value1 = </strong><strong style=\"color: rgb(255, 153, 0);\">C3:C10</strong></p><p><br></p><p><strong>EXAMPLE: </strong></p><p><span style=\"color: rgb(3, 7, 18);\">=</span><strong style=\"color: rgb(102, 163, 224);\">SUM(</strong><strong style=\"color: rgb(0, 138, 0);\">value1</strong><strong style=\"color: rgb(102, 163, 224);\">)</strong></p><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "b1144c76-bec9-430f-a8a6-07ce4b4b007f",
+                "objective_id": "07b061ff-6669-4b0a-897c-8e8fb4cceb34",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!C11:C11",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "number_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:53.228Z",
+                "updated_at": "2025-12-20T22:50:53.228Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function does not return a number. <strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p><p><br></p><p>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "6d40ab93-da22-4baa-b6ea-8136255e1ef7",
+            "section_id": "02cad766-c2a5-4701-9daf-d5e82de18455",
+            "title": "Total Military Deaths",
+            "description": "<p>Copy the formula in cell <strong style=\"color: rgb(255, 153, 0);\">C11 </strong>and paste it into cell <strong style=\"color: rgb(255, 153, 0);\">D11</strong>.</p><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">Watch the task video for step-by-step guidance.</span></p><p><br></p><p>You can use <strong>Prompt#01: Understand Instructions In Context</strong> in the project resource file for help with these instructions.</p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-12-20T22:50:53.464Z",
+            "updated_at": "2025-12-20T22:50:53.464Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "b05ee036-844c-4068-b58a-028a40602de7",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/8GeOSdHsZIY",
+                "order": 0,
+                "attachable_id": "6d40ab93-da22-4baa-b6ea-8136255e1ef7",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:50:53.845Z",
+                "updated_at": "2025-12-20T22:50:53.845Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "0898864b-210a-47fe-b505-41dddf972e32",
+                "objective_id": "6d40ab93-da22-4baa-b6ea-8136255e1ef7",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "sum"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D11:D11",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:53.543Z",
+                "updated_at": "2025-12-20T22:50:53.543Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Cell </span><strong style=\"color: rgb(255, 153, 0);\">D11</strong><span style=\"color: rgb(3, 7, 18);\"> does not contain a </span><strong style=\"color: rgb(102, 163, 224);\">SUM()</strong><span style=\"color: rgb(3, 7, 18);\"> function. </span><strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p><p><br></p><p>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "a514252a-1a15-4687-a438-c263ca61c520",
+                "objective_id": "6d40ab93-da22-4baa-b6ea-8136255e1ef7",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "D",
+                      "3",
+                      "10"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 3,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D11:D11",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:53.651Z",
+                "updated_at": "2025-12-20T22:50:53.651Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function does not use the correct <strong style=\"color: rgb(0, 138, 0);\">value1</strong><span style=\"color: rgb(3, 7, 18);\"> argument. The </span><strong style=\"color: rgb(0, 138, 0);\">value1</strong><span style=\"color: rgb(3, 7, 18);\"> argument must reference cells </span><strong style=\"color: rgb(255, 153, 0);\">D3 </strong><span style=\"color: rgb(3, 7, 18);\">and </span><strong style=\"color: rgb(255, 153, 0);\">D10</strong><span style=\"color: rgb(3, 7, 18);\">. </span><strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p><p><br></p><p>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "ed6a441b-6154-4686-b409-1a9ab51c444c",
+                "objective_id": "6d40ab93-da22-4baa-b6ea-8136255e1ef7",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!D11:D11",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "number_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:53.759Z",
+                "updated_at": "2025-12-20T22:50:53.759Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function does not return a number. <strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p><p><br></p><p>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "4a171b5a-06fa-40d3-b55e-1739d2e12e25",
+        "rubric_version_id": "3970fd49-5dbb-4660-88d4-304534353897",
+        "title": "Formulas",
+        "order": 2,
+        "description": "<p>Build your own calculations. Create a Casualty Rate formula that divides deaths by personnel and multiplies by 100, then autofill it down the column. This reinforces operator order, cell references, and fill handles.</p>",
+        "created_at": "2025-12-20T22:50:53.929Z",
+        "updated_at": "2025-12-20T22:50:53.929Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "05963222-9663-40e6-a447-73861c1b49da",
+            "section_id": "4a171b5a-06fa-40d3-b55e-1739d2e12e25",
+            "title": "Casualty Rate1",
+            "description": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">Locate cell </span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 153, 0);\">E3</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> and input a formula that returns the Casualty Rate. Next, fill it through the range of </span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 153, 0);\">E4:E11</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">.</span></p><p><br></p><p><strong style=\"background-color: rgb(255, 255, 255); color: var(--tw-prose-bold);\">Casualty Rate (%) </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">= </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(153, 51, 255);\">Military Deaths</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> / </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 102, 204);\">Military Personnel</span></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(153, 51, 255);\">Military Deaths</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> =</span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 153, 0);\"> D3</strong></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 102, 204);\">Military Personnel</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> = </span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 153, 0);\">C3</strong></p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2025-12-20T22:50:54.031Z",
+            "updated_at": "2025-12-20T22:50:54.031Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "c9bbf6c3-2d8d-4c39-86ca-c80eccd49d2f",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/S2C4QZ1Ueb8",
+                "order": 0,
+                "attachable_id": "05963222-9663-40e6-a447-73861c1b49da",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:50:55.118Z",
+                "updated_at": "2025-12-20T22:50:55.118Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "c0317553-8018-411c-94ef-44933a629b79",
+                "objective_id": "05963222-9663-40e6-a447-73861c1b49da",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E3:E3",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:54.152Z",
+                "updated_at": "2025-12-20T22:50:54.152Z",
+                "failure_message": "<p><span style=\"color: hsl(var(--foreground)); background-color: hsl(var(--background));\">Cell </span><strong style=\"color: rgb(255, 153, 0); background-color: hsl(var(--background));\">E3</strong><span style=\"color: hsl(var(--foreground)); background-color: hsl(var(--background));\"> does not contain a formula. </span><span style=\"color: rgb(230, 0, 0); background-color: hsl(var(--background));\">Please rewatch the task video for additional help. </span></p><p><br></p><p><strong style=\"background-color: rgb(255, 255, 255); color: var(--tw-prose-bold);\">Casualty Rate (%) </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">= </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(153, 51, 255);\">Military Deaths</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> / </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 102, 204);\">Military Personnel</span></p><p><br></p><p>You can use <strong style=\"background-color: transparent; color: rgb(0, 0, 0);\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "720aeb8f-f1fe-42db-ac63-94834a41b9d4",
+                "objective_id": "05963222-9663-40e6-a447-73861c1b49da",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "D",
+                      "C",
+                      "3"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 3,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E3:E3",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:54.275Z",
+                "updated_at": "2025-12-20T22:50:54.275Z",
+                "failure_message": "<p><span style=\"color: hsl(var(--foreground)); background-color: hsl(var(--background));\">The formula in cell </span><strong style=\"color: rgb(255, 153, 0); background-color: hsl(var(--background));\">E3</strong><span style=\"color: hsl(var(--foreground)); background-color: hsl(var(--background));\"> does not use the correct cell </span><span style=\"color: rgb(3, 7, 18);\">references</span><span style=\"color: hsl(var(--foreground)); background-color: hsl(var(--background));\">, </span><strong style=\"color: rgb(255, 153, 0);\">D3 </strong><span style=\"color: rgb(3, 7, 18);\">and </span><strong style=\"color: rgb(255, 153, 0);\">C3</strong>.</p><p><br></p><p><strong style=\"color: var(--tw-prose-bold); background-color: rgb(255, 255, 255);\">Casualty Rate (%) </strong><span style=\"color: rgb(55, 65, 81); background-color: rgb(255, 255, 255);\">= </span><span style=\"color: rgb(153, 51, 255); background-color: rgb(255, 255, 255);\">Military Deaths</span><span style=\"color: rgb(55, 65, 81); background-color: rgb(255, 255, 255);\"> / </span><span style=\"color: rgb(0, 102, 204); background-color: rgb(255, 255, 255);\">Military Personnel</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "a975a938-fd63-4c89-995d-a38c102e3203",
+                "objective_id": "05963222-9663-40e6-a447-73861c1b49da",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "regex:(?i)\\bD3\\s*/\\s*C3\\b"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!E3:E3",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:54.419Z",
+                "updated_at": "2025-12-20T22:50:54.419Z",
+                "failure_message": "<p><span style=\"background-color: hsl(var(--background)); color: hsl(var(--foreground));\">The formula in cell </span><strong style=\"background-color: hsl(var(--background)); color: rgb(255, 153, 0);\">E3</strong><span style=\"background-color: hsl(var(--background)); color: hsl(var(--foreground));\"> does not divide </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(153, 51, 255);\">Military Deaths</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> by  </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 102, 204);\">Military Personnel</span>. The division symbol is <strong style=\"color: rgb(255, 153, 0);\">/</strong><span style=\"color: rgb(3, 7, 18);\">.</span></p><p><br></p><p><strong style=\"background-color: rgb(255, 255, 255); color: var(--tw-prose-bold);\">Casualty Rate (%) </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">= </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(153, 51, 255);\">Military Deaths</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> / </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 102, 204);\">Military Personnel</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "ea6e2bb1-39f9-497e-a314-40882008d1d9",
+                "objective_id": "05963222-9663-40e6-a447-73861c1b49da",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!E3:E3",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "number_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:54.541Z",
+                "updated_at": "2025-12-20T22:50:54.541Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">The formula in cell </span><strong style=\"color: rgb(255, 153, 0);\">E3</strong><span style=\"color: rgb(3, 7, 18);\"> does not return a numeric value. </span></p><p><br></p><p>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "74fbf913-5795-41b0-a648-71be2eb34acc",
+                "objective_id": "05963222-9663-40e6-a447-73861c1b49da",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "D",
+                      "C",
+                      "/"
+                    ],
+                    "cell_check": true,
+                    "occurrence": 3,
+                    "match_value": 8,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E4:E11",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:54.758Z",
+                "updated_at": "2025-12-20T22:50:54.758Z",
+                "failure_message": "<p>One or more cells in the range of <strong style=\"color: rgb(255, 153, 0);\">E4:E11</strong> do not use the correct cell references or operator. Fill the formula in cell <strong style=\"color: rgb(255, 153, 0);\">E3 </strong>down to cell <strong style=\"color: rgb(255, 153, 0);\">E11</strong>.</p><p><br></p><p><strong style=\"color: rgb(3, 7, 18);\">Casualty Rate (%)</strong><span style=\"color: rgb(3, 7, 18);\"> = </span><span style=\"color: rgb(153, 51, 255);\">Military Deaths</span><span style=\"color: rgb(3, 7, 18);\"> / </span><span style=\"color: rgb(0, 102, 204);\">Military Personnel</span></p><p><span style=\"color: rgb(153, 51, 255);\">Military Deaths</span> = cell in column<strong style=\"color: rgb(255, 153, 0);\">D</strong></p><p><span style=\"color: rgb(0, 102, 204);\">Military Personnel</span> = cell in column<strong style=\"color: rgb(255, 153, 0);\">C</strong></p><p><br></p><p>You can use <strong style=\"background-color: transparent; color: rgb(0, 0, 0);\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "a38cd381-d8ff-40e4-85e4-30ab85627c14",
+                "objective_id": "05963222-9663-40e6-a447-73861c1b49da",
+                "evaluation_type": "platform",
+                "order": 5,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 9,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!E3:E11",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "number_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:54.876Z",
+                "updated_at": "2025-12-20T22:50:54.876Z",
+                "failure_message": "<p>One or more cells in the range of <strong style=\"color: rgb(255, 153, 0);\">E4:E11</strong> do not return a numeric value.</p><p><br></p><p>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "b428d8bb-b5ea-4db4-b572-8c7e0148b955",
+                "objective_id": "05963222-9663-40e6-a447-73861c1b49da",
+                "evaluation_type": "platform",
+                "order": 6,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "%"
+                    ],
+                    "cell_check": true,
+                    "occurrence": 1,
+                    "match_value": 9,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E3:E11",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:54.983Z",
+                "updated_at": "2025-12-20T22:50:54.983Z",
+                "failure_message": "<p>One or more cells in the range of <strong style=\"color: rgb(255, 153, 0);\">E4:E11</strong> is not formatted as a percentage ( <strong style=\"color: rgb(255, 153, 0);\">% </strong>). You must select the range and format as a Percentage.</p><p><br></p><p>You can use <strong style=\"color: rgb(0, 0, 0); background-color: transparent;\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "c96ef9be-84c0-45fd-a1d8-33a15aca45da",
+        "rubric_version_id": "3970fd49-5dbb-4660-88d4-304534353897",
+        "title": "More Functions",
+        "order": 3,
+        "description": "<p>Level-up with mixed references and lookup power-tools. Combine absolute row references with MAX(), MIN(), AVERAGE(), and XLOOKUP() to identify extremes and match them back to countries—skills you’ll reuse in real-world analytics.</p>",
+        "created_at": "2025-12-20T22:50:55.274Z",
+        "updated_at": "2025-12-20T22:50:55.274Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "d9ce87a7-c2a0-495d-b783-9b6f4a00fb35",
+            "section_id": "c96ef9be-84c0-45fd-a1d8-33a15aca45da",
+            "title": "Absolute References",
+            "description": "<p>Locate cell <strong style=\"color: rgb(255, 153, 0);\">D14</strong> and insert a <strong style=\"color: rgb(102, 163, 224);\">MAX()</strong> function. Use an <strong>absolute row reference</strong> ( <strong style=\"color: rgb(255, 153, 0);\">$</strong> ) to define the <strong>row numbers</strong> in the range of <strong style=\"color: rgb(255, 153, 0);\">E3:E10</strong>.</p><p><strong>EXAMPLE: </strong></p><p>=<strong style=\"color: rgb(102, 163, 224);\">MAX(</strong><strong style=\"color: rgb(0, 138, 0);\">value1</strong><strong style=\"color: rgb(102, 163, 224);\">)</strong></p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2025-12-20T22:50:55.416Z",
+            "updated_at": "2025-12-20T22:50:55.416Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "1877c060-73c0-4c99-b370-cf2b1f174d38",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/qeCZgd9GioY",
+                "order": 0,
+                "attachable_id": "d9ce87a7-c2a0-495d-b783-9b6f4a00fb35",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:50:56.152Z",
+                "updated_at": "2025-12-20T22:50:56.152Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "78bdf200-e3c3-4496-b4b8-ebd8491695bd",
+                "objective_id": "d9ce87a7-c2a0-495d-b783-9b6f4a00fb35",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "max"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D14:D14",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:55.584Z",
+                "updated_at": "2025-12-20T22:50:55.584Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Cell </span><strong style=\"color: rgb(255, 153, 0);\">D14</strong><span style=\"color: rgb(3, 7, 18);\"> does not contain a </span><strong style=\"color: rgb(102, 163, 224);\">MAX()</strong><span style=\"color: rgb(3, 7, 18);\"> function.</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "9b2ee5df-020b-48fc-9361-96d783c56724",
+                "objective_id": "d9ce87a7-c2a0-495d-b783-9b6f4a00fb35",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "E",
+                      "3",
+                      "10"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 3,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D14:D14",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:55.708Z",
+                "updated_at": "2025-12-20T22:50:55.708Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">MAX()</strong> function does not use the correct <strong style=\"color: rgb(0, 138, 0);\">value1</strong><span style=\"color: rgb(3, 7, 18);\"> argument. The </span><strong style=\"color: rgb(0, 138, 0);\">value1</strong><span style=\"color: rgb(3, 7, 18);\"> argument must reference cells </span><strong style=\"color: rgb(255, 153, 0);\">E3 </strong><span style=\"color: rgb(3, 7, 18);\">and </span><strong style=\"color: rgb(255, 153, 0);\">E3:E10</strong><span style=\"color: rgb(3, 7, 18);\">.</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "5f3bfb33-a5f4-4add-bf33-542aa185bc2f",
+                "objective_id": "d9ce87a7-c2a0-495d-b783-9b6f4a00fb35",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "$"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D14:D14",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:55.833Z",
+                "updated_at": "2025-12-20T22:50:55.833Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">The </span><strong style=\"color: rgb(102, 163, 224);\">MAX()</strong><span style=\"color: rgb(3, 7, 18);\"> function does not use two </span><strong style=\"color: rgb(3, 7, 18);\">absolute row references</strong><span style=\"color: rgb(3, 7, 18);\"> ( </span><strong style=\"color: rgb(255, 153, 0);\">$</strong><span style=\"color: rgb(3, 7, 18);\"> ) in the </span><strong style=\"color: rgb(0, 138, 0);\">value1 </strong><span style=\"color: rgb(3, 7, 18);\">argument.</span></p><p><br></p><p><strong style=\"color: rgb(0, 138, 0);\">value1 = </strong><strong style=\"color: rgb(255, 153, 0);\">E$3:E$10</strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "784c03fd-f990-4fda-9cfb-0e78c00e90ba",
+                "objective_id": "d9ce87a7-c2a0-495d-b783-9b6f4a00fb35",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!D14:D14",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "number_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:55.985Z",
+                "updated_at": "2025-12-20T22:50:55.985Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">MAX()</strong> function does not return a number.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "c5d1b34e-48a3-4938-afb0-7cf626251fb9",
+            "section_id": "c96ef9be-84c0-45fd-a1d8-33a15aca45da",
+            "title": "XLOOKUP Function",
+            "description": "<p>Locate cell <strong style=\"color: rgb(255, 153, 0);\">E14</strong> and insert an <strong style=\"color: rgb(102, 163, 224);\">XLOOKUP()</strong> function. Use a <strong>relative </strong>cell reference to define the <strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">search_key</strong> argument. Use an <strong>absolute</strong> <strong>row</strong> reference <span style=\"color: rgb(3, 7, 18);\">( </span><strong style=\"color: rgb(255, 153, 0);\">$</strong><span style=\"color: rgb(3, 7, 18);\"> ) to define the </span><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">lookup_range</strong> and <strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">result_range</strong><span style=\"color: rgb(3, 7, 18);\"> arguments.</span></p><p><br></p><p><strong>EXAMPLE: </strong></p><p>=<strong style=\"color: rgb(102, 163, 224);\">XLOOKUP(</strong><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">search_key</strong>, <strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">lookup_range</strong><span style=\"color: rgb(3, 7, 18);\">, </span><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">result_range</strong><strong style=\"color: rgb(102, 163, 224);\">)</strong></p><p><br></p><p><strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">search_key</strong> = Highest Casualty Rate cell</p><p><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">lookup_range</strong> = Casualty Rate range</p><p><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">result_range</strong><span style=\"color: rgb(3, 7, 18);\"> = </span>Country<span style=\"color: rgb(3, 7, 18);\"> range</span></p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2025-12-20T22:50:56.311Z",
+            "updated_at": "2025-12-20T22:50:56.311Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "a9924172-a7b1-4174-ba7e-3e2e5c33c462",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/yN5ufrqF3Fs",
+                "order": 0,
+                "attachable_id": "c5d1b34e-48a3-4938-afb0-7cf626251fb9",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:50:57.164Z",
+                "updated_at": "2025-12-20T22:50:57.164Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "90fbe3a7-6e63-4c65-b73f-f2c8e8fdf6dd",
+                "objective_id": "c5d1b34e-48a3-4938-afb0-7cf626251fb9",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "XLOOKUP"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E14:E14",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:56.483Z",
+                "updated_at": "2025-12-20T22:50:56.483Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Cell </span><strong style=\"color: rgb(255, 153, 0);\">E14</strong><span style=\"color: rgb(3, 7, 18);\"> does not contain a </span><strong style=\"color: rgb(102, 163, 224);\">XLOOKUP()</strong><span style=\"color: rgb(3, 7, 18);\"> function.</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "03fdde1f-b3c4-4bc0-9f25-19896d28907f",
+                "objective_id": "c5d1b34e-48a3-4938-afb0-7cf626251fb9",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 4,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "D",
+                      "14",
+                      "E",
+                      "3",
+                      "10",
+                      "B"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 6,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E14:E14",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:56.666Z",
+                "updated_at": "2025-12-20T22:50:56.666Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">XLOOKUP()</strong> function does not use the correct cell references in the <span style=\"color: rgb(3, 7, 18);\">arguments.</span></p><p><strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">search_key</strong> = Highest Casualty Rate cell</p><p><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">lookup_range</strong> = Casualty Rate range</p><p><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">result_range</strong> = Country range</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "f4f7ecf6-cef0-44b5-a0da-70a2cd293e73",
+                "objective_id": "c5d1b34e-48a3-4938-afb0-7cf626251fb9",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "$"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 4,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E14:E14",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:56.823Z",
+                "updated_at": "2025-12-20T22:50:56.823Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">The </span><strong style=\"color: rgb(102, 163, 224);\">XLOOKUP()</strong><span style=\"color: rgb(3, 7, 18);\"> function does not use </span><strong style=\"color: rgb(230, 0, 0);\">four</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">absolute </strong><span style=\"color: rgb(3, 7, 18);\">row references ( </span><strong style=\"color: rgb(255, 153, 0);\">$</strong><span style=\"color: rgb(3, 7, 18);\"> ). You must use a dollar symbol ( </span><strong style=\"color: rgb(255, 153, 0);\">$</strong><span style=\"color: rgb(3, 7, 18);\"> ) in front of the row number for the starting and ending cell reference range for the </span><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">lookup_range</strong><strong style=\"color: rgb(0, 138, 0);\"> </strong><span style=\"color: rgb(3, 7, 18);\">and </span><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">result_range</strong> a<span style=\"color: rgb(3, 7, 18);\">rguments.</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "eec3fe48-26ca-4b99-9e65-e1d3e9fcf7ae",
+                "objective_id": "c5d1b34e-48a3-4938-afb0-7cf626251fb9",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:Germany"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": true
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!E14:E14",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:56.992Z",
+                "updated_at": "2025-12-20T22:50:56.992Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(102, 163, 224);\">XLOOKUP()</strong> function does not return the correct country, <strong>Germany</strong>.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "1945a377-5559-44ed-808c-8960457eb402",
+            "section_id": "c96ef9be-84c0-45fd-a1d8-33a15aca45da",
+            "title": "Fill Operation",
+            "description": "<p>Locate and select the cell range <strong style=\"color: rgb(255, 153, 0);\">D14:E14</strong>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Use the Fill Operation to fill the formulas through the cell range <strong style=\"color: rgb(255, 153, 0);\">D16:E16</strong>.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select <strong style=\"color: rgb(255, 153, 0);\">D15</strong> and change the function to <strong style=\"color: rgb(102, 163, 224);\">MIN()</strong>.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select <strong style=\"color: rgb(255, 153, 0);\">D16</strong> and change the function to <strong style=\"color: rgb(102, 163, 224);\">AVERAGE()</strong>.</li></ol>",
+            "order": 2,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 15,
+            "created_at": "2025-12-20T22:50:57.339Z",
+            "updated_at": "2025-12-20T22:50:57.339Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "0e427b7d-b4d6-464f-a4f3-7b195f7004a0",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/kCXsuPuOX7o",
+                "order": 0,
+                "attachable_id": "1945a377-5559-44ed-808c-8960457eb402",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:50:59.060Z",
+                "updated_at": "2025-12-20T22:50:59.060Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "0e5f91bf-4d3f-42fb-b284-160655d3011b",
+                "objective_id": "1945a377-5559-44ed-808c-8960457eb402",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 3,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D15:E16",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "formula",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:57.605Z",
+                "updated_at": "2025-12-20T22:50:57.605Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">One or more cells in range </span><strong style=\"color: rgb(255, 153, 0);\">D15:E16</strong><span style=\"color: rgb(3, 7, 18);\"> do not contain a formula. </span><strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "b3735d32-56bf-4824-b424-5f5a73d582e7",
+                "objective_id": "1945a377-5559-44ed-808c-8960457eb402",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "MIN"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D15:D15",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:57.801Z",
+                "updated_at": "2025-12-20T22:50:57.801Z",
+                "failure_message": "<p>Cell <strong style=\"color: rgb(255, 153, 0);\">D15</strong> does not use the <strong style=\"color: rgb(102, 163, 224);\">MIN()</strong> function.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "a757c829-74c9-454c-b534-21a3bc6f0f34",
+                "objective_id": "1945a377-5559-44ed-808c-8960457eb402",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "AVERAGE"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D16:D16",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:57.960Z",
+                "updated_at": "2025-12-20T22:50:57.960Z",
+                "failure_message": "<p>Cell <strong style=\"color: rgb(255, 153, 0);\">D16</strong> does not use the <strong style=\"color: rgb(102, 163, 224);\">AVERAGE()</strong> function.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "5bebf79f-f586-4915-9c99-d9d163fa5fc6",
+                "objective_id": "1945a377-5559-44ed-808c-8960457eb402",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "E",
+                      "3",
+                      "E",
+                      "10",
+                      "D",
+                      "B"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 18,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D15:E16",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "collection"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:58.119Z",
+                "updated_at": "2025-12-20T22:50:58.119Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">One or more cells in range </span><strong style=\"color: rgb(255, 153, 0);\">D15:E16</strong><span style=\"color: rgb(3, 7, 18);\"> do not contain the correct arguments. </span><strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p><p><br></p><p><strong style=\"color: rgb(3, 7, 18);\">EXAMPLE: </strong></p><p>=<strong style=\"color: rgb(102, 163, 224);\">XLOOKUP(</strong><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">search_key</strong>, <strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">lookup_range</strong>, <strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">result_range</strong><strong style=\"color: rgb(102, 163, 224);\">)</strong></p><p><strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">search_key</strong> = Highest Casualty Rate cell</p><p><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">lookup_range</strong> = Casualty Rate range</p><p><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">result_range</strong> = Country range</p><p><br></p><p><strong style=\"color: rgb(3, 7, 18);\">EXAMPLE: </strong></p><p>=<strong style=\"color: rgb(102, 163, 224);\">MAX(</strong><strong style=\"color: rgb(0, 138, 0);\">value1</strong><strong style=\"color: rgb(102, 163, 224);\">)</strong></p><p><strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">value1</strong><span style=\"color: rgb(3, 7, 18);\"> = </span>Casualty Rate</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "78162a83-6c2f-41fd-9aec-820b4d4c650e",
+                "objective_id": "1945a377-5559-44ed-808c-8960457eb402",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "United",
+                      "States"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D15:E15",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "collection"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:58.532Z",
+                "updated_at": "2025-12-20T22:50:58.532Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Cell </span><strong style=\"color: rgb(255, 153, 0);\">E15</strong><span style=\"color: rgb(3, 7, 18);\"> does not return the correct country</span>, <strong>United States</strong>.<span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(230, 0, 0);\">Review the task video for additional help. </strong></p><p><br></p><p>You can use <strong style=\"background-color: transparent; color: rgb(0, 0, 0);\">Prompt#02: Understand Feedback In Context</strong> in the project resource file for help with these instructions.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "08095fc0-6c62-47f6-9679-2693635fdcd2",
+                "objective_id": "1945a377-5559-44ed-808c-8960457eb402",
+                "evaluation_type": "platform",
+                "order": 5,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "N/A"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E16:E16",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:58.681Z",
+                "updated_at": "2025-12-20T22:50:58.681Z",
+                "failure_message": "<p>Cell <strong style=\"color: rgb(255, 153, 0);\">E16</strong> must display <strong>N/A</strong>.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "e63ee361-7365-4d97-a733-c29e8a1173dd",
+                "objective_id": "1945a377-5559-44ed-808c-8960457eb402",
+                "evaluation_type": "platform",
+                "order": 6,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "target_value": "data!D15:D16",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "number_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:58.894Z",
+                "updated_at": "2025-12-20T22:50:58.894Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">One or more cells in range </span><strong style=\"color: rgb(255, 153, 0);\">D15:D16</strong><span style=\"color: rgb(3, 7, 18);\"> do not return a numeric value. </span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d6380daf-1cba-4c9a-b142-be431ffef60b",
+        "rubric_version_id": "3970fd49-5dbb-4660-88d4-304534353897",
+        "title": "Applied Knowledge & AI",
+        "order": 4,
+        "description": "<p>Put everything together (plus a little AI help). Prompt the AI resource for formula hints, then craft advanced calculations with locked references—no hard-coded numbers allowed. Accuracy and flexibility are the keys here.</p>",
+        "created_at": "2025-12-20T22:50:59.230Z",
+        "updated_at": "2025-12-20T22:50:59.230Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+            "section_id": "d6380daf-1cba-4c9a-b142-be431ffef60b",
+            "title": "AI & Critical Thinking",
+            "description": "<p>Use what you learned in previous tasks and AI to write formulas in cell range <strong style=\"color: rgb(255, 153, 0);\">D18:E20</strong> that return correct values. You must use <strong>absolute row references</strong> ( <strong style=\"color: rgb(255, 153, 0);\">$</strong> ) where appropriate and the following functions to accomplish this task. <strong style=\"color: rgb(102, 163, 224);\">MAX(), MIN(), AVERAGE(), and XLOOKUP()</strong>. No static value allowed.</p><p><br></p><p><strong>Use the following prompt from the resource File.</strong></p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span><span style=\"color: rgb(230, 0, 0);\">Prompt#10: Visual Analysis of a Spreadsheet for Formula Help</span></li><li data-list=\"ordered\"><span class=\"ql-ui\"></span><span style=\"color: rgb(230, 0, 0);\">Prompt#10.1: Help with Visual Analysis Formulas</span></li></ol>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 30,
+            "created_at": "2025-12-20T22:50:59.413Z",
+            "updated_at": "2025-12-20T22:50:59.413Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "2fb29041-1795-4f41-884b-4b8a17df548a",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/qYhRJRTzI9Q",
+                "order": 0,
+                "attachable_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:51:01.801Z",
+                "updated_at": "2025-12-20T22:51:01.801Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "6b0169f0-8d4b-410c-85cb-07aef6c25628",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 5,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D18:E20",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "function",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:59.640Z",
+                "updated_at": "2025-12-20T22:50:59.640Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">One or more cells in the range </span><strong style=\"color: rgb(255, 153, 0);\">D18:E20</strong><span style=\"color: rgb(3, 7, 18);\"> do not contain a function.</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "65f66894-e53a-42fa-8147-8020036163cc",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "D",
+                      "3",
+                      "10"
+                    ],
+                    "cell_check": true,
+                    "occurrence": 3,
+                    "match_value": 5,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D18:E20",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:59.803Z",
+                "updated_at": "2025-12-20T22:50:59.803Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">One or more cells in the range </span><strong style=\"color: rgb(255, 153, 0);\">D18:E20</strong><span style=\"color: rgb(3, 7, 18);\"> do not use the correct function arguments.</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "136b4a98-8fe1-4200-bfc9-4353b15e24ae",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "$"
+                    ],
+                    "cell_check": true,
+                    "occurrence": 2,
+                    "match_value": 5,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D18:E20",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:50:59.974Z",
+                "updated_at": "2025-12-20T22:50:59.974Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">One or more cells in the range </span><strong style=\"color: rgb(255, 153, 0);\">D18:E20</strong><span style=\"color: rgb(3, 7, 18);\"> do not use </span><strong style=\"color: rgb(3, 7, 18);\">absolute cell references</strong><span style=\"color: rgb(3, 7, 18);\"> ( </span><strong style=\"color: rgb(255, 153, 0);\">$</strong><span style=\"color: rgb(3, 7, 18);\"> ).</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "50296c22-2020-46d2-85c5-0874934ddbe2",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": true,
+                    "match_value": 8800000,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D18:D18",
+                  "evaluator_type": "countif",
+                  "match_operator": "equal_to",
+                  "evaluator_subject": "number_comparison",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:00.274Z",
+                "updated_at": "2025-12-20T22:51:00.274Z",
+                "failure_message": "<p>The data in cell <strong style=\"color: rgb(255, 153, 0);\">D18</strong> is not correct. <strong style=\"color: rgb(230, 0, 0);\">Watch the recovery video to correct this. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "0baab0e7-444c-455f-b219-634195e3ba81",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 4,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": true,
+                    "match_value": 217600,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D19:D19",
+                  "evaluator_type": "countif",
+                  "match_operator": "equal_to",
+                  "evaluator_subject": "number_comparison",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:00.670Z",
+                "updated_at": "2025-12-20T22:51:00.670Z",
+                "failure_message": "<p>The data in cell <strong style=\"color: rgb(255, 153, 0);\">D19</strong> is not correct. <strong style=\"color: rgb(230, 0, 0);\">Watch the recovery video to correct this. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "7c33f57c-3d96-47e5-a5d4-911b8444bee6",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 5,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "Soviet",
+                      "Union"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E18:E18",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:00.838Z",
+                "updated_at": "2025-12-20T22:51:00.838Z",
+                "failure_message": "<p>The data in cell <strong style=\"color: rgb(255, 153, 0);\">E18</strong> is not correct. <strong style=\"color: rgb(230, 0, 0);\">Watch the recovery video to correct this. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "393e78a3-dd42-4afd-be0b-f3d374507bb4",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 6,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "France"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E19:E19",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:01.024Z",
+                "updated_at": "2025-12-20T22:51:01.024Z",
+                "failure_message": "<p>The data in cell <strong style=\"color: rgb(255, 153, 0);\">E19</strong> is not correct. <strong style=\"color: rgb(230, 0, 0);\">Watch the recovery video to correct this. </strong></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "c150bdeb-0ddb-4430-a58f-c4d19544e950",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 7,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "N/A"
+                    ],
+                    "cell_check": false,
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E20:E20",
+                  "evaluator_type": "contains",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "string",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input",
+                    "partial_or_exact": "partial"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:01.213Z",
+                "updated_at": "2025-12-20T22:51:01.213Z",
+                "failure_message": "<p>Cell <strong style=\"color: rgb(255, 153, 0);\">E20</strong> must display <strong>N/A</strong>.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "0b899ea6-9b39-452f-ac3c-4b3d7eb4682a",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 8,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 3,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!D18:D20",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "number_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:01.409Z",
+                "updated_at": "2025-12-20T22:51:01.409Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">One or more cells in the range </span><strong style=\"color: rgb(255, 153, 0);\">D18:D20</strong><span style=\"color: rgb(3, 7, 18);\"> do not return a numeric value. </span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              },
+              {
+                "id": "2bcd398f-7ce0-46f8-9fe1-355001d06e1b",
+                "objective_id": "010209a3-ef81-4fa3-9f29-410a92945cb6",
+                "evaluation_type": "platform",
+                "order": 9,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": true,
+                    "match_value": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "range",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data!E18:E19",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "output"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:01.598Z",
+                "updated_at": "2025-12-20T22:51:01.598Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">One or more cells in the range </span><strong style=\"color: rgb(255, 153, 0);\">D18:D20</strong><span style=\"color: rgb(3, 7, 18);\"> do not return a country name. </span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "b5ecbe81-8b6c-486b-837a-ec935dfa27ba",
+        "rubric_version_id": "3970fd49-5dbb-4660-88d4-304534353897",
+        "title": "Charts",
+        "order": 5,
+        "description": "<p>Turn numbers into visuals. Build a Pie Chart for military deaths and a Column Chart for military personnel so patterns and outliers jump off the page.</p>",
+        "created_at": "2025-12-20T22:51:02.106Z",
+        "updated_at": "2025-12-20T22:51:02.106Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "228124a2-68bf-48a8-b24b-5c9ecdd9308b",
+            "section_id": "b5ecbe81-8b6c-486b-837a-ec935dfa27ba",
+            "title": "Pie Chart",
+            "description": "<p><span style=\"color: rgb(3, 7, 18);\">Create a </span><strong style=\"color: rgb(3, 7, 18);\">Pie Chart</strong><span style=\"color: rgb(3, 7, 18);\"> that displays the number of </span><strong style=\"color: rgb(3, 7, 18);\">Military Deaths</strong><span style=\"color: rgb(3, 7, 18);\"> by Country. Select two non-contiguous ranges, </span><strong style=\"color: rgb(255, 153, 0);\">B3:B10</strong><span style=\"color: rgb(3, 7, 18);\"> and </span><strong style=\"color: rgb(255, 153, 0);\">D3:D10</strong><span style=\"color: rgb(3, 7, 18);\">.</span></p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-12-20T22:51:02.346Z",
+            "updated_at": "2025-12-20T22:51:02.346Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "b36256d2-b1cb-4192-9b11-c2d9d2d45e3b",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/bBXNaWOm-z4",
+                "order": 0,
+                "attachable_id": "228124a2-68bf-48a8-b24b-5c9ecdd9308b",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:51:03.044Z",
+                "updated_at": "2025-12-20T22:51:03.044Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "22fede38-aa1a-4586-be5a-b3986fb7fcb6",
+                "objective_id": "228124a2-68bf-48a8-b24b-5c9ecdd9308b",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "tab",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "chart_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:02.571Z",
+                "updated_at": "2025-12-20T22:51:02.571Z",
+                "failure_message": "<p>Your <strong>data</strong> tab does not contain a <strong>chart</strong>.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": "json"
+              },
+              {
+                "id": "84227ae7-fa69-4712-8b56-46d820a7c69d",
+                "objective_id": "228124a2-68bf-48a8-b24b-5c9ecdd9308b",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 4,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "tab",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "pie_chart",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:02.816Z",
+                "updated_at": "2025-12-20T22:51:02.816Z",
+                "failure_message": "<p>Your <strong>data</strong> tab does not contain a <strong style=\"color: rgb(230, 0, 0);\">pie</strong><strong> chart</strong>.</p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": "json"
+              }
+            ]
+          },
+          {
+            "id": "821ac1f3-5b75-4298-aa72-c85554a7a108",
+            "section_id": "b5ecbe81-8b6c-486b-837a-ec935dfa27ba",
+            "title": "Column Chart",
+            "description": "<p>Create a <strong>Column Chart</strong> that displays the number of <strong>Military Personnel</strong> by Country. <span style=\"color: rgb(3, 7, 18);\">Select two non-contiguous ranges, </span><strong style=\"color: rgb(255, 153, 0);\">B3:B10</strong><span style=\"color: rgb(3, 7, 18);\"> and </span><strong style=\"color: rgb(255, 153, 0);\">C3:C10</strong><span style=\"color: rgb(3, 7, 18);\">.</span></p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-12-20T22:51:03.261Z",
+            "updated_at": "2025-12-20T22:51:03.261Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "bd8a2c6a-c226-4bed-ad08-14369ea56712",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/bBXNaWOm-z4?start=105",
+                "order": 0,
+                "attachable_id": "821ac1f3-5b75-4298-aa72-c85554a7a108",
+                "attachable_type": "Objective",
+                "created_at": "2025-12-20T22:51:03.997Z",
+                "updated_at": "2025-12-20T22:51:03.997Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "86edfb7d-18bd-4326-a075-b57f73a5b096",
+                "objective_id": "821ac1f3-5b75-4298-aa72-c85554a7a108",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "tab",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "chart_any",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:03.484Z",
+                "updated_at": "2025-12-20T22:51:03.484Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Your </span><strong style=\"color: rgb(3, 7, 18);\">data</strong><span style=\"color: rgb(3, 7, 18);\"> tab does not contain </span><strong style=\"color: rgb(3, 7, 18);\">two charts</strong><span style=\"color: rgb(3, 7, 18);\"> (column and pie).</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": "json"
+              },
+              {
+                "id": "991fabe3-eae8-48b2-b727-05e59be8b182",
+                "objective_id": "821ac1f3-5b75-4298-aa72-c85554a7a108",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 4,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "cell_check": false,
+                    "case_sensitive": false
+                  },
+                  "target": "tab",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "target_value": "data",
+                  "evaluator_type": "count",
+                  "match_operator": "greater_than_or_equal_to",
+                  "evaluator_subject": "column_chart",
+                  "target_attributes": {
+                    "cell_or_collection": "cell"
+                  },
+                  "evaluator_attributes": {
+                    "input_or_output": "input"
+                  }
+                },
+                "created_at": "2025-12-20T22:51:03.778Z",
+                "updated_at": "2025-12-20T22:51:03.778Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Your </span><strong style=\"color: rgb(3, 7, 18);\">data</strong><span style=\"color: rgb(3, 7, 18);\"> tab does not contain a </span><strong style=\"color: rgb(3, 7, 18);\">Column chart</strong><span style=\"color: rgb(3, 7, 18);\">.</span></p>",
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": "json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a1e48bd5-398b-448f-af44-d33ac9a23945",
+        "rubric_version_id": "3970fd49-5dbb-4660-88d4-304534353897",
+        "title": "Reflection",
+        "order": 6,
+        "description": "<p>Step back from the spreadsheet and write a brief analysis: What stories do the numbers and charts tell, and why do casualty rates differ across these nations? Your explanation shows you can translate data into insight.</p>",
+        "created_at": "2025-12-20T22:51:04.213Z",
+        "updated_at": "2025-12-20T22:51:04.213Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "ea2da75f-4d14-42ac-b5bc-22ecb5e53f1c",
+            "section_id": "a1e48bd5-398b-448f-af44-d33ac9a23945",
+            "title": "Data Reflection",
+            "description": "<p>You must use <strong style=\"color: rgb(230, 0, 0);\">ChatGPT</strong> or <strong style=\"color: rgb(230, 0, 0);\">Grok</strong> for this task because they allow free users to upload Google Spreadsheets for analysis. <span style=\"color: rgb(230, 0, 0);\">Watch the task video for step-by-step instructions.</span></p><p><br></p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Use the <strong>Prompt#05: Data Analyst and Tutor</strong> from the <strong>resource file</strong> for help.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Update the prompt, then use it with your Google Sheet to get Data and Historical analysis from an AI chatbot.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Locate cell <strong style=\"color: rgb(255, 153, 0);\">B23</strong> and write your own reflection on the experience of learn about data from an AI chatbot. <strong style=\"color: rgb(230, 0, 0);\">Do not use AI to write this. </strong><span style=\"color: rgb(230, 0, 0);\">Minimum of 100 words.</span></li></ol>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 15,
+            "created_at": "2025-12-20T22:51:04.438Z",
+            "updated_at": "2025-12-20T22:51:04.438Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "fea32307-3f27-4264-b4e8-490367c7ad7f",
+                "objective_id": "ea2da75f-4d14-42ac-b5bc-22ecb5e53f1c",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 15,
+                "data": {
+                  "model": "gemini-2.5-flash",
+                  "platform": "gemini",
+                  "max_tokens": 15000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria`\n\nScope of Review:\nOnly assess the word count and the content within the cell range `data!B23:E27`. These cells are merged into one large cell. Calculate and save the word count in a scratchpad. If less than 100, minus 1 from the following score. if less than 50, minus two from the following score. The final score can not be less than 0. \n\n1) You are an educational assessment and feedback specialist whose task is to pre-grade a student’s Google Sheet. Examine the writing in the cell range data!B23:E27.\n\nAward 5 points if the student reflected on some aspect of the data related to WW2 and the historical impact. \n\nAward 4 points if the student reflected on some aspect of the data related to WW2. \n\nAward 3 points if the student reflected on some aspect of the data related to WW2 and the historical impact. \n\nAward 2 points if the student reflected on some aspect of the data related to WW2 or WW2 in general. \n\nAward 1 point if the student reflected on some aspect of WW2 in general.  \n\nAward 0 points if no reflective writing is present in the cell range data!B23:E27.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-12-20T22:51:04.722Z",
+                "updated_at": "2025-12-20T22:51:04.722Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": "json"
+              }
+            ]
+          },
+          {
+            "id": "6f392577-4ffa-46e9-a3b4-823ff0ce108a",
+            "section_id": "a1e48bd5-398b-448f-af44-d33ac9a23945",
+            "title": "Spreadsheet Reflection",
+            "description": "<p>Locate cell <strong style=\"color: rgb(255, 153, 0);\">B30</strong> and write your own reflection on the experience using spreadsheets in a World History class.</p><p>What did you learn? What did you already know? What did you find most interesting or useful? How do you see yourself using spreadsheets in the future? <strong style=\"color: rgb(230, 0, 0);\">Do not use AI to write this. </strong><span style=\"color: rgb(230, 0, 0);\">Minimum of 100 words.</span></p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 25,
+            "created_at": "2025-12-20T22:51:04.973Z",
+            "updated_at": "2025-12-20T22:51:04.973Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "3a07eeee-4807-4279-a811-a9ea4a656ef6",
+                "objective_id": "6f392577-4ffa-46e9-a3b4-823ff0ce108a",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 25,
+                "data": {
+                  "model": "gemini-2.5-flash",
+                  "platform": "gemini",
+                  "max_tokens": 15000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria` \n\nScope of Review:\nOnly assess the content within the cell range data!B30:E34. These cells are merged into one large cell. \n\n1) You are an educational assessment and feedback specialist whose task is to pre-grade a student’s Google Sheet. Examine the writing in the cell range data!B30:E34.\n\nScore = 5 if the student reflection thoughtfully answers all four guiding questions—what was learned, what was already known, what was most interesting or useful, and how spreadsheets might be used in the future. Ideas are clear, specific, and connected to the World History context; writing is well-organized and virtually error-free.\n\nScore = 4 if the student reflection thoughtfully answers at least three questions in depth. Ideas are clear, specific, and connected to the World History context; writing is well-organized and virtually error-free.\n\nScore = 3 if the student reflection thoughtfully answers at least three questions in depth; minor gaps or small writing errors do not hinder understanding.\n\nScore = 2 if the student reflection thoughtfully answers at least two questions, but answers lack detail or contain several minor errors; connection to history class is present but thin.\n\nScore = 1 if the student writes a reflection related to spreadsheet use in class.\n\nScore = 0  if the student did not write a reflection.  ",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-12-20T22:51:05.242Z",
+                "updated_at": "2025-12-20T22:51:05.242Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": "json"
+              }
+            ]
+          },
+          {
+            "id": "1a8b5945-5255-47c3-ad32-894015d7d3d5",
+            "section_id": "a1e48bd5-398b-448f-af44-d33ac9a23945",
+            "title": "AI Reflection",
+            "description": "<p>Locate cell <strong style=\"color: rgb(255, 153, 0);\">B44</strong> and write your own reflection on the experience using AI on this project. You must address four guiding questions below. Also, weave in the the activities covered in this project.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>What you learned</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>What you already knew.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>What you found most interesting or useful</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>How you expect to use AI in the future</li></ol><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">Do not use AI to write this. </strong><span style=\"color: rgb(230, 0, 0);\">Minimum of 100 words.</span></p>",
+            "order": 2,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 25,
+            "created_at": "2025-12-20T22:51:05.499Z",
+            "updated_at": "2025-12-20T22:51:05.499Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "421ccfde-75f3-471f-a356-68cba20e49b3",
+                "objective_id": "1a8b5945-5255-47c3-ad32-894015d7d3d5",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 25,
+                "data": {
+                  "model": "gemini-2.5-flash",
+                  "platform": "gemini",
+                  "max_tokens": 15000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria` \n\nScope of Review:\nOnly assess the content within the cell range data!B37:E41. These cells are merged into one large cell. \n\n1) You are an educational assessment and feedback specialist whose task is to pre-grade a student’s Google Sheet. Examine the writing in the cell range data!B37:E41.\n\nStudent should address four guiding questions—what they learned, what they already knew, what they found most interesting or useful, and how they expect to use AI in the future—while weaving in several of the AI-related elements above.\n\nScore = 5 Reflection thoughtfully answers all four guiding questions and discusses three or more specific AI-related uses (e.g., prompt writing, data analysis). Ideas are clear, detailed, and explicitly tied to World History; writing is well-organised and virtually error-free.\n\nScore = 4 Addresses at least three guiding questions in depth and mentions two or more AI-related uses. Content is specific and connected to the course; minor wording or organisational issues do not impede understanding.\n\nScore = 3 Answers at least three guiding questions but with limited depth, OR references only one concrete AI use. Some gaps or minor errors exist, yet meaning remains clear.\n\nScore = 2 Responds meaningfully to two guiding questions and makes at least a passing mention of AI, but details are thin or several errors distract from the message.\n\nScore = 1 Writes a brief reflection that is recognisably about AI use in class but addresses fewer than two guiding questions or lacks meaningful detail.\n\nScore = 0  Cell is blank or contains text unrelated to AI or the assignment.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-12-20T22:51:05.764Z",
+                "updated_at": "2025-12-20T22:51:05.764Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": "3c714f55-ff88-4478-b991-68568449cbb9",
+                "template_format": "json"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "template_file_ready": true
+  }

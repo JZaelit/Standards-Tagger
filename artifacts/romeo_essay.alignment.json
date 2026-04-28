@@ -1,0 +1,1665 @@
+{
+  "edusperience_id": "3bcf4e6c-936b-44b7-8b93-718ccaeb1426",
+  "edusperience_title": "Romeo and Juliet",
+  "source_file": "edusperiences/romeo_essay.json",
+  "inferred_grade_bands": [
+    "9-10",
+    "11-12"
+  ],
+  "standards_db": "categorized-standards/California/CA-ELA.json",
+  "retrieval": {
+    "method": "tfidf_1-2grams_sublinear",
+    "reranker": "grade_band + keyword_strand heuristics"
+  },
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "section_title": "Essay Setup",
+      "objective_title": "Essay Header",
+      "objective_description": "Insert the heading in the top left corner of the first page. Do not skip any lines before the heading. Type the following information, each on its own line: Your full name Your teacher’s name Class name Date (Day Month Year – e.g., 13 May 2025) The header must be Times New Roman, size 12 fon t. Keep text left-aligned. Do not bold, underline, or italicize. You can use \" Prompt#01: Understand Instructions In Context\" from the resource file to help you understand this or any task instructions. You can use \" Prompt#02: Understand Feedback In Context\" from the resource file to help you understand this or any task feedback.",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.0901524148387402,
+          "code": "W.11-12.6",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Production and Distribution of Writing",
+          "is_anchor": false,
+          "text": "Use technology, including the Internet, to produce, publish, and update individual or shared writing products in response to ongoing feedback, including new arguments or information.",
+          "base_score": 0.0901524148387402,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3401524148387402
+        },
+        {
+          "score": 0.08463338529937868,
+          "code": "WHST.11-12.6",
+          "strand": "WHST",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Production and Distribution of Writing",
+          "is_anchor": false,
+          "text": "Use technology, including the Internet, to produce, publish, and update individual or shared writing products in response to ongoing feedback, including new arguments or information.",
+          "base_score": 0.08463338529937868,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3346333852993787
+        },
+        {
+          "score": 0.06970222139867774,
+          "code": "CCRA.SL.4",
+          "strand": "CCRA.SL",
+          "grade": null,
+          "grade_band": null,
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": true,
+          "text": "Present information, findings, and supporting evidence such that listeners can follow the line of reasoning and the organization, development, and style are appropriate to task, purpose, and audience.",
+          "base_score": 0.06970222139867774,
+          "grade_bonus": 0.1,
+          "keyword_bonus": 0.0,
+          "final_score": 0.16970222139867774
+        },
+        {
+          "score": 0.1597608852202036,
+          "code": "RF.K.1.a",
+          "strand": "RF",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Print Concepts",
+          "is_anchor": false,
+          "text": "Follow words from left to right, top to bottom, and page by page.",
+          "base_score": 0.1597608852202036,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": 0.009760885220203602
+        },
+        {
+          "score": 0.10725942638966791,
+          "code": "L.8.5.b",
+          "strand": "L",
+          "grade": "8",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use the relationship between particular words to better understand each of the words.",
+          "base_score": 0.10725942638966791,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.04274057361033208
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    },
+    {
+      "path": "sections[0].objectives[1]",
+      "section_title": "Essay Setup",
+      "objective_title": "Essay Title",
+      "objective_description": "Before you work on tasks, ensure you watch the Task resource videos. Below the heading, add a single blank line. Then enter the required title, Romeo and Juliet Consequences Essay . On the line directly below the title, input your subtitle. It must reflect the essay’s focus and connect to the actions, consequences, and analysis you explore. Center align the title and subtitle, and use Times New Roman, 12-point font. You can use Prompt#01: Understand Instructions In Context from the resource file to help you understand this or any task instructions.",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.05842028971770938,
+          "code": "SL.9-10.4",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Present information, findings, and supporting evidence clearly, concisely, and logically (using appropriate eye contact, adequate volume, and clear pronunciation) such that listeners can follow the line of reasoning and the organization, development, substance, and style are appropriate to purpose (e.g., argument, narrative, informative, response to literature presentations), audience, and task.",
+          "base_score": 0.05842028971770938,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3084202897177094
+        },
+        {
+          "score": 0.08286056941577975,
+          "code": "CCRA.SL.4",
+          "strand": "CCRA.SL",
+          "grade": null,
+          "grade_band": null,
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": true,
+          "text": "Present information, findings, and supporting evidence such that listeners can follow the line of reasoning and the organization, development, and style are appropriate to task, purpose, and audience.",
+          "base_score": 0.08286056941577975,
+          "grade_bonus": 0.1,
+          "keyword_bonus": 0.0,
+          "final_score": 0.18286056941577977
+        },
+        {
+          "score": 0.12312205227668747,
+          "code": "RI.K.5",
+          "strand": "RI",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Identify the front cover, back cover, and title page of a book.",
+          "base_score": 0.12312205227668747,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.02687794772331252
+        },
+        {
+          "score": 0.10111193308235361,
+          "code": "W.1.7",
+          "strand": "W",
+          "grade": "1",
+          "grade_band": "K-5",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Participate in shared research and writing projects (e.g., explore a number of “how-to” books on a given topic and use them to write a sequence of instructions).",
+          "base_score": 0.10111193308235361,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.04888806691764638
+        },
+        {
+          "score": 0.07869250226646127,
+          "code": "L.8.5.b",
+          "strand": "L",
+          "grade": "8",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use the relationship between particular words to better understand each of the words.",
+          "base_score": 0.07869250226646127,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.07130749773353873
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    },
+    {
+      "path": "sections[0].objectives[2]",
+      "section_title": "Essay Setup",
+      "objective_title": "Essay Sections",
+      "objective_description": "GradeFlow's evaluation engine will guide you as you write your essay, but to do this, you need to insert Section Breaks (Continuous) in specific locations. I strongly encourage you to watch the task video for specific step-by-step instructions. Failure to do this will result in a very poor score going forward. You must insert FIVE Section Breaks (Continuous) in specific locations and follow specific instructions. Again, I strongly encourage you to watch the task video for specific step-by-step instructions . Section #1: Heading - Insert after the MLA Date Format. Section #2: Title - Insert after the Subtitle. Insert the section name in sections 3-6. This is a temporary placeholder text that you will replace later. This step just ensures you've set up your document correctly. EXAMPLE : Introduction Paragraph, Body Paragraph#1, Body Paragraph#2, and Conclusion Paragraph. Section #3: Introduction Paragraph - Insert after paragraph #1. Section #4: Body Paragraph#1 - Insert after paragraph #2. Section #5: Body Paragraph#2 - Insert a fter paragraph #3. Section #6: Conclusion Paragraph You can use \" Prompt#01: Understand Instructions In Context\" from the resource file to help you understand this or any task instructions. You can use \" Prompt#02: Understand Feedback In Context\" from the resource file to help you understand this or any task feedback.",
+      "matched_keyword_rules": [
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter",
+        "\\b(introduction|introductory|hook|thesis statement|conclu(si"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.09291270033250436,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.09291270033250436,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.34291270033250437
+        },
+        {
+          "score": 0.09291270033250436,
+          "code": "L.11-12.4.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.09291270033250436,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.34291270033250437
+        },
+        {
+          "score": 0.08630890532054364,
+          "code": "W.3.2.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.08630890532054364,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.13630890532054366
+        },
+        {
+          "score": 0.08630890532054364,
+          "code": "W.3.1.d",
+          "strand": "W",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Provide a concluding statement or section.",
+          "base_score": 0.08630890532054364,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.13630890532054366
+        },
+        {
+          "score": 0.16124740111156893,
+          "code": "SL.K.2.a",
+          "strand": "SL",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Understand and follow one- and two- step oral directions.",
+          "base_score": 0.16124740111156893,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": 0.011247401111568939
+        }
+      ],
+      "auto_pick": {
+        "picks": [],
+        "reason": "logistical/operational objective, no ELA standard applies"
+      }
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "section_title": "Four Paragraph Essay",
+      "objective_title": "Introduction Paragraph",
+      "objective_description": "Review the Essay Instructions for specific Introduction Paragraph requirements. Your teacher will give the final grade after reviewing your work . Use GradeFlow scores and feedback as a guide to check your progress. Write an introduction paragraph that includes all of the following: A well-written hook that introduces the topic of emotional decision-making or consequences. The title of the play, the author, and a brief summary of the consequences you will write about. A strong thesis statement. Length: 3–4 sentences Word count: 75–125 words You can use Prompt#01: Understand Instructions In Context from the resource file to help you understand this or any task instructions.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(introduction|introductory|hook|thesis statement|conclu(si"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.10165718748180129,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.10165718748180129,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3516571874818013
+        },
+        {
+          "score": 0.10165718748180129,
+          "code": "L.11-12.4.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.10165718748180129,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3516571874818013
+        },
+        {
+          "score": 0.09862810539014492,
+          "code": "SL.11-12.1.b",
+          "strand": "SL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Work with peers to promote civil, democratic discussions and decision-making, set clear goals and deadlines, and establish individual roles as needed.",
+          "base_score": 0.09862810539014492,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.34862810539014494
+        },
+        {
+          "score": 0.0837015852349659,
+          "code": "SL.9-10.1.b",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Work with peers to set rules for collegial discussions and decision-making (e.g., informal consensus, taking votes on key issues, presentation of alternate views), clear goals and deadlines, and individual roles as needed.",
+          "base_score": 0.0837015852349659,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3337015852349659
+        },
+        {
+          "score": 0.07379382059683513,
+          "code": "RL.9-10.9",
+          "strand": "RL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Analyze how an author draws on and transforms source material in a specific work (e.g., how Shakespeare treats a theme or topic from Ovid or the Bible or how a later author draws on a play by Shakespeare).",
+          "base_score": 0.07379382059683513,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32379382059683515
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "L.9-10.4.a",
+            "grade": "9-10",
+            "final_score": 0.352,
+            "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+          },
+          {
+            "code": "L.11-12.4.a",
+            "grade": "11-12",
+            "final_score": 0.352,
+            "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+          },
+          {
+            "code": "SL.11-12.1.b",
+            "grade": "11-12",
+            "final_score": 0.349,
+            "text": "Work with peers to promote civil, democratic discussions and decision-making, set clear goals and deadlines, and establish individual roles as needed."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "section_title": "Four Paragraph Essay",
+      "objective_title": "Hook and Thesis Statement",
+      "objective_description": "Use Prompt#03: Help with Thesis and Hook for help. Craft a strong opening for your essay by writing a powerful hook and a clear thesis statement. Start with a Hook: This is your first sentence. It should grab your reader’s attention and use powerful or dramatic language to set the tone. Try to reflect the emotion, conflict, or seriousness of Romeo and Juliet. Title and author: Somewhere early in your introduction, mention the Title and Author. Strong Thesis Statement : Clearly state your main claim about the consequences of Romeo and Juliet’s actions. Be specific about which two groups were affected: their family, community, or future.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(word choice|figurative|imagery|tone|mood|diction|connotat",
+        "\\b(introduction|introductory|hook|thesis statement|conclu(si"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.13973584001446096,
+          "code": "W.9-10.2.a",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce a topic or thesis statement; organize complex ideas, concepts, and information to make important connections and distinctions; include formatting (e.g., headings), graphics (e.g., figures, tables), and multimedia when useful to aiding comprehension.",
+          "base_score": 0.13973584001446096,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.589735840014461
+        },
+        {
+          "score": 0.13097177029400164,
+          "code": "W.11-12.2.a",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce a topic or thesis statement; organize complex ideas, concepts, and information so that each new element builds on that which precedes it to create a unified whole; include formatting (e.g., headings), graphics (e.g., figures, tables), and multimedia when useful to aiding comprehension.",
+          "base_score": 0.13097177029400164,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5809717702940016
+        },
+        {
+          "score": 0.07596453294921805,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.07596453294921805,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5259645329492181
+        },
+        {
+          "score": 0.1824170184955673,
+          "code": "W.8.2.a",
+          "strand": "W",
+          "grade": "8",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce a topic or thesis statement clearly, previewing what is to follow; organize ideas, concepts, and information into broader categories; include formatting (e.g., headings), graphics (e.g., charts, tables), and multimedia when useful to aiding comprehension.",
+          "base_score": 0.1824170184955673,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.2324170184955673
+        },
+        {
+          "score": 0.15970383608387226,
+          "code": "W.7.2.a",
+          "strand": "W",
+          "grade": "7",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce a topic or thesis statement clearly, previewing what is to follow; organize ideas, concepts, and information, using strategies such as definition, classification, comparison/ contrast, and cause/effect; include formatting (e.g., headings), graphics (e.g., charts, tables), and multimedia when useful to aiding comprehension.",
+          "base_score": 0.15970383608387226,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.20970383608387227
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.2.a",
+            "grade": "9-10",
+            "final_score": 0.59,
+            "text": "Introduce a topic or thesis statement; organize complex ideas, concepts, and information to make important connections and distinctions; include formatting (e.g., headings), graphics (e.g., figures, tables), and multimedia when useful to aiding comprehension."
+          },
+          {
+            "code": "W.11-12.2.a",
+            "grade": "11-12",
+            "final_score": 0.581,
+            "text": "Introduce a topic or thesis statement; organize complex ideas, concepts, and information so that each new element builds on that which precedes it to create a unified whole; include formatting (e.g., headings), graphics (e.g., figures, tables), and multimedia when useful to aiding comprehension."
+          },
+          {
+            "code": "L.9-10.4.a",
+            "grade": "9-10",
+            "final_score": 0.526,
+            "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[2]",
+      "section_title": "Four Paragraph Essay",
+      "objective_title": "First Body Paragraph",
+      "objective_description": "Write your first body paragraph following the structure below: A topic sentence that clearly states which group (family, community, or future) was affected by Romeo and Juliet’s actions. Two short quotes from the play that support your point (each under 100 characters and introduced with the speaker’s name). Two sentences of explanation after each quote that connect the evidence to your claim. A concluding sentence that restates how the evidence shows the impact of their actions. Length : 8 sentences Word count : 150–200 words Use the Prompt#04: First/Second Body Paragraph for additional help.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(outline|organiz(e|ing)|structure|plan(ning)?|prewrit|grap",
+        "\\b(introduction|introductory|hook|thesis statement|conclu(si"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.0953386970394526,
+          "code": "W.9-10.1.c",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims.",
+          "base_score": 0.0953386970394526,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5453386970394526
+        },
+        {
+          "score": 0.0884629413594402,
+          "code": "W.11-12.1.c",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use words, phrases, and clauses as well as varied syntax to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims.",
+          "base_score": 0.0884629413594402,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5384629413594402
+        },
+        {
+          "score": 0.15564281559621324,
+          "code": "L.11-12.4.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.15564281559621324,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.40564281559621324
+        },
+        {
+          "score": 0.15564281559621324,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.15564281559621324,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.40564281559621324
+        },
+        {
+          "score": 0.08775837645644102,
+          "code": "WHST.9-10.1.c",
+          "strand": "WHST",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims.",
+          "base_score": 0.08775837645644102,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.337758376456441
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.1.c",
+            "grade": "9-10",
+            "final_score": 0.545,
+            "text": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims."
+          },
+          {
+            "code": "W.11-12.1.c",
+            "grade": "11-12",
+            "final_score": 0.538,
+            "text": "Use words, phrases, and clauses as well as varied syntax to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[3]",
+      "section_title": "Four Paragraph Essay",
+      "objective_title": "Second Body Paragraph",
+      "objective_description": "Write your second body paragraph following the structure below: A topic sentence that clearly states which group (family, community, or future) was affected by Romeo and Juliet’s actions. Two short quotes from the play that support your point (each under 100 characters and introduced with the speaker’s name). Two sentences of explanation after each quote that connect the evidence to your claim. A concluding sentence that restates how the evidence shows the impact of their actions. Length : 8 sentences Word count : 150–200 words Use the Prompt#04: First/Second Body Paragraph for additional help. Video is the same as the First Body Paragraph.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(outline|organiz(e|ing)|structure|plan(ning)?|prewrit|grap",
+        "\\b(introduction|introductory|hook|thesis statement|conclu(si"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.08795437177822985,
+          "code": "W.9-10.1.c",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims.",
+          "base_score": 0.08795437177822985,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5379543717782298
+        },
+        {
+          "score": 0.0816111681251966,
+          "code": "W.11-12.1.c",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use words, phrases, and clauses as well as varied syntax to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims.",
+          "base_score": 0.0816111681251966,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5316111681251966
+        },
+        {
+          "score": 0.14949755279836763,
+          "code": "L.11-12.4.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.14949755279836763,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.39949755279836763
+        },
+        {
+          "score": 0.14949755279836763,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.14949755279836763,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.39949755279836763
+        },
+        {
+          "score": 0.08096117431004472,
+          "code": "WHST.9-10.1.c",
+          "strand": "WHST",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims.",
+          "base_score": 0.08096117431004472,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33096117431004474
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.1.c",
+            "grade": "9-10",
+            "final_score": 0.538,
+            "text": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims."
+          },
+          {
+            "code": "W.11-12.1.c",
+            "grade": "11-12",
+            "final_score": 0.532,
+            "text": "Use words, phrases, and clauses as well as varied syntax to link the major sections of the text, create cohesion, and clarify the relationships between claim(s) and reasons, between reasons and evidence, and between claim(s) and counterclaims."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[4]",
+      "section_title": "Four Paragraph Essay",
+      "objective_title": "Body Paragraph Evidence",
+      "objective_description": "Review the Essay Instructions and make sure your Body Paragraphs #1 and #2 (Paragraphs 2 and 3) are in the correct sections of your document. GradeFlow will check both for required structure and how well you explain the evidence you've chosen. Your goal in this task is to make your analysis stronger by using precise, thoughtful language to explain how your quotes support your point. Each body paragraph should do more than list quotes—it should show deep understanding of the play and connect those quotes to the larger ideas you’re writing about. To succeed on this task: Refer to specific events, characters, and conflicts from Romeo and Juliet—not just general ideas. Avoid summary. Instead, explain why the quote matters and what it shows about the consequences of the characters’ actions. Use language that shows insight into the themes, emotions, and outcomes of the play. Choose verbs and vocabulary that clearly show how your evidence relates to the topic sentence.",
+      "matched_keyword_rules": [
+        "\\b(inform|informative|explanatory|explain(ing)?|expository)\\",
+        "\\b(outline|organiz(e|ing)|structure|plan(ning)?|prewrit|grap",
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.09827179543677782,
+          "code": "L.11-12.4.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.09827179543677782,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.34827179543677783
+        },
+        {
+          "score": 0.09827179543677782,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.09827179543677782,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.34827179543677783
+        },
+        {
+          "score": 0.11163184533742605,
+          "code": "W.6.2.d",
+          "strand": "W",
+          "grade": "6",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+          "base_score": 0.11163184533742605,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.16163184533742608
+        },
+        {
+          "score": 0.11163184533742605,
+          "code": "W.4.2.d",
+          "strand": "W",
+          "grade": "4",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+          "base_score": 0.11163184533742605,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.16163184533742608
+        },
+        {
+          "score": 0.11163184533742605,
+          "code": "W.5.2.d",
+          "strand": "W",
+          "grade": "5",
+          "grade_band": "K-5",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Use precise language and domain-specific vocabulary to inform about or explain the topic.",
+          "base_score": 0.11163184533742605,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.16163184533742608
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "L.11-12.4.a",
+            "grade": "11-12",
+            "final_score": 0.348,
+            "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+          },
+          {
+            "code": "L.9-10.4.a",
+            "grade": "9-10",
+            "final_score": 0.348,
+            "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[1].objectives[5]",
+      "section_title": "Four Paragraph Essay",
+      "objective_title": "Conclusion Paragraph",
+      "objective_description": "Wrap up your essay with a strong, thoughtful conclusion that reinforces your main argument and leaves the reader with a clear final impression. In your conclusion, you should: Restate your thesis in a fresh way, reminding the reader of your main claim. Summarize your two key points (the consequences for the two groups you wrote about). Reflect on the lasting message of Romeo and Juliet. What should we learn from the consequences of their actions?",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(introduction|introductory|hook|thesis statement|conclu(si"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.10890092951842206,
+          "code": "SL.9-10.4.a",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Plan and deliver an informative/explanatory presentation that: presents evidence in support of a thesis, conveys information from primary and secondary sources coherently, uses domain specific vocabulary, and provides a conclusion that summarizes the main points. (9 th or 10 th grade)",
+          "base_score": 0.10890092951842206,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.35890092951842206
+        },
+        {
+          "score": 0.0875606857304463,
+          "code": "RH.9-10.5",
+          "strand": "RH",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Craft and Structure",
+          "is_anchor": false,
+          "text": "Analyze how a text uses structure to emphasize key points or advance an explanation or analysis.",
+          "base_score": 0.0875606857304463,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3375606857304463
+        },
+        {
+          "score": 0.07931331581927804,
+          "code": "RL.11-12.1",
+          "strand": "RL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+          "base_score": 0.07931331581927804,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32931331581927803
+        },
+        {
+          "score": 0.07886700203505612,
+          "code": "RI.11-12.1",
+          "strand": "RI",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+          "base_score": 0.07886700203505612,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32886700203505614
+        },
+        {
+          "score": 0.1032503159387395,
+          "code": "CCRA.R.2",
+          "strand": "CCRA.R",
+          "grade": null,
+          "grade_band": null,
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": true,
+          "text": "Determine central ideas or themes of a text and analyze their development; summarize the key supporting details and ideas.",
+          "base_score": 0.1032503159387395,
+          "grade_bonus": 0.1,
+          "keyword_bonus": 0.0,
+          "final_score": 0.2032503159387395
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "SL.9-10.4.a",
+            "grade": "9-10",
+            "final_score": 0.359,
+            "text": "Plan and deliver an informative/explanatory presentation that: presents evidence in support of a thesis, conveys information from primary and secondary sources coherently, uses domain specific vocabulary, and provides a conclusion that summarizes the main points. (9 th or 10 th grade)"
+          },
+          {
+            "code": "RH.9-10.5",
+            "grade": "9-10",
+            "final_score": 0.338,
+            "text": "Analyze how a text uses structure to emphasize key points or advance an explanation or analysis."
+          },
+          {
+            "code": "RL.11-12.1",
+            "grade": "11-12",
+            "final_score": 0.329,
+            "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "section_title": "File Name",
+      "objective_title": "File Name",
+      "objective_description": "When turning in assignments, it's important to name your Google Docs or other files clearly so your teacher can easily identify your work. Use the following naming convention every time you submit an assignment. ﻿Naming Convention : Last Name, First Name | Assignment Title | Class Period or Section Example : If your name is Todd Benrud , you're turning in the Romeo and Juliet Consequences Essay , and you're in Period 5 , then your file should be named: Benrud, Todd | Romeo and Juliet Consequences Essay | Period 5",
+      "matched_keyword_rules": [],
+      "reranked_candidates": [
+        {
+          "score": 0.15824614527134762,
+          "code": "L.11-12.1.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Apply the understanding that usage is a matter of convention, can change over time, and is sometimes contested.",
+          "base_score": 0.15824614527134762,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.4082461452713476
+        },
+        {
+          "score": 0.08850353098011844,
+          "code": "RL.11-12.9",
+          "strand": "RL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth- century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics.",
+          "base_score": 0.08850353098011844,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33850353098011843
+        },
+        {
+          "score": 0.07996499778240529,
+          "code": "W.11-12.9.a",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Research to Build and Present Knowledge",
+          "is_anchor": false,
+          "text": "Apply grades 11–12 Reading standards to literature (e.g., “Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth-century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics”).",
+          "base_score": 0.07996499778240529,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3299649977824053
+        },
+        {
+          "score": 0.05652948452327325,
+          "code": "SL.9-10.1",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Comprehension and Collaboration",
+          "is_anchor": false,
+          "text": "Initiate and participate effectively in a range of collaborative discussions (one-on-one, in groups, and teacher-led) with diverse partners on grades 9–10 topics, texts, and issues, building on others’ ideas and expressing their own clearly and persuasively.",
+          "base_score": 0.05652948452327325,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3065294845232732
+        },
+        {
+          "score": 0.11928523918767128,
+          "code": "RL.7.9",
+          "strand": "RL",
+          "grade": "7",
+          "grade_band": "6-12",
+          "subgroup": "Integration of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means of understanding how authors of fiction use or alter history.",
+          "base_score": 0.11928523918767128,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.0,
+          "final_score": -0.030714760812328712
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "L.11-12.1.a",
+            "grade": "11-12",
+            "final_score": 0.408,
+            "text": "Apply the understanding that usage is a matter of convention, can change over time, and is sometimes contested."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "section_title": "Teacher Review",
+      "objective_title": "Intro Paragraph",
+      "objective_description": "Your introduction will be graded on four main parts: a strong hook that grabs attention, background information that includes the title and author, a clear summary of the text, and a thesis that directly answers the prompt. The strongest essays include all of these elements written clearly and effectively. Partial credit will be given if one or more parts are weak or missing. To earn full points, make sure your hook is compelling, your background is complete, your summary is clear, and your thesis directly responds to the prompt.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(introduction|introductory|hook|thesis statement|conclu(si"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.09609991554138517,
+          "code": "W.9-10.2.a",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce a topic or thesis statement; organize complex ideas, concepts, and information to make important connections and distinctions; include formatting (e.g., headings), graphics (e.g., figures, tables), and multimedia when useful to aiding comprehension.",
+          "base_score": 0.09609991554138517,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5460999155413853
+        },
+        {
+          "score": 0.07647112883583693,
+          "code": "RH.11-12.2",
+          "strand": "RH",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Determine the central ideas or information of a primary or secondary source; provide an accurate summary that makes clear the relationships among the key details and ideas.",
+          "base_score": 0.07647112883583693,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32647112883583695
+        },
+        {
+          "score": 0.07525230700977445,
+          "code": "SL.9-10.4.a",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Plan and deliver an informative/explanatory presentation that: presents evidence in support of a thesis, conveys information from primary and secondary sources coherently, uses domain specific vocabulary, and provides a conclusion that summarizes the main points. (9 th or 10 th grade)",
+          "base_score": 0.07525230700977445,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3252523070097745
+        },
+        {
+          "score": 0.07266852831239705,
+          "code": "RI.11-12.2",
+          "strand": "RI",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Determine two or more central ideas of a text and analyze their development over the course of the text, including how they interact and build on one another to provide a complex analysis; provide an objective summary of the text.",
+          "base_score": 0.07266852831239705,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32266852831239706
+        },
+        {
+          "score": 0.07177307159605682,
+          "code": "RI.9-10.2",
+          "strand": "RI",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Determine a central idea of a text and analyze its development over the course of the text, including how it emerges and is shaped and refined by specific details; provide an objective summary of the text.",
+          "base_score": 0.07177307159605682,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32177307159605684
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.2.a",
+            "grade": "9-10",
+            "final_score": 0.546,
+            "text": "Introduce a topic or thesis statement; organize complex ideas, concepts, and information to make important connections and distinctions; include formatting (e.g., headings), graphics (e.g., figures, tables), and multimedia when useful to aiding comprehension."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[3].objectives[1]",
+      "section_title": "Teacher Review",
+      "objective_title": "Body Paragraph #1",
+      "objective_description": "Your first body paragraph will be graded on how well you support your claim with evidence. To earn full credit, include two well-chosen quotes that clearly support your argument and introduce each quote smoothly. Partial credit is given if the quotes are present but weak, off-topic, or lack proper introductions. You’ll lose points if one or both quotes are missing or fail to support your claim.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(discuss(ion)?|collaborat|peer|present(ing)?|speaking|oral"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.12261773211342586,
+          "code": "W.9-10.1.a",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce precise claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that establishes clear relationships among claim(s), counterclaims, reasons, and evidence.",
+          "base_score": 0.12261773211342586,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5726177321134258
+        },
+        {
+          "score": 0.11451208008603248,
+          "code": "W.11-12.1.a",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce precise, knowledgeable claim(s), establish the significance of the claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that logically sequences claim(s), counter- claims, reasons, and evidence.",
+          "base_score": 0.11451208008603248,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5645120800860325
+        },
+        {
+          "score": 0.11401915630444252,
+          "code": "WHST.9-10.1.a",
+          "strand": "WHST",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce precise claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that establishes clear relationships among the claim(s), counterclaims, reasons, and evidence.",
+          "base_score": 0.11401915630444252,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.36401915630444254
+        },
+        {
+          "score": 0.1137971409000055,
+          "code": "WHST.11-12.1.a",
+          "strand": "WHST",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce precise, knowledgeable claim(s), establish the significance of the claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that logically sequences the claim(s), counterclaims, reasons, and evidence.",
+          "base_score": 0.1137971409000055,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3637971409000055
+        },
+        {
+          "score": 0.20006619055035396,
+          "code": "W.6.1.b",
+          "strand": "W",
+          "grade": "6",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Support claim(s) with clear reasons and relevant evidence, using credible sources and demonstrating an understanding of the topic or text.",
+          "base_score": 0.20006619055035396,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.25006619055035395
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.1.a",
+            "grade": "9-10",
+            "final_score": 0.573,
+            "text": "Introduce precise claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that establishes clear relationships among claim(s), counterclaims, reasons, and evidence."
+          },
+          {
+            "code": "W.11-12.1.a",
+            "grade": "11-12",
+            "final_score": 0.565,
+            "text": "Introduce precise, knowledgeable claim(s), establish the significance of the claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that logically sequences claim(s), counter- claims, reasons, and evidence."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[3].objectives[2]",
+      "section_title": "Teacher Review",
+      "objective_title": "Body Paragraph #1 Commentary",
+      "objective_description": "This part of your paragraph is graded on how well you explain your evidence. To earn full credit, include two pieces of analysis for each quote (four total) that clearly explain how the quote supports your claim and why it matters in the context of the text. Partial credit is given if the analysis is weak, vague, or leans too much on summary. You’ll lose points if your commentary is missing, lacks clear connections, or simply restates the quote without explaining its relevance.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(inform|informative|explanatory|explain(ing)?|expository)\\"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.07915491939448,
+          "code": "RI.9-10.3",
+          "strand": "RI",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Analyze how the author unfolds an analysis or series of ideas or events, including the order in which the points are made, how they are introduced and developed, and the connections that are drawn between them.",
+          "base_score": 0.07915491939448,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32915491939448
+        },
+        {
+          "score": 0.07901101668955189,
+          "code": "RI.11-12.1",
+          "strand": "RI",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+          "base_score": 0.07901101668955189,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3290110166895519
+        },
+        {
+          "score": 0.0785897657093221,
+          "code": "RL.11-12.1",
+          "strand": "RL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+          "base_score": 0.0785897657093221,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3285897657093221
+        },
+        {
+          "score": 0.0775851210843224,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.0775851210843224,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3275851210843224
+        },
+        {
+          "score": 0.08865966673442566,
+          "code": "W.6.1.a",
+          "strand": "W",
+          "grade": "6",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce claim(s) and organize the reasons and evidence clearly.",
+          "base_score": 0.08865966673442566,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.13865966673442567
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "RI.9-10.3",
+            "grade": "9-10",
+            "final_score": 0.329,
+            "text": "Analyze how the author unfolds an analysis or series of ideas or events, including the order in which the points are made, how they are introduced and developed, and the connections that are drawn between them."
+          },
+          {
+            "code": "RI.11-12.1",
+            "grade": "11-12",
+            "final_score": 0.329,
+            "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain."
+          },
+          {
+            "code": "RL.11-12.1",
+            "grade": "11-12",
+            "final_score": 0.329,
+            "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[3].objectives[3]",
+      "section_title": "Teacher Review",
+      "objective_title": "Body Paragraph #2",
+      "objective_description": "Your second body paragraph will be graded on how well you support your claim with evidence. To earn full credit, include two well-chosen quotes that clearly support your argument and introduce each quote smoothly. Partial credit is given if the quotes are present but weak, off-topic, or lack proper introductions. You’ll lose points if one or both quotes are missing or fail to support your claim.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(discuss(ion)?|collaborat|peer|present(ing)?|speaking|oral"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.11869972168804183,
+          "code": "W.9-10.1.a",
+          "strand": "W",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce precise claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that establishes clear relationships among claim(s), counterclaims, reasons, and evidence.",
+          "base_score": 0.11869972168804183,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5686997216880418
+        },
+        {
+          "score": 0.11085306995857015,
+          "code": "W.11-12.1.a",
+          "strand": "W",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce precise, knowledgeable claim(s), establish the significance of the claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that logically sequences claim(s), counter- claims, reasons, and evidence.",
+          "base_score": 0.11085306995857015,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5608530699585701
+        },
+        {
+          "score": 0.11037589659481865,
+          "code": "WHST.9-10.1.a",
+          "strand": "WHST",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce precise claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that establishes clear relationships among the claim(s), counterclaims, reasons, and evidence.",
+          "base_score": 0.11037589659481865,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.36037589659481867
+        },
+        {
+          "score": 0.11016097525951984,
+          "code": "WHST.11-12.1.a",
+          "strand": "WHST",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce precise, knowledgeable claim(s), establish the significance of the claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that logically sequences the claim(s), counterclaims, reasons, and evidence.",
+          "base_score": 0.11016097525951984,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.36016097525951984
+        },
+        {
+          "score": 0.19367346572309935,
+          "code": "W.6.1.b",
+          "strand": "W",
+          "grade": "6",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Support claim(s) with clear reasons and relevant evidence, using credible sources and demonstrating an understanding of the topic or text.",
+          "base_score": 0.19367346572309935,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.24367346572309936
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "W.9-10.1.a",
+            "grade": "9-10",
+            "final_score": 0.569,
+            "text": "Introduce precise claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that establishes clear relationships among claim(s), counterclaims, reasons, and evidence."
+          },
+          {
+            "code": "W.11-12.1.a",
+            "grade": "11-12",
+            "final_score": 0.561,
+            "text": "Introduce precise, knowledgeable claim(s), establish the significance of the claim(s), distinguish the claim(s) from alternate or opposing claims, and create an organization that logically sequences claim(s), counter- claims, reasons, and evidence."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[3].objectives[4]",
+      "section_title": "Teacher Review",
+      "objective_title": "Body Paragraph #2 Commentary",
+      "objective_description": "This part of your paragraph is graded on how well you explain your evidence. To earn full credit, include two pieces of analysis for each quote (four total) that clearly explain how the quote supports your claim and why it matters in the context of the text. Partial credit is given if the analysis is weak, vague, or leans too much on summary. You’ll lose points if your commentary is missing, lacks clear connections, or simply restates the quote without explaining its relevance.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(inform|informative|explanatory|explain(ing)?|expository)\\"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.07915491939448,
+          "code": "RI.9-10.3",
+          "strand": "RI",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Analyze how the author unfolds an analysis or series of ideas or events, including the order in which the points are made, how they are introduced and developed, and the connections that are drawn between them.",
+          "base_score": 0.07915491939448,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.32915491939448
+        },
+        {
+          "score": 0.07901101668955189,
+          "code": "RI.11-12.1",
+          "strand": "RI",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+          "base_score": 0.07901101668955189,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3290110166895519
+        },
+        {
+          "score": 0.0785897657093221,
+          "code": "RL.11-12.1",
+          "strand": "RL",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+          "base_score": 0.0785897657093221,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3285897657093221
+        },
+        {
+          "score": 0.0775851210843224,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.0775851210843224,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.3275851210843224
+        },
+        {
+          "score": 0.08865966673442566,
+          "code": "W.6.1.a",
+          "strand": "W",
+          "grade": "6",
+          "grade_band": "6-12",
+          "subgroup": "Text Types and Purposes",
+          "is_anchor": false,
+          "text": "Introduce claim(s) and organize the reasons and evidence clearly.",
+          "base_score": 0.08865966673442566,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.13865966673442567
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "RI.9-10.3",
+            "grade": "9-10",
+            "final_score": 0.329,
+            "text": "Analyze how the author unfolds an analysis or series of ideas or events, including the order in which the points are made, how they are introduced and developed, and the connections that are drawn between them."
+          },
+          {
+            "code": "RI.11-12.1",
+            "grade": "11-12",
+            "final_score": 0.329,
+            "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain."
+          },
+          {
+            "code": "RL.11-12.1",
+            "grade": "11-12",
+            "final_score": 0.329,
+            "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[3].objectives[5]",
+      "section_title": "Teacher Review",
+      "objective_title": "V4 Conclusion Paragraph",
+      "objective_description": "Your conclusion is graded on how well it wraps up your essay. To earn full credit, restate your thesis in a new way, clearly summarize your main points, and explain the overall message or lesson of the text. Partial credit is given if one of these elements is weak or missing. You’ll lose points if the thesis is simply copied, not included, or if the conclusion lacks a summary or a discussion of the text’s larger meaning.",
+      "matched_keyword_rules": [
+        "\\b(argument|argu(e|ing)|thesis|claim|opinion|persuas|positio",
+        "\\b(inform|informative|explanatory|explain(ing)?|expository)\\",
+        "\\b(theme|central idea|main idea|overall message)\\b",
+        "\\b(introduction|introductory|hook|thesis statement|conclu(si",
+        "\\b(discuss(ion)?|collaborat|peer|present(ing)?|speaking|oral"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.16184218097793276,
+          "code": "SL.9-10.4.a",
+          "strand": "SL",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Presentation of Knowledge and Ideas",
+          "is_anchor": false,
+          "text": "Plan and deliver an informative/explanatory presentation that: presents evidence in support of a thesis, conveys information from primary and secondary sources coherently, uses domain specific vocabulary, and provides a conclusion that summarizes the main points. (9 th or 10 th grade)",
+          "base_score": 0.16184218097793276,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.6118421809779329
+        },
+        {
+          "score": 0.08857129833703387,
+          "code": "L.11-12.4.a",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.08857129833703387,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33857129833703387
+        },
+        {
+          "score": 0.08857129833703387,
+          "code": "L.9-10.4.a",
+          "strand": "L",
+          "grade": "9-10",
+          "grade_band": "6-12",
+          "subgroup": "Vocabulary Acquisition and Use",
+          "is_anchor": false,
+          "text": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+          "base_score": 0.08857129833703387,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.0,
+          "final_score": 0.33857129833703387
+        },
+        {
+          "score": 0.14621375257185276,
+          "code": "RL.1.2",
+          "strand": "RL",
+          "grade": "1",
+          "grade_band": "K-5",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Retell stories, including key details, and demonstrate understanding of their central message or lesson.",
+          "base_score": 0.14621375257185276,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.19621375257185278
+        },
+        {
+          "score": 0.12771566841649853,
+          "code": "RL.3.2",
+          "strand": "RL",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Key Ideas and Details",
+          "is_anchor": false,
+          "text": "Recount stories, including fables, folktales, and myths from diverse cultures; determine the central message, lesson, or moral and explain how it is conveyed through key details in the text.",
+          "base_score": 0.12771566841649853,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.17771566841649855
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "SL.9-10.4.a",
+            "grade": "9-10",
+            "final_score": 0.612,
+            "text": "Plan and deliver an informative/explanatory presentation that: presents evidence in support of a thesis, conveys information from primary and secondary sources coherently, uses domain specific vocabulary, and provides a conclusion that summarizes the main points. (9 th or 10 th grade)"
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    },
+    {
+      "path": "sections[3].objectives[6]",
+      "section_title": "Teacher Review",
+      "objective_title": "Overall Structure / Format",
+      "objective_description": "Your writing will be graded on how well you follow MLA format, use correct grammar, and vary your sentence structure. To earn the highest score, make sure you have few or no grammar mistakes, follow MLA rules, use sophisticated language, and include a mix of short and long sentences. Points will be taken off if there are format mistakes, grammar errors, or if your sentences are too simple or repetitive.",
+      "matched_keyword_rules": [
+        "\\b(outline|organiz(e|ing)|structure|plan(ning)?|prewrit|grap",
+        "\\b(hyperlink|image|media|multimedia|digital|technology|inter",
+        "\\b(grammar|syntax|punctuation|spelling|capitaliz|conventions"
+      ],
+      "reranked_candidates": [
+        {
+          "score": 0.09960297225271124,
+          "code": "L.11-12.1",
+          "strand": "L",
+          "grade": "11-12",
+          "grade_band": "6-12",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
+          "base_score": 0.09960297225271124,
+          "grade_bonus": 0.25,
+          "keyword_bonus": 0.2,
+          "final_score": 0.5496029722527113
+        },
+        {
+          "score": 0.1756552879552296,
+          "code": "L.4.2.a",
+          "strand": "L",
+          "grade": "4",
+          "grade_band": "K-5",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Use correct capitalization.",
+          "base_score": 0.1756552879552296,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.22565528795522963
+        },
+        {
+          "score": 0.10429299619206767,
+          "code": "L.3.1.i",
+          "strand": "L",
+          "grade": "3",
+          "grade_band": "K-5",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Produce simple, compound, and complex sentences.",
+          "base_score": 0.10429299619206767,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.15429299619206768
+        },
+        {
+          "score": 0.09960297225271124,
+          "code": "L.5.1",
+          "strand": "L",
+          "grade": "5",
+          "grade_band": "K-5",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
+          "base_score": 0.09960297225271124,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.14960297225271124
+        },
+        {
+          "score": 0.09960297225271124,
+          "code": "L.K.1",
+          "strand": "L",
+          "grade": "K",
+          "grade_band": "K-5",
+          "subgroup": "Conventions of Standard English",
+          "is_anchor": false,
+          "text": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking.",
+          "base_score": 0.09960297225271124,
+          "grade_bonus": -0.15,
+          "keyword_bonus": 0.2,
+          "final_score": 0.14960297225271124
+        }
+      ],
+      "auto_pick": {
+        "picks": [
+          {
+            "code": "L.11-12.1",
+            "grade": "11-12",
+            "final_score": 0.55,
+            "text": "Demonstrate command of the conventions of standard English grammar and usage when writing or speaking."
+          }
+        ],
+        "reason": "top-1 plus any candidate within 85% of top score"
+      }
+    }
+  ]
+}
