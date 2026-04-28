@@ -1,103 +1,201 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
-  TextInput,
   StyleSheet,
   ScrollView,
   TouchableOpacity,
   ActivityIndicator,
+  Switch,
 } from 'react-native';
-import { supabase } from '../lib/supabase';
+import { dataClient } from '../lib/dataClient';
+import { previewText, parseHtmlBlocks } from '../lib/htmlText';
 import { colors, typography, shadows } from '../theme';
+import SourcePanel from '../components/SourcePanel';
+import ObjectiveRow from '../components/ObjectiveRow';
+
+function StatPill({ label, value }) {
+  return (
+    <View style={styles.stat}>
+      <Text style={styles.statValue}>{value}</Text>
+      <Text style={styles.statLabel}>{label}</Text>
+    </View>
+  );
+}
 
 export default function OutputScreen({ route, navigation }) {
   const { assignment } = route.params || {};
+  const [detail, setDetail] = useState(null);
   const [curriculum, setCurriculum] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showStandardText, setShowStandardText] = useState(true);
 
-  // Placeholder — will be populated by AI tagger later
-  const taggedStandards = [];
+  const scrollRef = useRef(null);
+  const sourceRef = useRef(null);
 
   useEffect(() => {
-    const fetchCurriculum = async () => {
-      if (!assignment?.curriculum_id) {
-        setLoading(false);
-        return;
-      }
-      const { data } = await supabase
-        .from('curriculum')
-        .select('*')
-        .eq('id', assignment.curriculum_id)
-        .single();
-      setCurriculum(data || null);
+    let cancelled = false;
+    const load = async () => {
+      setLoading(true);
+      const [d, curr] = await Promise.all([
+        dataClient.assignments.detail(assignment?.id),
+        assignment?.curriculum_id
+          ? dataClient.curricula.get(assignment.curriculum_id)
+          : Promise.resolve(null),
+      ]);
+      if (cancelled) return;
+      setDetail(d);
+      setCurriculum(curr);
       setLoading(false);
     };
-    fetchCurriculum();
-  }, [assignment]);
+    load();
+    return () => { cancelled = true; };
+  }, [assignment?.id, assignment?.curriculum_id]);
+
+  if (loading) {
+    return (
+      <View style={[styles.container, styles.center]}>
+        <ActivityIndicator color={colors.primary} size="large" />
+      </View>
+    );
+  }
+
+  const hasObjectives = detail && detail.objectives && detail.objectives.length > 0;
+  const subject = detail?.subject || 'ela';
+
+  // Group the objectives by section_idx for the section headers in the
+  // alignment view (mirrors the dashboard's per-edusperience tab).
+  const groupedSections = [];
+  let lastSecIdx = -Infinity;
+  for (const o of detail?.objectives || []) {
+    if (o.section_idx !== lastSecIdx) {
+      groupedSections.push({
+        idx: o.section_idx,
+        title: o.section_title,
+        rows: [],
+      });
+      lastSecIdx = o.section_idx;
+    }
+    groupedSections[groupedSections.length - 1].rows.push(o);
+  }
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+    <ScrollView
+      ref={scrollRef}
+      style={styles.container}
+      contentContainerStyle={styles.content}
+    >
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.back}>← Back</Text>
+          <Text style={styles.back}>{'\u2190 Back'}</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>{assignment?.name || 'Output'}</Text>
-        <Text style={styles.subtitle}>Grade {assignment?.grade}</Text>
+        <Text style={styles.title}>{detail?.name || assignment?.name || 'Output'}</Text>
+        <Text style={styles.subtitle}>
+          {`${(detail?.subject || assignment?.subject || 'ela').toUpperCase()} \u00b7 Grade ${detail?.grade || assignment?.grade || ''}`}
+        </Text>
       </View>
 
-      {loading ? (
-        <ActivityIndicator color={colors.primary} style={{ marginTop: 40 }} />
-      ) : (
-        <>
-          {/* Curriculum Box */}
-          <View style={styles.box}>
-            <Text style={styles.sectionLabel}>Curriculum</Text>
-            {curriculum ? (
-              <>
-                <Text style={styles.curriculumTitle}>{curriculum.title}</Text>
-                <Text style={styles.curriculumGrade}>Grade {curriculum.grade}</Text>
-              </>
-            ) : (
-              <Text style={styles.empty}>No curriculum linked to this assignment.</Text>
-            )}
-          </View>
+      {/* Summary card */}
+      <View style={styles.box}>
+        <View style={styles.statsRow}>
+          <StatPill
+            label="Objectives"
+            value={`${detail?.n_aligned ?? 0}/${detail?.n_total ?? 0}`}
+          />
+          <StatPill
+            label="Aligned"
+            value={
+              detail && detail.n_total > 0
+                ? `${Math.round((100 * detail.n_aligned) / detail.n_total)}%`
+                : '0%'
+            }
+          />
+          <StatPill
+            label="Curriculum"
+            value={curriculum ? curriculum.title : 'Unlinked'}
+          />
+        </View>
+        {detail?.notes ? (
+          <Text style={styles.notes}>{detail.notes}</Text>
+        ) : null}
+      </View>
 
-          {/* Tagged Standards */}
-          <View style={styles.box}>
-            <Text style={styles.sectionLabel}>Tagged Standards</Text>
-            {taggedStandards.length === 0 ? (
-              <View style={styles.emptyStandards}>
-                <Text style={styles.empty}>No standards tagged yet.</Text>
-                <Text style={styles.emptyHint}>Standards will appear here after the AI tagger runs.</Text>
-              </View>
-            ) : (
-              taggedStandards.map((s, i) => (
-                <View key={i} style={styles.standardRow}>
-                  <View style={styles.standardBadge}>
-                    <Text style={styles.standardCode}>{s.code}</Text>
-                  </View>
-                  <Text style={styles.standardDesc}>{s.description}</Text>
-                </View>
-              ))
-            )}
-          </View>
+      {/* Source viewer */}
+      {detail?.source ? (
+        <View style={styles.boxFlat}>
+          <SourcePanel
+            ref={sourceRef}
+            source={detail.source}
+            scrollViewRef={scrollRef}
+          />
+        </View>
+      ) : null}
 
-          {/* Assignment Text */}
-          <View style={styles.box}>
-            <Text style={styles.sectionLabel}>Assignment</Text>
-            <TextInput
-              style={styles.textarea}
-              value={assignment?.description || ''}
-              placeholder="Assignment description will appear here..."
-              placeholderTextColor={colors.textLight}
-              multiline
-              editable={false}
-              textAlignVertical="top"
-            />
+      {/* Alignment list */}
+      <View style={styles.box}>
+        <View style={styles.alignmentHeader}>
+          <Text style={styles.sectionLabel}>
+            {hasObjectives ? 'Tagged Standards' : 'Standards'}
+          </Text>
+          {hasObjectives ? (
+            <View style={styles.toggleRow}>
+              <Text style={styles.toggleLabel}>Show standard text</Text>
+              <Switch
+                value={showStandardText}
+                onValueChange={setShowStandardText}
+                trackColor={{ true: colors.primary, false: colors.border }}
+                thumbColor={'#fff'}
+              />
+            </View>
+          ) : null}
+        </View>
+
+        {!hasObjectives ? (
+          <View style={styles.emptyStandards}>
+            <Text style={styles.empty}>No standards tagged yet.</Text>
+            <Text style={styles.emptyHint}>
+              {detail?.is_seed === false
+                ? 'New uploads need the AI tagger to run before standards appear here.'
+                : 'Standards will appear here after the AI tagger runs.'}
+            </Text>
           </View>
-        </>
-      )}
+        ) : (
+          groupedSections.map((sec) => (
+            <View key={sec.idx} style={styles.sectionGroup}>
+              <Text style={styles.sectionHdr}>
+                {`Section ${sec.idx + 1}: ${sec.title}`}
+              </Text>
+              {sec.rows.map((o, i) => (
+                <ObjectiveRow
+                  key={`${sec.idx}-${o.objective_idx}-${i}`}
+                  objective={o}
+                  subject={subject}
+                  showStandardText={showStandardText}
+                  hasSource={!!detail?.source}
+                  onViewSource={() => {
+                    if (sourceRef.current?.jumpTo) {
+                      sourceRef.current.jumpTo(o.section_idx, o.objective_idx);
+                    }
+                  }}
+                />
+              ))}
+            </View>
+          ))
+        )}
+      </View>
+
+      {/* Assignment description (kept from the original screen — handy for
+          quick reference at the bottom). */}
+      <View style={styles.box}>
+        <Text style={styles.sectionLabel}>Assignment description</Text>
+        {parseHtmlBlocks(assignment?.description || detail?.description).length === 0 ? (
+          <Text style={styles.empty}>(none)</Text>
+        ) : (
+          parseHtmlBlocks(assignment?.description || detail?.description).map((b, i) => (
+            <Text key={i} style={styles.descBody}>{b}</Text>
+          ))
+        )}
+      </View>
     </ScrollView>
   );
 }
@@ -107,9 +205,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
   },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   content: {
     padding: 24,
-    maxWidth: 720,
+    maxWidth: 1100,
     width: '100%',
     alignSelf: 'center',
     gap: 16,
@@ -132,10 +234,6 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 2,
   },
-  sectionLabel: {
-    ...typography.label,
-    marginBottom: 12,
-  },
   box: {
     backgroundColor: colors.white,
     borderRadius: 14,
@@ -144,57 +242,96 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     ...shadows.card,
   },
-  curriculumTitle: {
-    ...typography.subheading,
-    fontSize: 18,
+  boxFlat: {
+    backgroundColor: colors.white,
+    borderRadius: 14,
+    padding: 14,
+    borderWidth: 1,
+    borderColor: colors.border,
   },
-  curriculumGrade: {
+  statsRow: {
+    flexDirection: 'row',
+    gap: 14,
+    flexWrap: 'wrap',
+  },
+  stat: {
+    minWidth: 120,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderRadius: 8,
+    backgroundColor: colors.background,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  statValue: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: colors.textPrimary,
+  },
+  statLabel: {
+    fontSize: 11,
+    color: colors.textSecondary,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginTop: 2,
+  },
+  notes: {
+    marginTop: 12,
     fontSize: 13,
-    color: colors.primary,
-    fontWeight: '600',
+    color: colors.textSecondary,
+    fontStyle: 'italic',
+    lineHeight: 19,
+  },
+  alignmentHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 6,
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  sectionLabel: {
+    ...typography.label,
+  },
+  toggleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  toggleLabel: {
+    fontSize: 12,
+    color: colors.textSecondary,
+  },
+  sectionGroup: {
     marginTop: 4,
   },
-  emptyStandards: {
-    paddingVertical: 12,
-    alignItems: 'center',
-    gap: 4,
+  sectionHdr: {
+    fontSize: 11,
+    color: colors.textSecondary,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginTop: 14,
+    marginBottom: 4,
   },
   empty: {
     color: colors.textSecondary,
     fontSize: 14,
+  },
+  emptyStandards: {
+    paddingVertical: 18,
+    alignItems: 'center',
+    gap: 4,
   },
   emptyHint: {
     color: colors.textLight,
     fontSize: 12,
     textAlign: 'center',
   },
-  standardRow: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: 10,
-    marginBottom: 10,
-  },
-  standardBadge: {
-    backgroundColor: colors.primaryLight,
-    borderRadius: 6,
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-  },
-  standardCode: {
-    color: colors.primaryDark,
-    fontWeight: '700',
-    fontSize: 12,
-  },
-  standardDesc: {
-    flex: 1,
+  descBody: {
     fontSize: 14,
     color: colors.textPrimary,
-    lineHeight: 20,
-  },
-  textarea: {
-    minHeight: 220,
-    fontSize: 15,
-    color: colors.textPrimary,
-    lineHeight: 22,
+    lineHeight: 21,
+    marginBottom: 8,
   },
 });

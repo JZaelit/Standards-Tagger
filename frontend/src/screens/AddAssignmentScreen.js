@@ -8,7 +8,7 @@ import {
   ScrollView,
   ActivityIndicator,
 } from 'react-native';
-import { supabase } from '../lib/supabase';
+import { dataClient } from '../lib/dataClient';
 import { colors, typography } from '../theme';
 
 export default function AddAssignmentScreen({ navigation }) {
@@ -23,13 +23,8 @@ export default function AddAssignmentScreen({ navigation }) {
 
   useEffect(() => {
     const fetchCurricula = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      const { data } = await supabase
-        .from('user_curriculum')
-        .select('curriculum(id, title, grade)')
-        .eq('user_id', session.user.id)
-        .order('created_at', { ascending: false });
-      setCurricula((data || []).map((uc) => uc.curriculum));
+      const data = await dataClient.curricula.listForUser();
+      setCurricula(data || []);
       setFetchingCurricula(false);
     };
     fetchCurricula();
@@ -39,24 +34,18 @@ export default function AddAssignmentScreen({ navigation }) {
     if (!name.trim() || !grade.trim()) return;
     setError('');
     setLoading(true);
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
-      setError('Not logged in. Please sign in again.');
+    try {
+      await dataClient.assignments.create({
+        name: name.trim(),
+        grade: grade.trim(),
+        description: description.trim(),
+        curriculum_id: selectedCurriculum,
+      });
       setLoading(false);
-      return;
-    }
-    const { error: insertError } = await supabase.from('assignments').insert({
-      name: name.trim(),
-      grade: grade.trim(),
-      description: description.trim(),
-      curriculum_id: selectedCurriculum,
-      user_id: session.user.id,
-    });
-    setLoading(false);
-    if (insertError) {
-      setError(insertError.message);
-    } else {
       navigation.goBack();
+    } catch (e) {
+      setLoading(false);
+      setError(e.message || 'Could not save assignment.');
     }
   };
 

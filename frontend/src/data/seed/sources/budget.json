@@ -1,0 +1,216 @@
+{
+  "title": "50-30-20 Budget - Dev",
+  "description": "<p>In this project, you will build a personal monthly budget using Google Sheets and the 50/30/20 budgeting rule. This rule suggests spending roughly 50% of your after-tax income on needs, 30% on wants, and 20% on savings and financial goals. You will choose a career, research a realistic salary, and then plan how you would spend your monthly take-home pay across those three categories.</p><p><br></p><p>Along the way, you will practice key spreadsheet skills including writing formulas, using functions, applying number formatting, and working with absolute cell references. By the end, you will have a working budget that calculates your income, tracks your spending, and shows whether your plan follows the 50/30/20 guideline. You will also reflect on what you learned about both spreadsheets and personal budgeting.</p>",
+  "sections": [
+    {
+      "title": "Project Setup",
+      "description": "<p>In this section, you will watch an introductory video, enter your personal scenario information, and set up the income values that power the rest of your spreadsheet. Getting these details right matters because every formula you build later depends on the numbers you enter here.</p>",
+      "objectives": [
+        {
+          "title": "Watch Me",
+          "description": "<p>Watch the \"<span style=\"background-color: rgb(255, 255, 0);\">Watch Me</span>\" video linked in cell <span style=\"color: rgb(255, 153, 0);\">D1</span>. This video will introduce you to important GradeFlow features and show you exactly what you need to do to complete this task. <span style=\"color: rgb(230, 0, 0);\">You can also watch the task video(s) for step-by-step instructions</span>. </p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Personal Information",
+          "description": "<p>Enter the following information for your budget. Use Gemini (or other AI) and <strong>Prompt#001</strong> to research careers and income.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">C2</span>, type your first and last name.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">C3</span>, type the career you plan to have.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">C4</span>, enter your age as a number.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">C5</span>, type the city and state (or country) where you plan to live.</li></ol><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions</span>.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Tax and Income",
+          "description": "<p>Use Gemini (or other AI) and <strong>Prompt#002</strong> in the Resources File to research effective tax rate and income.</p><p><br></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">C6</span>, enter your total effective tax rate as a decimal (for example, 0.22 for 22%). </li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">C7</span>, enter your annual gross income (your salary before taxes). Format this cell as currency.</li></ol>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Formulas",
+      "description": "<p>In this section, you will write your first spreadsheet formulas to calculate your take-home pay. These formulas connect your income and tax data so that if you ever change your career or location, the entire budget updates automatically. Understanding how to build formulas that reference other cells is one of the most important spreadsheet skills you can develop.</p>",
+      "objectives": [
+        {
+          "title": "Annual Net Pay",
+          "description": "<p>In cell <span style=\"color: rgb(255, 153, 0);\">C8</span>, write a formula that calculates your estimated annual net pay (income after taxes). Your formula must reference cells <span style=\"color: rgb(255, 153, 0);\">C6</span> and <span style=\"color: rgb(255, 153, 0);\">C7</span>, use multiplication and subtraction operators, and include parentheses for the correct order of operations. Format the cell as currency.</p><p><br></p><p><strong>EXAMPLE</strong>:</p><p>[Annual Gross Income] * (1-[Effective Tax Rate])</p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "Monthly Net Pay",
+          "description": "<p>In cell <span style=\"color: rgb(255, 153, 0);\">C9</span>, write a formula that calculates your estimated monthly net pay by dividing your Estimated Annual Net Pay by 12. Your formula must reference cell <span style=\"color: rgb(255, 153, 0);\">C8</span> and use the division operator. Format the cell as currency.</p><p><br></p><p><strong>EXAMPLE</strong>:</p><p>[Estimated Annual Net Pay] / [Months in a Year]</p>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Needs",
+      "description": "<p>Needs are expenses you cannot avoid. These are the bills and costs required to live safely and maintain your basic responsibilities. In this section, you will research and list realistic monthly costs for essentials like housing, food, transportation, utilities, and insurance. You will also use a SUM function and write a formula to see what percentage of your income goes toward needs. The 50/30/20 rule suggests keeping this category at or below 50%.</p>",
+      "objectives": [
+        {
+          "title": "Housing",
+          "description": "<ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">B12</span>, type either \"Rent\" or \"Mortgage\" depending on your housing plan.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">C12</span>, enter the monthly dollar amount you expect to pay.</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Format <span style=\"color: rgb(255, 153, 0);\">C12</span> as currency.</li></ol><p><br></p><p>Practice writing your own <a rel=\"noopener noreferrer\" href=\"https://docs.google.com/document/d/1SVc8o0HAzUDqedVaDS7RW8x7U6DHWKd-nACa6Qxuu0M/edit\">CTF Prompt</a> to help you with the research. <span style=\"color: rgb(230, 0, 0);\">Watch the task video for step-by-step instructions</span>. </p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Needs List",
+          "description": "<p>List at least <strong>SEVEN</strong> needs in cells <span style=\"color: rgb(255, 153, 0);\">B12</span> through <span style=\"color: rgb(255, 153, 0);\">B26</span>. Include notes to help your teacher and AI understand the particulars of the cost. For example, a few words describing your housing, vehicle, etc...</p><p><br></p><p>Write a <a rel=\"noopener noreferrer\" href=\"https://docs.google.com/document/d/1SVc8o0HAzUDqedVaDS7RW8x7U6DHWKd-nACa6Qxuu0M/edit\">C/T/F Prompt</a> (context, task, format) to help you research 'Need' expenses and their expected amounts based on your location, salary, and personal preferences.</p><p><br></p><p>For each 'Need', enter the estimated monthly cost in the matching row of column <span style=\"color: rgb(255, 153, 0);\">C</span>. Format all dollar amounts as currency. Research realistic costs for your chosen location. Use actual prices or reasonable estimates based on the local cost of living, not guesses.</p><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">Your listed needs and their monthly costs will be reviewed using AI to check whether they are realistic for your career, salary, and location. </span></p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "Sum Function",
+          "description": "<p>In cell <span style=\"color: rgb(255, 153, 0);\">D27</span>, use the <span style=\"color: rgb(0, 102, 204);\">SUM()</span> function to add up all of your monthly need costs. The <span style=\"color: rgb(0, 138, 0);\">value1</span> argument must be the range of <span style=\"color: rgb(255, 153, 0);\">C12:C26</span>. Format the cell as currency.</p><p><br></p><p><strong>EXAMPLE</strong>:</p><p><span style=\"color: rgb(0, 102, 204);\">SUM</span>(<span style=\"color: rgb(0, 138, 0);\">value1</span>)</p><p><br></p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "% Monthly Net Pay",
+          "description": "<p>In cell <span style=\"color: rgb(255, 153, 0);\">E27</span>, write a formula that divides your Need Subtotal (<span style=\"color: rgb(255, 153, 0);\">D27</span>) by your Estimated Monthly Net Pay (<span style=\"color: rgb(255, 153, 0);\">C9</span>). </p><p>Use an absolute row reference for Estimated Monthly Net Pay so this formula still works if you copy it to other subtotal rows later. Format the cell as a percentage.</p><p><br></p><p><strong>EXAMPLE</strong>:</p><p>[Need Subtotal] / [Estimated Monthly Net Pay]</p>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Wants",
+      "description": "<p>Wants are things you enjoy but could live without. This includes entertainment, dining out, subscriptions, hobbies, and other lifestyle choices. Budgeting for wants is not about cutting fun out of your life. It is about being intentional with your spending so you can enjoy things without falling behind on what matters. The 50/30/20 rule suggests keeping wants at or below 30%.</p>",
+      "objectives": [
+        {
+          "title": "Entertainment",
+          "description": "<p>In cell <span style=\"color: rgb(255, 153, 0);\">B30</span>, type \"Entertainment.\" In cell <span style=\"color: rgb(255, 153, 0);\">C30</span>, enter the monthly dollar amount you plan to spend on entertainment. Format <span style=\"color: rgb(255, 153, 0);\">C30</span> as currency.</p><p><br></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Wants List",
+          "description": "<p>List at least <strong>SEVEN</strong> wants in cells <span style=\"color: rgb(255, 153, 0);\">B30</span> through <span style=\"color: rgb(255, 153, 0);\">B44</span>. For each want, enter the estimated monthly cost in the matching row of column <span style=\"color: rgb(255, 153, 0);\">C</span>. Format all dollar amounts as currency. Include notes to help your teacher and AI understand the particulars of the cost. For example, a few words describing what your entertainment, travel, shopping, etc.... looks like. </p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "Reusing Formulas",
+          "description": "<p>In this task you'll learn how to copy and paste cell formulas and formatting for use in other areas or your spreadsheet. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and to learn why this method works in this situation</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select cells <span style=\"color: rgb(255, 153, 0);\">D27</span>and <span style=\"color: rgb(255, 153, 0);\">E27</span>, and copy them.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select cells <span style=\"color: rgb(255, 153, 0);\">D45</span>and <span style=\"color: rgb(255, 153, 0);\">E45</span>, and paste.</li></ol><p><br></p><p>If you want be build the formula manually, follow these instructions.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">D45</span>, use the <span style=\"color: rgb(0, 102, 204);\">SUM()</span> function to add up all of your monthly want costs. Your formula should sum the range <span style=\"color: rgb(255, 153, 0);\">C30:C44</span>. Format the cell as currency.</li></ol><p><br></p><p><strong>EXAMPLE</strong>:</p><p><span style=\"color: rgb(0, 102, 204);\">SUM</span>(<span style=\"color: rgb(0, 138, 0);\">value1</span>)</p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "% Monthly Net Pay",
+          "description": "<p>In this task you'll learn how to copy and paste cell formulas and formatting for use in other areas or your spreadsheet. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and to learn why this method works in this situation</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select cells <span style=\"color: rgb(255, 153, 0);\">D27</span>and <span style=\"color: rgb(255, 153, 0);\">E27</span>, and copy them.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select cells <span style=\"color: rgb(255, 153, 0);\">D45</span>and <span style=\"color: rgb(255, 153, 0);\">E45</span>, and paste.</li></ol><p><br></p><p>If you want be build the formula manually, follow these instructions.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">E45</span>, write a formula that divides your Wants Subtotal (<span style=\"color: rgb(255, 153, 0);\">D45</span>) by your Estimated Monthly Net Pay. Use the absolute row reference <span style=\"color: rgb(255, 153, 0);\">C$9</span>. Format the cell as a percentage.</li></ol><p><br></p><p><strong>EXAMPLE</strong>:</p><p>[Want Subtotal] / [Estimated Monthly Net Pay]</p>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Financials",
+      "description": "<p>Financial goals are how you build long-term security. This includes your emergency fund, retirement savings, debt payments, and other savings goals. Many people skip this category or treat it as optional, but building these habits early makes a significant difference over time. The 50/30/20 rule suggests putting at least 20% toward savings and financial goals.</p>",
+      "objectives": [
+        {
+          "title": "Emergency Fund",
+          "description": "<p>In cell <span style=\"color: rgb(255, 153, 0);\">B48</span>, type \"Emergency Fund.\" In cell <span style=\"color: rgb(255, 153, 0);\">C48</span>, enter the monthly dollar amount you plan to set aside for emergencies. Format <span style=\"color: rgb(255, 153, 0);\">C48</span> as currency.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Financials List",
+          "description": "<p>List at least <strong>FOUR</strong> financial goals in cells <span style=\"color: rgb(255, 153, 0);\">B48</span> through <span style=\"color: rgb(255, 153, 0);\">B52</span>. For each goal, enter the estimated monthly contribution in the matching row of column<span style=\"color: rgb(255, 153, 0);\"> C</span>. Format all dollar amounts as currency. Include notes to help your teacher and AI understand the particulars of the cost. For example, a few words describing what your emergency fund, retirement accounts, and financial goals look like.</p><p><br></p><p>Write a CTF prompt to help or use the prompt used for the Wants and ask AI to rewrite it for use on Financial Goals section. </p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "Modify Copied Formulas",
+          "description": "<p>In this task you'll learn how to copy, paste, and adjust cell formulas and formatting in other areas or your spreadsheet.  <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and to learn why this method works in this situation</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select cells <span style=\"color: rgb(255, 153, 0);\">D45</span>and <span style=\"color: rgb(255, 153, 0);\">E45</span>, and copy them.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select cells <span style=\"color: rgb(255, 153, 0);\">D53</span>and <span style=\"color: rgb(255, 153, 0);\">E53</span>, and paste.</li></ol><p><br></p><p>If you want be build the formula manually, follow these instructions.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">D53</span>, use the <span style=\"color: rgb(0, 102, 204);\">SUM()</span> function to add up all of your monthly financial goal contributions. Your formula should sum the range <span style=\"color: rgb(255, 153, 0);\">C48:C52</span>. Format the cell as currency.</li></ol><p><br></p><p><strong>EXAMPLE</strong>:</p><p><span style=\"color: rgb(0, 102, 204);\">SUM</span>(<span style=\"color: rgb(0, 138, 0);\">value1</span>)</p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "% Monthly Net Pay",
+          "description": "<p>In this task you'll learn how to copy, paste, and adjust cell formulas and formatting in other areas or your spreadsheet. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and to learn why this method works in this situation</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select cells <span style=\"color: rgb(255, 153, 0);\">D45</span>and <span style=\"color: rgb(255, 153, 0);\">E45</span>, and copy them.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select cells <span style=\"color: rgb(255, 153, 0);\">D53</span>and <span style=\"color: rgb(255, 153, 0);\">E53</span>, and paste.</li></ol><p><br></p><p>If you want be build the formula manually, follow these instructions.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>In cell <span style=\"color: rgb(255, 153, 0);\">E53</span>, write a formula that divides your Financial Goals Subtotal (<span style=\"color: rgb(255, 153, 0);\">D53</span>) by your Estimated Monthly Net Pay. Use the absolute row reference <span style=\"color: rgb(255, 153, 0);\">C$9</span>. Format the cell as a percentage.</li></ol><p><br></p><p><strong>EXAMPLE</strong>:</p><p>[Financials Subtotal] / [Estimated Monthly Net Pay]</p>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Totals and Chart",
+      "description": "<p>This section brings everything together. You will calculate your total monthly spending, find out how much money remains, and see whether your budget follows the 50/30/20 guideline. These totals give you the full picture of your financial plan and help you decide whether any adjustments are needed.</p>",
+      "objectives": [
+        {
+          "title": "Total Spending",
+          "description": "<p>In cell <span style=\"color: rgb(255, 153, 0);\">D55</span>, write a formula that adds your three subtotals together: Needs Subtotal (<span style=\"color: rgb(255, 153, 0);\">D27</span>), Wants Subtotal (<span style=\"color: rgb(255, 153, 0);\">D45</span>), and Financial Goals Subtotal (<span style=\"color: rgb(255, 153, 0);\">D53</span>). Use the addition operator. Format the cell as currency.</p><p><br></p><p><strong>EXAMPLE</strong>:</p><p>[Needs Subtotal] + [Wants Subtotal] + [Financials Subtotal]</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Remaining Funds",
+          "description": "<p>In cell <span style=\"color: rgb(255, 153, 0);\">D56</span>, write a formula that subtracts your Total Spending (<span style=\"color: rgb(255, 153, 0);\">D55</span>) from your Estimated Monthly Net Pay (<span style=\"color: rgb(255, 153, 0);\">C9</span>). This shows how much money is left over (or how much you are over budget). Format the cell as currency.</p><p><br></p><p>In cells <span style=\"color: rgb(255, 153, 0);\">E55</span> and <span style=\"color: rgb(255, 153, 0);\">E56</span>, write formulas that divide each row's dollar amount by your Estimated Monthly Net Pay using the absolute row reference <span style=\"color: rgb(255, 153, 0);\">C$9</span>. Format both cells as percentages.</p><p><br></p><p><strong>EXAMPLE</strong>:</p><p>[Total Spending] / [Estimated Monthly Net Pay]</p><p>[Remaining Funds] / [Estimated Monthly Net Pay]</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Pie Chart",
+          "description": "<p>Create a pie chart that visualizes how your budget is divided across Needs, Wants, Financial Goals, and Remaining Funds.</p><ol><li><p>Select your four sets of cells (label and value), then and insert a chart.</p></li><li><p><strong>Setup:</strong></p></li><li><p>In the Chart Editor, choose any pie chart style.</p></li><li><p>Set \"Combine ranges\" to \"Vertically\" so all four categories appear as slices in a single chart.</p></li><li><p><strong>Customize:</strong></p></li><li><p>Change the chart title to <strong>50/30/20: [Your Name]</strong> (use your actual name).</p></li><li><p>Move the chart legend to either the right or left side.</p></li><li><p>Under the Pie Chart settings, turn on labels and set them to show percentages.</p></li></ol><p></p><p><span style=\"color: rgb(230, 0, 0);\">Watch the task video for step-by-step instructions.</span></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Reflections and Notes",
+      "description": "<p>about spreadsheets, about budgeting, and about using AI as a learning tool. Strong reflections go beyond \"it was good\" or \"I learned a lot.\" They describe specific moments, challenges, or realizations.</p>",
+      "objectives": [
+        {
+          "title": "Notes",
+          "description": "<p>You must complete the \"Notes\" section for at least <strong>EIGHT</strong> items in your budget. Focus on the ones that are the highest dollar amounts or most general. For example, housing, entertainment, vehicle, etc.... </p><p><br></p><p>Include notes that help your teacher and an AI to understand the dollar amount. For example; the year, make, and model of a car. The number of rooms, SQFT, and if you have roommates for housing. Also what you will do with your entertainment or travel funds. </p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Spreadsheet Reflection",
+          "description": "<p>Write a reflection (at least 25 words) about what you learned from building this spreadsheet. What spreadsheet skills were new to you? What did you find most helpful? What did you find most difficult? </p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "50/30/20 Reflection",
+          "description": "<p>Write a reflection (at least 25 words) about what you learned from building a 50/30/20 budget based on income and research. What did you find most interesting? What did you find most helpful? What did you find most difficult? </p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "AI Reflection",
+          "description": "<p>Write a reflection (at least 25 words) about what you learned from building a 50/30/20 budget based on income and research. What did you find most interesting? What did you find most helpful? What did you find most difficult? </p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Teacher Graded",
+      "description": "<p>This section is reviewed for the quality and thoughtfulness of your work, not just whether you completed each step. The focus is on whether your budget tells a realistic story, whether your calculations are accurate, and whether your reflections show genuine thought related to what you learned.</p>",
+      "objectives": [
+        {
+          "title": "Budget Realism",
+          "description": "<p>Your budget should tell a believable financial story. The career you chose, the location you picked, the salary you researched, and the expenses you listed should all connect logically. A realistic budget is not about being perfect. It is about showing that you thought carefully about what life actually costs for someone in your situation.</p>",
+          "evaluation_type": "ai_assistant",
+          "points": 45
+        },
+        {
+          "title": "Reflection Quality",
+          "description": "<p>Your three reflections are a chance to show what you actually took away from this project. Strong reflections describe specific things you learned, challenges you faced, or decisions you made. They go beyond general statements and show that you are thinking critically about your own learning.</p>",
+          "evaluation_type": "ai_assistant",
+          "points": 25
+        },
+        {
+          "title": "Accuracy and Completeness",
+          "description": "<p>The 50/30/20 rule only works if items are placed in the right category. This task checks whether your needs, wants, and financial goals are properly sorted and whether your overall budget shows an intentional plan rather than random numbers. The pie chart configuration is included here as well. </p>",
+          "evaluation_type": "ai_assistant",
+          "points": 50
+        }
+      ]
+    }
+  ]
+}

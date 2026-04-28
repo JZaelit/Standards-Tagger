@@ -1,0 +1,162 @@
+{
+  "title": "Resume V2",
+  "description": "<p>You will create a polished resume suitable for a high school that showcases your academic achievements, experiences, and skills. This resume will help you organize your qualifications into a coherent story for potential employers or internship coordinators. By the end of this project, you'll have a polished document that represents who you are and where you're headed professionally.</p>",
+  "sections": [
+    {
+      "title": "File Setup",
+      "description": "<p>Set up your resume structure by creating the main section headings and updating your file name. Focus on proper heading formatting and document organization.</p>",
+      "objectives": [
+        {
+          "title": "Headings",
+          "description": "<p>Leave line #1 blank. Then insert five section headings in the following order. You must style as <strong>heading3</strong> and capitalize the first letter. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Summary</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Education</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Experience</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Skills</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>You pick this one.</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Leadership / Extracurriculars / Projects / Certifications / Volunteer / Achievements / Languages</li></ol>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "File Name",
+          "description": "<p>Rename your file using this naming convention:</p><p><span style=\"color: rgb(230, 0, 0);\">Last, First | Assignment Name | Period</span></p><p><br></p><p><strong>Example</strong>:</p><p><span style=\"color: rgb(230, 0, 0);\">Benrud, Todd | Resume | Period #5</span></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Contact Information",
+      "description": "<p>Include the following information.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Your full name.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Your phone number.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Your school email address (One associated with your GradeFlow account)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Your city and state in the City, State format (Capitalized Abbreviation)</li></ol><p><br></p><p><strong>EXAMPLE:</strong></p><p>&lt;phone&gt; | &lt;email&gt; | &lt;location&gt;</p><p>(234) 567-8190 | email@address.com | San Diego, CA</p>",
+      "objectives": [
+        {
+          "title": "Your Name",
+          "description": "<p>Add your full name to the first line of your Google Doc. Capitalize your First and Last name. The font must be <strong>20 sizes</strong> or larger and <strong>bold</strong>.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Contact Details",
+          "description": "<p>Add you phone number, email address, and location. Separate each element with a delimiter like a pipe, slash, etc....</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Phone number must use the Common Display Format for North American, 3-3-4 split for the 10 digits to maintain readability.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Email address must be hyperlinked and be the one associated with your GradeFlow profile.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location must be in the City, State format. State must be the official 2-letter abbreviation.</li></ol><p><br></p><p><strong>EXAMPLE</strong>:</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>(123) 456-7890 / email@address.com / City, ST</li></ol>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Summary Section",
+      "description": "<p>Write a clear and concise summary statement that tells employers who you are, including your grade level, a standout trait, and your intended path or interest. Name one or two strengths or skills that match the role you want. Add one proof point, such as your GPA, a certification, a project, an award, or a measurable result. Keep it specific, include numbers when you can, tailor it to the role, and avoid buzzwords, fluff, and long lists. Aim for 1 to 2 sentences, roughly 20 - 30 words.</p><p><br></p><p><strong>EXAMPLES:</strong></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Dependable junior seeking part-time retail role; 3.6 GPA; school store cashier handling $500 daily. Available evenings and weekends.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>STEM-focused senior seeking data internship; Python and Excel; built a survey dashboard used by 60 students that improved planning decisions.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Motivated senior seeking peer tutor role; AP Calculus score 5; raised tutees’ quiz averages by 12 percent through targeted review.</li></ol>",
+      "objectives": [
+        {
+          "title": "Insert Section: {{var:OBJECTIVE}}",
+          "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:OBJECTIVE}}</strong>\" heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Write Summary Section",
+          "description": "<p>Write a clear and concise summary statement between the \"<strong>SUMMARY</strong>\" and \"<strong>EDUCATION</strong>\" headings. It must be between <strong>10</strong> and <strong>25</strong> words in length.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Education Section",
+      "description": "<p>Insert a <strong>Section Break (continous)</strong> before the \"<strong>EDUCATION</strong>\" heading. Then write a clear and concise objective statement that is between 10 and 25 words in length. Your objective statement must be between \"<strong>EDUCATION</strong>\" and \"<strong>EXPERIENCE</strong>\" headings.</p><p><br></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>The name of your school (most recent first)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Expected graduation date (month and year)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>GPA (if it's above 3.0)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Relevant coursework (optional, but only include if it's related to the job you're applying for)</li></ol><p><br></p><p><br></p><p><br></p><p>As a high school student, education is likely your most important section. It shows your academic background and whether you’re a strong student.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>The name of your school (most recent first)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Expected graduation date (month and year)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>GPA (if it's above 3.0)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Relevant coursework (optional, but only include if it's related to the job you're applying for)</li></ol>",
+      "objectives": [
+        {
+          "title": "Insert Section: {{var:EDUCATION}}",
+          "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:EDUCATION}}</strong>\" heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "High School",
+          "description": "<p>Add the following to your \"<strong>{{var:EDUCATION}}</strong>\" section. </p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Your high school's full name.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Year attended in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>2020-2024</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Two bullet points: </li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>The first, relavant courses and/or projects related to the type of work you are interested in. </li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>The second, your GPA in the one decimal format.</li><li class=\"ql-indent-2\" data-list=\"ordered\"><span class=\"ql-ui\"></span>GPA: 3.5</li></ol>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Experience Section",
+      "description": "<p>Employers want to know about the kind of work or activities you have experience with. Even if they are not directly related to the job you're applying for. It shows you have a responsibility and a work ethic.</p><p><br></p><p>Jobs, internships, volunteer work, sports, clubs, etc... (most recent first). For each, include the company/organization name, your role, location, and dates. Add 2-3 bullet points for each role that explain your tasks and responsibilities.</p>",
+      "objectives": [
+        {
+          "title": "Insert Section: {{var:EXPERIENCE}}",
+          "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:EXPERIENCE}}</strong>\" heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Experience #1",
+          "description": "<p>Add the following to your \"<strong>{{var:EXPERIENCE}}</strong>\" section.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>A role or position you had that provided you with some type of experience.</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span> After the role, include the word '<strong>at</strong>' then include the name of the company, organization, etc... </li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Years of experience in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span><strong>EXAMPLE</strong>: 2020-2024</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>At least one bullet point:</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Describe your responsibilities in a clear, concise statement.</li></ol>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "Experience #2",
+          "description": "<p>Add a 2nd experience. </p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>A role or position you had that provided you with some type of experience.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Years of experience in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span><strong>EXAMPLE</strong>: 2020-2024</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>At least one bullet point:</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Describe your responsibilities in a clear, concise statement.</li></ol>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Skills Section",
+      "description": "<p>Create a list of 5 to 10 skills that match your target roles. Include both technical skills, such as Google Workspace or beginner coding, and workplace skills, such as communication, teamwork, leadership, or time management. Group similar skills so they are easy to scan, avoid repeating the same idea with different words, and keep capitalization consistent. Use Evaluate to verify coverage and readability.</p>",
+      "objectives": [
+        {
+          "title": "Insert Section: {{var:SKILLS}}",
+          "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:SKILLS}}</strong>\" heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Table",
+          "description": "<p><span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Insert a 1-row 2-column table below the \"<strong>{{var:SKILLS}}</strong>\" heading3.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Add at least six skills, one bullet point per skill, three skills per column.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Bullets should be one to three words, not sentences or long statements.</li></ol><p><br></p>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Custom Section",
+      "description": "<p>Create a short list of 10 to 20 skills that match your target roles. Include both technical skills, such as Google Workspace or beginner coding, and workplace skills, such as communication, teamwork, leadership, or time management. Group similar skills so they are easy to scan, avoid repeating the same idea with different words, and keep capitalization consistent. Use Evaluate to verify coverage and readability.</p>",
+      "objectives": [
+        {
+          "title": "Insert Section: Custom",
+          "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before your custom heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Custom Section Content",
+          "description": "<p><span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Use AI and/or the internet to learn about what belongs in your custom section.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Using only text and bullets, construct your custom section.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>It must consist of at least 20 words and 2 bullet points.</li></ol>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Teacher Grader",
+      "description": "<p>Your teacher will evaluate your completed resume to ensure each section contains accurate, well-organized information that effectively presents your qualifications. Double-check each of the tasks below to ensure you submit high quality work. </p>",
+      "objectives": [
+        {
+          "title": "Summary and Formatting",
+          "description": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">Review your Summary section. Verify it includes all required elements: your current grade level, one standout trait or strength, one or two relevant skills, and one concrete achievement with numbers (GPA, certification, or measurable result). Your statement should be 20-30 words, avoid generic buzzwords, and maintain a professional tone.</span></p>",
+          "evaluation_type": "ai_assistant",
+          "points": 50
+        },
+        {
+          "title": "Education and Experience",
+          "description": "<p>Review your Summary section. Verify it includes all required elements: your current grade level, one standout trait or strength, one or two relevant skills, and one concrete achievement with numbers (GPA, certification, or measurable result). Your statement should be 20-30 words, avoid generic buzzwords, and maintain a professional tone.</p><p><br></p><p>Review your Education section. Verify it includes your school name, years attended, and location in City, State format. Confirm you have two bullet points: one describing your coursework or academics, and one stating your GPA in X.X format (e.g., \"GPA: 3.5\").</p>",
+          "evaluation_type": "ai_assistant",
+          "points": 50
+        },
+        {
+          "title": "Skills",
+          "description": "<p>Review your Skills section. Verify you have a properly formatted 1-row, 2-column table positioned directly below the \"Skills\" heading. Confirm the table includes at least six skills total with three skills per column, each as a separate bullet point. Check that each skill is concise (1-3 words only), uses professional terminology, and avoids complete sentences or lengthy descriptions.</p><p><br></p><p>Review your custom section. Verify you selected one allowed heading (Leadership, Extracurriculars, Projects, Certifications, Volunteer, Achievements, or Languages). Confirm your section contains at least 20 words total and includes at least one bullet point. Check that your content is relevant to the section type you chose, demonstrates appropriate research, and uses only text and bullets (no tables, graphics, or special formatting).</p>",
+          "evaluation_type": "ai_assistant",
+          "points": 50
+        }
+      ]
+    }
+  ]
+}

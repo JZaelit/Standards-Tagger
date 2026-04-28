@@ -9,7 +9,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
-import { supabase } from '../lib/supabase';
+import { dataClient } from '../lib/dataClient';
 import { colors, typography } from '../theme';
 
 const ACCEPTED_TYPES = [
@@ -39,25 +39,15 @@ export default function AddCurriculumScreen({ navigation }) {
     if (!query.trim()) return;
     setSearching(true);
     setSearched(false);
-    const { data } = await supabase
-      .from('curriculum')
-      .select('*')
-      .eq('is_public', true)
-      .ilike('title', `%${query.trim()}%`)
-      .order('title', { ascending: true });
+    const data = await dataClient.curricula.search(query);
     setSearchResults(data || []);
     setSearching(false);
     setSearched(true);
   };
 
   const handleAddFromLibrary = async (curriculum) => {
-    const { data: { session } } = await supabase.auth.getSession();
-    const { error } = await supabase.from('user_curriculum').insert({
-      user_id: session.user.id,
-      curriculum_id: curriculum.id,
-    });
-    // Duplicate just means they already have it — still navigate back
-    if (!error || error.code === '23505') navigation.goBack();
+    await dataClient.curricula.addToUser(curriculum.id);
+    navigation.goBack();
   };
 
   const handlePickFile = async () => {
@@ -73,29 +63,18 @@ export default function AddCurriculumScreen({ navigation }) {
   const handleUpload = async () => {
     if (!title.trim() || !grade.trim()) return;
     setLoading(true);
-    const { data: { session } } = await supabase.auth.getSession();
-    const user = session.user;
-
-    const { data: curr, error } = await supabase
-      .from('curriculum')
-      .insert({
+    try {
+      await dataClient.curricula.create({
         title: title.trim(),
         grade: grade.trim(),
         file_name: file?.name || null,
         is_public: isPublic,
-        uploaded_by: user.id,
-      })
-      .select()
-      .single();
-
-    if (!error && curr) {
-      await supabase.from('user_curriculum').insert({
-        user_id: user.id,
-        curriculum_id: curr.id,
       });
+      setLoading(false);
+      navigation.goBack();
+    } catch (e) {
+      setLoading(false);
     }
-    setLoading(false);
-    if (!error) navigation.goBack();
   };
 
   return (

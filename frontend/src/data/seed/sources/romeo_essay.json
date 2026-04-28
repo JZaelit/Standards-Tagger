@@ -1,0 +1,132 @@
+{
+  "title": "Romeo and Juliet",
+  "description": "<p><span style=\"color: rgb(230, 0, 0);\">Your teacher will give the final grade after reviewing your work</span><span style=\"color: rgb(3, 7, 18);\">. Use GradeFlow scores and feedback as a guide to check your progress. The </span><strong style=\"color: rgb(3, 7, 18);\">Essay Instructions</strong><span style=\"color: rgb(3, 7, 18);\"> (linked at the top right of your Google File) are the requirements for this assignment. </span>The Grading Rubric at the bottom of that file explains how your final grade will be calculated by your teacher.<span style=\"color: rgb(3, 7, 18);\"> </span></p><p><br></p><ol><li><strong style=\"color: rgb(230, 0, 0);\">﻿Before you work on tasks, ensure you watch the Task resource videos. </strong></li><li><strong style=\"color: rgb(230, 0, 0);\">﻿Review the Resource File (linked at the top right of your Google File) before you begin.</strong></li></ol>",
+  "sections": [
+    {
+      "title": "Essay Setup",
+      "description": "<p>We'll cover the essay requirements, MLA formats, and GradeFlow basics in this section. Make sure you watch task videos for step-by-step instructions, learn to use the AI prompts and chatbots, review task hints, and understand when/how to use the \"evaluate\" button.</p><p><br></p><ol><li><strong style=\"color: rgb(230, 0, 0);\">﻿Before you work on tasks, ensure you watch the Task resource videos. </strong></li><li><strong style=\"color: rgb(230, 0, 0);\">﻿Review the Resource File (linked at the top right of your Google File) before you begin.</strong></li></ol><p><br></p>",
+      "objectives": [
+        {
+          "title": "Essay Header",
+          "description": "<p>Insert the heading in the top left corner of the first page. Do not skip any lines before the heading. Type the following information, each on its own line:</p><ul><li>Your full name</li><li>Your teacher’s name</li><li>Class name</li><li>Date (Day Month Year – e.g., 13 May 2025)</li></ul><p><br></p><p>The header must be<strong> Times New Roman, size 12 fon</strong>t. Keep text left-aligned. Do not bold, underline, or italicize.</p><p><br></p><ul><li><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#01: Understand Instructions In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task instructions. </span></li><li><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></li></ul>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Essay Title",
+          "description": "<p><strong style=\"color: rgb(230, 0, 0);\">Before you work on tasks, ensure you watch the Task resource videos. </strong></p><p><br></p><p>Below the heading, add a single blank line. Then enter the required title, <strong>Romeo and Juliet Consequences Essay</strong>. On the line directly below the title, input your subtitle. It must reflect the essay’s focus and connect to the actions, consequences, and analysis you explore. Center align the title and subtitle, and use Times New Roman, 12-point font.</p><p><strong style=\"color: rgb(230, 0, 0);\">You can use Prompt#01: Understand Instructions In Context from the resource file to help you understand this or any task instructions. </strong></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Essay Sections",
+          "description": "<p>GradeFlow's evaluation engine will guide you as you write your essay, but to do this, you need to insert <strong>Section Breaks (Continuous)</strong> in specific locations. <span style=\"color: rgb(230, 0, 0);\">I strongly encourage you to watch the task video for specific step-by-step instructions. </span>Failure to do this will result in a very poor score going forward.</p><p><br></p><p>You must insert <span style=\"color: rgb(230, 0, 0);\">FIVE</span> <strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong> in specific locations and follow specific instructions. Again, <span style=\"color: rgb(230, 0, 0);\">I strongly encourage you to watch the task video for specific step-by-step instructions</span>.</p><ol><li><strong>Section #1: </strong>Heading<span style=\"color: rgb(3, 7, 18);\"> - Insert after the MLA Date Format.</span></li><li><strong style=\"color: rgb(3, 7, 18);\">Section #2:</strong><span style=\"color: rgb(3, 7, 18);\"> Title - Insert after the Subtitle.</span></li><li>Insert the section name in sections 3-6. This is a temporary placeholder text that you will replace later. This step just ensures you've set up your document correctly. <strong>EXAMPLE</strong>: Introduction Paragraph, Body Paragraph#1, Body Paragraph#2, and Conclusion Paragraph.</li><li class=\"ql-indent-1\"><strong style=\"color: rgb(3, 7, 18);\">Section #3:</strong><span style=\"color: rgb(3, 7, 18);\"> Introduction Paragraph - Insert after paragraph #1.</span></li><li class=\"ql-indent-1\"><strong style=\"color: rgb(3, 7, 18);\">Section #4:</strong><span style=\"color: rgb(3, 7, 18);\"> Body Paragraph#1 - Insert after paragraph #2.</span></li><li class=\"ql-indent-1\"><strong>Section #5:</strong> Body Paragraph#2 - <span style=\"color: rgb(3, 7, 18);\">Insert a</span>fter paragraph #3.</li><li class=\"ql-indent-1\"><strong>Section #6:</strong> Conclusion Paragraph</li></ol><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#01: Understand Instructions In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task instructions. </span></p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Four Paragraph Essay",
+      "description": "<p><strong style=\"color: rgb(230, 0, 0);\">﻿</strong>Write the heart of your assignment.</p><p>Here you’ll draft and refine:</p><p>1. an introduction with a hook, summary, and thesis</p><p>2. two body paragraphs that each use quotes and analysis</p><p>3. a conclusion that restates your claim and leaves the reader thinking.</p><p>Automated checks will guide you on structure, word count, and evidence. Use the feedback after each attempt to strengthen your writing before moving on.</p>",
+      "objectives": [
+        {
+          "title": "Introduction Paragraph",
+          "description": "<p>Review the <strong>Essay Instructions</strong> for specific Introduction Paragraph requirements. <span style=\"color: rgb(230, 0, 0);\">Your teacher will give the final grade after reviewing your work</span>. Use GradeFlow scores and feedback as a guide to check your progress.</p><p><br></p><p><strong>Write an introduction paragraph that includes all of the following:</strong></p><ul><li>A well-written hook that introduces the topic of emotional decision-making or consequences.</li><li>The title of the play, the author, and a brief summary of the consequences you will write about.</li><li>A strong thesis statement.</li></ul><p><br></p><p><strong>Length:</strong> 3–4 sentences</p><p><strong>Word count:</strong> 75–125 words</p><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">You can use Prompt#01: Understand Instructions In Context from the resource file to help you understand this or any task instructions. </strong></p>",
+          "evaluation_type": "platform",
+          "points": 3
+        },
+        {
+          "title": "Hook and Thesis Statement",
+          "description": "<p>Use<span style=\"color: rgb(230, 0, 0);\"> </span><strong style=\"color: rgb(230, 0, 0);\">Prompt#03: Help with Thesis and Hook</strong> for help.</p><p><br></p><p>Craft a strong opening for your essay by writing a powerful hook and a clear thesis statement.</p><ol><li><strong>Start with a Hook: </strong>This is your first sentence. It should grab your reader’s attention and use powerful or dramatic language to set the tone. Try to reflect the emotion, conflict, or seriousness of Romeo and Juliet.</li><li><strong>Title and author: </strong>Somewhere early in your introduction, mention the Title and Author.</li><li><strong>Strong Thesis Statement</strong><strong style=\"color: rgb(3, 7, 18);\">: </strong>Clearly state your main claim about the consequences of Romeo and Juliet’s actions. Be specific about which two groups were affected: their family, community, or future.</li></ol>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "First Body Paragraph",
+          "description": "<p><strong>Write your first body paragraph following the structure below:</strong></p><ul><li>A topic sentence that clearly states which group (family, community, or future) was affected by Romeo and Juliet’s actions.</li><li>Two short quotes from the play that support your point (each under 100 characters and introduced with the speaker’s name).</li><li>Two sentences of explanation after each quote that connect the evidence to your claim.</li><li>A concluding sentence that restates how the evidence shows the impact of their actions.</li></ul><p><strong>Length</strong>: 8 sentences</p><p><strong>Word count</strong>: 150–200 words</p><p><br></p><p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Use the </span><strong style=\"background-color: transparent; color: rgb(230, 0, 0);\">Prompt#04: First/Second Body Paragraph</strong><span style=\"background-color: transparent; color: rgb(0, 0, 0);\"> for additional help. </span></p>",
+          "evaluation_type": "platform",
+          "points": 4
+        },
+        {
+          "title": "Second Body Paragraph",
+          "description": "<p><strong>Write your second body paragraph following the structure below:</strong></p><ul><li>A topic sentence that clearly states which group (family, community, or future) was affected by Romeo and Juliet’s actions.</li><li>Two short quotes from the play that support your point (each under 100 characters and introduced with the speaker’s name).</li><li>Two sentences of explanation after each quote that connect the evidence to your claim.</li><li>A concluding sentence that restates how the evidence shows the impact of their actions.</li></ul><p><strong>Length</strong>: 8 sentences</p><p><strong>Word count</strong>: 150–200 words</p><p><br></p><p><span style=\"color: rgb(0, 0, 0); background-color: transparent;\">Use the </span><strong style=\"color: rgb(230, 0, 0); background-color: transparent;\">Prompt#04: First/Second Body Paragraph</strong><span style=\"color: rgb(0, 0, 0); background-color: transparent;\"> for additional help. </span></p><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">Video is the same as the First Body Paragraph. </span></p>",
+          "evaluation_type": "platform",
+          "points": 4
+        },
+        {
+          "title": "Body Paragraph Evidence",
+          "description": "<p>Review the Essay Instructions and make sure your Body Paragraphs #1 and #2 (Paragraphs 2 and 3) are in the correct sections of your document. GradeFlow will check both for required structure and how well you explain the evidence you've chosen.</p><p><br></p><p>Your goal in this task is to make your analysis stronger by using precise, thoughtful language to explain how your quotes support your point. Each body paragraph should do more than list quotes—it should show deep understanding of the play and connect those quotes to the larger ideas you’re writing about.</p><p><br></p><p><strong>To succeed on this task:</strong></p><ul><li>Refer to specific events, characters, and conflicts from Romeo and Juliet—not just general ideas.</li><li>Avoid summary. Instead, explain why the quote matters and what it shows about the consequences of the characters’ actions.</li><li>Use language that shows insight into the themes, emotions, and outcomes of the play.</li><li>Choose verbs and vocabulary that clearly show how your evidence relates to the topic sentence.</li></ul>",
+          "evaluation_type": "platform",
+          "points": 2
+        },
+        {
+          "title": "Conclusion Paragraph",
+          "description": "<p>Wrap up your essay with a strong, thoughtful conclusion that reinforces your main argument and leaves the reader with a clear final impression.</p><p><strong>In your conclusion, you should:</strong></p><ul><li><strong>Restate your thesis</strong> in a fresh way, reminding the reader of your main claim.</li><li><strong>Summarize your two key points</strong> (the consequences for the two groups you wrote about).</li><li><strong>Reflect on the lasting message</strong> of Romeo and Juliet. What should we learn from the consequences of their actions?</li></ul>",
+          "evaluation_type": "platform",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "title": "File Name",
+      "description": "<p>This section covers how to name a file so it is useful to the individual and/or system receiving it. </p>",
+      "objectives": [
+        {
+          "title": "File Name",
+          "description": "<p>When turning in assignments, it's important to name your Google Docs or other files clearly so your teacher can easily identify your work. Use the following naming convention every time you submit an assignment.</p><p><br></p><p><strong>﻿Naming Convention</strong>: Last Name, First Name | Assignment Title | Class Period or Section</p><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">Example</strong><span style=\"color: rgb(3, 7, 18);\">: </span>If your name is <strong>Todd Benrud</strong>, you're turning in the <strong>Romeo and Juliet Consequences Essay</strong>, and you're in <strong>Period 5</strong>, then your file should be named: <strong style=\"color: rgb(230, 0, 0);\">Benrud, Todd | Romeo and Juliet Consequences Essay | Period 5</strong></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Teacher Review",
+      "description": "<p>These tasks will not be graded until you submit the assignment to your teacher. After you click the \"Evaluate\" button, you will see a \"Turn In Assignment\" button in the popup window. Click that to turn this into your teacher. </p><p><br></p><p>All following tasks will be graded by your teacher using the grading rubric at the bottom of the Assignment Instructions doc. </p>",
+      "objectives": [
+        {
+          "title": "Intro Paragraph",
+          "description": "<p>Your introduction will be graded on four main parts: a strong hook that grabs attention, background information that includes the title and author, a clear summary of the text, and a thesis that directly answers the prompt. The strongest essays include all of these elements written clearly and effectively. Partial credit will be given if one or more parts are weak or missing. To earn full points, make sure your hook is compelling, your background is complete, your summary is clear, and your thesis directly responds to the prompt.</p>",
+          "evaluation_type": "ai",
+          "points": 15
+        },
+        {
+          "title": "Body Paragraph #1",
+          "description": "<p>Your first body paragraph will be graded on how well you support your claim with evidence. To earn full credit, include two well-chosen quotes that clearly support your argument and introduce each quote smoothly. Partial credit is given if the quotes are present but weak, off-topic, or lack proper introductions. You’ll lose points if one or both quotes are missing or fail to support your claim.</p>",
+          "evaluation_type": "ai",
+          "points": 15
+        },
+        {
+          "title": "Body Paragraph #1 Commentary",
+          "description": "<p>This part of your paragraph is graded on how well you explain your evidence. To earn full credit, include two pieces of analysis for each quote (four total) that clearly explain how the quote supports your claim and why it matters in the context of the text. Partial credit is given if the analysis is weak, vague, or leans too much on summary. You’ll lose points if your commentary is missing, lacks clear connections, or simply restates the quote without explaining its relevance.</p>",
+          "evaluation_type": "ai",
+          "points": 15
+        },
+        {
+          "title": "Body Paragraph #2",
+          "description": "<p><span style=\"color: rgb(3, 7, 18);\">Your second body paragraph will be graded on how well you support your claim with evidence. To earn full credit, include two well-chosen quotes that clearly support your argument and introduce each quote smoothly. Partial credit is given if the quotes are present but weak, off-topic, or lack proper introductions. You’ll lose points if one or both quotes are missing or fail to support your claim.</span></p>",
+          "evaluation_type": "ai",
+          "points": 20
+        },
+        {
+          "title": "Body Paragraph #2 Commentary",
+          "description": "<p>This part of your paragraph is graded on how well you explain your evidence. To earn full credit, include two pieces of analysis for each quote (four total) that clearly explain how the quote supports your claim and why it matters in the context of the text. Partial credit is given if the analysis is weak, vague, or leans too much on summary. You’ll lose points if your commentary is missing, lacks clear connections, or simply restates the quote without explaining its relevance.</p>",
+          "evaluation_type": "ai",
+          "points": 20
+        },
+        {
+          "title": "V4 Conclusion Paragraph",
+          "description": "<p>Your conclusion is graded on how well it wraps up your essay. To earn full credit, restate your thesis in a new way, clearly summarize your main points, and explain the overall message or lesson of the text. Partial credit is given if one of these elements is weak or missing. You’ll lose points if the thesis is simply copied, not included, or if the conclusion lacks a summary or a discussion of the text’s larger meaning.</p>",
+          "evaluation_type": "ai",
+          "points": 15
+        },
+        {
+          "title": "Overall Structure / Format ",
+          "description": "<p>Your writing will be graded on how well you follow MLA format, use correct grammar, and vary your sentence structure. To earn the highest score, make sure you have few or no grammar mistakes, follow MLA rules, use sophisticated language, and include a mix of short and long sentences. Points will be taken off if there are format mistakes, grammar errors, or if your sentences are too simple or repetitive.</p>",
+          "evaluation_type": "ai",
+          "points": 20
+        }
+      ]
+    }
+  ]
+}

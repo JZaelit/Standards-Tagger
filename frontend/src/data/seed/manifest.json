@@ -1,0 +1,78 @@
+[
+  {
+    "stem": "WWII_data",
+    "subject": "math",
+    "source_file": "edusperiences/WWII_data.json",
+    "has_source": true,
+    "standards_db": "categorized-standards/California/CA-MATH.json",
+    "edusperience_title": "WWII Data Analysis: UPDATE",
+    "inferred_grade_bands": [
+      "9-12"
+    ],
+    "notes": "A history-context spreadsheet/data-analysis project. Most concrete math is in the function/formula objectives (SUM, MAX, MIN, AVERAGE, XLOOKUP), which map to function-notation standards (F-IF.A.1, F-IF.A.2). The casualty-rate calculation is the strongest ratio/percent task (6.RP/7.RP). Pie- and column-chart objectives lack a clean CCSS-M anchor at HS - MP.4 modeling is the most honest fit. Reflective writing is ELA, not math."
+  },
+  {
+    "stem": "budget",
+    "subject": "math",
+    "source_file": "edusperiences/budget.json",
+    "has_source": true,
+    "standards_db": "categorized-standards/California/CA-MATH.json",
+    "edusperience_title": "50-30-20 Budget - Dev",
+    "inferred_grade_bands": [
+      "9-12"
+    ],
+    "notes": "Personal-finance spreadsheet project at HS Algebra/Modeling level. Most concrete math is in the formula objectives (net pay, percentages, sums) which map cleanly to A-SSE / N-Q / 7.RP. Several objectives are pure data entry, categorization, or reflective writing and have no math alignment. The pie-chart task lacks a clean CCSS-M anchor - MP.4 (modeling) is the strongest available fit."
+  },
+  {
+    "stem": "mockingbird_essay",
+    "subject": "ela",
+    "source_file": "edusperiences/mockingbird_essay.json",
+    "has_source": true,
+    "standards_db": "categorized-standards/California/CA-ELA.json",
+    "edusperience_title": "Mockingbird Essay",
+    "inferred_grade_bands": [
+      "9-10",
+      "11-12"
+    ],
+    "notes": "High-school literary analysis essay. Objective-level alignment; logistical objectives (file naming, length quota) receive no substantive ELA alignment."
+  },
+  {
+    "stem": "odyssey_essay",
+    "subject": "ela",
+    "source_file": "edusperiences/odyssey_essay.json",
+    "has_source": true,
+    "standards_db": "categorized-standards/California/CA-ELA.json",
+    "edusperience_title": "Odyssey Mini Essay V2",
+    "inferred_grade_bands": [
+      "9-10",
+      "11-12"
+    ],
+    "notes": "High-school argumentative mini-essay on heroism in The Odyssey (introduction + single body paragraph)."
+  },
+  {
+    "stem": "resume",
+    "subject": "ela",
+    "source_file": "edusperiences/resume.json",
+    "has_source": true,
+    "standards_db": "categorized-standards/California/CA-ELA.json",
+    "edusperience_title": "Resume V2",
+    "inferred_grade_bands": [
+      "9-10",
+      "11-12"
+    ],
+    "notes": "High-school resume project. Career-prep writing for a specific audience. Most content-writing objectives map to W.9-10.2 (informative/explanatory) and W.9-10.4 (clear coherent writing). Many logistical formatting objectives are intentionally unaligned."
+  },
+  {
+    "stem": "romeo_essay",
+    "subject": "ela",
+    "source_file": "edusperiences/romeo_essay.json",
+    "has_source": true,
+    "standards_db": "categorized-standards/California/CA-ELA.json",
+    "edusperience_title": "Romeo and Juliet Consequences Essay",
+    "inferred_grade_bands": [
+      "9-10",
+      "11-12"
+    ],
+    "notes": "High-school 4-paragraph argumentative essay on the consequences of Romeo and Juliet's actions."
+  }
+]

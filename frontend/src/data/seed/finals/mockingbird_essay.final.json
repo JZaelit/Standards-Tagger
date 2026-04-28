@@ -1,0 +1,111 @@
+{
+  "edusperience_id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
+  "edusperience_title": "Mockingbird Essay",
+  "source_file": "edusperiences/mockingbird_essay.json",
+  "inferred_grade_bands": [
+    "9-10",
+    "11-12"
+  ],
+  "standards_db": "categorized-standards/California/CA-ELA.json",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> LLM curation (Claude Sonnet)",
+  "notes": "High-school literary analysis essay. Objective-level alignment; logistical objectives (file naming, length quota) receive no substantive ELA alignment.",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "Naming Convention",
+      "description": "Follow the file naming convention of: Your Name | Period # | Assignment Name",
+      "alignments": [],
+      "note": "Logistical/operational. No ELA content standard applies."
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Essay Length",
+      "description": "Your essay must be 500-1000 words and contain at least five paragraphs.",
+      "alignments": [
+        {
+          "code": "W.9-10.4",
+          "confidence": "high",
+          "rationale": "Length, paragraph-count, and coherent structure expectations fall under 'produce clear and coherent writing in which the development, organization, and style are appropriate to task, purpose, and audience.'"
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Essay Elements",
+      "description": "Include two hyperlinks and two images that are relevant information this essay.",
+      "alignments": [
+        {
+          "code": "W.9-10.6",
+          "confidence": "high",
+          "rationale": "Use of hyperlinks / embedded images is the production-and-publishing-with-technology standard."
+        },
+        {
+          "code": "W.9-10.2.a",
+          "confidence": "medium",
+          "rationale": "Integrating graphics/media with text when writing informative/explanatory content."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[2]",
+      "title": "Essay Content",
+      "description": "Include character names, locations, scenes, etc... in your text.",
+      "alignments": [
+        {
+          "code": "RL.9-10.3",
+          "confidence": "high",
+          "rationale": "Analyzing complex characters, their interactions with setting, and how they advance plot/theme — the knowledge an essay must surface about the novel."
+        },
+        {
+          "code": "W.9-10.9.a",
+          "confidence": "medium",
+          "rationale": "Applying Reading standards to literature: draw evidence from literary texts to support analysis."
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "Subjective AI",
+      "description": "Subjective AI Evaluations covering Depth of Analysis, Clarity and Coherence, Engagement and Originality, Use of Textual Evidence, and Emotional and Intellectual Impact.",
+      "alignments": [
+        {
+          "code": "W.9-10.1",
+          "confidence": "high",
+          "rationale": "Literary analysis essay = argument writing: introduce a thesis, develop claims with evidence, and maintain cohesion. The AI evaluation criteria map directly onto W.*.1 sub-components."
+        },
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Develop claim(s) and counterclaims fairly, supplying evidence for each."
+        },
+        {
+          "code": "RL.9-10.1",
+          "confidence": "high",
+          "rationale": "Cite strong and thorough textual evidence to support analysis — maps to 'Use of Textual Evidence' criterion."
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "title": "Objective AI",
+      "description": "Objective: Spelling, Grammar and Syntax, Formatting, Organized Ideas into Paragraphs, and LEngth.",
+      "alignments": [
+        {
+          "code": "L.9-10.1",
+          "confidence": "high",
+          "rationale": "Demonstrate command of conventions of standard English grammar and usage."
+        },
+        {
+          "code": "L.9-10.2",
+          "confidence": "high",
+          "rationale": "Capitalization, punctuation, and spelling when writing."
+        },
+        {
+          "code": "W.9-10.4",
+          "confidence": "medium",
+          "rationale": "'Organized Ideas into Paragraphs' and 'Length' fold into producing clear, coherent writing appropriate to task and purpose."
+        }
+      ]
+    }
+  ]
+}

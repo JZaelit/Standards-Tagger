@@ -8,6 +8,8 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { supabase } from '../lib/supabase';
+import { dataClient } from '../lib/dataClient';
+import { previewText } from '../lib/htmlText';
 import { colors, shadows, typography } from '../theme';
 
 function ColumnHeader({ title, onAdd }) {
@@ -22,12 +24,13 @@ function ColumnHeader({ title, onAdd }) {
 }
 
 function AssignmentCard({ item, onPress }) {
+  const desc = previewText(item.description);
   return (
     <TouchableOpacity style={styles.card} onPress={() => onPress(item)}>
       <Text style={styles.cardTitle}>{item.name}</Text>
       <Text style={styles.cardSub}>Grade {item.grade}</Text>
-      {item.description ? (
-        <Text style={styles.cardDesc} numberOfLines={2}>{item.description}</Text>
+      {desc ? (
+        <Text style={styles.cardDesc} numberOfLines={2}>{desc}</Text>
       ) : null}
     </TouchableOpacity>
   );
@@ -49,18 +52,12 @@ export default function EvalScreen({ navigation }) {
 
   const fetchData = async () => {
     setLoading(true);
-    const { data: { session } } = await supabase.auth.getSession();
-    const user = session.user;
-    const [{ data: asgn }, { data: ucurr }] = await Promise.all([
-      supabase.from('assignments').select('*').order('created_at', { ascending: false }),
-      supabase
-        .from('user_curriculum')
-        .select('curriculum_id, created_at, curriculum(*)')
-        .eq('user_id', user.id)
-        .order('created_at', { ascending: false }),
+    const [asgn, curr] = await Promise.all([
+      dataClient.assignments.list(),
+      dataClient.curricula.listForUser(),
     ]);
     setAssignments(asgn || []);
-    setCurricula((ucurr || []).map((uc) => uc.curriculum));
+    setCurricula(curr || []);
     setLoading(false);
   };
 
@@ -74,14 +71,19 @@ export default function EvalScreen({ navigation }) {
     <View style={styles.container}>
       <View style={styles.topBar}>
         <Text style={styles.appTitle}>GradeFlow</Text>
-        <TouchableOpacity
-          onPress={async () => {
-            await supabase.auth.signOut();
-            navigation.replace('Login');
-          }}
-        >
-          <Text style={styles.signOut}>Sign out</Text>
-        </TouchableOpacity>
+        <View style={styles.topBarRight}>
+          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+            <Text style={styles.topLink}>Dashboard</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={async () => {
+              await supabase.auth.signOut();
+              navigation.replace('Login');
+            }}
+          >
+            <Text style={styles.signOut}>Sign out</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       {loading ? (
@@ -162,6 +164,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '800',
     color: colors.primary,
+  },
+  topBarRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 18,
+  },
+  topLink: {
+    fontSize: 14,
+    color: colors.primary,
+    fontWeight: '600',
   },
   signOut: {
     fontSize: 14,
