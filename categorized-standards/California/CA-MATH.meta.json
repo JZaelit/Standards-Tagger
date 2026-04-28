@@ -1,0 +1,97 @@
+{
+  "source_pdf": "math-pdfs/MATH-CA-finalelaccssstandards.pdf",
+  "source_label": "California Common Core State Standards: Mathematics (CDE, 2013 edition, electronic 2014)",
+  "generated_by": "tools/parse_math.py",
+  "sections": [
+    "9-12 Mathematics",
+    "K-8 Mathematics",
+    "Mathematical Practices"
+  ],
+  "k8_domains": {
+    "CC": "Counting and Cardinality",
+    "OA": "Operations and Algebraic Thinking",
+    "NBT": "Number and Operations in Base Ten",
+    "NF": "Number and Operations—Fractions",
+    "MD": "Measurement and Data",
+    "G": "Geometry",
+    "RP": "Ratios and Proportional Relationships",
+    "NS": "The Number System",
+    "EE": "Expressions and Equations",
+    "SP": "Statistics and Probability",
+    "F": "Functions"
+  },
+  "hs_categories": {
+    "N": {
+      "name": "Number and Quantity",
+      "domains": {
+        "N-RN": "The Real Number System",
+        "N-Q": "Quantities",
+        "N-CN": "The Complex Number System",
+        "N-VM": "Vector and Matrix Quantities"
+      }
+    },
+    "A": {
+      "name": "Algebra",
+      "domains": {
+        "A-SSE": "Seeing Structure in Expressions",
+        "A-APR": "Arithmetic with Polynomials and Rational Expressions",
+        "A-CED": "Creating Equations",
+        "A-REI": "Reasoning with Equations and Inequalities"
+      }
+    },
+    "F": {
+      "name": "Functions",
+      "domains": {
+        "F-IF": "Interpreting Functions",
+        "F-BF": "Building Functions",
+        "F-LE": "Linear, Quadratic, and Exponential Models",
+        "F-TF": "Trigonometric Functions"
+      }
+    },
+    "G": {
+      "name": "Geometry",
+      "domains": {
+        "G-CO": "Congruence",
+        "G-SRT": "Similarity, Right Triangles, and Trigonometry",
+        "G-C": "Circles",
+        "G-GPE": "Expressing Geometric Properties with Equations",
+        "G-GMD": "Geometric Measurement and Dimension",
+        "G-MG": "Modeling with Geometry"
+      }
+    },
+    "S": {
+      "name": "Statistics and Probability",
+      "domains": {
+        "S-ID": "Interpreting Categorical and Quantitative Data",
+        "S-IC": "Making Inferences and Justifying Conclusions",
+        "S-CP": "Conditional Probability and the Rules of Probability",
+        "S-MD": "Using Probability to Make Decisions"
+      }
+    }
+  },
+  "record_counts": {
+    "total": 519,
+    "by_section": {
+      "Mathematical Practices": 9,
+      "K-8 Mathematics": 319,
+      "9-12 Mathematics": 191
+    },
+    "by_grade": {
+      "null": 8,
+      "9-12": 192,
+      "K": 25,
+      "1": 25,
+      "2": 29,
+      "3": 37,
+      "4": 36,
+      "5": 41,
+      "6": 47,
+      "7": 43,
+      "8": 36
+    },
+    "ca_additions": 13,
+    "plus_standards": 43,
+    "modeling_standards": 66,
+    "sub_bullets": 123
+  }
+}

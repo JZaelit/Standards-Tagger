@@ -1,0 +1,628 @@
+"""
+Parse the California CCSS ELA PDF into leaf-level standard records.
+
+Output:
+  standards/ela.json       — list of standard records
+  standards/ela.meta.json  — strand + subgroup metadata
+
+Page types handled:
+  - "grade_table": 3-column (K/1/2, 3/4/5, 6/7/8) or 2-column (9-10 / 11-12) grade pages
+  - "anchor": CCR anchor-standards intro pages
+  - "progressive": Language Progressive Skills compact tables (parsed best-effort)
+  - "skip": front matter, section dividers, appendix, blank
+
+Subgroups are looked up by (strand, standard_number) from a hard-coded map
+derived from the CCSS document — much more reliable than parsing rotated
+sidebar labels.
+"""
+from __future__ import annotations
+import json, re, sys
+from pathlib import Path
+from collections import defaultdict
+import pdfplumber
+
+PDF_PATH = Path("/sessions/keen-lucid-heisenberg/mnt/Standards-Tagger/California/raw-pdfs/ELA-CA-finalelaccssstandards.pdf")
+OUT_DIR  = Path("/sessions/keen-lucid-heisenberg/mnt/Standards-Tagger/standards")
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# ------------------------------------------------------------------ #
+# Reference metadata
+# ------------------------------------------------------------------ #
+STRAND_NAMES = {
+    "RL":  "Reading Standards for Literature",
+    "RI":  "Reading Standards for Informational Text",
+    "RF":  "Reading Standards for Foundational Skills",
+    "W":   "Writing Standards",
+    "SL":  "Speaking and Listening Standards",
+    "L":   "Language Standards",
+    "RH":  "Reading Standards for Literacy in History/Social Studies",
+    "RST": "Reading Standards for Literacy in Science and Technical Subjects",
+    "WHST":"Writing Standards for Literacy in History/Social Studies, Science, and Technical Subjects",
+}
+
+# Subgroup lookups keyed by (strand, standard_number)
+SUBGROUPS = {
+    "RL":  {1:"Key Ideas and Details", 2:"Key Ideas and Details", 3:"Key Ideas and Details",
+            4:"Craft and Structure", 5:"Craft and Structure", 6:"Craft and Structure",
+            7:"Integration of Knowledge and Ideas", 8:"Integration of Knowledge and Ideas",
+            9:"Integration of Knowledge and Ideas",
+            10:"Range of Reading and Level of Text Complexity"},
+    "RI":  {1:"Key Ideas and Details", 2:"Key Ideas and Details", 3:"Key Ideas and Details",
+            4:"Craft and Structure", 5:"Craft and Structure", 6:"Craft and Structure",
+            7:"Integration of Knowledge and Ideas", 8:"Integration of Knowledge and Ideas",
+            9:"Integration of Knowledge and Ideas",
+            10:"Range of Reading and Level of Text Complexity"},
+    "RF":  {1:"Print Concepts", 2:"Phonological Awareness",
+            3:"Phonics and Word Recognition", 4:"Fluency"},
+    "W":   {1:"Text Types and Purposes", 2:"Text Types and Purposes", 3:"Text Types and Purposes",
+            4:"Production and Distribution of Writing", 5:"Production and Distribution of Writing",
+            6:"Production and Distribution of Writing",
+            7:"Research to Build and Present Knowledge", 8:"Research to Build and Present Knowledge",
+            9:"Research to Build and Present Knowledge",
+            10:"Range of Writing"},
+    "SL":  {1:"Comprehension and Collaboration", 2:"Comprehension and Collaboration",
+            3:"Comprehension and Collaboration",
+            4:"Presentation of Knowledge and Ideas", 5:"Presentation of Knowledge and Ideas",
+            6:"Presentation of Knowledge and Ideas"},
+    "L":   {1:"Conventions of Standard English", 2:"Conventions of Standard English",
+            3:"Knowledge of Language",
+            4:"Vocabulary Acquisition and Use", 5:"Vocabulary Acquisition and Use",
+            6:"Vocabulary Acquisition and Use"},
+    "RH":  {1:"Key Ideas and Details", 2:"Key Ideas and Details", 3:"Key Ideas and Details",
+            4:"Craft and Structure", 5:"Craft and Structure", 6:"Craft and Structure",
+            7:"Integration of Knowledge and Ideas", 8:"Integration of Knowledge and Ideas",
+            9:"Integration of Knowledge and Ideas",
+            10:"Range of Reading and Level of Text Complexity"},
+    "RST": {1:"Key Ideas and Details", 2:"Key Ideas and Details", 3:"Key Ideas and Details",
+            4:"Craft and Structure", 5:"Craft and Structure", 6:"Craft and Structure",
+            7:"Integration of Knowledge and Ideas", 8:"Integration of Knowledge and Ideas",
+            9:"Integration of Knowledge and Ideas",
+            10:"Range of Reading and Level of Text Complexity"},
+    "WHST":{1:"Text Types and Purposes", 2:"Text Types and Purposes",
+            4:"Production and Distribution of Writing", 5:"Production and Distribution of Writing",
+            6:"Production and Distribution of Writing",
+            7:"Research to Build and Present Knowledge", 8:"Research to Build and Present Knowledge",
+            9:"Research to Build and Present Knowledge",
+            10:"Range of Writing"},  # WHST has no standard 3
+}
+
+CCR_STRAND_FOR = {
+    "RL":"R", "RI":"R", "RF":None, "RH":"R", "RST":"R",
+    "W":"W", "WHST":"W",
+    "SL":"SL",
+    "L":"L",
+}
+
+# Map PDF page number (1-indexed) to page classification.
+# Hand-compiled from survey_pages.py output.
+PAGE_MAP = {
+    # === Front matter ===
+    # 1..15: title, copyright, TOC, "How to read", intro. Skipped.
+
+    # === K-5 ELA section ===
+    16: ("anchor", {"section":"K-5 ELA", "ccr_strand":"R"}),
+    17: ("grade_table", {"strand":"RL", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":list(range(1,10))}),
+    18: ("grade_table", {"strand":"RL", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[10]}),
+    19: ("grade_table", {"strand":"RL", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":list(range(1,11))}),
+    20: ("grade_table", {"strand":"RI", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":list(range(1,10))}),
+    21: ("grade_table", {"strand":"RI", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[10]}),
+    22: ("grade_table", {"strand":"RI", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":list(range(1,11))}),
+    23: ("grade_table", {"strand":"RF", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1"],     "numbers":[1,2]}),
+    24: ("grade_table", {"strand":"RF", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[3,4]}),
+    25: ("grade_table", {"strand":"RF", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[3,4]}),
+    26: ("anchor", {"section":"K-5 ELA", "ccr_strand":"W"}),
+    27: ("grade_table", {"strand":"W", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":list(range(1,6))}),
+    28: ("grade_table", {"strand":"W", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[6,7,8,9,10]}),
+    29: ("grade_table", {"strand":"W", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[1]}),
+    30: ("grade_table", {"strand":"W", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[2,3,4,5,6]}),
+    31: ("grade_table", {"strand":"W", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[7,8,9,10]}),
+    32: ("anchor", {"section":"K-5 ELA", "ccr_strand":"SL"}),
+    33: ("grade_table", {"strand":"SL", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[1,2,3]}),
+    34: ("grade_table", {"strand":"SL", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[4,5,6]}),
+    35: ("grade_table", {"strand":"SL", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[1,2,3]}),
+    36: ("grade_table", {"strand":"SL", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[4,5,6]}),
+    37: ("anchor", {"section":"K-5 ELA", "ccr_strand":"L"}),
+    38: ("grade_table", {"strand":"L", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[1]}),
+    39: ("grade_table", {"strand":"L", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[2,3]}),
+    40: ("grade_table", {"strand":"L", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["K","1","2"], "numbers":[4,5,6]}),
+    41: ("grade_table", {"strand":"L", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[1]}),
+    42: ("grade_table", {"strand":"L", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[1]}),  # overflow?
+    43: ("grade_table", {"strand":"L", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[2]}),
+    44: ("grade_table", {"strand":"L", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[3]}),
+    45: ("grade_table", {"strand":"L", "section":"K-5 ELA", "grade_band":"K-5",
+                         "grades":["3","4","5"], "numbers":[4,5,6]}),
+    # p46 Language Progressive Skills K-5 — special/compact; skip for now
+    # p47-50 Standard 10 text complexity + appendix blurbs; skip
+
+    # === 6-12 ELA section ===
+    52: ("anchor", {"section":"6-12 ELA", "ccr_strand":"R"}),
+    53: ("grade_table", {"strand":"RL", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[1,2,3,4,5]}),
+    54: ("grade_table", {"strand":"RL", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[6,7,8,9,10]}),
+    55: ("grade_table", {"strand":"RL", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[1,2,3,4,5]}),
+    56: ("grade_table", {"strand":"RL", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[6,7,8,9,10]}),
+    57: ("grade_table", {"strand":"RI", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[1,2,3,4,5]}),
+    58: ("grade_table", {"strand":"RI", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[6,7,8,9,10]}),
+    59: ("grade_table", {"strand":"RI", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[1,2,3,4,5]}),
+    60: ("grade_table", {"strand":"RI", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[6,7,8,9,10]}),
+    61: ("anchor", {"section":"6-12 ELA", "ccr_strand":"W"}),
+    62: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[1]}),
+    63: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[2]}),
+    64: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[3]}),
+    65: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[4,5,6,7,8,9]}),
+    66: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[10]}),
+    67: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[1]}),
+    68: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[2]}),
+    69: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[3,4,5,6,7,8,9]}),
+    70: ("grade_table", {"strand":"W", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[10]}),
+    71: ("anchor", {"section":"6-12 ELA", "ccr_strand":"SL"}),
+    72: ("grade_table", {"strand":"SL","section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[1,2,3]}),
+    73: ("grade_table", {"strand":"SL","section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[4,5,6]}),
+    74: ("grade_table", {"strand":"SL","section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[1,2,3]}),
+    75: ("grade_table", {"strand":"SL","section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[4,5,6]}),
+    76: ("anchor", {"section":"6-12 ELA", "ccr_strand":"L"}),
+    77: ("grade_table", {"strand":"L", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[1,2,3]}),
+    78: ("grade_table", {"strand":"L", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[4,5,6]}),
+    79: ("grade_table", {"strand":"L", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["6","7","8"], "numbers":[6]}),  # overflow
+    80: ("grade_table", {"strand":"L", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[1,2,3]}),
+    81: ("grade_table", {"strand":"L", "section":"6-12 ELA", "grade_band":"6-12",
+                         "grades":["9-10","11-12"], "numbers":[4,5,6]}),
+    # p82-84 Progressive/Standard 10/texts — skip
+
+    # === 6-12 Literacy in H/SS, Sci, Tech ===
+    86: ("anchor", {"section":"6-12 Literacy", "ccr_strand":"R"}),
+    87: ("grade_table", {"strand":"RH", "section":"6-12 Literacy in H/SS",
+                         "grade_band":"6-12", "grades":["6-8","9-10","11-12"],
+                         "numbers":[1,2,3,4,5]}),
+    88: ("grade_table", {"strand":"RH", "section":"6-12 Literacy in H/SS",
+                         "grade_band":"6-12", "grades":["6-8","9-10","11-12"],
+                         "numbers":[6,7,8,9,10]}),
+    89: ("grade_table", {"strand":"RST","section":"6-12 Literacy in Science/Tech",
+                         "grade_band":"6-12", "grades":["6-8","9-10","11-12"],
+                         "numbers":[1,2,3,4,5]}),
+    90: ("grade_table", {"strand":"RST","section":"6-12 Literacy in Science/Tech",
+                         "grade_band":"6-12", "grades":["6-8","9-10","11-12"],
+                         "numbers":[6,7,8,9,10]}),
+    91: ("anchor", {"section":"6-12 Literacy", "ccr_strand":"W"}),
+    92: ("grade_table", {"strand":"WHST","section":"6-12 Literacy in H/SS/Sci/Tech",
+                         "grade_band":"6-12","grades":["6-8","9-10","11-12"],
+                         "numbers":[1]}),
+    93: ("grade_table", {"strand":"WHST","section":"6-12 Literacy in H/SS/Sci/Tech",
+                         "grade_band":"6-12","grades":["6-8","9-10","11-12"],
+                         "numbers":[2]}),
+    94: ("grade_table", {"strand":"WHST","section":"6-12 Literacy in H/SS/Sci/Tech",
+                         "grade_band":"6-12","grades":["6-8","9-10","11-12"],
+                         "numbers":[4,5,6,7,8,9]}),
+    95: ("grade_table", {"strand":"WHST","section":"6-12 Literacy in H/SS/Sci/Tech",
+                         "grade_band":"6-12","grades":["6-8","9-10","11-12"],
+                         "numbers":[10]}),
+}
+
+BULLET_NUM_RE  = re.compile(r'^(\d{1,2})\.$')
+BULLET_LET_RE  = re.compile(r'^([a-z])\.$')
+
+# Y-coordinate tolerance (points). pdfplumber can report the same line of text
+# with microscopic y differences between a leading bullet and following words
+# (e.g. 203.211 vs 203.2099998). Without tolerance, a word belonging to the
+# *next* bullet slips into the *previous* bullet's range and contaminates it.
+Y_TOL = 1.0
+
+def classify_columns(bullet_xs, expected_cols):
+    """Cluster bullet x-positions into expected_cols columns. Return sorted left edges."""
+    if not bullet_xs:
+        return []
+    xs = sorted(bullet_xs)
+    # Greedy clustering: anything within 30pt is same column
+    clusters = [[xs[0]]]
+    for x in xs[1:]:
+        if x - clusters[-1][-1] < 40:
+            clusters[-1].append(x)
+        else:
+            clusters.append([x])
+    # Return cluster centers
+    return [sum(c)/len(c) for c in clusters]
+
+def parse_grade_table_page(page, info, page_no):
+    """Extract standard records from a grade-table page."""
+    words = [w for w in page.extract_words(extra_attrs=["upright","size"])
+             if w.get("upright", True)]
+    # Filter out page title (size ≥ 12.5 at top), strand-letter big marker, page footer
+    page_h = page.height
+    body = [w for w in words
+            if w.get("size", 0) < 12
+            and 90 < w["top"] < page_h - 40
+            and w["x0"] > 35]  # skip rotated leftmost labels (typically x<35 when rotated is excluded, but safety)
+
+    # Find numbered bullets to determine column positions
+    bullets = []
+    for w in body:
+        t = w["text"]
+        m = BULLET_NUM_RE.match(t)
+        if m:
+            bullets.append((w["top"], w["x0"], int(m.group(1)), "num", w))
+            continue
+        m = BULLET_LET_RE.match(t)
+        if m:
+            bullets.append((w["top"], w["x0"], m.group(1), "let", w))
+    if not bullets:
+        return []
+
+    # Determine column centers from NUMBERED bullets only (sub-letter bullets are indented)
+    num_bullet_xs = [b[1] for b in bullets if b[3] == "num"]
+    col_centers = classify_columns(num_bullet_xs, len(info["grades"]))
+    if len(col_centers) != len(info["grades"]):
+        print(f"    WARN p{page_no}: detected {len(col_centers)} cols, expected {len(info['grades'])} ({col_centers})", file=sys.stderr)
+        # Be lenient: still try, aligning by order
+    col_centers = col_centers[:len(info["grades"])]
+
+    def assign_col(x):
+        # assign to nearest col center (robust to sub-letter indent)
+        best_i, best_d = 0, 1e9
+        for i, c in enumerate(col_centers):
+            # Column width estimated as ~200pt; we prefer the column whose center is <= x (i.e., we're inside that column)
+            if x + 5 >= c - 15:  # word starts at or after column left edge
+                d = x - (c - 15)
+                if d >= 0 and d < best_d:
+                    best_i, best_d = i, d
+        return best_i
+
+    # Assign every body word to a column
+    col_words = defaultdict(list)
+    for w in body:
+        col_i = assign_col(w["x0"])
+        col_words[col_i].append(w)
+
+    # Within each column, identify bullets and group text
+    records = []
+    for col_i, grade in enumerate(info["grades"]):
+        ws = sorted(col_words[col_i], key=lambda w: (w["top"], w["x0"]))
+        # Identify bullet positions in this column
+        col_bullets = []
+        for w in ws:
+            t = w["text"]
+            m = BULLET_NUM_RE.match(t)
+            if m and int(m.group(1)) in info["numbers"]:
+                col_bullets.append((w["top"], w["x0"], int(m.group(1)), "num"))
+            else:
+                m2 = BULLET_LET_RE.match(t)
+                if m2:
+                    col_bullets.append((w["top"], w["x0"], m2.group(1), "let"))
+        col_bullets.sort()
+        # Build a range for each bullet: from its y to next bullet's y (same col)
+        for i, b in enumerate(col_bullets):
+            y_start, x_bul, bid, btype = b
+            y_end = col_bullets[i+1][0] if i+1 < len(col_bullets) else 1e9
+            # Collect words in this column strictly AFTER the bullet token, whose y is
+            # in [y_start-Y_TOL, y_end-Y_TOL). The -Y_TOL on both sides makes the
+            # comparison robust against float-precision noise where a word on the
+            # next bullet's line has y just below y_end by ~0.001pt.
+            text_words = []
+            for w in ws:
+                # A word belongs to this bullet if:
+                #   - its y is in the vertical range of this bullet
+                #   - it is not itself one of the bullet tokens for this column
+                #   - it is not the bullet's own token
+                t = w["text"]
+                if y_start - Y_TOL <= w["top"] < y_end - Y_TOL:
+                    if w["x0"] == x_bul and w["top"] == y_start and t in (f"{bid}.", f"{bid}"):
+                        continue
+                    if BULLET_NUM_RE.match(t) and int(BULLET_NUM_RE.match(t).group(1)) in info["numbers"]:
+                        continue  # skip any other numbered bullet token
+                    if BULLET_LET_RE.match(t):
+                        # skip sub-letter bullet tokens themselves
+                        continue
+                    text_words.append(w)
+            # Group text_words into logical lines by y
+            text_words.sort(key=lambda w: (round(w["top"]/2)*2, w["x0"]))
+            text = " ".join(w["text"] for w in text_words)
+            text = re.sub(r'\s+', ' ', text).strip()
+            # Detect CA-addition suffix
+            ca = False
+            # The suffix "CA" is a standalone word at end
+            if re.search(r'\bCA\b\s*$', text):
+                ca = True
+                text = re.sub(r'\s*CA\s*$', '', text).strip()
+            # Also the pattern "...) CA" or "... CA"
+            if btype == "num":
+                code_base = f"{info['strand']}.{grade}.{bid}"
+                rec = {
+                    "code": code_base,
+                    "full_code": f"CCSS.ELA-LITERACY.{info['strand']}.{grade}.{bid}",
+                    "strand": info["strand"],
+                    "strand_name": STRAND_NAMES.get(info["strand"], info["strand"]),
+                    "section": info["section"],
+                    "grade": grade,
+                    "grade_band": info["grade_band"],
+                    "subgroup": SUBGROUPS.get(info["strand"], {}).get(bid),
+                    "number": bid,
+                    "sub_letter": None,
+                    "parent_code": None,
+                    "anchor_code": (f"CCRA.{CCR_STRAND_FOR[info['strand']]}.{bid}"
+                                    if CCR_STRAND_FOR.get(info["strand"]) else None),
+                    "is_anchor": False,
+                    "ca_addition": ca,
+                    "text": text,
+                    "source_page": page_no,
+                }
+                records.append(rec)
+            else:
+                # sub-letter: find the most recent numbered standard in this column
+                parent_num = None
+                for j in range(i, -1, -1):
+                    if col_bullets[j][3] == "num":
+                        parent_num = col_bullets[j][2]
+                        break
+                if parent_num is None:
+                    # fallback: attach to the most likely number — the largest number in info["numbers"]
+                    parent_num = info["numbers"][-1]
+                code = f"{info['strand']}.{grade}.{parent_num}.{bid}"
+                rec = {
+                    "code": code,
+                    "full_code": f"CCSS.ELA-LITERACY.{info['strand']}.{grade}.{parent_num}.{bid}",
+                    "strand": info["strand"],
+                    "strand_name": STRAND_NAMES.get(info["strand"], info["strand"]),
+                    "section": info["section"],
+                    "grade": grade,
+                    "grade_band": info["grade_band"],
+                    "subgroup": SUBGROUPS.get(info["strand"], {}).get(parent_num),
+                    "number": parent_num,
+                    "sub_letter": bid,
+                    "parent_code": f"{info['strand']}.{grade}.{parent_num}",
+                    "anchor_code": (f"CCRA.{CCR_STRAND_FOR[info['strand']]}.{parent_num}"
+                                    if CCR_STRAND_FOR.get(info["strand"]) else None),
+                    "is_anchor": False,
+                    "ca_addition": ca,  # sub-bullets are often CA additions
+                    "text": text,
+                    "source_page": page_no,
+                }
+                records.append(rec)
+    return records
+
+
+def parse_anchor_page(page, info, page_no):
+    """Parse a CCR anchor-standards page. Returns 10 (or 6) anchor records."""
+    # Anchor pages are harder to segment automatically (2-column intro+standards flow)
+    # Strategy: use extract_text and regex for standards "N. <text>"
+    text = page.extract_text() or ""
+    ccr_strand = info["ccr_strand"]
+    # The anchor page lists 10 Reading/Writing (or 6 SL/L) standards with subgroup headings interleaved.
+    # Subgroup headings for this strand:
+    strand_subgroups_order = {
+        "R":  [("Key Ideas and Details", [1,2,3]),
+               ("Craft and Structure", [4,5,6]),
+               ("Integration of Knowledge and Ideas", [7,8,9]),
+               ("Range of Reading and Level of Text Complexity", [10])],
+        "W":  [("Text Types and Purposes", [1,2,3]),
+               ("Production and Distribution of Writing", [4,5,6]),
+               ("Research to Build and Present Knowledge", [7,8,9]),
+               ("Range of Writing", [10])],
+        "SL": [("Comprehension and Collaboration", [1,2,3]),
+               ("Presentation of Knowledge and Ideas", [4,5,6])],
+        "L":  [("Conventions of Standard English", [1,2]),
+               ("Knowledge of Language", [3]),
+               ("Vocabulary Acquisition and Use", [4,5,6])],
+    }[ccr_strand]
+
+    # pdfplumber's extract_text on anchor pages tends to interleave the 2 columns line-by-line.
+    # Strategy: extract WORDS, then split by x into 2 columns, then read each column's text, then find "N. "
+    words = [w for w in page.extract_words(extra_attrs=["upright","size"])
+             if w.get("upright", True)]
+    # Filter big header & page number footer
+    ph = page.height
+    body = [w for w in words if 60 < w["top"] < ph - 30 and w.get("size", 0) < 12]
+    if not body:
+        return []
+    # Find column split: bullet x positions again
+    bullet_words = [w for w in body if BULLET_NUM_RE.match(w["text"])]
+    if not bullet_words:
+        # nothing found; fall back to regex on extract_text
+        return []
+    bxs = sorted(set(round(w["x0"]) for w in bullet_words))
+    # Cluster bullet x-positions
+    clusters = [[bxs[0]]]
+    for x in bxs[1:]:
+        if x - clusters[-1][-1] < 80:
+            clusters[-1].append(x)
+        else:
+            clusters.append([x])
+    col_xs = [min(c) for c in clusters]
+    # Assign each word to a column
+    def col_of(x):
+        for i in range(len(col_xs)-1, -1, -1):
+            if x >= col_xs[i] - 10:
+                return i
+        return 0
+    col_words = defaultdict(list)
+    for w in body:
+        col_words[col_of(w["x0"])].append(w)
+    # Within each column, reconstruct text in reading order, then find standards by "N. "
+    all_text = ""
+    for ci in range(len(col_xs)):
+        ws = sorted(col_words[ci], key=lambda w: (round(w["top"]/2)*2, w["x0"]))
+        all_text += "\n" + " ".join(w["text"] for w in ws)
+    # Normalize
+    all_text = re.sub(r'\s+', ' ', all_text)
+    # Find standards N. ... until next "N. " or subgroup header or sentinel
+    # Build list of anticipated numbers
+    expected_nums = [n for _, nums in strand_subgroups_order for n in nums]
+    records = []
+    # Regex to split: look for " <N>. " where N is 1-10
+    # We'll greedily capture each standard's text by finding boundaries.
+    # Split at headers we know to avoid embedding them.
+    header_titles = [h for h, _ in strand_subgroups_order]
+    # Build a regex that matches " N. " or any known header
+    boundary_re = re.compile(
+        r'(?<=\s)(?:' + '|'.join(re.escape(h) for h in header_titles) + r'|\d{1,2}\.\s)'
+    )
+    # Simpler approach: iterate through anticipated standard numbers and extract text between markers
+    for n in expected_nums:
+        # locate " n. " occurrence (with the dot+space) — but skip false matches from year refs
+        pat = re.compile(r'(?<![0-9.])' + str(n) + r'\.\s')
+        matches = list(pat.finditer(all_text))
+        if not matches:
+            continue
+        # Take the first, or the one that's followed by a capital letter (start of standard text)
+        chosen = None
+        for m in matches:
+            tail = all_text[m.end():m.end()+2]
+            if tail and tail[0].isupper():
+                chosen = m
+                break
+        if chosen is None:
+            chosen = matches[0]
+        start = chosen.end()
+        # End at the next anticipated number or subgroup header
+        end_candidates = []
+        for m in re.finditer(r'(?<![0-9.])(\d{1,2})\.\s', all_text[start:]):
+            try:
+                if int(m.group(1)) != n:
+                    end_candidates.append(start + m.start())
+                    break
+            except ValueError:
+                pass
+        for h in header_titles:
+            idx = all_text.find(h, start)
+            if idx > 0:
+                end_candidates.append(idx)
+        end = min(end_candidates) if end_candidates else len(all_text)
+        text = all_text[start:end].strip()
+        # Trim known footer / asterisk notes
+        text = re.sub(r'\*Please see.*$', '', text).strip()
+        text = re.sub(r'\*These broad.*$', '', text).strip()
+        text = re.sub(r'Note on range.*$', '', text).strip()
+        text = re.sub(r'College and Career Readiness.*$', '', text).strip()
+        # Trim a dangling asterisk footnote marker
+        text = re.sub(r'\*\d*\s*$', '', text).strip()
+        if not text or len(text) < 10:
+            continue
+        # Find subgroup for this number
+        sub = None
+        for h, nums in strand_subgroups_order:
+            if n in nums:
+                sub = h; break
+        rec = {
+            "code": f"CCRA.{ccr_strand}.{n}",
+            "full_code": f"CCSS.ELA-LITERACY.CCRA.{ccr_strand}.{n}",
+            "strand": f"CCRA.{ccr_strand}",
+            "strand_name": f"CCR Anchor Standards for { 'Reading' if ccr_strand=='R' else ('Writing' if ccr_strand=='W' else ('Speaking and Listening' if ccr_strand=='SL' else 'Language')) }",
+            "section": info["section"],
+            "grade": None,
+            "grade_band": None,
+            "subgroup": sub,
+            "number": n,
+            "sub_letter": None,
+            "parent_code": None,
+            "anchor_code": None,
+            "is_anchor": True,
+            "ca_addition": False,
+            "text": text,
+            "source_page": page_no,
+        }
+        records.append(rec)
+    return records
+
+
+def main():
+    all_records = []
+    with pdfplumber.open(PDF_PATH) as pdf:
+        for pnum in sorted(PAGE_MAP):
+            if pnum > len(pdf.pages):
+                continue
+            ptype, info = PAGE_MAP[pnum]
+            page = pdf.pages[pnum - 1]
+            if ptype == "grade_table":
+                recs = parse_grade_table_page(page, info, pnum)
+            elif ptype == "anchor":
+                recs = parse_anchor_page(page, info, pnum)
+            else:
+                recs = []
+            all_records.extend(recs)
+            print(f"p{pnum:3d} [{ptype}] -> {len(recs)} records", file=sys.stderr)
+
+    # De-duplicate CCRA records that appear on multiple anchor pages (K-5 / 6-12 / Literacy)
+    # Keep the first occurrence
+    seen = set()
+    dedup = []
+    for r in all_records:
+        key = (r["code"], r["grade"], r["sub_letter"])
+        if key in seen:
+            continue
+        seen.add(key)
+        dedup.append(r)
+
+    with open(OUT_DIR / "ela.json", "w") as f:
+        json.dump(dedup, f, indent=2, ensure_ascii=False)
+
+    meta = {
+        "source_pdf": PDF_PATH.name,
+        "source_label": "California Common Core State Standards: English Language Arts & Literacy (CDE, 2013 edition)",
+        "generated_by": "tools/parse_ela.py",
+        "strands": STRAND_NAMES,
+        "subgroups": SUBGROUPS,
+        "sections": sorted({r["section"] for r in dedup if r["section"]}),
+    }
+    with open(OUT_DIR / "ela.meta.json", "w") as f:
+        json.dump(meta, f, indent=2, ensure_ascii=False)
+
+    print(f"\nTotal records: {len(dedup)}", file=sys.stderr)
+    # summary
+    from collections import Counter
+    c_strand = Counter(r["strand"] for r in dedup)
+    c_ca = sum(1 for r in dedup if r["ca_addition"])
+    c_anc = sum(1 for r in dedup if r["is_anchor"])
+    print(f"CA additions: {c_ca}", file=sys.stderr)
+    print(f"Anchors: {c_anc}", file=sys.stderr)
+    print(f"Per strand: {dict(c_strand)}", file=sys.stderr)
+
+if __name__ == "__main__":
+    main()
+

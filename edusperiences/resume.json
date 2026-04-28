@@ -1,0 +1,2100 @@
+{
+    "id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+    "rubric_id": "29d399c9-b3f1-42cb-a432-7b2c814531ff",
+    "title": "Resume V2",
+    "description": "<p>You will create a polished resume suitable for a high school that showcases your academic achievements, experiences, and skills. This resume will help you organize your qualifications into a coherent story for potential employers or internship coordinators. By the end of this project, you'll have a polished document that represents who you are and where you're headed professionally.</p>",
+    "user_id": "6ae5c814-5b21-4ac5-9481-936a535bc9e2",
+    "deleted_at": null,
+    "created_at": "2025-10-11T22:14:51.502Z",
+    "updated_at": "2026-01-25T19:03:17.901Z",
+    "status": "active",
+    "version": 1,
+    "content_hash": "2b613556e8b290a50b6934864aad35fd12065ea5845eede5f2c2ee1eb5572f28",
+    "tags": [
+      "business",
+      "resume"
+    ],
+    "rubric_variables": [
+      {
+        "id": "8dc91b06-833b-4f8a-a734-eebdd48e5058",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "name": "EDUCATION",
+        "value": "EDUCATION",
+        "variable_type": "private_variable",
+        "description": "",
+        "created_at": "2025-10-18T22:58:41.725Z",
+        "updated_at": "2025-10-18T22:58:41.725Z"
+      },
+      {
+        "id": "2a8a8809-7be9-4650-9ed4-db1797b1159f",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "name": "EXPERIENCE",
+        "value": "EXPERIENCE",
+        "variable_type": "private_variable",
+        "description": "",
+        "created_at": "2025-10-18T23:53:44.000Z",
+        "updated_at": "2025-10-18T23:53:44.000Z"
+      },
+      {
+        "id": "e1b3f6e1-b3d2-4a4f-8177-6e62a96d0fe3",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "name": "SKILLS",
+        "value": "SKILLS",
+        "variable_type": "private_variable",
+        "description": "",
+        "created_at": "2025-10-19T17:19:04.522Z",
+        "updated_at": "2025-10-19T17:19:04.522Z"
+      },
+      {
+        "id": "6a6e3940-cb70-44f4-b190-00dfee85827e",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "name": "OBJECTIVE",
+        "value": "SUMMARY",
+        "variable_type": "private_variable",
+        "description": "",
+        "created_at": "2025-10-18T23:00:59.166Z",
+        "updated_at": "2025-10-19T18:23:00.700Z"
+      }
+    ],
+    "template": {
+      "id": "f1db88dc-21f8-44fb-b69c-3b8563ebe77e",
+      "attachable_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+      "attachable_type": "RubricVersion",
+      "order": 0,
+      "provider_slug": "google/docs",
+      "title": null,
+      "description": null,
+      "file_id": "165f8294-8108-4c24-9512-8abb7898d88b",
+      "file": {
+        "id": "165f8294-8108-4c24-9512-8abb7898d88b",
+        "url": "https://docs.google.com/document/d/1uhOmwqRq1GBTupM-FzI27Ru449-JE2ED8NBHCS44PQo/edit"
+      },
+      "created_at": "2025-10-11T22:14:51.532Z",
+      "updated_at": "2025-10-11T22:14:59.427Z",
+      "deleted_at": null,
+      "use_case": "live"
+    },
+    "test_template": {
+      "id": "5fec4a6d-facd-4cd3-92b6-692fb2bd13d3",
+      "attachable_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+      "attachable_type": "RubricVersion",
+      "order": 0,
+      "provider_slug": "google/docs",
+      "title": null,
+      "description": null,
+      "file_id": "ba04abd6-fc8d-49db-852b-d035da899a53",
+      "file": {
+        "id": "ba04abd6-fc8d-49db-852b-d035da899a53",
+        "url": "https://docs.google.com/document/d/1Sq9KFw3soOyHJZU0sscXVbcqraVRbYKl-wBNG17XiGY/edit"
+      },
+      "created_at": "2025-10-11T22:14:59.452Z",
+      "updated_at": "2025-10-11T22:15:05.390Z",
+      "deleted_at": null,
+      "use_case": "test"
+    },
+    "resource_attachments": [],
+    "resources": [],
+    "resource_file_links": [],
+    "sections": [
+      {
+        "id": "b858d0f0-a4e9-43fb-8050-1204bc68e18a",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "title": "File Setup",
+        "order": 0,
+        "description": "<p>Set up your resume structure by creating the main section headings and updating your file name. Focus on proper heading formatting and document organization.</p>",
+        "created_at": "2025-10-14T16:16:58.147Z",
+        "updated_at": "2025-10-21T18:12:58.047Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "5568ddae-ec11-4098-b180-52080998e509",
+            "section_id": "b858d0f0-a4e9-43fb-8050-1204bc68e18a",
+            "title": "Headings",
+            "description": "<p>Leave line #1 blank. Then insert five section headings in the following order. You must style as <strong>heading3</strong> and capitalize the first letter. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Summary</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Education</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Experience</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Skills</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>You pick this one.</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Leadership / Extracurriculars / Projects / Certifications / Volunteer / Achievements / Languages</li></ol>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-14T17:07:18.894Z",
+            "updated_at": "2025-10-21T17:21:34.207Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "b7f50b8e-09da-4de6-b656-85960b9f882a",
+                "title": "Video1.1",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/9Lyf_rFI2UU",
+                "order": 0,
+                "attachable_id": "5568ddae-ec11-4098-b180-52080998e509",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-19T23:54:11.447Z",
+                "updated_at": "2025-10-19T23:54:11.447Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "04525dbb-5ede-403c-be0c-5443c9652fb0",
+                "objective_id": "5568ddae-ec11-4098-b180-52080998e509",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:(?=.*\\bSummary\\b)(?=.*\\bEducation\\b)(?=.*\\bExperience\\b)(?=.*\\bSkills\\b)"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2025-10-18T22:25:26.309Z",
+                "updated_at": "2025-10-27T01:39:36.115Z",
+                "failure_message": "<p>Your resume is missing one or more of the following section headings. You must capitalize the first letter.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Summary</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Education</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Experience</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Skills</li></ol>",
+                "deleted_at": null,
+                "template_id": "f1db88dc-21f8-44fb-b69c-3b8563ebe77e",
+                "template_format": "json"
+              },
+              {
+                "id": "85ff6fa5-58bc-4de1-b88d-3fccc149374e",
+                "objective_id": "5568ddae-ec11-4098-b180-52080998e509",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "Leadership",
+                      "Extracurriculars",
+                      "Projects",
+                      "Certifications",
+                      "Volunteer",
+                      "Achievements",
+                      "Languages"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2025-10-14T17:10:47.196Z",
+                "updated_at": "2025-10-21T17:21:29.199Z",
+                "failure_message": "<p>Your resume is missing the custom section. You must include one of the following as the last section of your resume.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Leadership</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Extracurriculars</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Projects</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Certifications</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Volunteer</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Achievements</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Languages</li></ol>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "76e83dc1-d09a-4c53-ad84-9a3766fc5654",
+                "objective_id": "5568ddae-ec11-4098-b180-52080998e509",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 5,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "heading3"
+                },
+                "created_at": "2025-10-18T22:31:52.873Z",
+                "updated_at": "2025-10-19T18:21:54.918Z",
+                "failure_message": "<p>One or more of the following are not styled as a <strong>heading3</strong> in your resume. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Summary</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Education</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Experience</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Skills</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Custom Heading</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Leadership / Extracurriculars / Projects / Certifications / Volunteer / Achievements / Languages</li></ol>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "26cd89e4-a7e4-4f2b-84f2-609dd9822810",
+            "section_id": "b858d0f0-a4e9-43fb-8050-1204bc68e18a",
+            "title": "File Name",
+            "description": "<p>Rename your file using this naming convention:</p><p><span style=\"color: rgb(230, 0, 0);\">Last, First | Assignment Name | Period</span></p><p><br></p><p><strong>Example</strong>:</p><p><span style=\"color: rgb(230, 0, 0);\">Benrud, Todd | Resume | Period #5</span></p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-14T16:17:31.097Z",
+            "updated_at": "2025-10-21T17:21:49.824Z",
+            "deleted_at": null,
+            "resource_attachments": [
+              {
+                "id": "e2d5642e-48d4-450a-a4c8-761268f7c8fb",
+                "platform_resource_id": "ce032c63-9fd1-446b-9ab4-49875f377d8f",
+                "attachable_type": "Objective",
+                "attachable_id": "26cd89e4-a7e4-4f2b-84f2-609dd9822810",
+                "created_at": "2025-10-19T23:54:37.256Z",
+                "updated_at": "2025-10-19T23:54:37.256Z",
+                "deleted_at": null,
+                "order": 0,
+                "title": "FileName",
+                "platform_resource": {
+                  "id": "ce032c63-9fd1-446b-9ab4-49875f377d8f",
+                  "name": "FileName",
+                  "description": "",
+                  "file_url": "https://api.gradeflow.net/rubric/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--d61ead9822832be0725cc8b92503bc00df6012b8/FileName_%20Naming%20ConventionV1.webm",
+                  "file_type": "webm",
+                  "file_size": 14213517,
+                  "content_type": "video/webm",
+                  "created_at": "2025-08-29T03:43:47.374Z",
+                  "updated_at": "2025-09-06T01:22:00.096Z",
+                  "deleted_at": null,
+                  "tags": [
+                    "Slides",
+                    "FileName"
+                  ],
+                  "resource_kind": null,
+                  "link": null
+                }
+              },
+              {
+                "id": "f97a3284-9494-445e-9028-8ac5a067cb32",
+                "platform_resource_id": "8c843a14-452d-4c0e-a9a2-c19f052ef169",
+                "attachable_type": "Objective",
+                "attachable_id": "26cd89e4-a7e4-4f2b-84f2-609dd9822810",
+                "created_at": "2025-10-19T23:54:50.100Z",
+                "updated_at": "2025-10-19T23:54:50.100Z",
+                "deleted_at": null,
+                "order": 1,
+                "title": "FileNameErrors",
+                "platform_resource": {
+                  "id": "8c843a14-452d-4c0e-a9a2-c19f052ef169",
+                  "name": "FileNameErrors",
+                  "description": "",
+                  "file_url": "https://api.gradeflow.net/rubric/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTMsInB1ciI6ImJsb2JfaWQifX0=--6550d2c540f5b172ee81325382dc561b96acc40c/fileNameErrorCorrection.webm",
+                  "file_type": "webm",
+                  "file_size": 23709172,
+                  "content_type": "video/webm",
+                  "created_at": "2025-08-29T03:53:35.829Z",
+                  "updated_at": "2025-09-06T01:21:47.767Z",
+                  "deleted_at": null,
+                  "tags": [
+                    "FileName",
+                    "Slides"
+                  ],
+                  "resource_kind": null,
+                  "link": null
+                }
+              }
+            ],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "a1fd27b4-4cbc-42f0-a264-3ac2b9b1efe6",
+                "objective_id": "26cd89e4-a7e4-4f2b-84f2-609dd9822810",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "student_first_name"
+                },
+                "created_at": "2025-10-14T16:28:38.950Z",
+                "updated_at": "2025-10-14T16:30:05.519Z",
+                "failure_message": "<p>The filename does not include your <strong>First Name</strong>. Double-check spelling to ensure it matches your profile.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "1ab0586f-3fee-4f99-b574-777454628079",
+                "objective_id": "26cd89e4-a7e4-4f2b-84f2-609dd9822810",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "student_last_name"
+                },
+                "created_at": "2025-10-14T16:28:39.375Z",
+                "updated_at": "2025-10-14T16:30:48.566Z",
+                "failure_message": "<p>The filename does not include your <strong>Last Name</strong>. Double-check spelling to ensure it matches your profile.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "5f0a4e68-a2ac-4c4f-b1a0-37a57e524b21",
+                "objective_id": "26cd89e4-a7e4-4f2b-84f2-609dd9822810",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:(?i)[a-z0-9]+(?:[ '\\-\\.][a-z0-9]+)*\\s*,\\s*[a-z0-9]+(?:[ '\\-\\.][a-z0-9]+)*\\s*\\|\\s*[a-z0-9][a-z0-9 _'\\-\\.&()\\/#,:]*\\s*\\|\\s*[a-z0-9#\\-\\s]+"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2025-10-14T16:19:10.549Z",
+                "updated_at": "2026-01-25T19:03:17.564Z",
+                "failure_message": "<p>Your filename does not include two pipe ( <strong style=\"color: rgb(255, 153, 0);\">|</strong> ) characters or is missing the comma ( <strong style=\"color: rgb(255, 153, 0);\">,</strong> ) between Last and First name.</p><p>- The pipe ( <strong style=\"color: rgb(255, 153, 0);\">|</strong> ) characters separate the parts of the file name [student name, assignment name, period].</p><p>- The comma ( <strong style=\"color: rgb(255, 153, 0);\">,</strong> ) separates the student's last name from their first name.</p>",
+                "deleted_at": null,
+                "template_id": "f1db88dc-21f8-44fb-b69c-3b8563ebe77e",
+                "template_format": "json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "f9a87943-fe3d-4e0e-b3a5-e6c319086c15",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "title": "Contact Information",
+        "order": 1,
+        "description": "<p>Include the following information.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Your full name.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Your phone number.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Your school email address (One associated with your GradeFlow account)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Your city and state in the City, State format (Capitalized Abbreviation)</li></ol><p><br></p><p><strong>EXAMPLE:</strong></p><p>&lt;phone&gt; | &lt;email&gt; | &lt;location&gt;</p><p>(234) 567-8190 | email@address.com | San Diego, CA</p>",
+        "created_at": "2025-10-14T15:05:41.702Z",
+        "updated_at": "2025-10-19T18:43:08.020Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "1cc518ee-17e6-4e46-9f59-8d354c33c94f",
+            "section_id": "f9a87943-fe3d-4e0e-b3a5-e6c319086c15",
+            "title": "Your Name",
+            "description": "<p>Add your full name to the first line of your Google Doc. Capitalize your First and Last name. The font must be <strong>20 sizes</strong> or larger and <strong>bold</strong>.</p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-14T15:06:02.642Z",
+            "updated_at": "2025-10-21T17:32:38.335Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "1876873f-1f86-42e7-a1be-4d90a5a8d54b",
+                "title": "Video2.1",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/irgKeEccBuM",
+                "order": 0,
+                "attachable_id": "1cc518ee-17e6-4e46-9f59-8d354c33c94f",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-20T00:01:13.492Z",
+                "updated_at": "2025-10-20T00:03:36.378Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "8fe86f0c-0b4b-490a-803c-41ea2e8a9658",
+                "objective_id": "1cc518ee-17e6-4e46-9f59-8d354c33c94f",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "student_first_name"
+                },
+                "created_at": "2025-10-14T15:07:41.651Z",
+                "updated_at": "2025-10-21T17:32:41.716Z",
+                "failure_message": "<p>Your <strong>First Name</strong> is missing or not spelled as it is in your profile.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "1dcd6272-cd64-41fb-9a32-8f5576adc6f7",
+                "objective_id": "1cc518ee-17e6-4e46-9f59-8d354c33c94f",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "student_last_name"
+                },
+                "created_at": "2025-10-14T15:07:37.940Z",
+                "updated_at": "2025-10-21T17:32:45.668Z",
+                "failure_message": "<p>Your <strong>Last Name</strong> is missing or not spelled as it is in your profile.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "2e75779c-6b37-4429-af66-dcabf84260c7",
+            "section_id": "f9a87943-fe3d-4e0e-b3a5-e6c319086c15",
+            "title": "Contact Details",
+            "description": "<p>Add you phone number, email address, and location. Separate each element with a delimiter like a pipe, slash, etc....</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Phone number must use the Common Display Format for North American, 3-3-4 split for the 10 digits to maintain readability.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Email address must be hyperlinked and be the one associated with your GradeFlow profile.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location must be in the City, State format. State must be the official 2-letter abbreviation.</li></ol><p><br></p><p><strong>EXAMPLE</strong>:</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>(123) 456-7890 / email@address.com / City, ST</li></ol>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-14T15:08:09.862Z",
+            "updated_at": "2025-10-21T17:28:11.573Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "d93d209c-562c-4ff2-a626-1edfd524f0d0",
+                "title": "Video2.2",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/FxZREVvB4n4",
+                "order": 0,
+                "attachable_id": "2e75779c-6b37-4429-af66-dcabf84260c7",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-20T00:05:18.631Z",
+                "updated_at": "2025-10-27T01:25:35.850Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "e2123ed2-3d73-4c43-967e-8633eb68d3e0",
+                "objective_id": "2e75779c-6b37-4429-af66-dcabf84260c7",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:(?:\\(\\d{3}\\)\\s\\d{3}-\\d{4}|\\d{3}-\\d{3}-\\d{4})"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2025-10-14T15:08:09.930Z",
+                "updated_at": "2025-10-21T17:28:19.203Z",
+                "failure_message": "<p>Your <strong>phone number</strong> is missing or formatted correctly. You must use the North American Numbering Plan (NANP)</p><p><br></p><p><strong>EXAMPLE:</strong></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Hyphen-separated: 234-567-8901</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Parentheses around area code: (234) 567-8901</li></ol>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "896f729e-1e43-4482-bbee-aaca9df20874",
+                "objective_id": "2e75779c-6b37-4429-af66-dcabf84260c7",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "student_email"
+                },
+                "created_at": "2025-10-14T15:19:07.181Z",
+                "updated_at": "2025-10-21T17:23:06.844Z",
+                "failure_message": "<p>Your <strong>Email Address</strong> is missing or not spelled as it is in your profile.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "9e17ff8a-8349-4435-b496-37539d42f750",
+                "objective_id": "2e75779c-6b37-4429-af66-dcabf84260c7",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "hyperlinks_emails"
+                },
+                "created_at": "2025-10-18T19:43:39.563Z",
+                "updated_at": "2025-10-21T17:23:10.210Z",
+                "failure_message": "<p>Your <strong>Email Address</strong> is missing a hyperlink. You must add an email hyperlink to your email address.</p><p><br></p><p><strong>EXAMPLE</strong>:</p><p>sendto:example@email.com</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "8e1ab547-109d-43c2-8400-5c12a46fbdea",
+                "objective_id": "2e75779c-6b37-4429-af66-dcabf84260c7",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:^(?:[A-Za-z]+(?:[\\'\\.\\-\\s&\\/][A-Za-z]+)*)\\s*,\\s*(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)$"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 1,
+                    "start_at": 1
+                  }
+                },
+                "created_at": "2025-10-19T16:50:33.676Z",
+                "updated_at": "2025-10-21T17:23:16.203Z",
+                "failure_message": "<p>You are missing the location in the <strong>City, State</strong> format. State must be the official 2-letter abbreviation.</p><p><br></p><p><strong>EXAMPLE: </strong></p><p>City, ST</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "29c5d3c0-6c68-41ba-aada-7a61801fe1e3",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "title": "Summary Section",
+        "order": 2,
+        "description": "<p>Write a clear and concise summary statement that tells employers who you are, including your grade level, a standout trait, and your intended path or interest. Name one or two strengths or skills that match the role you want. Add one proof point, such as your GPA, a certification, a project, an award, or a measurable result. Keep it specific, include numbers when you can, tailor it to the role, and avoid buzzwords, fluff, and long lists. Aim for 1 to 2 sentences, roughly 20 - 30 words.</p><p><br></p><p><strong>EXAMPLES:</strong></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Dependable junior seeking part-time retail role; 3.6 GPA; school store cashier handling $500 daily. Available evenings and weekends.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>STEM-focused senior seeking data internship; Python and Excel; built a survey dashboard used by 60 students that improved planning decisions.</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Motivated senior seeking peer tutor role; AP Calculus score 5; raised tutees’ quiz averages by 12 percent through targeted review.</li></ol>",
+        "created_at": "2025-10-14T15:20:30.138Z",
+        "updated_at": "2025-10-21T17:18:30.064Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "322cc459-5bba-40c6-abbc-da42ca598e32",
+            "section_id": "29c5d3c0-6c68-41ba-aada-7a61801fe1e3",
+            "title": "Insert Section: {{var:OBJECTIVE}}",
+            "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:OBJECTIVE}}</strong>\" heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-14T15:31:11.113Z",
+            "updated_at": "2025-10-21T17:28:38.685Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "2427ffd7-71e8-4a15-9ebd-35f0d37d97d9",
+                "title": "Video3.1",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/JrSD9u_91DU",
+                "order": 0,
+                "attachable_id": "322cc459-5bba-40c6-abbc-da42ca598e32",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T01:45:28.030Z",
+                "updated_at": "2025-10-27T01:45:28.030Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "a1dca0b7-bfd1-4e61-8849-1f79a38e2010",
+                "objective_id": "322cc459-5bba-40c6-abbc-da42ca598e32",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 2,
+                    "start_at": 2
+                  }
+                },
+                "created_at": "2025-10-18T20:16:28.417Z",
+                "updated_at": "2025-10-21T17:28:43.727Z",
+                "failure_message": "<p>Verify you have inserted a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:OBJECTIVE}}</strong>\" heading3. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "48f8ad49-523a-44db-b6a2-0ff525638128",
+                "objective_id": "322cc459-5bba-40c6-abbc-da42ca598e32",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "heading3",
+                  "target_attributes": {
+                    "end_at": 2,
+                    "start_at": 2
+                  }
+                },
+                "created_at": "2025-10-14T16:08:27.553Z",
+                "updated_at": "2025-10-21T17:28:48.106Z",
+                "failure_message": "<p>Highlight the word \"<strong>{{var:OBJECTIVE}}</strong>\", then style it as <strong>heading3</strong>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "aeb2b79e-9095-4c34-9a4c-2788b5f224d9",
+            "section_id": "29c5d3c0-6c68-41ba-aada-7a61801fe1e3",
+            "title": "Write Summary Section",
+            "description": "<p>Write a clear and concise summary statement between the \"<strong>SUMMARY</strong>\" and \"<strong>EDUCATION</strong>\" headings. It must be between <strong>10</strong> and <strong>25</strong> words in length.</p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-18T22:34:27.031Z",
+            "updated_at": "2025-10-21T17:29:11.090Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "d38d3087-7043-4e24-a03e-e48255936d2a",
+                "title": "Video3.2",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/RAtV8mRtzl0",
+                "order": 0,
+                "attachable_id": "aeb2b79e-9095-4c34-9a4c-2788b5f224d9",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T01:49:15.836Z",
+                "updated_at": "2025-10-27T01:49:15.836Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "8c4f9154-8927-4eb8-b9e3-f2768f5808d8",
+                "objective_id": "aeb2b79e-9095-4c34-9a4c-2788b5f224d9",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      8,
+                      32
+                    ],
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "between",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 2,
+                    "start_at": 2
+                  }
+                },
+                "created_at": "2025-10-18T22:34:27.701Z",
+                "updated_at": "2025-10-21T17:29:06.976Z",
+                "failure_message": "<p>The objective statement must be between <strong>10</strong> and <strong>25</strong> words in length. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "95de1c51-f81c-44a6-91b2-47ffdbd974a9",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "title": "Education Section",
+        "order": 3,
+        "description": "<p>Insert a <strong>Section Break (continous)</strong> before the \"<strong>EDUCATION</strong>\" heading. Then write a clear and concise objective statement that is between 10 and 25 words in length. Your objective statement must be between \"<strong>EDUCATION</strong>\" and \"<strong>EXPERIENCE</strong>\" headings.</p><p><br></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>The name of your school (most recent first)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Expected graduation date (month and year)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>GPA (if it's above 3.0)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Relevant coursework (optional, but only include if it's related to the job you're applying for)</li></ol><p><br></p><p><br></p><p><br></p><p>As a high school student, education is likely your most important section. It shows your academic background and whether you’re a strong student.</p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>The name of your school (most recent first)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Expected graduation date (month and year)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>GPA (if it's above 3.0)</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Relevant coursework (optional, but only include if it's related to the job you're applying for)</li></ol>",
+        "created_at": "2025-10-14T15:22:24.888Z",
+        "updated_at": "2025-10-19T18:18:53.397Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "520b4575-6655-4b0f-9f3f-fc1e7bfc4915",
+            "section_id": "95de1c51-f81c-44a6-91b2-47ffdbd974a9",
+            "title": "Insert Section: {{var:EDUCATION}}",
+            "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:EDUCATION}}</strong>\" heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-18T22:57:15.961Z",
+            "updated_at": "2025-10-21T17:29:19.631Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "6762fc69-2e75-49d0-8f47-d19a1db4419a",
+                "title": "Video4.1",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/OkIdQX9r_7Q",
+                "order": 0,
+                "attachable_id": "520b4575-6655-4b0f-9f3f-fc1e7bfc4915",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T01:57:13.053Z",
+                "updated_at": "2025-10-27T01:57:13.053Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "96fb34f0-4ad5-49a8-b717-a44952c72e40",
+                "objective_id": "520b4575-6655-4b0f-9f3f-fc1e7bfc4915",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-10-18T22:57:16.257Z",
+                "updated_at": "2025-10-21T17:29:23.887Z",
+                "failure_message": "<p>Verify you have inserted a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:EDUCATION}}</strong>\" heading3. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "59c38b07-9400-4d20-8822-3db8068564e5",
+                "objective_id": "520b4575-6655-4b0f-9f3f-fc1e7bfc4915",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "heading3",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-10-18T22:57:16.554Z",
+                "updated_at": "2025-10-21T17:29:26.847Z",
+                "failure_message": "<p>Highlight the word \"<strong>{{var:EDUCATION}}</strong>\", then style it as <strong>heading3</strong>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "f5603149-cb3e-4ea6-a952-0269392faee0",
+            "section_id": "95de1c51-f81c-44a6-91b2-47ffdbd974a9",
+            "title": "High School",
+            "description": "<p>Add the following to your \"<strong>{{var:EDUCATION}}</strong>\" section. </p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Your high school's full name.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Year attended in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>2020-2024</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Two bullet points: </li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>The first, relavant courses and/or projects related to the type of work you are interested in. </li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>The second, your GPA in the one decimal format.</li><li class=\"ql-indent-2\" data-list=\"ordered\"><span class=\"ql-ui\"></span>GPA: 3.5</li></ol>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2025-10-18T20:28:50.928Z",
+            "updated_at": "2025-10-21T17:36:12.405Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "7955cced-a469-41df-a9dc-a65572dcfc7a",
+                "title": "Video4.2",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/540NuwW8u1M",
+                "order": 0,
+                "attachable_id": "f5603149-cb3e-4ea6-a952-0269392faee0",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T01:56:55.651Z",
+                "updated_at": "2025-10-27T01:56:55.651Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "6576231e-a1b1-4cbc-901d-0f60fdeeea8a",
+                "objective_id": "f5603149-cb3e-4ea6-a952-0269392faee0",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "lists_items",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-10-18T23:14:18.813Z",
+                "updated_at": "2025-10-21T17:36:18.107Z",
+                "failure_message": "<p>You are missing one or both bullet points below your high school name. </p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "186797db-dbcf-4e1e-b908-512e80343494",
+                "objective_id": "f5603149-cb3e-4ea6-a952-0269392faee0",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:\\d{4}-\\d{4}"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-10-18T20:28:51.541Z",
+                "updated_at": "2025-10-21T17:36:20.725Z",
+                "failure_message": "<p>You are missing the years you attended your high school or it is not formatted properly. No spaces, it must be exactly 9-characters long. Four numbers, a hypen, and four numbers. </p><p><br></p><p><strong>EXAMPLE: </strong></p><p>2020-2024</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "ac30ea01-3d71-4de4-a6d5-ae2ea2fc9a60",
+                "objective_id": "f5603149-cb3e-4ea6-a952-0269392faee0",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:^(?:[A-Za-z]+(?:[\\'\\.\\-\\s&\\/][A-Za-z]+)*)\\s*,\\s*(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)$"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-10-19T18:40:27.459Z",
+                "updated_at": "2025-10-21T17:36:24.146Z",
+                "failure_message": "<p>You are missing the location in the <strong>City, State</strong> format. State must be the official 2-letter abbreviation.</p><p><br></p><p><strong>EXAMPLE: </strong></p><p>City, ST</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "40fb9105-8dcf-4458-a0af-c6a6ab7a886d",
+                "objective_id": "f5603149-cb3e-4ea6-a952-0269392faee0",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:GPA: [0-5]\\.[0-9]"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-10-18T23:45:15.891Z",
+                "updated_at": "2025-10-21T17:36:27.073Z",
+                "failure_message": "<p>You are missing your GPA or it is not formatted properly. The letters GPA, a colon, a space, and two numbers separated by a decimal. </p><p><br></p><p><strong>EXAMPLE: </strong></p><p>GPA: 3.5</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "654b6afa-915d-436c-9790-87f5226e639e",
+                "objective_id": "f5603149-cb3e-4ea6-a952-0269392faee0",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 10,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-10-18T20:28:51.258Z",
+                "updated_at": "2025-10-21T17:36:30.047Z",
+                "failure_message": "<p>You are missing some or all of your high school information.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Your high school's full name.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Year attended in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>2020-2024</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Two Bullet Points</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Related Courses and/or Projects</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>GPA</li></ol>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "26130a63-e335-4f3d-8294-30cfe0745e03",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "title": "Experience Section",
+        "order": 4,
+        "description": "<p>Employers want to know about the kind of work or activities you have experience with. Even if they are not directly related to the job you're applying for. It shows you have a responsibility and a work ethic.</p><p><br></p><p>Jobs, internships, volunteer work, sports, clubs, etc... (most recent first). For each, include the company/organization name, your role, location, and dates. Add 2-3 bullet points for each role that explain your tasks and responsibilities.</p>",
+        "created_at": "2025-10-14T15:23:35.527Z",
+        "updated_at": "2025-10-19T18:18:51.132Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "778fcac1-c684-4103-8e75-3d8cbd28fdb0",
+            "section_id": "26130a63-e335-4f3d-8294-30cfe0745e03",
+            "title": "Insert Section: {{var:EXPERIENCE}}",
+            "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:EXPERIENCE}}</strong>\" heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-18T23:52:12.418Z",
+            "updated_at": "2025-10-21T17:30:27.575Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "2c18b12c-fb3b-4591-b989-92f6229d55c7",
+                "title": "Video5.1",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/pgQTDf0wKzQ",
+                "order": 0,
+                "attachable_id": "778fcac1-c684-4103-8e75-3d8cbd28fdb0",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T01:59:20.833Z",
+                "updated_at": "2025-10-27T01:59:20.833Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "8ce3fa69-d92d-47b7-babf-6d7ce7cc5f99",
+                "objective_id": "778fcac1-c684-4103-8e75-3d8cbd28fdb0",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-18T23:52:12.624Z",
+                "updated_at": "2025-10-21T17:30:31.871Z",
+                "failure_message": "<p>Verify you have inserted a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:EXPERIENCE}}</strong>\" heading3. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "a3679484-65f4-4ddd-ae06-f8b9f8546d26",
+                "objective_id": "778fcac1-c684-4103-8e75-3d8cbd28fdb0",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "heading3",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-18T23:52:12.826Z",
+                "updated_at": "2025-10-21T17:33:13.793Z",
+                "failure_message": "<p>Highlight the word \"<strong>{{var:EXPERIENCE}}</strong>\", then style it as <strong>heading3</strong>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "47403f3c-b17a-471f-9853-22c12a5ef234",
+            "section_id": "26130a63-e335-4f3d-8294-30cfe0745e03",
+            "title": "Experience #1",
+            "description": "<p>Add the following to your \"<strong>{{var:EXPERIENCE}}</strong>\" section.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>A role or position you had that provided you with some type of experience.</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span> After the role, include the word '<strong>at</strong>' then include the name of the company, organization, etc... </li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Years of experience in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span><strong>EXAMPLE</strong>: 2020-2024</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>At least one bullet point:</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Describe your responsibilities in a clear, concise statement.</li></ol>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2025-10-18T23:54:39.216Z",
+            "updated_at": "2025-10-21T17:30:46.950Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "8314f6a0-54ed-486e-8684-ab7c32f71d62",
+                "title": "Video5.2",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/gmyMXenFLJo",
+                "order": 0,
+                "attachable_id": "47403f3c-b17a-471f-9853-22c12a5ef234",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T02:04:49.893Z",
+                "updated_at": "2025-10-27T02:04:49.893Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "3874926a-9653-46a5-aab6-36fedfed2e4a",
+                "objective_id": "47403f3c-b17a-471f-9853-22c12a5ef234",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:(?i)(?:[A-Za-z0-9&'’.\\-]+(?:[ \\t]+[A-Za-z0-9&'’.\\-]+)*)[ \\t]+\\bat\\b[ \\t]+(?:[A-Za-z0-9&'’.\\-]+(?:[ \\t]+[A-Za-z0-9&'’.\\-]+)*)(?:[ \\t]*[.,;:!?]+)?"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-19T16:53:41.862Z",
+                "updated_at": "2025-10-21T17:30:50.961Z",
+                "failure_message": "<p>You are missing the word \"<strong>at</strong>\" between the role and the name of the organization where you got your experience.</p><p><br></p><p><strong>EXAMPLE: </strong></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Peer Tutor at Lincoln High School</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Cashier at Target</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Waiter at TGI Fridays.</li></ol>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "a7bd0012-08fc-4282-bfb5-7f658199596d",
+                "objective_id": "47403f3c-b17a-471f-9853-22c12a5ef234",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:^(?:[A-Za-z]+(?:[\\'\\.\\-\\s&\\/][A-Za-z]+)*)\\s*,\\s*(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)$"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-19T19:44:07.568Z",
+                "updated_at": "2025-10-21T17:30:53.497Z",
+                "failure_message": "<p>You are missing the location in the City, State format. State must be the official 2-letter abbreviation. </p><p><br></p><p><strong>EXAMPLE: </strong></p><p>City, ST</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "6e083d08-6e23-4c4d-a1f7-90a50829e351",
+                "objective_id": "47403f3c-b17a-471f-9853-22c12a5ef234",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:\\d{4}-\\d{4}"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-18T23:54:39.890Z",
+                "updated_at": "2025-10-21T17:30:56.118Z",
+                "failure_message": "<p>You are missing the years you attended your high school or it is not formatted properly. No spaces, it must be exactly 9-characters long. Four numbers, a hypen, and four numbers. </p><p><br></p><p><strong>EXAMPLE: </strong></p><p>2020-2024</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "802f8872-c8ac-49c3-b478-887693031b5e",
+                "objective_id": "47403f3c-b17a-471f-9853-22c12a5ef234",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "lists_items",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-18T23:54:39.691Z",
+                "updated_at": "2025-10-21T17:30:58.654Z",
+                "failure_message": "<p>You are missing a bullet point below your experience.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "2ccad845-6417-40b8-9577-1e1b5b97d897",
+                "objective_id": "47403f3c-b17a-471f-9853-22c12a5ef234",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 10,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-18T23:54:39.465Z",
+                "updated_at": "2025-10-21T17:31:01.000Z",
+                "failure_message": "<p>You are missing some or all of your Experience information.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>The role or position you had at an organization. </li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>After the role, include the word '<strong>at</strong>' then include the name of the company, organization, etc...</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Year attended in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>2020-2024</li></ol>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "655a8518-ecb3-4cfe-aadc-a0a24a038281",
+            "section_id": "26130a63-e335-4f3d-8294-30cfe0745e03",
+            "title": "Experience #2",
+            "description": "<p>Add a 2nd experience. </p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>A role or position you had that provided you with some type of experience.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Years of experience in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span><strong>EXAMPLE</strong>: 2020-2024</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>At least one bullet point:</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>Describe your responsibilities in a clear, concise statement.</li></ol>",
+            "order": 2,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2025-10-19T17:14:36.800Z",
+            "updated_at": "2025-10-21T17:31:08.797Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "b5fb771e-931f-4fc8-a6fd-b298e05a8201",
+                "objective_id": "655a8518-ecb3-4cfe-aadc-a0a24a038281",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:(?i)(?:[A-Za-z0-9&'’.\\-]+(?:[ \\t]+[A-Za-z0-9&'’.\\-]+)*)[ \\t]+\\bat\\b[ \\t]+(?:[A-Za-z0-9&'’.\\-]+(?:[ \\t]+[A-Za-z0-9&'’.\\-]+)*)(?:[ \\t]*[.,;:!?]+)?"
+                    ],
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-19T19:47:22.805Z",
+                "updated_at": "2025-10-21T17:31:12.308Z",
+                "failure_message": "<p>You are missing the word \"<strong>at</strong>\" between the role and the name of the organization where you got your experience. <span style=\"color: rgb(230, 0, 0);\">You must use the word \"</span><strong style=\"color: rgb(230, 0, 0);\">at</strong><span style=\"color: rgb(230, 0, 0);\">\" for both experience #1 and #2.  </span></p><p><br></p><p><strong>EXAMPLE: </strong></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Peer Tutor at Lincoln High School</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Cashier at Target</li><li data-list=\"bullet\"><span class=\"ql-ui\"></span>Waiter at TGI Fridays.</li></ol>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "6b9c251d-8a90-46df-9746-e25d16e5013e",
+                "objective_id": "655a8518-ecb3-4cfe-aadc-a0a24a038281",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:^(?:[A-Za-z]+(?:[\\'\\.\\-\\s&\\/][A-Za-z]+)*)\\s*,\\s*(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)$"
+                    ],
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-19T17:14:37.200Z",
+                "updated_at": "2025-10-21T17:31:14.909Z",
+                "failure_message": "<p>You are missing the location in the City, State format. State must be the official 2-letter abbreviation. </p><p><br></p><p><strong>EXAMPLE: </strong></p><p>City, ST</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "085cb6d4-7555-4179-9ed5-46b6745b1a3b",
+                "objective_id": "655a8518-ecb3-4cfe-aadc-a0a24a038281",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:\\d{4}-\\d{4}"
+                    ],
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-19T17:14:37.528Z",
+                "updated_at": "2025-10-21T17:31:17.856Z",
+                "failure_message": "<p>You are missing the years you attended your high school or it is not formatted properly. No spaces, it must be exactly 9-characters long. Four numbers, a hypen, and four numbers. </p><p><br></p><p><strong>EXAMPLE: </strong></p><p>2020-2024</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "d13da230-e75a-4a09-a19d-4b678c0fd746",
+                "objective_id": "655a8518-ecb3-4cfe-aadc-a0a24a038281",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "lists_items",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-19T17:14:37.863Z",
+                "updated_at": "2025-10-21T17:31:20.690Z",
+                "failure_message": "<p>You are missing a bullet point below your experience.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "a81915c1-2f2b-4507-83bf-89202ab41206",
+                "objective_id": "655a8518-ecb3-4cfe-aadc-a0a24a038281",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 25,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-10-19T17:14:38.222Z",
+                "updated_at": "2025-10-21T17:31:23.563Z",
+                "failure_message": "<p>You are missing some or all of your Experience information.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>The role or position you had at an organization. </li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>After the role, include the word '<strong>at</strong>' then include the name of the company, organization, etc...</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Location in the <strong>City, State</strong> format</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Year attended in the four-digit year hyphen four-digit format</li><li class=\"ql-indent-1\" data-list=\"ordered\"><span class=\"ql-ui\"></span>2020-2024</li></ol>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "278f782a-360a-4324-9c11-762e908dd6df",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "title": "Skills Section",
+        "order": 5,
+        "description": "<p>Create a list of 5 to 10 skills that match your target roles. Include both technical skills, such as Google Workspace or beginner coding, and workplace skills, such as communication, teamwork, leadership, or time management. Group similar skills so they are easy to scan, avoid repeating the same idea with different words, and keep capitalization consistent. Use Evaluate to verify coverage and readability.</p>",
+        "created_at": "2025-10-14T15:25:51.411Z",
+        "updated_at": "2025-10-19T22:12:31.257Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "30dfc5e5-7fe7-4b4f-a018-9599c13ccc68",
+            "section_id": "278f782a-360a-4324-9c11-762e908dd6df",
+            "title": "Insert Section: {{var:SKILLS}}",
+            "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:SKILLS}}</strong>\" heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-19T17:17:57.890Z",
+            "updated_at": "2025-10-21T17:33:27.136Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "653d1cb9-03b5-4ced-bef7-cf59065e4295",
+                "title": "Video5.1",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/pgQTDf0wKzQ",
+                "order": 1,
+                "attachable_id": "30dfc5e5-7fe7-4b4f-a018-9599c13ccc68",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T02:05:23.893Z",
+                "updated_at": "2025-10-27T02:05:38.061Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "9db4a9cd-6066-431e-9bdb-31c97df75fb0",
+                "objective_id": "30dfc5e5-7fe7-4b4f-a018-9599c13ccc68",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-10-19T17:17:58.242Z",
+                "updated_at": "2025-10-21T17:33:32.484Z",
+                "failure_message": "<p>Verify you have inserted a <strong>Section Break (continuous)</strong> before the \"<strong>{{var:SKILLS}}</strong>\" heading3. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "2ceef2cd-2e4a-4a31-bab0-11c4c9b35675",
+                "objective_id": "30dfc5e5-7fe7-4b4f-a018-9599c13ccc68",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "heading3",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-10-19T17:17:58.565Z",
+                "updated_at": "2025-10-21T17:33:35.237Z",
+                "failure_message": "<p>Highlight the word \"<strong>{{var:SKILLS}}</strong>\", then style it as <strong>heading3</strong>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "47f1836c-13aa-4117-b4eb-6ce0d1888417",
+            "section_id": "278f782a-360a-4324-9c11-762e908dd6df",
+            "title": "Table",
+            "description": "<p><span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Insert a 1-row 2-column table below the \"<strong>{{var:SKILLS}}</strong>\" heading3.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Add at least six skills, one bullet point per skill, three skills per column.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Bullets should be one to three words, not sentences or long statements.</li></ol><p><br></p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2025-10-19T17:21:21.906Z",
+            "updated_at": "2025-10-21T17:33:44.050Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "655b389a-c670-422e-8083-e9db69197b06",
+                "title": "Video6.2",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/VIwJGBAHOpQ",
+                "order": 0,
+                "attachable_id": "47f1836c-13aa-4117-b4eb-6ce0d1888417",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T02:10:13.564Z",
+                "updated_at": "2025-10-27T02:10:13.564Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "fdecca01-6def-4745-b8cf-5e68ef31835a",
+                "objective_id": "47f1836c-13aa-4117-b4eb-6ce0d1888417",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "tables_any",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-10-19T17:21:22.588Z",
+                "updated_at": "2025-10-21T17:33:50.049Z",
+                "failure_message": "<p>Your \"<strong>{{var:SKILLS}}</strong>\" section does not contain a table. </p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "3c6ec5ad-9d95-4f79-b9f6-33fe408a8629",
+                "objective_id": "47f1836c-13aa-4117-b4eb-6ce0d1888417",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 6,
+                    "case_sensitive": false
+                  },
+                  "target": "table",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 1,
+                    "start_at": 1
+                  }
+                },
+                "created_at": "2025-10-19T17:47:09.421Z",
+                "updated_at": "2025-10-21T17:33:53.556Z",
+                "failure_message": "<p>The skills table does not contain at least 6 words. </p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "63f312b6-ffbf-4a5e-b9ef-4f21aecd8711",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "title": "Custom Section",
+        "order": 6,
+        "description": "<p>Create a short list of 10 to 20 skills that match your target roles. Include both technical skills, such as Google Workspace or beginner coding, and workplace skills, such as communication, teamwork, leadership, or time management. Group similar skills so they are easy to scan, avoid repeating the same idea with different words, and keep capitalization consistent. Use Evaluate to verify coverage and readability.</p>",
+        "created_at": "2025-10-19T18:18:25.170Z",
+        "updated_at": "2025-10-19T18:18:40.485Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "3271e989-446f-4552-987c-5a961974085f",
+            "section_id": "63f312b6-ffbf-4a5e-b9ef-4f21aecd8711",
+            "title": "Insert Section: Custom",
+            "description": "<p>Insert a horizontal line and Insert a <strong>Section Break (continuous)</strong> before your custom heading3. Both must be styled as \"normal\". <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-10-19T18:18:25.945Z",
+            "updated_at": "2025-10-21T17:34:03.606Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "0f9b8db5-638b-4482-a336-1dc02a3da397",
+                "title": "Video5.1",
+                "description": "",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/pgQTDf0wKzQ",
+                "order": 0,
+                "attachable_id": "3271e989-446f-4552-987c-5a961974085f",
+                "attachable_type": "Objective",
+                "created_at": "2025-10-27T02:05:44.500Z",
+                "updated_at": "2025-10-27T02:05:57.215Z",
+                "deleted_at": null,
+                "transcript": "",
+                "transcript_summary": "",
+                "transcript_prompt": "Review the transcript, then summarize it for high school students. Start with; This video is a tutorial on how to ......"
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "261e35e0-3c26-42d1-ae66-3ba76d5c4032",
+                "objective_id": "3271e989-446f-4552-987c-5a961974085f",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 6,
+                    "start_at": 6
+                  }
+                },
+                "created_at": "2025-10-19T18:18:26.387Z",
+                "updated_at": "2025-10-21T17:34:06.635Z",
+                "failure_message": "<p>Verify you have inserted a <strong>Section Break (continuous)</strong> before your custom heading3. <span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "5b3db607-8502-424e-bb0c-7899a0900255",
+                "objective_id": "3271e989-446f-4552-987c-5a961974085f",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "heading3",
+                  "target_attributes": {
+                    "end_at": 6,
+                    "start_at": 6
+                  }
+                },
+                "created_at": "2025-10-19T18:18:26.819Z",
+                "updated_at": "2025-10-21T17:34:09.428Z",
+                "failure_message": "<p>Highlight the word for your custom section, then style it as <strong>heading3</strong>.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "6f58472a-128c-4efc-81af-be54a1000736",
+            "section_id": "63f312b6-ffbf-4a5e-b9ef-4f21aecd8711",
+            "title": "Custom Section Content",
+            "description": "<p><span style=\"color: rgb(230, 0, 0);\">Watch the task video(s) for step-by-step instructions and common errors</span>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Use AI and/or the internet to learn about what belongs in your custom section.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Using only text and bullets, construct your custom section.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>It must consist of at least 20 words and 2 bullet points.</li></ol>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2025-10-19T18:18:27.192Z",
+            "updated_at": "2025-10-21T17:36:02.903Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "d69eda11-93df-4dd2-af38-1a7adfde5dc5",
+                "objective_id": "6f58472a-128c-4efc-81af-be54a1000736",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 18,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 6,
+                    "start_at": 6
+                  }
+                },
+                "created_at": "2025-10-19T18:18:27.654Z",
+                "updated_at": "2025-10-21T17:36:05.985Z",
+                "failure_message": "<p>Your custom section does not contain at least <strong>20</strong> words.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "dee64a86-f4b1-46a1-9e8f-1457ac309528",
+                "objective_id": "6f58472a-128c-4efc-81af-be54a1000736",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "lists_items",
+                  "target_attributes": {
+                    "end_at": 6,
+                    "start_at": 6
+                  }
+                },
+                "created_at": "2025-10-19T18:18:28.080Z",
+                "updated_at": "2025-10-21T17:34:59.385Z",
+                "failure_message": "<p>Your custom section does not contain at least <strong>2</strong> bullet point.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d43f6b36-5748-4c00-ad86-7438cbb5ea86",
+        "rubric_version_id": "4428c591-6a91-4dbb-8533-6b6710aa616e",
+        "title": "Teacher Grader",
+        "order": 7,
+        "description": "<p>Your teacher will evaluate your completed resume to ensure each section contains accurate, well-organized information that effectively presents your qualifications. Double-check each of the tasks below to ensure you submit high quality work. </p>",
+        "created_at": "2025-10-14T15:28:49.397Z",
+        "updated_at": "2025-10-21T18:14:28.845Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "3c5292c4-1686-4344-a803-5abf8c3b4d1d",
+            "section_id": "d43f6b36-5748-4c00-ad86-7438cbb5ea86",
+            "title": "Summary and Formatting",
+            "description": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">Review your Summary section. Verify it includes all required elements: your current grade level, one standout trait or strength, one or two relevant skills, and one concrete achievement with numbers (GPA, certification, or measurable result). Your statement should be 20-30 words, avoid generic buzzwords, and maintain a professional tone.</span></p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "ai_assistant",
+            "points": 50,
+            "created_at": "2025-10-27T00:48:02.450Z",
+            "updated_at": "2025-10-27T00:59:13.313Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "8ea07665-b92e-4396-a23d-8c1eee683fdf",
+                "objective_id": "3c5292c4-1686-4344-a803-5abf8c3b4d1d",
+                "evaluation_type": "ai_assistant",
+                "order": 0,
+                "points": 50,
+                "data": {
+                  "platform": "gemini",
+                  "user_prompt": "`Grading Criteria`\n\n1) Evaluate if the Summary section contains a clear statement (1-2 sentences, 20-40 words) that includes: grade level or expected graduation year, a standout trait or characteristic, two to three relevant strengths or skills that match the student's intended role, and one concrete proof point with numbers when possible (such as GPA, certification, measurable result, project, or achievement). Verify the statement avoids generic buzzwords like \"hardworking\" or \"team player\" and maintains specific, concrete language tailored to the student's career interest or target role. Verify the statement flows logically, communicates the student's value clearly, and maintains a professional tone appropriate for high school students entering the workforce.\n\n2) Evaluate if the resume maintains consistent formatting throughout the entire document, including uniform font choices, standardized bullet point styles, even margins, and balanced spacing between sections. Verify that all section headings are clearly labeled, visually distinct through bold text or capitalization, and formatted consistently across the document. Check that the resume uses bullet points appropriately to break down details in the Experience section, making information easy to read and scan quickly. The resume should present a simple, clean, and organized appearance that demonstrates attention to detail suitable for high school students seeking employment or internships.\n\n3) Contact information is center aligned, sections are tabled, a horizontal line indicated the end of each section (excluding the last one), and the table borders are invisible. "
+                },
+                "created_at": "2025-10-27T00:49:06.873Z",
+                "updated_at": "2025-10-27T00:59:18.555Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": "f1db88dc-21f8-44fb-b69c-3b8563ebe77e",
+                "template_format": "pdf"
+              }
+            ]
+          },
+          {
+            "id": "8a01a613-4a1d-4581-926f-3661607e8520",
+            "section_id": "d43f6b36-5748-4c00-ad86-7438cbb5ea86",
+            "title": "Education and Experience",
+            "description": "<p>Review your Summary section. Verify it includes all required elements: your current grade level, one standout trait or strength, one or two relevant skills, and one concrete achievement with numbers (GPA, certification, or measurable result). Your statement should be 20-30 words, avoid generic buzzwords, and maintain a professional tone.</p><p><br></p><p>Review your Education section. Verify it includes your school name, years attended, and location in City, State format. Confirm you have two bullet points: one describing your coursework or academics, and one stating your GPA in X.X format (e.g., \"GPA: 3.5\").</p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "ai_assistant",
+            "points": 50,
+            "created_at": "2025-10-21T16:49:17.226Z",
+            "updated_at": "2025-10-27T00:59:21.677Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "e53e08c5-ff96-420c-8135-1751763252df",
+                "objective_id": "8a01a613-4a1d-4581-926f-3661607e8520",
+                "evaluation_type": "ai_assistant",
+                "order": 0,
+                "points": 50,
+                "data": {
+                  "platform": "gemini",
+                  "user_prompt": "`Grading Criteria`\n\n1) Evaluate if the Education section contains required elements: school name, years attended, and location formatted as City, State abbreviation. Each education institution must include two bullet points. Bullet point one must describe that student's coursework or academics. Bullet point one must must state GPA in X.X format (e.g., \"GPA: 3.5\").\n"
+                },
+                "created_at": "2025-10-21T16:49:17.627Z",
+                "updated_at": "2025-10-29T20:06:48.474Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": "f1db88dc-21f8-44fb-b69c-3b8563ebe77e",
+                "template_format": "json"
+              }
+            ]
+          },
+          {
+            "id": "cd78f44b-dba0-4b1b-a95e-c52970051a27",
+            "section_id": "d43f6b36-5748-4c00-ad86-7438cbb5ea86",
+            "title": "Skills",
+            "description": "<p>Review your Skills section. Verify you have a properly formatted 1-row, 2-column table positioned directly below the \"Skills\" heading. Confirm the table includes at least six skills total with three skills per column, each as a separate bullet point. Check that each skill is concise (1-3 words only), uses professional terminology, and avoids complete sentences or lengthy descriptions.</p><p><br></p><p>Review your custom section. Verify you selected one allowed heading (Leadership, Extracurriculars, Projects, Certifications, Volunteer, Achievements, or Languages). Confirm your section contains at least 20 words total and includes at least one bullet point. Check that your content is relevant to the section type you chose, demonstrates appropriate research, and uses only text and bullets (no tables, graphics, or special formatting).</p>",
+            "order": 2,
+            "assessmentable": null,
+            "evaluation_type": "ai_assistant",
+            "points": 50,
+            "created_at": "2025-10-21T13:20:01.230Z",
+            "updated_at": "2025-10-27T00:59:28.081Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "635381b4-194b-4950-b8a1-39e7fc4078aa",
+                "objective_id": "cd78f44b-dba0-4b1b-a95e-c52970051a27",
+                "evaluation_type": "ai_assistant",
+                "order": 0,
+                "points": 50,
+                "data": {
+                  "platform": "gemini",
+                  "user_prompt": "`Grading Criteria`\n\n1) Evaluate if the Skills section contains a properly formatted 1-row, 2-column table positioned directly below the \"Skills\" heading. Verify the table includes at least six skills total with three skills per column, each as a separate bullet point. Check that each skill entry is concise (1-3 words only), uses professional terminology relevant to high school students, and avoids complete sentences or lengthy descriptions.\n\n2) Evaluate if the student selected one allowed custom section heading (Leadership, Extracurriculars, Projects, Certifications, Volunteer, Achievements, or Languages). Verify the section contains at least 20 words total and includes at least one bullet point. Check that content is relevant to the chosen section type, demonstrates research into appropriate section content, and uses only text and bullets (no tables, graphics, or special formatting).\n\nSection-Specific Expectations:\nLeadership: Positions held, organizations led, team sizes, initiatives implemented\nExtracurriculars: Club names, roles, years participated, key activities or contributions\nProjects: Project titles, dates, descriptions, outcomes or technologies used\nCertifications: Certification names, issuing organizations, dates earned\nVolunteer: Organization names, roles, hours served, impact or responsibilities\nAchievements: Award names, competitions, dates, level of recognition (school/regional/national)\nLanguages: Language names, proficiency levels, relevant experience or certifications"
+                },
+                "created_at": "2025-10-21T13:20:01.614Z",
+                "updated_at": "2025-10-27T00:59:31.593Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": "f1db88dc-21f8-44fb-b69c-3b8563ebe77e",
+                "template_format": "json"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "template_file_ready": true
+  }

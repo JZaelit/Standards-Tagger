@@ -1,0 +1,591 @@
+{
+    "id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
+    "rubric_id": "2c5134dd-1807-4c22-8899-fa4c77166a71",
+    "title": "Mockingbird Essay",
+    "description": "<p>You will write a literary analysis essay examining Harper Lee's \"To Kill a Mockingbird.\" Your essay will present a clear, arguable thesis exploring a specific aspect of the novel while demonstrating your technical proficiency in modern document creation and formatting.</p>",
+    "user_id": "6ae5c814-5b21-4ac5-9481-936a535bc9e2",
+    "deleted_at": null,
+    "created_at": "2024-12-06T05:10:46.945Z",
+    "updated_at": "2025-01-13T13:59:32.703Z",
+    "status": "active",
+    "version": 1,
+    "content_hash": null,
+    "tags": [],
+    "rubric_variables": [],
+    "template": {
+      "id": "b012d366-fa49-4aa5-9915-71b573063675",
+      "attachable_id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
+      "attachable_type": "RubricVersion",
+      "order": 1,
+      "provider_slug": "google/docs",
+      "title": "Hello",
+      "description": "World",
+      "file_id": "853f7cbb-7caf-48a1-a138-dd9eae219352",
+      "file": {
+        "id": "853f7cbb-7caf-48a1-a138-dd9eae219352",
+        "url": "https://docs.google.com/document/d/1tF-E8JxrdoLAV1uRwDXPfNF0cRL3GHPd17SEijSa7FU/edit"
+      },
+      "created_at": "2024-12-06T05:11:01.072Z",
+      "updated_at": "2024-12-06T05:11:04.976Z",
+      "deleted_at": null,
+      "use_case": "live"
+    },
+    "resource_attachments": [],
+    "resources": [],
+    "resource_file_links": [],
+    "sections": [
+      {
+        "id": "1d62addc-adef-4c2a-b830-7b76c2f0795b",
+        "rubric_version_id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
+        "title": "File Name",
+        "order": 0,
+        "description": "Follow the file naming convention of: Your Name | Period # | Assignment Name",
+        "created_at": "2024-12-06T05:10:46.960Z",
+        "updated_at": "2024-12-06T05:10:46.960Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "a101868c-e270-4f94-99de-f3659c3f672c",
+            "section_id": "1d62addc-adef-4c2a-b830-7b76c2f0795b",
+            "title": "Naming Convention",
+            "description": "Follow the file naming convention of: Your Name | Period # | Assignment Name",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 10,
+            "created_at": "2024-12-06T05:10:46.973Z",
+            "updated_at": "2024-12-06T05:10:46.973Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "181a5978-979d-4cc4-beb0-94c9fe94affd",
+                "objective_id": "a101868c-e270-4f94-99de-f3659c3f672c",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 10,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "kill",
+                      "mockingbird",
+                      "essay",
+                      "period"
+                    ],
+                    "occurrence": 4,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2024-12-06T05:10:46.994Z",
+                "updated_at": "2024-12-06T05:10:46.994Z",
+                "failure_message": "Your file name does not meet the naming convention requirement.",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "724b29a4-ad64-420e-aef0-eb4162f73b33",
+        "rubric_version_id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
+        "title": "Essay Objectives",
+        "order": 1,
+        "description": "These tasks will outline the objective requirements for your essay.",
+        "created_at": "2024-12-06T05:10:47.011Z",
+        "updated_at": "2024-12-06T05:10:47.011Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "f2025c31-6677-4554-81dc-8bff6dcd6fb1",
+            "section_id": "724b29a4-ad64-420e-aef0-eb4162f73b33",
+            "title": "Essay Length",
+            "description": "Your essay must be 500-1000 words and contain at least five paragraphs. ",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 40,
+            "created_at": "2024-12-06T05:10:47.017Z",
+            "updated_at": "2024-12-06T05:10:47.017Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "830de36f-a27b-438c-9220-8e663da74007",
+                "objective_id": "f2025c31-6677-4554-81dc-8bff6dcd6fb1",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 10,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 250,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2024-12-06T05:10:47.027Z",
+                "updated_at": "2024-12-06T05:10:47.027Z",
+                "failure_message": "Your essay does not have at least 250 words. ",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "49dedf71-4a15-4939-aff2-26fcad5f88c3",
+                "objective_id": "f2025c31-6677-4554-81dc-8bff6dcd6fb1",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 10,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 400,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2024-12-06T05:10:47.042Z",
+                "updated_at": "2024-12-06T05:10:47.042Z",
+                "failure_message": "Your essay does not have at least 400 words. ",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "f452eae0-a3ba-430f-b07e-0e8926a1e40a",
+                "objective_id": "f2025c31-6677-4554-81dc-8bff6dcd6fb1",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 10,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 3,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "paragraphs"
+                },
+                "created_at": "2024-12-06T05:10:47.050Z",
+                "updated_at": "2024-12-06T05:10:47.050Z",
+                "failure_message": "Your essay does not have at least three paragraphs.",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "2f3d3528-f8f2-488e-823c-28525360a3d8",
+                "objective_id": "f2025c31-6677-4554-81dc-8bff6dcd6fb1",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 10,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 5,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "paragraphs"
+                },
+                "created_at": "2024-12-06T05:10:47.056Z",
+                "updated_at": "2024-12-06T05:10:47.056Z",
+                "failure_message": "Your essay does not have at least five paragraphs.",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "ece799e2-e440-49dd-9ae8-4b77094313ea",
+            "section_id": "724b29a4-ad64-420e-aef0-eb4162f73b33",
+            "title": "Essay Elements",
+            "description": "Include two hyperlinks and two images that are relevant information this essay. ",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 20,
+            "created_at": "2024-12-06T05:10:47.062Z",
+            "updated_at": "2024-12-06T05:10:47.062Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "20a8d60d-3d8c-4a35-bcc7-e464eb729f42",
+                "objective_id": "ece799e2-e440-49dd-9ae8-4b77094313ea",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 1,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "hyperlinks"
+                },
+                "created_at": "2024-12-06T05:10:47.071Z",
+                "updated_at": "2024-12-06T05:10:47.071Z",
+                "failure_message": "Your file does not include at least 1 hyperlink.",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "1a429eb6-ada8-4471-846c-36c47134d9b2",
+                "objective_id": "ece799e2-e440-49dd-9ae8-4b77094313ea",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 2,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "hyperlinks"
+                },
+                "created_at": "2024-12-06T05:10:47.078Z",
+                "updated_at": "2024-12-06T05:10:47.078Z",
+                "failure_message": "Your file does not include at least 2 hyperlinks.",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "b8488f90-0bae-41f8-bb2c-30ab8d757244",
+                "objective_id": "ece799e2-e440-49dd-9ae8-4b77094313ea",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 1,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "images"
+                },
+                "created_at": "2024-12-06T05:10:47.084Z",
+                "updated_at": "2024-12-06T05:10:47.084Z",
+                "failure_message": "Your file does not include at least 1 image.",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "a2521639-0eae-4e5c-9518-772da97a3137",
+                "objective_id": "ece799e2-e440-49dd-9ae8-4b77094313ea",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 5,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 2,
+                    "case_sensitive": true
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "images"
+                },
+                "created_at": "2024-12-06T05:10:47.089Z",
+                "updated_at": "2024-12-06T05:10:47.089Z",
+                "failure_message": "Your file does not include at least 2 image.",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "302957bc-e11a-4470-9be0-bc6efecb6474",
+            "section_id": "724b29a4-ad64-420e-aef0-eb4162f73b33",
+            "title": "Essay Content",
+            "description": "Include character names, locations, scenes, etc... in your text. ",
+            "order": 2,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 30,
+            "created_at": "2024-12-06T05:10:47.094Z",
+            "updated_at": "2024-12-06T05:10:47.094Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "766bca9b-2603-405e-a9a6-0975f1a301cf",
+                "objective_id": "302957bc-e11a-4470-9be0-bc6efecb6474",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 10,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "Scout",
+                      "Atticus",
+                      "Jem",
+                      "Dill",
+                      "Calpurnia",
+                      "Tom",
+                      "Mayella",
+                      "Bob",
+                      "Boo",
+                      "Maudie",
+                      "Alexandra",
+                      "Nathan",
+                      "Heck"
+                    ],
+                    "occurrence": 3,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2024-12-06T05:10:47.101Z",
+                "updated_at": "2024-12-06T05:10:47.101Z",
+                "failure_message": "Your does not reference at least three character first names. Double-check correct spelling. ",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "1a48488f-239b-4e08-83f9-5e4472c8d997",
+                "objective_id": "302957bc-e11a-4470-9be0-bc6efecb6474",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 10,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "inch",
+                      "Ewell",
+                      "Radley",
+                      "Robinson",
+                      "Dubose",
+                      "Crawford",
+                      "Tate",
+                      "Deas",
+                      "Taylor",
+                      "Underwood",
+                      "Merriweather",
+                      "Gates",
+                      "Perkins"
+                    ],
+                    "occurrence": 3,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2024-12-06T05:10:47.106Z",
+                "updated_at": "2024-12-06T05:10:47.106Z",
+                "failure_message": "Your does not reference at least three character last names. Double-check correct spelling. ",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "2e7afbc6-69a7-4e80-88b5-a62e695d26d0",
+                "objective_id": "302957bc-e11a-4470-9be0-bc6efecb6474",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 10,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "School",
+                      "Knothole",
+                      "Rabid",
+                      "Dog",
+                      "Mob",
+                      "jail",
+                      "Trial",
+                      "Argument",
+                      "Conviction",
+                      "Death",
+                      "Halloween",
+                      "Pageant",
+                      "Rescu"
+                    ],
+                    "occurrence": 3,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2024-12-06T05:10:47.117Z",
+                "updated_at": "2024-12-06T05:10:47.117Z",
+                "failure_message": "Your does not reference at least two important scenes from the book. Double-check correct spelling. ",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "9e1266bf-193b-43f5-abc6-7fdd6f66b111",
+        "rubric_version_id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
+        "title": "AI Evaluations",
+        "order": 2,
+        "description": "AI Evaluations",
+        "created_at": "2024-12-06T05:10:47.132Z",
+        "updated_at": "2024-12-06T05:10:47.132Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "c8b77d76-ce8d-4aac-aca3-85cac4dc5714",
+            "section_id": "9e1266bf-193b-43f5-abc6-7fdd6f66b111",
+            "title": "Subjective AI",
+            "description": "Subjective AI Evaluations covering Depth of Analysis, Clarity and Coherence, Engagement and Originality, Use of Textual Evidence, and Emotional and Intellectual Impact.",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 50,
+            "created_at": "2024-12-06T05:10:47.139Z",
+            "updated_at": "2024-12-06T05:10:47.139Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "130b8fcf-41c9-40fe-af6d-0f7e11e2276d",
+                "objective_id": "c8b77d76-ce8d-4aac-aca3-85cac4dc5714",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 50,
+                "data": {
+                  "model": "gpt-4o",
+                  "platform": "open_ai",
+                  "max_tokens": 1000,
+                  "temperature": "0.1",
+                  "user_prompt": "<p><span style=\"color: rgb(0, 0, 0); background-color: transparent;\">`Grading Criteria`</span></p><h3><br></h3><p><strong>Clarity and Relevance of Thesis (10 points): </strong>Evaluate the extent to which the essay presents a clear, arguable, and specific thesis related to <em>To Kill a Mockingbird</em>. The thesis must focus on a particular aspect of the novel, such as a theme, character development, moral conflict, or symbolism.</p><ul><li><strong>10 points:</strong> Thesis is clear, specific, and directly addresses a significant aspect of the novel with a well-defined argument.</li><li><strong>5 points:</strong> Thesis is somewhat clear but lacks specificity or relevance to a critical element of the novel.</li><li><strong>0 points:</strong> Thesis is unclear, overly general, or not directly related to <em>To Kill a Mockingbird</em>.</li></ul><p><br></p><p><strong>Depth of Literary Analysis (10 points): </strong>Assess how well the essay examines key literary elements such as themes, motifs, character arcs, or the setting of <em>To Kill a Mockingbird</em>. Look for evidence of critical thinking and insight into the text.</p><ul><li><strong>10 points:</strong> Analysis demonstrates a deep understanding of the novel, providing original insights and nuanced interpretations of its literary elements.</li><li><strong>5 points:</strong> Analysis shows some understanding of the text but lacks depth or originality.</li><li><strong>0 points:</strong> Analysis is superficial, overly simplistic, or misinterprets the novel.</li></ul><p><br></p><p><strong>Use of Evidence from the Text (10 points): </strong>Determine the quality and integration of textual evidence used to support the essay’s thesis and analysis. Quotes and references should be relevant, accurately cited, and effectively woven into the argument.</p><ul><li><strong>10 points:</strong> Evidence is consistently relevant, well-chosen, and seamlessly integrated to support the thesis and analysis.</li><li><strong>5 points:</strong> Evidence is occasionally relevant but may lack variety, proper integration, or sufficient connection to the argument.</li><li><strong>0 points:</strong> Evidence is absent, irrelevant, or misinterpreted.</li></ul><p><br></p><p><strong>Exploration of Social and Historical Context (10 points): </strong>Evaluate the extent to which the essay incorporates the social and historical context of the 1930s American South as it relates to <em>To Kill a Mockingbird</em>. Consider how the context is used to enhance the analysis.</p><ul><li><strong>10 points:</strong> Context is skillfully integrated and enhances the understanding of the novel’s themes, conflicts, or characters.</li><li><strong>5 points:</strong> Context is mentioned but not effectively integrated into the analysis or lacks depth.</li><li><strong>0 points:</strong> Context is absent, irrelevant, or misrepresented.</li></ul><p><br></p><p><strong>Character and Theme Interconnection (10 points): </strong>Assess how well the essay connects character development to overarching themes in the novel, such as racism, justice, or moral growth. The connections should be clear and well-supported.</p><ul><li><strong>10 points:</strong> Essay insightfully explores the relationship between character arcs and themes, providing well-supported connections that enhance the argument.</li><li><strong>5 points:</strong> Essay makes some connections between characters and themes but lacks depth or clarity.</li><li><strong>0 points:</strong> Essay fails to connect character development to the novel’s themes or does so incorrectly.</li></ul><p><br></p>",
+                  "system_prompt": "<ol><li><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\">You are an expert educator assisting a classroom teacher. Your task is to review student-submitted files, evaluate them based on specific `Grading Criteria`, provide formative feedback to the student, and offer a critical assessment to the classroom teacher.</span></li></ol>"
+                },
+                "created_at": "2024-12-06T05:10:47.147Z",
+                "updated_at": "2024-12-06T05:10:47.147Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "5a50d614-75a9-483d-9c4c-cb3c7039fcbe",
+            "section_id": "9e1266bf-193b-43f5-abc6-7fdd6f66b111",
+            "title": "Objective AI",
+            "description": "Objective: Spelling, Grammar and Syntax, Formatting, Organized Ideas into Paragraphs, and LEngth. ",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 50,
+            "created_at": "2024-12-06T05:10:47.163Z",
+            "updated_at": "2024-12-06T05:10:47.163Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "8106d531-205d-4d6c-bc57-e1801eee39e7",
+                "objective_id": "5a50d614-75a9-483d-9c4c-cb3c7039fcbe",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 50,
+                "data": {
+                  "model": "gpt-4o",
+                  "platform": "open_ai",
+                  "max_tokens": 1000,
+                  "temperature": "0.1",
+                  "user_prompt": "<p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">`Grading Criteria`</span></p><p><br></p><p><strong>Word Count (10 points)</strong></p><ul><li>Evaluate the total word count of the essay.</li><li>Scoring Guide:</li><li class=\"ql-indent-1\">10 points: Word count is between 800-1000 words.</li><li class=\"ql-indent-1\">7-9 points: Word count is 700-799 or 1001-1100.</li><li class=\"ql-indent-1\">4-6 points: Word count is 600-699 or 1101-1200.</li><li class=\"ql-indent-1\">1-3 points: Word count is less than 600 or more than 1200.</li><li class=\"ql-indent-1\">0 points: Word count is below 400 or excessively over 1500.</li></ul><p><strong>Presence of Paragraphs (10 points)</strong></p><ul><li>Evaluate the structure and presence of distinct paragraphs in the document.</li><li>Scoring Guide:</li><li class=\"ql-indent-1\">10 points: Essay includes 5 or more paragraphs with clear divisions.</li><li class=\"ql-indent-1\">7-9 points: Essay includes 4 paragraphs.</li><li class=\"ql-indent-1\">4-6 points: Essay includes 3 paragraphs.</li><li class=\"ql-indent-1\">1-3 points: Essay includes 2 paragraphs.</li><li class=\"ql-indent-1\">0 points: Essay is a single paragraph.</li></ul><p><strong>Title Formatting (10 points)</strong></p><ul><li>Assess the formatting of the essay's title based on font size, boldness, and presence at the top of the document.</li><li>Scoring Guide:</li><li class=\"ql-indent-1\">10 points: Title is bolded, centered, and at least 20-point font.</li><li class=\"ql-indent-1\">7-9 points: Title is bolded and centered, but font size is 16-19.</li><li class=\"ql-indent-1\">4-6 points: Title is present but missing either bolding, centering, or proper font size.</li><li class=\"ql-indent-1\">1-3 points: Title is present but poorly formatted.</li><li class=\"ql-indent-1\">0 points: No title is present.</li></ul><p><strong>Spelling Accuracy (10 points)</strong></p><ul><li>Count the number of spelling errors in the document.</li><li>Scoring Guide:</li><li class=\"ql-indent-1\">10 points: 0 spelling errors.</li><li class=\"ql-indent-1\">7-9 points: 1-2 spelling errors.</li><li class=\"ql-indent-1\">4-6 points: 3-5 spelling errors.</li><li class=\"ql-indent-1\">1-3 points: 6-10 spelling errors.</li><li class=\"ql-indent-1\">0 points: More than 10 spelling errors.</li></ul><p><strong>Grammar and Syntax Accuracy (10 points)</strong></p><ul><li>Evaluate the number of grammatical or syntax errors in the text.</li><li>Scoring Guide:</li><li class=\"ql-indent-1\">10 points: 0 grammatical or syntax errors.</li><li class=\"ql-indent-1\">7-9 points: 1-2 errors.</li><li class=\"ql-indent-1\">4-6 points: 3-5 errors.</li><li class=\"ql-indent-1\">1-3 points: 6-10 errors.</li><li class=\"ql-indent-1\">0 points: More than 10 errors.</li></ul>",
+                  "system_prompt": "<p><span style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\">You are an expert educator assisting a classroom teacher. Your task is to review student-submitted files, evaluate them based on specific `Grading Criteria`, provide formative feedback to the student, and offer a critical assessment to the classroom teacher.</span></p>"
+                },
+                "created_at": "2024-12-06T05:10:47.171Z",
+                "updated_at": "2024-12-06T05:10:47.171Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "template_file_ready": true
+  }

@@ -1,0 +1,118 @@
+{
+  "source_pdf": "ELA-CA-finalelaccssstandards.pdf",
+  "source_label": "California Common Core State Standards: English Language Arts & Literacy (CDE, 2013 edition)",
+  "generated_by": "tools/parse_ela.py",
+  "strands": {
+    "RL": "Reading Standards for Literature",
+    "RI": "Reading Standards for Informational Text",
+    "RF": "Reading Standards for Foundational Skills",
+    "W": "Writing Standards",
+    "SL": "Speaking and Listening Standards",
+    "L": "Language Standards",
+    "RH": "Reading Standards for Literacy in History/Social Studies",
+    "RST": "Reading Standards for Literacy in Science and Technical Subjects",
+    "WHST": "Writing Standards for Literacy in History/Social Studies, Science, and Technical Subjects"
+  },
+  "subgroups": {
+    "RL": {
+      "1": "Key Ideas and Details",
+      "2": "Key Ideas and Details",
+      "3": "Key Ideas and Details",
+      "4": "Craft and Structure",
+      "5": "Craft and Structure",
+      "6": "Craft and Structure",
+      "7": "Integration of Knowledge and Ideas",
+      "8": "Integration of Knowledge and Ideas",
+      "9": "Integration of Knowledge and Ideas",
+      "10": "Range of Reading and Level of Text Complexity"
+    },
+    "RI": {
+      "1": "Key Ideas and Details",
+      "2": "Key Ideas and Details",
+      "3": "Key Ideas and Details",
+      "4": "Craft and Structure",
+      "5": "Craft and Structure",
+      "6": "Craft and Structure",
+      "7": "Integration of Knowledge and Ideas",
+      "8": "Integration of Knowledge and Ideas",
+      "9": "Integration of Knowledge and Ideas",
+      "10": "Range of Reading and Level of Text Complexity"
+    },
+    "RF": {
+      "1": "Print Concepts",
+      "2": "Phonological Awareness",
+      "3": "Phonics and Word Recognition",
+      "4": "Fluency"
+    },
+    "W": {
+      "1": "Text Types and Purposes",
+      "2": "Text Types and Purposes",
+      "3": "Text Types and Purposes",
+      "4": "Production and Distribution of Writing",
+      "5": "Production and Distribution of Writing",
+      "6": "Production and Distribution of Writing",
+      "7": "Research to Build and Present Knowledge",
+      "8": "Research to Build and Present Knowledge",
+      "9": "Research to Build and Present Knowledge",
+      "10": "Range of Writing"
+    },
+    "SL": {
+      "1": "Comprehension and Collaboration",
+      "2": "Comprehension and Collaboration",
+      "3": "Comprehension and Collaboration",
+      "4": "Presentation of Knowledge and Ideas",
+      "5": "Presentation of Knowledge and Ideas",
+      "6": "Presentation of Knowledge and Ideas"
+    },
+    "L": {
+      "1": "Conventions of Standard English",
+      "2": "Conventions of Standard English",
+      "3": "Knowledge of Language",
+      "4": "Vocabulary Acquisition and Use",
+      "5": "Vocabulary Acquisition and Use",
+      "6": "Vocabulary Acquisition and Use"
+    },
+    "RH": {
+      "1": "Key Ideas and Details",
+      "2": "Key Ideas and Details",
+      "3": "Key Ideas and Details",
+      "4": "Craft and Structure",
+      "5": "Craft and Structure",
+      "6": "Craft and Structure",
+      "7": "Integration of Knowledge and Ideas",
+      "8": "Integration of Knowledge and Ideas",
+      "9": "Integration of Knowledge and Ideas",
+      "10": "Range of Reading and Level of Text Complexity"
+    },
+    "RST": {
+      "1": "Key Ideas and Details",
+      "2": "Key Ideas and Details",
+      "3": "Key Ideas and Details",
+      "4": "Craft and Structure",
+      "5": "Craft and Structure",
+      "6": "Craft and Structure",
+      "7": "Integration of Knowledge and Ideas",
+      "8": "Integration of Knowledge and Ideas",
+      "9": "Integration of Knowledge and Ideas",
+      "10": "Range of Reading and Level of Text Complexity"
+    },
+    "WHST": {
+      "1": "Text Types and Purposes",
+      "2": "Text Types and Purposes",
+      "4": "Production and Distribution of Writing",
+      "5": "Production and Distribution of Writing",
+      "6": "Production and Distribution of Writing",
+      "7": "Research to Build and Present Knowledge",
+      "8": "Research to Build and Present Knowledge",
+      "9": "Research to Build and Present Knowledge",
+      "10": "Range of Writing"
+    }
+  },
+  "sections": [
+    "6-12 ELA",
+    "6-12 Literacy in H/SS",
+    "6-12 Literacy in H/SS/Sci/Tech",
+    "6-12 Literacy in Science/Tech",
+    "K-5 ELA"
+  ]
+}

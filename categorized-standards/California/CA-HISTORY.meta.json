@@ -1,0 +1,54 @@
+{
+  "source_pdf": "HISTORY-CA-finalelaccssstandards.pdf",
+  "source_label": "California History-Social Science Content Standards (CDE, 1998 adoption / 2000 publication)",
+  "generated_by": "tools/parse_history.py",
+  "sections": [
+    "K-5 Analysis Skills",
+    "K-5 Content",
+    "6-8 Analysis Skills",
+    "6-8 Content",
+    "9-12 Analysis Skills",
+    "9-12 Content"
+  ],
+  "grade_bands": [
+    "K-5",
+    "6-8",
+    "9-12"
+  ],
+  "grade_titles": {
+    "K": "Learning and Working Now and Long Ago",
+    "1": "A Child's Place in Time and Space",
+    "2": "People Who Make a Difference",
+    "3": "Continuity and Change",
+    "4": "California: A Changing State",
+    "5": "United States History and Geography: Making a New Nation",
+    "6": "World History and Geography: Ancient Civilizations",
+    "7": "World History and Geography: Medieval and Early Modern Times",
+    "8": "United States History and Geography: Growth and Conflict",
+    "10": "World History, Culture, and Geography: The Modern World",
+    "11": "United States History and Geography: Continuity and Change in the Twentieth Century",
+    "12": "Principles of American Democracy and Economics"
+  },
+  "grade_12_courses": {
+    "12": "Principles of American Democracy",
+    "12E": "Principles of Economics"
+  },
+  "skill_categories": {
+    "CST": "Chronological and Spatial Thinking",
+    "REP": "Research, Evidence, and Point of View",
+    "HI": "Historical Interpretation"
+  },
+  "code_scheme": {
+    "content_top": "<grade>.<n>            e.g. K.1, 5.4, 10.2",
+    "content_sub": "<grade>.<n>.<sub>      e.g. K.1.1, 5.4.3, 10.2.5",
+    "grade_12_econ": "12E.<n>[.<sub>]        Principles of Economics course",
+    "skill": "HSS-<band>.<cat>.<i>   e.g. HSS-K5.CST.1, HSS-912.HI.4"
+  },
+  "notes": [
+    "Grade 9 has no content standards in this PDF; only the 9-12 Analysis Skills apply.",
+    "Grade 12 covers two semester courses (American Democracy = prefix 12, Economics = prefix 12E) sharing the same numeric standard ordering.",
+    "Top-level standards and substandards are both emitted as records.",
+    "Analysis-skills codes (HSS-<band>.<cat>.<i>) are minted; the source has no canonical short code for them."
+  ],
+  "record_count": 642
+}

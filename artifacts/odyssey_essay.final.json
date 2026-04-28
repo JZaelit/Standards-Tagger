@@ -1,0 +1,205 @@
+{
+  "edusperience_id": "2db23ee0-f8f4-479f-8c6b-45e338408215",
+  "edusperience_title": "Odyssey Mini Essay V2",
+  "source_file": "edusperiences/odyssey_essay.json",
+  "inferred_grade_bands": [
+    "9-10",
+    "11-12"
+  ],
+  "standards_db": "categorized-standards/California/CA-ELA.json",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> LLM curation (Claude Sonnet)",
+  "notes": "High-school argumentative mini-essay on heroism in The Odyssey (introduction + single body paragraph).",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "GradeFlow Intro",
+      "description": "Tutorial task / platform setup.",
+      "alignments": [],
+      "note": "Logistical / platform onboarding. No ELA standard applies."
+    },
+    {
+      "path": "sections[0].objectives[1]",
+      "title": "MLA Heading",
+      "description": "Create MLA heading (name, teacher, class, date) at top-left.",
+      "alignments": [
+        {
+          "code": "W.9-10.4",
+          "confidence": "low",
+          "rationale": "Producing writing appropriate to task and purpose touches format conventions, though MLA heading itself is largely logistical."
+        }
+      ]
+    },
+    {
+      "path": "sections[0].objectives[2]",
+      "title": "Essay Title",
+      "description": "Draft a title that tells the reader what the essay is about.",
+      "alignments": [
+        {
+          "code": "W.9-10.4",
+          "confidence": "medium",
+          "rationale": "Writing a title tied to task and purpose falls under producing clear and coherent writing."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Prewriting — Introduction",
+      "description": "Plan hook, background, thesis via a prewriting table.",
+      "alignments": [
+        {
+          "code": "W.9-10.5",
+          "confidence": "high",
+          "rationale": "Develop and strengthen writing as needed by planning, revising, editing — prewriting is the 'planning' phase."
+        },
+        {
+          "code": "W.9-10.1.a",
+          "confidence": "high",
+          "rationale": "Introduce precise claim(s), distinguish from alternate claims, and create organization — the intro/thesis frame."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Prewriting — Topic and Commentary",
+      "description": "Plan topic sentence, evidence, and commentary for the body paragraph.",
+      "alignments": [
+        {
+          "code": "W.9-10.5",
+          "confidence": "high",
+          "rationale": "Planning body-paragraph structure is part of the writing process."
+        },
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Develop claims and counterclaims fairly, supplying evidence for each."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[2]",
+      "title": "Prewriting — Commentary and Conclusion",
+      "description": "Plan additional evidence and commentary through to the conclusion.",
+      "alignments": [
+        {
+          "code": "W.9-10.5",
+          "confidence": "high",
+          "rationale": "Planning stage of the writing process."
+        },
+        {
+          "code": "W.9-10.1.e",
+          "confidence": "medium",
+          "rationale": "Provide a concluding statement or section that follows from and supports the argument."
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "Insert Section Breaks",
+      "description": "Insert Section Break (continuous) for GradeFlow identification.",
+      "alignments": [],
+      "note": "Platform-specific document formatting. No ELA standard applies."
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "title": "Introduction Paragraph",
+      "description": "Write hook, background, and a main argument. Must include required elements.",
+      "alignments": [
+        {
+          "code": "W.9-10.1",
+          "confidence": "high",
+          "rationale": "Write arguments to support claims with valid reasoning — the overarching argument-writing standard."
+        },
+        {
+          "code": "W.9-10.1.a",
+          "confidence": "high",
+          "rationale": "Introduce precise claim(s) and create an organization that establishes clear relationships among claim(s), counterclaims, reasons, and evidence."
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[2]",
+      "title": "Body Paragraph",
+      "description": "Topic sentence, two quoted pieces of evidence, commentary, conclusion.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Develop claim(s) fairly, supplying evidence for each while pointing out strengths and limitations."
+        },
+        {
+          "code": "W.9-10.1.c",
+          "confidence": "high",
+          "rationale": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify relationships."
+        },
+        {
+          "code": "RL.9-10.1",
+          "confidence": "high",
+          "rationale": "Cite strong and thorough textual evidence to support analysis — the quote-selection and quote-handling part."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "title": "Prewriting Connections",
+      "description": "Review that prewriting plan flows into final essay (quotes and commentary).",
+      "alignments": [
+        {
+          "code": "W.9-10.5",
+          "confidence": "high",
+          "rationale": "Revising to ensure the plan is reflected — editing/revising phase of writing."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[1]",
+      "title": "Introduction Paragraph (Teacher Graded)",
+      "description": "Verify hook, title/author, summary, and directional thesis.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.a",
+          "confidence": "high",
+          "rationale": "Introduce precise claim(s) and establish significance — this is the thesis-and-framing check."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[2]",
+      "title": "Body Paragraph (Teacher Graded)",
+      "description": "Clear topic sentence, two quotes, commentary on Odysseus's heroism.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Develop claim(s) and supply evidence — graded on quote integration and support."
+        },
+        {
+          "code": "RL.9-10.3",
+          "confidence": "medium",
+          "rationale": "Analyze how complex characters (Odysseus) develop and advance themes (heroism)."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[3]",
+      "title": "Quality and Format",
+      "description": "Analytical language, smooth flow, commentary starters, MLA format.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.d",
+          "confidence": "high",
+          "rationale": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline."
+        },
+        {
+          "code": "L.9-10.3",
+          "confidence": "medium",
+          "rationale": "Apply knowledge of language to make effective choices — vary sentence structure for meaning and style."
+        },
+        {
+          "code": "L.9-10.1",
+          "confidence": "medium",
+          "rationale": "Conventions of standard English grammar and usage in the polished draft."
+        }
+      ]
+    }
+  ]
+}

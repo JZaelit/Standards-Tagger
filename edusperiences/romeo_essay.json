@@ -1,0 +1,2446 @@
+{
+    "id": "3bcf4e6c-936b-44b7-8b93-718ccaeb1426",
+    "rubric_id": "3d67d9fa-5f1a-493e-898d-386d60933f82",
+    "title": "Romeo and Juliet",
+    "description": "<p><span style=\"color: rgb(230, 0, 0);\">Your teacher will give the final grade after reviewing your work</span><span style=\"color: rgb(3, 7, 18);\">. Use GradeFlow scores and feedback as a guide to check your progress. The </span><strong style=\"color: rgb(3, 7, 18);\">Essay Instructions</strong><span style=\"color: rgb(3, 7, 18);\"> (linked at the top right of your Google File) are the requirements for this assignment. </span>The Grading Rubric at the bottom of that file explains how your final grade will be calculated by your teacher.<span style=\"color: rgb(3, 7, 18);\"> </span></p><p><br></p><ol><li><strong style=\"color: rgb(230, 0, 0);\">﻿Before you work on tasks, ensure you watch the Task resource videos. </strong></li><li><strong style=\"color: rgb(230, 0, 0);\">﻿Review the Resource File (linked at the top right of your Google File) before you begin.</strong></li></ol>",
+    "user_id": "6ae5c814-5b21-4ac5-9481-936a535bc9e2",
+    "deleted_at": null,
+    "created_at": "2025-05-19T15:33:23.915Z",
+    "updated_at": "2025-06-04T00:38:39.817Z",
+    "status": "active",
+    "version": 32,
+    "content_hash": "95b4c28803ae1e937e30b239f9af938ee62ae3d1c3d72dc5761e81cee3d45c75",
+    "tags": [],
+    "rubric_variables": [],
+    "template": {
+      "id": "11f3aa56-7623-4667-a349-34baaf0181f6",
+      "attachable_id": "3bcf4e6c-936b-44b7-8b93-718ccaeb1426",
+      "attachable_type": "RubricVersion",
+      "order": 0,
+      "provider_slug": "google/docs",
+      "title": null,
+      "description": null,
+      "file_id": "4785c37e-06f0-4873-9125-d9f08c093074",
+      "file": {
+        "id": "4785c37e-06f0-4873-9125-d9f08c093074",
+        "url": "https://docs.google.com/document/d/1GKEreuHaMKizNS5EepjfRB-3TsjaniH4PMJGUOCaNM4/edit"
+      },
+      "created_at": "2025-05-19T15:33:28.482Z",
+      "updated_at": "2025-05-19T15:33:38.606Z",
+      "deleted_at": null,
+      "use_case": "live"
+    },
+    "test_template": {
+      "id": "a9e22070-b44c-4244-a014-f93ee3f6b305",
+      "attachable_id": "3bcf4e6c-936b-44b7-8b93-718ccaeb1426",
+      "attachable_type": "RubricVersion",
+      "order": 0,
+      "provider_slug": "google/docs",
+      "title": null,
+      "description": null,
+      "file_id": "d9bbe134-3cdf-4053-b1d8-8af4215dbd6f",
+      "file": {
+        "id": "d9bbe134-3cdf-4053-b1d8-8af4215dbd6f",
+        "url": "https://docs.google.com/document/d/1cw8o7RDP_EUY5sEqSzrdN1P3DC2leRyQj7ytOz7s_FY/edit"
+      },
+      "created_at": "2025-05-19T15:33:28.509Z",
+      "updated_at": "2025-05-19T15:33:35.853Z",
+      "deleted_at": null,
+      "use_case": "test"
+    },
+    "resource_attachments": [],
+    "resources": [],
+    "resource_file_links": [],
+    "sections": [
+      {
+        "id": "36d9740d-f7f4-46a2-95ad-5ffe170c6733",
+        "rubric_version_id": "3bcf4e6c-936b-44b7-8b93-718ccaeb1426",
+        "title": "Essay Setup",
+        "order": 0,
+        "description": "<p>We'll cover the essay requirements, MLA formats, and GradeFlow basics in this section. Make sure you watch task videos for step-by-step instructions, learn to use the AI prompts and chatbots, review task hints, and understand when/how to use the \"evaluate\" button.</p><p><br></p><ol><li><strong style=\"color: rgb(230, 0, 0);\">﻿Before you work on tasks, ensure you watch the Task resource videos. </strong></li><li><strong style=\"color: rgb(230, 0, 0);\">﻿Review the Resource File (linked at the top right of your Google File) before you begin.</strong></li></ol><p><br></p>",
+        "created_at": "2025-05-19T15:33:23.930Z",
+        "updated_at": "2025-05-19T15:33:23.930Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "2b07113f-5710-45af-8035-993067093942",
+            "section_id": "36d9740d-f7f4-46a2-95ad-5ffe170c6733",
+            "title": "Essay Header",
+            "description": "<p>Insert the heading in the top left corner of the first page. Do not skip any lines before the heading. Type the following information, each on its own line:</p><ul><li>Your full name</li><li>Your teacher’s name</li><li>Class name</li><li>Date (Day Month Year – e.g., 13 May 2025)</li></ul><p><br></p><p>The header must be<strong> Times New Roman, size 12 fon</strong>t. Keep text left-aligned. Do not bold, underline, or italicize.</p><p><br></p><ul><li><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#01: Understand Instructions In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task instructions. </span></li><li><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></li></ul>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-05-19T15:33:23.951Z",
+            "updated_at": "2025-05-19T15:33:23.951Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "20e204c6-a93b-4482-9aba-0c36e516b3e7",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/bnQRybmRqmo",
+                "order": 0,
+                "attachable_id": "2b07113f-5710-45af-8035-993067093942",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:24.104Z",
+                "updated_at": "2025-05-19T15:33:24.104Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              },
+              {
+                "id": "8b73ce38-794c-4516-a171-9abf02d705fc",
+                "title": "videoB",
+                "description": "<p>videoB</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/UryVhWoZnS0",
+                "order": 1,
+                "attachable_id": "2b07113f-5710-45af-8035-993067093942",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:24.130Z",
+                "updated_at": "2025-05-19T15:33:24.130Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "faadcbab-1618-44bc-8172-e949e2995361",
+                "objective_id": "2b07113f-5710-45af-8035-993067093942",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": 5,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 1,
+                    "start_at": 1
+                  }
+                },
+                "created_at": "2025-05-19T15:33:23.976Z",
+                "updated_at": "2025-05-19T15:33:23.976Z",
+                "failure_message": "<p>Your header does not contain your name, the teacher's name, <span style=\"color: rgb(3, 7, 18);\">the class name</span>, and/or an MLA formatted<span style=\"color: rgb(3, 7, 18);\"> date</span>. Please review the task instructions and watch the task video for step-by-step instructions.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "579ec9ac-112a-4b34-8341-71c67114ac74",
+                "objective_id": "2b07113f-5710-45af-8035-993067093942",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "January",
+                      "February",
+                      "March",
+                      "April",
+                      "May",
+                      "June",
+                      "July",
+                      "August",
+                      "September",
+                      "October",
+                      "November",
+                      "December"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 1,
+                    "start_at": 1
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.006Z",
+                "updated_at": "2025-06-04T00:38:39.718Z",
+                "failure_message": "<p>Your header does not include a proper MLA date format with a correctly spelled month. Double-check spelling and capitalization. <span style=\"color: rgb(3, 7, 18);\">Please rewatch the task video for additional assistance.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "bc64fcab-1d2f-4c78-9cf2-dccf98383157",
+                "objective_id": "2b07113f-5710-45af-8035-993067093942",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:(?<!\\d)(?<!\\d[/-])([1-9]|[12][0-9]|3[01])\\s+(January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{4}(?!\\s*[/-]|\\d)"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 1,
+                    "start_at": 1
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.032Z",
+                "updated_at": "2025-05-19T15:33:24.032Z",
+                "failure_message": "<p>The date format in your essay doesn't follow MLA guidelines. In MLA format, dates should be written as:</p><ul><li>Day (numeral without leading zeros)</li><li>Month (<strong style=\"color: rgb(230, 0, 0);\">fully spelled out</strong>)</li><li>Year (four digits)</li><li>No commas or punctuation between elements</li></ul><p><strong style=\"color: rgb(3, 7, 18);\">For example</strong><span style=\"color: rgb(3, 7, 18);\">: </span><span style=\"color: rgb(230, 0, 0);\">12 May 2025</span></p><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">Please rewatch the task video for additional assistance.</strong></p><p><br></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "00cecac1-b3c5-46dd-9c7c-9d6f13b77732",
+                "objective_id": "2b07113f-5710-45af-8035-993067093942",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:^([\\p{Lu}][\\p{L}\\p{M}'\\.-]*(-[\\p{L}\\p{M}'\\.-]+)?(\\s+[\\p{L}\\p{M}'\\.-]+(-[\\p{L}\\p{M}'\\.-]+)?)*),\\s+([\\p{Lu}][\\p{L}\\p{M}'\\.-]*)((\\s+[\\p{L}\\p{M}'\\.-]+)*)$"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 1,
+                    "start_at": 1
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.056Z",
+                "updated_at": "2025-05-19T15:33:24.056Z",
+                "failure_message": "<p>Your header doesn't use the required MLA name format.</p><p><strong>Please use</strong>:</p><ul><li>Last, First format (Smith, Jane)</li><li>Capitalize both names</li><li>Include the comma between the last and first name</li></ul>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "203ea32f-4917-43b0-ab09-5dce578a90e1",
+                "objective_id": "2b07113f-5710-45af-8035-993067093942",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "Professor",
+                      "Prof",
+                      "Dr",
+                      "Mr",
+                      "Mrs",
+                      "Ms",
+                      "Miss",
+                      "Mx",
+                      "Instructor"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 1,
+                    "start_at": 1
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.079Z",
+                "updated_at": "2025-05-19T15:33:24.079Z",
+                "failure_message": "<p>You did not add the appropriate teacher prefix before your teacher's last name.</p><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">Use Mr. Mrs. Ms. etc...</strong></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "64fadbc7-e24c-419c-82a7-03ded602b187",
+            "section_id": "36d9740d-f7f4-46a2-95ad-5ffe170c6733",
+            "title": "Essay Title",
+            "description": "<p><strong style=\"color: rgb(230, 0, 0);\">Before you work on tasks, ensure you watch the Task resource videos. </strong></p><p><br></p><p>Below the heading, add a single blank line. Then enter the required title, <strong>Romeo and Juliet Consequences Essay</strong>. On the line directly below the title, input your subtitle. It must reflect the essay’s focus and connect to the actions, consequences, and analysis you explore. Center align the title and subtitle, and use Times New Roman, 12-point font.</p><p><strong style=\"color: rgb(230, 0, 0);\">You can use Prompt#01: Understand Instructions In Context from the resource file to help you understand this or any task instructions. </strong></p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-05-19T15:33:24.153Z",
+            "updated_at": "2025-06-04T00:27:35.160Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "2039d079-09b5-46d8-8e0f-2b2dd3be4717",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/Vx_gb8PZBbc",
+                "order": 0,
+                "attachable_id": "64fadbc7-e24c-419c-82a7-03ded602b187",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:24.318Z",
+                "updated_at": "2025-05-19T15:33:24.318Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "65ed7a5b-3e15-4d0a-bb28-b563c45fe57d",
+                "objective_id": "64fadbc7-e24c-419c-82a7-03ded602b187",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "titles_only"
+                },
+                "created_at": "2025-05-19T15:33:24.180Z",
+                "updated_at": "2025-05-19T15:33:24.180Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Your document does not contain a </span><strong style=\"color: rgb(3, 7, 18);\">Title</strong><span style=\"color: rgb(3, 7, 18);\"> Style, or the </span><strong style=\"color: rgb(3, 7, 18);\">Title</strong><span style=\"color: rgb(3, 7, 18);\"> Style is used more than once. Please rewatch the task video for additional help. </span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "dda1b642-fbf9-47a1-aafc-d233480d23e6",
+                "objective_id": "64fadbc7-e24c-419c-82a7-03ded602b187",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "subtitles_only"
+                },
+                "created_at": "2025-05-19T15:33:24.207Z",
+                "updated_at": "2025-05-19T15:33:24.207Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Your document does not contain a </span><strong style=\"color: rgb(3, 7, 18);\">Subtitle</strong><span style=\"color: rgb(3, 7, 18);\"> Style, or the </span><strong style=\"color: rgb(3, 7, 18);\">Subtitle</strong><span style=\"color: rgb(3, 7, 18);\"> Style is used more than once. Please rewatch the task video for additional help. </span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "981fd764-620c-4b48-8e38-884122c4b6d8",
+                "objective_id": "64fadbc7-e24c-419c-82a7-03ded602b187",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "less_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "font_size_uniques"
+                },
+                "created_at": "2025-05-19T15:33:24.234Z",
+                "updated_at": "2025-05-19T15:33:24.234Z",
+                "failure_message": "<p>Your document contains a font size other than <strong>12-point</strong> font. <span style=\"color: rgb(3, 7, 18);\">You must standardize all font sizes in your essay. </span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "5ba71f08-7f5c-47ed-9634-56b0b78058be",
+                "objective_id": "64fadbc7-e24c-419c-82a7-03ded602b187",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "body",
+                  "operator": "less_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "font_type_uniques"
+                },
+                "created_at": "2025-05-19T15:33:24.261Z",
+                "updated_at": "2025-05-19T15:33:24.261Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Your document contains more than one font face. You must standardize all fonts in your essay. </span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "d19edd7f-67a6-44a9-88ee-1042265d0d40",
+                "objective_id": "64fadbc7-e24c-419c-82a7-03ded602b187",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "Romeo",
+                      "Juliet",
+                      "Consequences",
+                      "Essay"
+                    ],
+                    "occurrence": 4,
+                    "case_sensitive": false
+                  },
+                  "target": "title",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 1,
+                    "start_at": 1
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.290Z",
+                "updated_at": "2025-05-19T15:33:24.290Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">The Title is not \"</span>Romeo and Juliet Consequences Essay\". Double-check spelling and ensure it is formatted as a Title Style. </p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "67cc4281-bf5a-43f2-a3e8-c24bd7ae17b4",
+            "section_id": "36d9740d-f7f4-46a2-95ad-5ffe170c6733",
+            "title": "Essay Sections",
+            "description": "<p>GradeFlow's evaluation engine will guide you as you write your essay, but to do this, you need to insert <strong>Section Breaks (Continuous)</strong> in specific locations. <span style=\"color: rgb(230, 0, 0);\">I strongly encourage you to watch the task video for specific step-by-step instructions. </span>Failure to do this will result in a very poor score going forward.</p><p><br></p><p>You must insert <span style=\"color: rgb(230, 0, 0);\">FIVE</span> <strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong> in specific locations and follow specific instructions. Again, <span style=\"color: rgb(230, 0, 0);\">I strongly encourage you to watch the task video for specific step-by-step instructions</span>.</p><ol><li><strong>Section #1: </strong>Heading<span style=\"color: rgb(3, 7, 18);\"> - Insert after the MLA Date Format.</span></li><li><strong style=\"color: rgb(3, 7, 18);\">Section #2:</strong><span style=\"color: rgb(3, 7, 18);\"> Title - Insert after the Subtitle.</span></li><li>Insert the section name in sections 3-6. This is a temporary placeholder text that you will replace later. This step just ensures you've set up your document correctly. <strong>EXAMPLE</strong>: Introduction Paragraph, Body Paragraph#1, Body Paragraph#2, and Conclusion Paragraph.</li><li class=\"ql-indent-1\"><strong style=\"color: rgb(3, 7, 18);\">Section #3:</strong><span style=\"color: rgb(3, 7, 18);\"> Introduction Paragraph - Insert after paragraph #1.</span></li><li class=\"ql-indent-1\"><strong style=\"color: rgb(3, 7, 18);\">Section #4:</strong><span style=\"color: rgb(3, 7, 18);\"> Body Paragraph#1 - Insert after paragraph #2.</span></li><li class=\"ql-indent-1\"><strong>Section #5:</strong> Body Paragraph#2 - <span style=\"color: rgb(3, 7, 18);\">Insert a</span>fter paragraph #3.</li><li class=\"ql-indent-1\"><strong>Section #6:</strong> Conclusion Paragraph</li></ol><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#01: Understand Instructions In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task instructions. </span></p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></p>",
+            "order": 2,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-05-19T15:33:24.345Z",
+            "updated_at": "2025-05-19T15:33:24.345Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "58c8aef5-14f9-4097-823b-d334af7866c6",
+                "title": "videoA",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/2sXCTQr6Wjg",
+                "order": 0,
+                "attachable_id": "67cc4281-bf5a-43f2-a3e8-c24bd7ae17b4",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:24.545Z",
+                "updated_at": "2025-05-19T15:33:24.545Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              },
+              {
+                "id": "ca7223b2-0664-419b-831f-7042280da674",
+                "title": "videoB",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/2sXCTQr6Wjg?start=100",
+                "order": 1,
+                "attachable_id": "67cc4281-bf5a-43f2-a3e8-c24bd7ae17b4",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:24.579Z",
+                "updated_at": "2025-05-19T15:33:24.579Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "eb8191ba-b667-450b-8975-f9dc3573d7af",
+                "objective_id": "67cc4281-bf5a-43f2-a3e8-c24bd7ae17b4",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 6,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 2,
+                    "start_at": 2
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.376Z",
+                "updated_at": "2025-05-19T15:33:24.376Z",
+                "failure_message": "<p><strong>Section #2 (Title) </strong>does not contain the correct information. Verify that the title and subtitle information is after the <strong style=\"color: rgb(230, 0, 0);\">first</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong> <span style=\"color: rgb(3, 7, 18);\">and before the </span><strong style=\"color: rgb(230, 0, 0);\">second</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong><span style=\"color: rgb(3, 7, 18);\">.</span><strong style=\"color: rgb(3, 7, 18);\"> </strong>Rewatch the task video for step-by-step instructions.</p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "ad0bf02a-ce03-49dd-b58a-4bc96d9eac33",
+                "objective_id": "67cc4281-bf5a-43f2-a3e8-c24bd7ae17b4",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.409Z",
+                "updated_at": "2025-05-19T15:33:24.409Z",
+                "failure_message": "<p><strong>Section #3 (Introduction Paragraph) </strong>does not contain the correct information. Verify that the title and subtitle information is after the <strong style=\"color: rgb(230, 0, 0);\">second</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong> <span style=\"color: rgb(3, 7, 18);\">and before the </span><strong style=\"color: rgb(230, 0, 0);\">third</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong><span style=\"color: rgb(3, 7, 18);\">.</span><strong style=\"color: rgb(3, 7, 18);\"> </strong>Rewatch the task video for step-by-step instructions.</p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "af19d302-31da-4c48-a4ab-de1638afd512",
+                "objective_id": "67cc4281-bf5a-43f2-a3e8-c24bd7ae17b4",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.443Z",
+                "updated_at": "2025-05-19T15:33:24.443Z",
+                "failure_message": "<p><strong>Section #4 (Body Paragraph</strong><strong style=\"color: rgb(3, 7, 18);\">#1 </strong><strong>) </strong>does not contain the correct information. Verify that the title and subtitle information is after the <strong style=\"color: rgb(230, 0, 0);\">third</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong> <span style=\"color: rgb(3, 7, 18);\">and before the </span><strong style=\"color: rgb(230, 0, 0);\">fourth</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong><span style=\"color: rgb(3, 7, 18);\">.</span><strong style=\"color: rgb(3, 7, 18);\"> </strong>Rewatch the task video for step-by-step instructions.</p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "bfdedc66-dfa5-4387-8a3d-0471cb5b2dbd",
+                "objective_id": "67cc4281-bf5a-43f2-a3e8-c24bd7ae17b4",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.478Z",
+                "updated_at": "2025-05-19T15:33:24.478Z",
+                "failure_message": "<p><strong>Section #6 (Conclusion Paragraph</strong><strong style=\"color: rgb(3, 7, 18);\"> </strong><strong>) </strong>does not contain the correct information. Verify that the title and subtitle information is after the <strong style=\"color: rgb(230, 0, 0);\">fifth</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong><span style=\"color: rgb(3, 7, 18);\">.</span><strong style=\"color: rgb(3, 7, 18);\"> </strong>Rewatch the task video for step-by-step instructions.</p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "c2cf01ea-cfde-4b1d-afe1-845ccba5d810",
+                "objective_id": "67cc4281-bf5a-43f2-a3e8-c24bd7ae17b4",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.513Z",
+                "updated_at": "2025-05-19T15:33:24.513Z",
+                "failure_message": "<p><strong>Section #5 (Body Paragraph</strong><strong style=\"color: rgb(3, 7, 18);\">#2 </strong><strong>) </strong>does not contain the correct information. Verify that the title and subtitle information is after the <strong style=\"color: rgb(230, 0, 0);\">fourth</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong> <span style=\"color: rgb(3, 7, 18);\">and before the </span><strong style=\"color: rgb(230, 0, 0);\">fifth</strong><span style=\"color: rgb(3, 7, 18);\"> </span><strong style=\"color: rgb(3, 7, 18);\">Section Breaks (Continuous)</strong><span style=\"color: rgb(3, 7, 18);\">.</span><strong style=\"color: rgb(3, 7, 18);\"> </strong>Rewatch the task video for step-by-step instructions.</p><p><span style=\"color: rgb(230, 0, 0);\">You can use \"</span><strong style=\"color: rgb(230, 0, 0);\">Prompt#02: Understand Feedback In Context\"</strong><span style=\"color: rgb(230, 0, 0);\"> from the resource file to help you understand this or any task feedback.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1c3dbb5a-1cac-47b2-af1a-db8c619510fc",
+        "rubric_version_id": "3bcf4e6c-936b-44b7-8b93-718ccaeb1426",
+        "title": "Four Paragraph Essay",
+        "order": 1,
+        "description": "<p><strong style=\"color: rgb(230, 0, 0);\">﻿</strong>Write the heart of your assignment.</p><p>Here you’ll draft and refine:</p><p>1. an introduction with a hook, summary, and thesis</p><p>2. two body paragraphs that each use quotes and analysis</p><p>3. a conclusion that restates your claim and leaves the reader thinking.</p><p>Automated checks will guide you on structure, word count, and evidence. Use the feedback after each attempt to strengthen your writing before moving on.</p>",
+        "created_at": "2025-05-19T15:33:24.613Z",
+        "updated_at": "2025-05-19T15:33:24.613Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "dc973571-e959-446d-accd-795af0030c36",
+            "section_id": "1c3dbb5a-1cac-47b2-af1a-db8c619510fc",
+            "title": "Introduction Paragraph",
+            "description": "<p>Review the <strong>Essay Instructions</strong> for specific Introduction Paragraph requirements. <span style=\"color: rgb(230, 0, 0);\">Your teacher will give the final grade after reviewing your work</span>. Use GradeFlow scores and feedback as a guide to check your progress.</p><p><br></p><p><strong>Write an introduction paragraph that includes all of the following:</strong></p><ul><li>A well-written hook that introduces the topic of emotional decision-making or consequences.</li><li>The title of the play, the author, and a brief summary of the consequences you will write about.</li><li>A strong thesis statement.</li></ul><p><br></p><p><strong>Length:</strong> 3–4 sentences</p><p><strong>Word count:</strong> 75–125 words</p><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">You can use Prompt#01: Understand Instructions In Context from the resource file to help you understand this or any task instructions. </strong></p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 3,
+            "created_at": "2025-05-19T15:33:24.647Z",
+            "updated_at": "2025-05-19T15:33:24.647Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "48a5d0f1-4aef-4d05-a968-5e836e40f6ab",
+                "title": "VideoA",
+                "description": "<p>Video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/Jhk2bDNCi3M",
+                "order": 0,
+                "attachable_id": "dc973571-e959-446d-accd-795af0030c36",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:24.803Z",
+                "updated_at": "2025-05-19T15:33:24.803Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              },
+              {
+                "id": "cd0d7033-7eb9-4578-a616-afb975a456f5",
+                "title": "VideoB",
+                "description": "<p>Video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/9Xwab0jgRJc",
+                "order": 1,
+                "attachable_id": "dc973571-e959-446d-accd-795af0030c36",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:24.841Z",
+                "updated_at": "2025-05-19T15:33:24.841Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "e3ccee14-214f-4c09-8740-94b76fb24323",
+                "objective_id": "dc973571-e959-446d-accd-795af0030c36",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 35,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.684Z",
+                "updated_at": "2025-05-19T15:33:24.684Z",
+                "failure_message": "<p>The <strong>introduction paragraph</strong> (Par#1) does not contain at least <strong style=\"color: rgb(230, 0, 0);\">40</strong> words. The <strong style=\"color: rgb(3, 7, 18);\">introduction paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> must be</span> between <strong>75 and 125</strong> words to earn full credit. Verify that the <strong style=\"color: rgb(3, 7, 18);\">introduction paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section three</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "c0c3986d-eb3c-4519-9b9f-69414f92250e",
+                "objective_id": "dc973571-e959-446d-accd-795af0030c36",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      70,
+                      135
+                    ],
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "between",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.725Z",
+                "updated_at": "2025-05-19T15:33:24.725Z",
+                "failure_message": "<p>The <strong>introduction paragraph</strong> (Par#1) does not contain between <strong style=\"color: rgb(230, 0, 0);\">75</strong> <span style=\"color: rgb(3, 7, 18);\">and </span><strong style=\"color: rgb(230, 0, 0);\">125</strong><span style=\"color: rgb(3, 7, 18);\"> </span>words. Adjust your writing accordingly. V<span style=\"color: rgb(3, 7, 18);\">erify that the </span><strong style=\"color: rgb(3, 7, 18);\">introduction paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> is in </span><strong style=\"color: rgb(230, 0, 0);\">section three</strong><span style=\"color: rgb(3, 7, 18);\">. Rewatch the task video for additional assistance.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "908d63a0-49d0-4ac6-ae89-8286081a7828",
+                "objective_id": "dc973571-e959-446d-accd-795af0030c36",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "Romeo",
+                      "Juliet",
+                      "William",
+                      "Shakespeare"
+                    ],
+                    "occurrence": 4,
+                    "case_sensitive": true
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.763Z",
+                "updated_at": "2025-05-19T15:33:24.763Z",
+                "failure_message": "<p>You did not include the book's <strong style=\"color: rgb(230, 0, 0);\">title and/or author</strong> in the <strong>introduction paragraph</strong> (Par#1). Double-check the spelling and capitalization. Please rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "d7e8bd5f-3921-431a-9fa2-cdce65228e57",
+            "section_id": "1c3dbb5a-1cac-47b2-af1a-db8c619510fc",
+            "title": "Hook and Thesis Statement",
+            "description": "<p>Use<span style=\"color: rgb(230, 0, 0);\"> </span><strong style=\"color: rgb(230, 0, 0);\">Prompt#03: Help with Thesis and Hook</strong> for help.</p><p><br></p><p>Craft a strong opening for your essay by writing a powerful hook and a clear thesis statement.</p><ol><li><strong>Start with a Hook: </strong>This is your first sentence. It should grab your reader’s attention and use powerful or dramatic language to set the tone. Try to reflect the emotion, conflict, or seriousness of Romeo and Juliet.</li><li><strong>Title and author: </strong>Somewhere early in your introduction, mention the Title and Author.</li><li><strong>Strong Thesis Statement</strong><strong style=\"color: rgb(3, 7, 18);\">: </strong>Clearly state your main claim about the consequences of Romeo and Juliet’s actions. Be specific about which two groups were affected: their family, community, or future.</li></ol>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-05-19T15:33:24.882Z",
+            "updated_at": "2025-05-19T15:33:24.882Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "c5f7d23a-3b65-4c51-bd35-ca30d3fed404",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/7cO5y3HFXoE",
+                "order": 0,
+                "attachable_id": "d7e8bd5f-3921-431a-9fa2-cdce65228e57",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:25.014Z",
+                "updated_at": "2025-05-19T15:33:25.014Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "6be1f834-7ad4-41e7-9ad2-2ac723e09584",
+                "objective_id": "d7e8bd5f-3921-431a-9fa2-cdce65228e57",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 2,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "aftermath",
+                      "anger",
+                      "blindly",
+                      "calamitous",
+                      "cascading",
+                      "catastrophic",
+                      "choices",
+                      "conflict",
+                      "consequences",
+                      "control",
+                      "decisions",
+                      "destiny",
+                      "destruction",
+                      "devastating",
+                      "disobedience",
+                      "divisive",
+                      "doomed",
+                      "dramatic",
+                      "emotional",
+                      "emotions",
+                      "expectations",
+                      "explosive",
+                      "family",
+                      "fatal",
+                      "fate",
+                      "feud",
+                      "foolhardy",
+                      "forbidden",
+                      "freedom",
+                      "generations",
+                      "grief",
+                      "hasty",
+                      "hate",
+                      "hatred",
+                      "heartbreak",
+                      "honor",
+                      "ill-fated",
+                      "impulsive",
+                      "impulsiveness",
+                      "intense",
+                      "intensity",
+                      "irrational",
+                      "irreversible",
+                      "legacy",
+                      "love",
+                      "loyalty",
+                      "miscommunication",
+                      "misunderstanding",
+                      "passion",
+                      "power",
+                      "profound",
+                      "rashness",
+                      "rebellion",
+                      "reckless",
+                      "regret",
+                      "relationships",
+                      "repercussions",
+                      "resonating",
+                      "revenge",
+                      "reverberating",
+                      "rivalry",
+                      "sacrifice",
+                      "sadness",
+                      "secrecy",
+                      "shattered",
+                      "societal",
+                      "star-crossed",
+                      "teenagers",
+                      "tradition",
+                      "tragedy",
+                      "tragic",
+                      "tumbling",
+                      "tumultuous",
+                      "turmoil",
+                      "unbridled",
+                      "unthinking",
+                      "verona",
+                      "volatile",
+                      "youth"
+                    ],
+                    "occurrence": 3,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.924Z",
+                "updated_at": "2025-05-19T15:33:24.924Z",
+                "failure_message": "<p>Your hook appears too general and doesn’t reflect the emotional or thematic depth of <em>Romeo and Juliet</em>. Strong hooks in literary analysis often use powerful words to set the tone and connect to the key ideas of the play. These words show me that you understand the story’s emotional weight and lasting consequences.</p><p><br></p><p><strong>To Improve:</strong></p><ul><li>Include a few more<strong> vivid, meaningful words</strong> reflecting&nbsp;<em>Romeo and Juliet's major themes</em>.</li><li>Focus your hook on <strong>emotion, conflict, and consequence</strong> to strengthen your thesis's connection.</li><li>Make the opening feel like it belongs to a story filled with passion, danger, and irreversible choices.</li></ul><p>Revise your hook to better capture the seriousness of the play and grab your reader's attention right from the start.</p><p><br></p><p>Verify that the <strong style=\"color: rgb(3, 7, 18);\">introduction paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section three</strong>. Rewatch the task video for additional assistance.</p><p><br></p><p><span style=\"color: rgb(3, 7, 18);\">Use</span><span style=\"color: rgb(230, 0, 0);\"> </span><strong style=\"color: rgb(230, 0, 0);\">Prompt#03: Help with Thesis and Hook</strong><span style=\"color: rgb(3, 7, 18);\"> for help.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "b2154fea-8022-4aae-b4f1-4022e558401d",
+                "objective_id": "d7e8bd5f-3921-431a-9fa2-cdce65228e57",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 3,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "action",
+                      "affect",
+                      "although",
+                      "argue",
+                      "assert",
+                      "avoidable",
+                      "because",
+                      "believe",
+                      "between",
+                      "causes",
+                      "character",
+                      "claim",
+                      "community",
+                      "conflict",
+                      "consequence",
+                      "crucial",
+                      "decision",
+                      "decisions",
+                      "demonstrate",
+                      "destructive",
+                      "devastating",
+                      "effect",
+                      "effects",
+                      "emotion",
+                      "emotional",
+                      "emphasizing",
+                      "essay",
+                      "essential",
+                      "establish",
+                      "examine",
+                      "explains",
+                      "explore",
+                      "familial",
+                      "families",
+                      "family",
+                      "fate",
+                      "feud",
+                      "future",
+                      "hate",
+                      "hatred",
+                      "highlight",
+                      "illustrate",
+                      "impact",
+                      "important",
+                      "impulsive",
+                      "intense",
+                      "key",
+                      "lead",
+                      "love",
+                      "main",
+                      "major",
+                      "mistake",
+                      "must",
+                      "outcome",
+                      "primary",
+                      "prove",
+                      "reason",
+                      "relationship",
+                      "result",
+                      "results",
+                      "reveal",
+                      "serious",
+                      "shakespeare",
+                      "should",
+                      "show",
+                      "shows",
+                      "significant",
+                      "since",
+                      "suggest",
+                      "theme",
+                      "therefore",
+                      "through",
+                      "tragic",
+                      "ultimately"
+                    ],
+                    "occurrence": 4,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 3,
+                    "start_at": 3
+                  }
+                },
+                "created_at": "2025-05-19T15:33:24.968Z",
+                "updated_at": "2025-05-19T15:33:24.968Z",
+                "failure_message": "<p>Your thesis statement is too vague or general. It <span style=\"color: rgb(3, 7, 18);\">needs to be more focused and take a clear position. </span>A strong thesis should clearly state a claim and preview key reasons or consequences.</p><p><br></p><p><strong>To improve:</strong></p><ul><li>Use words like <strong>\"because,\" \"consequences,\" \"conflict,\" or \"tragic\"</strong> to show cause and effect.</li><li>Include an <strong>action verb</strong> like <strong>\"argues,\" \"demonstrates,\" or \"reveals\"</strong> to assert your position clearly.</li><li>Ensure your thesis answers the prompt directly and signals what the body paragraphs will explain.</li></ul><p>Try revising your thesis to <strong>include stronger academic language</strong> and <strong>be more specific about what leads to the outcome</strong> in <em>Romeo and Juliet</em>.</p><p><br></p><p>Verify that the <strong style=\"color: rgb(3, 7, 18);\">introduction paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section three</strong>. Rewatch the task video for additional assistance.</p><p><br></p><p><span style=\"color: rgb(3, 7, 18);\">Use</span><span style=\"color: rgb(230, 0, 0);\"> </span><strong style=\"color: rgb(230, 0, 0);\">Prompt#03: Help with Thesis and Hook</strong><span style=\"color: rgb(3, 7, 18);\"> for help.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "674199db-03c8-4455-88e2-a0b914b18660",
+            "section_id": "1c3dbb5a-1cac-47b2-af1a-db8c619510fc",
+            "title": "First Body Paragraph",
+            "description": "<p><strong>Write your first body paragraph following the structure below:</strong></p><ul><li>A topic sentence that clearly states which group (family, community, or future) was affected by Romeo and Juliet’s actions.</li><li>Two short quotes from the play that support your point (each under 100 characters and introduced with the speaker’s name).</li><li>Two sentences of explanation after each quote that connect the evidence to your claim.</li><li>A concluding sentence that restates how the evidence shows the impact of their actions.</li></ul><p><strong>Length</strong>: 8 sentences</p><p><strong>Word count</strong>: 150–200 words</p><p><br></p><p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Use the </span><strong style=\"background-color: transparent; color: rgb(230, 0, 0);\">Prompt#04: First/Second Body Paragraph</strong><span style=\"background-color: transparent; color: rgb(0, 0, 0);\"> for additional help. </span></p>",
+            "order": 2,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 4,
+            "created_at": "2025-05-19T15:33:25.057Z",
+            "updated_at": "2025-05-19T15:33:25.057Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "43f8216c-3986-4b49-8048-ea39046a5beb",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/pJUgdRWb5RE",
+                "order": 0,
+                "attachable_id": "674199db-03c8-4455-88e2-a0b914b18660",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:25.333Z",
+                "updated_at": "2025-05-19T15:33:25.333Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "f9620104-7f25-470f-9f08-e79174c71563",
+                "objective_id": "674199db-03c8-4455-88e2-a0b914b18660",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 45,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.127Z",
+                "updated_at": "2025-05-19T15:33:25.127Z",
+                "failure_message": "<p>The <strong>first body paragraph</strong> <span style=\"color: rgb(3, 7, 18);\"> (Par#2) </span>does not contain at least <strong style=\"color: rgb(230, 0, 0);\">50</strong> words. <span style=\"color: rgb(3, 7, 18);\">The </span><strong style=\"color: rgb(3, 7, 18);\">first body paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> must be between </span><strong style=\"color: rgb(3, 7, 18);\">150 and 200</strong><span style=\"color: rgb(3, 7, 18);\"> words to earn full credit. </span>Verify that the <strong style=\"color: rgb(3, 7, 18);\">first body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section four</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "14d4e7f9-9fd8-45cc-967f-49898357d869",
+                "objective_id": "674199db-03c8-4455-88e2-a0b914b18660",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      75,
+                      210
+                    ],
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "between",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.179Z",
+                "updated_at": "2025-05-19T15:33:25.179Z",
+                "failure_message": "<p>The <strong>first body paragraph</strong> <span style=\"color: rgb(3, 7, 18);\">(Par#2) </span>does not <span style=\"color: rgb(3, 7, 18);\">contain between </span><strong style=\"color: rgb(230, 0, 0);\">75</strong><span style=\"color: rgb(3, 7, 18);\"> and </span><strong style=\"color: rgb(230, 0, 0);\">200</strong><span style=\"color: rgb(3, 7, 18);\"> words.</span> <span style=\"color: rgb(3, 7, 18);\">Adjust your writing accordingly. </span>Verify that the <strong style=\"color: rgb(3, 7, 18);\">first body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section four</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "b4d7a13e-1225-4213-bce4-b60de6992178",
+                "objective_id": "674199db-03c8-4455-88e2-a0b914b18660",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "regex:[\"“”](.{5,120}?)[\"“”]"
+                    ],
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.228Z",
+                "updated_at": "2025-05-19T15:33:25.228Z",
+                "failure_message": "<p>The&nbsp;<strong style=\"color: rgb(3, 7, 18);\">first body paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> (Par#2) is </span>missing one or more required quotes. Remember, each paragraph should include <strong>two direct quotes</strong> from <em>Romeo and Juliet</em> that support your claim.&nbsp;<strong style=\"color: rgb(230, 0, 0);\">Quotes can not be over 100 characters long.</strong><span style=\"color: rgb(230, 0, 0);\"> </span></p><p><br></p><p>Verify that the <strong style=\"color: rgb(3, 7, 18);\">first body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section four</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "1a614541-666f-4247-a296-099a9cf7f1db",
+                "objective_id": "674199db-03c8-4455-88e2-a0b914b18660",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "abraham",
+                      "abram",
+                      "balthasar",
+                      "benvolio",
+                      "capulet",
+                      "chorus",
+                      "escalus",
+                      "friar",
+                      "gregory",
+                      "juliet",
+                      "lady",
+                      "laurence",
+                      "lord",
+                      "mercutio",
+                      "montague",
+                      "nurse",
+                      "paris",
+                      "peter",
+                      "prince",
+                      "romeo",
+                      "rosaline",
+                      "sampson",
+                      "tybalt",
+                      "father",
+                      "mother",
+                      "mom",
+                      "dad",
+                      "parent"
+                    ],
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 4,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.277Z",
+                "updated_at": "2025-05-19T15:33:25.277Z",
+                "failure_message": "<p>One of your quotes isn't attributed to a character. Make sure to include the speaker’s name before the quote and double-check spelling for accuracy.</p><p><br></p><p>Verify that the <strong style=\"color: rgb(3, 7, 18);\">first body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section four</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "80787413-7f81-4442-bbb3-6e84d4735b04",
+            "section_id": "1c3dbb5a-1cac-47b2-af1a-db8c619510fc",
+            "title": "Second Body Paragraph",
+            "description": "<p><strong>Write your second body paragraph following the structure below:</strong></p><ul><li>A topic sentence that clearly states which group (family, community, or future) was affected by Romeo and Juliet’s actions.</li><li>Two short quotes from the play that support your point (each under 100 characters and introduced with the speaker’s name).</li><li>Two sentences of explanation after each quote that connect the evidence to your claim.</li><li>A concluding sentence that restates how the evidence shows the impact of their actions.</li></ul><p><strong>Length</strong>: 8 sentences</p><p><strong>Word count</strong>: 150–200 words</p><p><br></p><p><span style=\"color: rgb(0, 0, 0); background-color: transparent;\">Use the </span><strong style=\"color: rgb(230, 0, 0); background-color: transparent;\">Prompt#04: First/Second Body Paragraph</strong><span style=\"color: rgb(0, 0, 0); background-color: transparent;\"> for additional help. </span></p><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">Video is the same as the First Body Paragraph. </span></p>",
+            "order": 3,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 4,
+            "created_at": "2025-05-19T15:33:25.385Z",
+            "updated_at": "2025-05-19T15:33:25.385Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "d9399538-ade3-469c-855b-ca103288e574",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/pJUgdRWb5RE",
+                "order": 0,
+                "attachable_id": "80787413-7f81-4442-bbb3-6e84d4735b04",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:25.648Z",
+                "updated_at": "2025-05-19T15:33:25.648Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "eee21029-bd3b-4be4-9958-73b8e1ee62f2",
+                "objective_id": "80787413-7f81-4442-bbb3-6e84d4735b04",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 95,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.436Z",
+                "updated_at": "2025-05-19T15:33:25.436Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(3, 7, 18);\">second body </strong><strong>paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> (Par#3) does not contain at least </span><strong style=\"color: rgb(230, 0, 0);\">100</strong><span style=\"color: rgb(3, 7, 18);\"> words. The </span><strong style=\"color: rgb(3, 7, 18);\">second body paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> must be between </span><strong style=\"color: rgb(3, 7, 18);\">150 and 200</strong><span style=\"color: rgb(3, 7, 18);\"> words to earn full credit. </span>Verify that the <strong style=\"color: rgb(3, 7, 18);\">second body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section five</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "6462cc82-134f-4f32-b381-6fabea10ced4",
+                "objective_id": "80787413-7f81-4442-bbb3-6e84d4735b04",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      140,
+                      210
+                    ],
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "between",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.489Z",
+                "updated_at": "2025-05-19T15:33:25.489Z",
+                "failure_message": "<p>The <strong style=\"color: rgb(3, 7, 18);\">second body </strong><strong>paragraph</strong> <span style=\"color: rgb(3, 7, 18);\"> (Par#3) does not contain between </span><strong style=\"color: rgb(230, 0, 0);\">150</strong><span style=\"color: rgb(3, 7, 18);\"> and </span><strong style=\"color: rgb(230, 0, 0);\">200</strong><span style=\"color: rgb(3, 7, 18);\"> words. Adjust your writing accordingly. </span>Verify that the <strong style=\"color: rgb(3, 7, 18);\">second body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section five</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "3b649aef-7289-4a8b-b391-af2d459ffdfe",
+                "objective_id": "80787413-7f81-4442-bbb3-6e84d4735b04",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "regex:[\"“”](.{5,120}?)[\"“”]"
+                    ],
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.541Z",
+                "updated_at": "2025-05-19T15:33:25.541Z",
+                "failure_message": "<p>The&nbsp;<strong style=\"color: rgb(3, 7, 18);\">second body paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> (Par#2) is </span>missing one or more required quotes. Remember, each paragraph should include <strong>two direct quotes</strong> from <em>Romeo and Juliet</em> that support your claim.&nbsp;<span style=\"color: rgb(230, 0, 0);\">Quotes can not be over 100 characters long. </span></p><p><br></p><p>Verify that the <strong style=\"color: rgb(3, 7, 18);\">second body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section five</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "fe950ef2-7c61-424e-ad44-83e3e61ca75a",
+                "objective_id": "80787413-7f81-4442-bbb3-6e84d4735b04",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "abraham",
+                      "abram",
+                      "balthasar",
+                      "benvolio",
+                      "capulet",
+                      "chorus",
+                      "escalus",
+                      "friar",
+                      "gregory",
+                      "juliet",
+                      "lady",
+                      "laurence",
+                      "lord",
+                      "mercutio",
+                      "montague",
+                      "nurse",
+                      "paris",
+                      "peter",
+                      "prince",
+                      "romeo",
+                      "rosaline",
+                      "sampson",
+                      "tybalt"
+                    ],
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 5
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.595Z",
+                "updated_at": "2025-05-19T15:33:25.595Z",
+                "failure_message": "<p>One of your quotes isn't attributed to a character. Make sure to include the speaker’s name before the quote and double-check spelling for accuracy.</p><p><br></p><p>Verify that the <strong style=\"color: rgb(3, 7, 18);\">second body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section five</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "074d2ca5-b15f-4ad7-877c-f6999edbd517",
+            "section_id": "1c3dbb5a-1cac-47b2-af1a-db8c619510fc",
+            "title": "Body Paragraph Evidence",
+            "description": "<p>Review the Essay Instructions and make sure your Body Paragraphs #1 and #2 (Paragraphs 2 and 3) are in the correct sections of your document. GradeFlow will check both for required structure and how well you explain the evidence you've chosen.</p><p><br></p><p>Your goal in this task is to make your analysis stronger by using precise, thoughtful language to explain how your quotes support your point. Each body paragraph should do more than list quotes—it should show deep understanding of the play and connect those quotes to the larger ideas you’re writing about.</p><p><br></p><p><strong>To succeed on this task:</strong></p><ul><li>Refer to specific events, characters, and conflicts from Romeo and Juliet—not just general ideas.</li><li>Avoid summary. Instead, explain why the quote matters and what it shows about the consequences of the characters’ actions.</li><li>Use language that shows insight into the themes, emotions, and outcomes of the play.</li><li>Choose verbs and vocabulary that clearly show how your evidence relates to the topic sentence.</li></ul>",
+            "order": 4,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 2,
+            "created_at": "2025-05-19T15:33:25.701Z",
+            "updated_at": "2025-05-19T15:33:25.701Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "d7f5eda5-a158-4531-83cf-049036700b9a",
+                "objective_id": "074d2ca5-b15f-4ad7-877c-f6999edbd517",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "accord",
+                      "act",
+                      "action",
+                      "affect",
+                      "after",
+                      "although",
+                      "anger",
+                      "argu",
+                      "author",
+                      "banish",
+                      "becaus",
+                      "behav",
+                      "bereft",
+                      "blood",
+                      "broken",
+                      "capulet",
+                      "cause",
+                      "choic",
+                      "citizen",
+                      "claim",
+                      "clear",
+                      "commun",
+                      "conflict",
+                      "connect",
+                      "consequ",
+                      "death",
+                      "decis",
+                      "declar",
+                      "decre",
+                      "demonstra",
+                      "descend",
+                      "describ",
+                      "destroy",
+                      "devast",
+                      "dialog",
+                      "disobey",
+                      "disrupt",
+                      "divi",
+                      "duel",
+                      "emotion",
+                      "emphas",
+                      "exampl",
+                      "exil",
+                      "explain",
+                      "famil",
+                      "fate",
+                      "feud",
+                      "final",
+                      "friar",
+                      "futur",
+                      "generat",
+                      "grief",
+                      "hast",
+                      "hate",
+                      "heir",
+                      "highlight",
+                      "house",
+                      "illustrat",
+                      "impact",
+                      "impli",
+                      "impuls",
+                      "indicat",
+                      "influenc",
+                      "initiat",
+                      "juliet",
+                      "kill",
+                      "kins",
+                      "lady",
+                      "laurenc",
+                      "lead",
+                      "legacy",
+                      "lesson",
+                      "letter",
+                      "lineag",
+                      "lord",
+                      "love",
+                      "loyal",
+                      "mantua",
+                      "market",
+                      "marriag",
+                      "mean",
+                      "memori",
+                      "mention",
+                      "mercutio",
+                      "miscommun",
+                      "misunderstand",
+                      "moment",
+                      "monolog",
+                      "montague",
+                      "mourn",
+                      "note",
+                      "nurs",
+                      "obey",
+                      "overal",
+                      "parent",
+                      "passag",
+                      "passion",
+                      "peace",
+                      "penalt",
+                      "perpetuat",
+                      "plan",
+                      "play",
+                      "point",
+                      "poison",
+                      "pressur",
+                      "prince",
+                      "prov",
+                      "public",
+                      "quot",
+                      "react",
+                      "reckless",
+                      "reconcil",
+                      "reflect",
+                      "regret",
+                      "relativ",
+                      "respons",
+                      "result",
+                      "reveal",
+                      "revenge",
+                      "rival",
+                      "romeo",
+                      "say",
+                      "scene",
+                      "secrec",
+                      "secret",
+                      "shatter",
+                      "show",
+                      "since",
+                      "soliloquy",
+                      "stat",
+                      "strife",
+                      "suffer",
+                      "suggest",
+                      "suicid",
+                      "support",
+                      "tens",
+                      "therefor",
+                      "thus",
+                      "tomb",
+                      "trag",
+                      "trigger",
+                      "tybalt",
+                      "ultimat",
+                      "unit",
+                      "verona",
+                      "violenc",
+                      "warn",
+                      "write"
+                    ],
+                    "occurrence": 10,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.757Z",
+                "updated_at": "2025-05-19T15:33:25.757Z",
+                "failure_message": "<p>Your body paragraphs need stronger, more thoughtful, and vivid word choices to clearly explain how your evidence supports your point.</p><p><strong>To improve:</strong></p><ul><li>Use words that show deeper thinking about the characters, their actions, and the consequences.</li><li>Focus on the <em>why</em> and <em>how</em> behind each quote, not just what happened.</li><li>Expand your vocabulary to reflect the themes and emotions in the play.</li><li>Check that Paragraphs 2 and 3 are in Sections 4 and 5. Rewatch the task video if needed.</li></ul><p><br></p><p>The <strong style=\"color: rgb(3, 7, 18);\">body </strong><strong>paragraphs</strong> <span style=\"color: rgb(3, 7, 18);\">(Par#2 and #3)</span> are in <strong style=\"color: rgb(230, 0, 0);\">sections four and five</strong>. Rewatch the task video for additional assistance.</p><p><br></p><p><span style=\"color: rgb(0, 0, 0); background-color: transparent;\">Use the </span><strong style=\"color: rgb(230, 0, 0);\">Prompt#05: Body Paragraph Evidence Help</strong><span style=\"color: rgb(0, 0, 0); background-color: transparent;\"> for additional help. </span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "b9f6a9fa-da07-4f33-8eac-860ead40e528",
+                "objective_id": "074d2ca5-b15f-4ad7-877c-f6999edbd517",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": true,
+                    "value": [
+                      "accord",
+                      "act",
+                      "action",
+                      "affect",
+                      "after",
+                      "although",
+                      "anger",
+                      "argu",
+                      "author",
+                      "banish",
+                      "becaus",
+                      "behav",
+                      "bereft",
+                      "blood",
+                      "broken",
+                      "capulet",
+                      "cause",
+                      "choic",
+                      "citizen",
+                      "claim",
+                      "clear",
+                      "commun",
+                      "conflict",
+                      "connect",
+                      "consequ",
+                      "death",
+                      "decis",
+                      "declar",
+                      "decre",
+                      "demonstra",
+                      "descend",
+                      "describ",
+                      "destroy",
+                      "devast",
+                      "dialog",
+                      "disobey",
+                      "disrupt",
+                      "divi",
+                      "duel",
+                      "emotion",
+                      "emphas",
+                      "exampl",
+                      "exil",
+                      "explain",
+                      "famil",
+                      "fate",
+                      "feud",
+                      "final",
+                      "friar",
+                      "futur",
+                      "generat",
+                      "grief",
+                      "hast",
+                      "hate",
+                      "heir",
+                      "highlight",
+                      "house",
+                      "illustrat",
+                      "impact",
+                      "impli",
+                      "impuls",
+                      "indicat",
+                      "influenc",
+                      "initiat",
+                      "juliet",
+                      "kill",
+                      "kins",
+                      "lady",
+                      "laurenc",
+                      "lead",
+                      "legacy",
+                      "lesson",
+                      "letter",
+                      "lineag",
+                      "lord",
+                      "love",
+                      "loyal",
+                      "mantua",
+                      "market",
+                      "marriag",
+                      "mean",
+                      "memori",
+                      "mention",
+                      "mercutio",
+                      "miscommun",
+                      "misunderstand",
+                      "moment",
+                      "monolog",
+                      "montague",
+                      "mourn",
+                      "note",
+                      "nurs",
+                      "obey",
+                      "overal",
+                      "parent",
+                      "passag",
+                      "passion",
+                      "peace",
+                      "penalt",
+                      "perpetuat",
+                      "plan",
+                      "play",
+                      "point",
+                      "poison",
+                      "pressur",
+                      "prince",
+                      "prov",
+                      "public",
+                      "quot",
+                      "react",
+                      "reckless",
+                      "reconcil",
+                      "reflect",
+                      "regret",
+                      "relativ",
+                      "respons",
+                      "result",
+                      "reveal",
+                      "revenge",
+                      "rival",
+                      "romeo",
+                      "say",
+                      "scene",
+                      "secrec",
+                      "secret",
+                      "shatter",
+                      "show",
+                      "since",
+                      "soliloquy",
+                      "stat",
+                      "strife",
+                      "suffer",
+                      "suggest",
+                      "suicid",
+                      "support",
+                      "tens",
+                      "therefor",
+                      "thus",
+                      "tomb",
+                      "trag",
+                      "trigger",
+                      "tybalt",
+                      "ultimat",
+                      "unit",
+                      "verona",
+                      "violenc",
+                      "warn",
+                      "write"
+                    ],
+                    "occurrence": 15,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 5,
+                    "start_at": 4
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.819Z",
+                "updated_at": "2025-05-19T15:33:25.819Z",
+                "failure_message": "<p>Your body paragraphs need more precise language to clearly explain and connect your evidence to the topic sentences. Include specific references to the play and use relevant vocabulary to fully develop your ideas.</p><p><br></p><p><strong>To improve:</strong></p><ul><li>Refer to the events, characters, conflicts, and consequences. Do not summarize.</li><li>Use clear verbs to show how they relate to the consequences you are discussing.</li><li>Use words that reflect the themes, emotions, and consequences in the play.</li><li>Make sure your explanations clearly show the impact of the characters’ choices and how they connect to the larger message.</li><li>Focus on using analytical and meaningful vocabulary that shows insight into the play's events, relationships, and outcomes.</li><li>Aim to use a wider variety of vocabulary that directly ties back to the novel’s themes and characters. This will make your writing more focused, analytical, and persuasive.</li></ul><p><br></p><p>The <strong style=\"color: rgb(3, 7, 18);\">body </strong><strong>paragraphs</strong> <span style=\"color: rgb(3, 7, 18);\">(Par#2 and #3)</span> are in <strong style=\"color: rgb(230, 0, 0);\">sections four and five</strong>. Rewatch the task video for additional assistance.</p><p><br></p><p><span style=\"color: rgb(0, 0, 0); background-color: transparent;\">Use the </span><strong style=\"color: rgb(230, 0, 0);\">Prompt#05: Body Paragraph Evidence Help</strong><span style=\"color: rgb(0, 0, 0); background-color: transparent;\"> for additional help. </span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "6232876e-3981-47ed-93fc-c87edfef1305",
+            "section_id": "1c3dbb5a-1cac-47b2-af1a-db8c619510fc",
+            "title": "Conclusion Paragraph",
+            "description": "<p>Wrap up your essay with a strong, thoughtful conclusion that reinforces your main argument and leaves the reader with a clear final impression.</p><p><strong>In your conclusion, you should:</strong></p><ul><li><strong>Restate your thesis</strong> in a fresh way, reminding the reader of your main claim.</li><li><strong>Summarize your two key points</strong> (the consequences for the two groups you wrote about).</li><li><strong>Reflect on the lasting message</strong> of Romeo and Juliet. What should we learn from the consequences of their actions?</li></ul>",
+            "order": 5,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 2,
+            "created_at": "2025-05-19T15:33:25.876Z",
+            "updated_at": "2025-05-19T15:33:25.876Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "73f05e0e-891d-4b87-a4c6-c4996672e863",
+                "objective_id": "6232876e-3981-47ed-93fc-c87edfef1305",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 50,
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 6,
+                    "start_at": 6
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.936Z",
+                "updated_at": "2025-05-19T15:33:25.936Z",
+                "failure_message": "<p>The <strong>conclusion paragraph</strong> <span style=\"color: rgb(3, 7, 18);\"> (Par#4) does not contain at least </span><strong style=\"color: rgb(230, 0, 0);\">60</strong><span style=\"color: rgb(3, 7, 18);\"> words. The </span><strong style=\"color: rgb(3, 7, 18);\">conclusion paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> must be between </span><strong style=\"color: rgb(3, 7, 18);\">75 and 125</strong><span style=\"color: rgb(3, 7, 18);\"> words to earn full credit. </span>Verify that the <strong style=\"color: rgb(3, 7, 18);\">conclusion body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section six</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "bcf6e9ec-f53c-4837-9c47-7e148c48242c",
+                "objective_id": "6232876e-3981-47ed-93fc-c87edfef1305",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      70,
+                      135
+                    ],
+                    "case_sensitive": false
+                  },
+                  "target": "section_continuous",
+                  "operator": "between",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words",
+                  "target_attributes": {
+                    "end_at": 6,
+                    "start_at": 6
+                  }
+                },
+                "created_at": "2025-05-19T15:33:25.995Z",
+                "updated_at": "2025-05-19T15:33:25.995Z",
+                "failure_message": "<p>The <strong>conclusion paragraph</strong> <span style=\"color: rgb(3, 7, 18);\"> (Par#4) does not contain between </span><strong style=\"color: rgb(230, 0, 0);\">75</strong><span style=\"color: rgb(3, 7, 18);\"> and </span><strong style=\"color: rgb(230, 0, 0);\">125</strong><span style=\"color: rgb(3, 7, 18);\"> words. Adjust your writing accordingly. The </span><strong style=\"color: rgb(3, 7, 18);\">conclusion paragraph</strong><span style=\"color: rgb(3, 7, 18);\"> must be between </span><strong style=\"color: rgb(3, 7, 18);\">75 and 125</strong><span style=\"color: rgb(3, 7, 18);\"> words to earn full credit. </span>Verify that the <strong style=\"color: rgb(3, 7, 18);\">conclusion body paragraph</strong> is in <strong style=\"color: rgb(230, 0, 0);\">section six</strong>. Rewatch the task video for additional assistance.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "804ef8fc-6117-45b5-975b-c56772c11623",
+        "rubric_version_id": "3bcf4e6c-936b-44b7-8b93-718ccaeb1426",
+        "title": "File Name",
+        "order": 2,
+        "description": "<p>This section covers how to name a file so it is useful to the individual and/or system receiving it. </p>",
+        "created_at": "2025-05-19T15:33:26.059Z",
+        "updated_at": "2025-05-19T15:33:26.059Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "0a5e3771-f3c5-4c28-ac30-788420ef6027",
+            "section_id": "804ef8fc-6117-45b5-975b-c56772c11623",
+            "title": "File Name",
+            "description": "<p>When turning in assignments, it's important to name your Google Docs or other files clearly so your teacher can easily identify your work. Use the following naming convention every time you submit an assignment.</p><p><br></p><p><strong>﻿Naming Convention</strong>: Last Name, First Name | Assignment Title | Class Period or Section</p><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">Example</strong><span style=\"color: rgb(3, 7, 18);\">: </span>If your name is <strong>Todd Benrud</strong>, you're turning in the <strong>Romeo and Juliet Consequences Essay</strong>, and you're in <strong>Period 5</strong>, then your file should be named: <strong style=\"color: rgb(230, 0, 0);\">Benrud, Todd | Romeo and Juliet Consequences Essay | Period 5</strong></p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "platform",
+            "points": 5,
+            "created_at": "2025-05-19T15:33:26.124Z",
+            "updated_at": "2025-05-19T15:33:26.124Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "9a06d470-07a7-4d7a-9091-431010206801",
+                "title": "video",
+                "description": "<p>video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/x566-qyMZFY",
+                "order": 0,
+                "attachable_id": "0a5e3771-f3c5-4c28-ac30-788420ef6027",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:26.571Z",
+                "updated_at": "2025-05-19T15:33:26.571Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "7edf40ed-cda2-49c4-a746-0f8e5dd6c568",
+                "objective_id": "0a5e3771-f3c5-4c28-ac30-788420ef6027",
+                "evaluation_type": "platform",
+                "order": 0,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 6,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2025-05-19T15:33:26.199Z",
+                "updated_at": "2025-05-19T15:33:26.199Z",
+                "failure_message": "<p>Your file name does not include your first name, last name, assignment name, and/or your class period or section. Please rewatch the task video for step-by-step instructions. </p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "344ee35d-330c-4646-8aec-b68692d0732c",
+                "objective_id": "0a5e3771-f3c5-4c28-ac30-788420ef6027",
+                "evaluation_type": "platform",
+                "order": 1,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "|"
+                    ],
+                    "occurrence": 2,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2025-05-19T15:33:26.286Z",
+                "updated_at": "2025-05-19T15:33:26.286Z",
+                "failure_message": "<p>Your file name does not use the \"vertical bar\" or \"pipe\" character. It must be used twice. Once after your name and a second time after the assignment name. You can type it by pressing: <strong>Shift</strong> +<strong> \\ </strong> (it's usually above the Enter key). Please rewatch the task video for additional help.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "001e6ab3-b53d-438f-a729-201831fe82c9",
+                "objective_id": "0a5e3771-f3c5-4c28-ac30-788420ef6027",
+                "evaluation_type": "platform",
+                "order": 2,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": [
+                      "regex:(?i)^\\s*[^|]+?,\\s*[^|]+?\\s*\\|\\s*[^|]+?\\s*\\|\\s*[^|]+?\\s*$"
+                    ],
+                    "occurrence": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "regex",
+                  "evaluator_type": "contains",
+                  "evaluator_subject": "words"
+                },
+                "created_at": "2025-05-19T15:33:26.358Z",
+                "updated_at": "2025-05-19T15:33:26.358Z",
+                "failure_message": "<p>Your file name does not follow the naming convention. </p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "41b6653a-7b8f-4695-955c-d9ffa1315706",
+                "objective_id": "0a5e3771-f3c5-4c28-ac30-788420ef6027",
+                "evaluation_type": "platform",
+                "order": 3,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "student_first_name"
+                },
+                "created_at": "2025-05-19T15:33:26.427Z",
+                "updated_at": "2025-05-19T15:33:26.427Z",
+                "failure_message": "<p>Your filename does not contain your <strong>First name</strong>. Please ensure the spelling exactly matches the name in your GradeFlow profile. Rewatch the task video for additional help.</p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              },
+              {
+                "id": "f80a80fe-37a7-435d-8bdb-e6f74fd880ad",
+                "objective_id": "0a5e3771-f3c5-4c28-ac30-788420ef6027",
+                "evaluation_type": "platform",
+                "order": 4,
+                "points": 1,
+                "data": {
+                  "value": {
+                    "uniq": false,
+                    "value": 1,
+                    "case_sensitive": false
+                  },
+                  "target": "file_name",
+                  "operator": "greater_than_or_equal_to",
+                  "string_type": "word",
+                  "evaluator_type": "count",
+                  "evaluator_subject": "student_last_name"
+                },
+                "created_at": "2025-05-19T15:33:26.498Z",
+                "updated_at": "2025-05-19T15:33:26.498Z",
+                "failure_message": "<p><span style=\"color: rgb(3, 7, 18);\">Your filename does not contain your </span><strong style=\"color: rgb(3, 7, 18);\">Last name</strong><span style=\"color: rgb(3, 7, 18);\">. Please ensure the spelling exactly matches the name in your GradeFlow profile. Rewatch the task video for additional help.</span></p>",
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+        "rubric_version_id": "3bcf4e6c-936b-44b7-8b93-718ccaeb1426",
+        "title": "Teacher Review",
+        "order": 3,
+        "description": "<p>These tasks will not be graded until you submit the assignment to your teacher. After you click the \"Evaluate\" button, you will see a \"Turn In Assignment\" button in the popup window. Click that to turn this into your teacher. </p><p><br></p><p>All following tasks will be graded by your teacher using the grading rubric at the bottom of the Assignment Instructions doc. </p>",
+        "created_at": "2025-05-19T15:33:26.642Z",
+        "updated_at": "2025-05-19T15:33:26.642Z",
+        "deleted_at": null,
+        "is_reusable": false,
+        "from_reusable_section": false,
+        "resource_attachments": [],
+        "resources": [
+          {
+            "id": "e34002a3-e56f-4377-a4c1-87bd7c7450d2",
+            "title": "Video",
+            "description": "<p>Video</p>",
+            "kind": "video",
+            "target": "https://www.youtube.com/embed/bhclyYMwWo0",
+            "order": 0,
+            "attachable_id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+            "attachable_type": "Section",
+            "created_at": "2025-05-19T15:33:28.239Z",
+            "updated_at": "2025-05-19T15:33:28.239Z",
+            "deleted_at": null,
+            "transcript": null,
+            "transcript_summary": null,
+            "transcript_prompt": null
+          }
+        ],
+        "resource_file_links": [],
+        "objectives": [
+          {
+            "id": "0c87269e-3d49-4e35-9691-2b37477396d2",
+            "section_id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+            "title": "Intro Paragraph",
+            "description": "<p>Your introduction will be graded on four main parts: a strong hook that grabs attention, background information that includes the title and author, a clear summary of the text, and a thesis that directly answers the prompt. The strongest essays include all of these elements written clearly and effectively. Partial credit will be given if one or more parts are weak or missing. To earn full points, make sure your hook is compelling, your background is complete, your summary is clear, and your thesis directly responds to the prompt.</p>",
+            "order": 0,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 15,
+            "created_at": "2025-05-19T15:33:26.714Z",
+            "updated_at": "2025-05-19T15:33:26.714Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "857afb95-b33a-4685-bc58-a2d78c58d478",
+                "title": "Video",
+                "description": "<p>Video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/bhclyYMwWo0",
+                "order": 0,
+                "attachable_id": "0c87269e-3d49-4e35-9691-2b37477396d2",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:26.872Z",
+                "updated_at": "2025-05-19T15:33:26.872Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "375ac959-076c-4665-88cc-264e3548e8f2",
+                "objective_id": "0c87269e-3d49-4e35-9691-2b37477396d2",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 15,
+                "data": {
+                  "model": "gemini-2.5-flash-preview-04-17",
+                  "platform": "gemini",
+                  "max_tokens": 2000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria`\nFirst, review the entire essay to determine whether it is about Romeo and Juliet by William Shakespeare. Only proceed if the Pre-Check passes. If it fails, return a score of zero. \n\n1) The first paragraph is the Introduction Paragraph: Evaluate each submission by assessing three elements—hook, background, and thesis—against four performance bands (Exceeds = 5, Meets = 4, Developing = 3.5, Does Not Meet = 2.5). For the hook, check whether it is strong and engaging (Exceeds), merely present (Meets), weak or unclear (Developing), or missing/incorrect (Does Not Meet). For the background, verify that it names the work’s title and author and provides an accurate, concise summary (Exceeds), gives an adequate summary (Meets), lists title and author but offers a weak or missing summary (Developing), or fails two or more components (Does Not Meet). For the thesis, determine if it clearly and eloquently addresses the prompt (Exceeds), directly answers the prompt (Meets), is vague/off-prompt (Developing), or is missing/incorrect along with another element (Does Not Meet). Assign the highest band for which all criteria are met, then output a numeric score (5, 4, 3.5, 2.5), the corresponding descriptor, targeted feedback on each element, and a brief overall comment.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-05-19T15:33:26.795Z",
+                "updated_at": "2025-05-19T15:33:26.795Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "33774c23-b701-467b-a1f7-4782b18f6ed2",
+            "section_id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+            "title": "Body Paragraph #1",
+            "description": "<p>Your first body paragraph will be graded on how well you support your claim with evidence. To earn full credit, include two well-chosen quotes that clearly support your argument and introduce each quote smoothly. Partial credit is given if the quotes are present but weak, off-topic, or lack proper introductions. You’ll lose points if one or both quotes are missing or fail to support your claim.</p>",
+            "order": 1,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 15,
+            "created_at": "2025-05-19T15:33:26.951Z",
+            "updated_at": "2025-05-19T15:33:26.951Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "8ddba4f2-bf43-4a18-9c3d-85641f60c633",
+                "title": "Video",
+                "description": "<p>Video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/bhclyYMwWo0",
+                "order": 0,
+                "attachable_id": "33774c23-b701-467b-a1f7-4782b18f6ed2",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:27.105Z",
+                "updated_at": "2025-05-19T15:33:27.105Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "5707c63d-baa1-42d8-908c-63eae029149f",
+                "objective_id": "33774c23-b701-467b-a1f7-4782b18f6ed2",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 15,
+                "data": {
+                  "model": "gemini-2.5-flash-preview-04-17",
+                  "platform": "gemini",
+                  "max_tokens": 2000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria`\nFirst, review the entire essay to determine whether it is about Romeo and Juliet by William Shakespeare. Only proceed if the Pre-Check passes. If it fails, return a score of zero. \n\n1) The second paragraph is the Body Paragraph #1: Evaluate the student’s use of quotations against four performance bands—Exceeds (5) if the paragraph includes two well-chosen quotes that strongly support the claim with clear, strong introductions to both; Meets (4) if it includes two quotes that support the claim with basic introductions; Developing (3.5) if it includes two quotes but one or both are poorly chosen, fail to support the claim, or lack an introduction; and Does Not Meet (2.5) if it does not include two quotes or they do not support the claim. Assign the highest band for which all criteria are met, then output a numeric score (5, 4, 3.5, 2.5), the corresponding descriptor, targeted feedback on each element, and a brief overall comment.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-05-19T15:33:27.026Z",
+                "updated_at": "2025-05-19T15:33:27.026Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "7ab063e0-bf17-4764-bd0a-44236c799510",
+            "section_id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+            "title": "Body Paragraph #1 Commentary",
+            "description": "<p>This part of your paragraph is graded on how well you explain your evidence. To earn full credit, include two pieces of analysis for each quote (four total) that clearly explain how the quote supports your claim and why it matters in the context of the text. Partial credit is given if the analysis is weak, vague, or leans too much on summary. You’ll lose points if your commentary is missing, lacks clear connections, or simply restates the quote without explaining its relevance.</p>",
+            "order": 2,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 15,
+            "created_at": "2025-05-19T15:33:27.185Z",
+            "updated_at": "2025-05-19T15:33:27.185Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [
+              {
+                "id": "d899abb0-42de-4fe2-acc6-3f825e6b487a",
+                "title": "Video",
+                "description": "<p>Video</p>",
+                "kind": "video",
+                "target": "https://www.youtube.com/embed/bhclyYMwWo0",
+                "order": 1,
+                "attachable_id": "7ab063e0-bf17-4764-bd0a-44236c799510",
+                "attachable_type": "Objective",
+                "created_at": "2025-05-19T15:33:27.362Z",
+                "updated_at": "2025-05-19T15:33:27.362Z",
+                "deleted_at": null,
+                "transcript": null,
+                "transcript_summary": null,
+                "transcript_prompt": null
+              }
+            ],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "79354f52-19d9-47ef-9555-224b4141a963",
+                "objective_id": "7ab063e0-bf17-4764-bd0a-44236c799510",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 15,
+                "data": {
+                  "model": "gemini-2.5-flash-preview-04-17",
+                  "platform": "gemini",
+                  "max_tokens": 2000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria`\nFirst, review the entire essay to determine whether it is about Romeo and Juliet by William Shakespeare. Only proceed if the Pre-Check passes. If it fails, return a score of zero. \n\n1)  The second paragraph is the Body Paragraph #1: Evaluate the student’s analysis of evidence against four performance bands—Exceeds (5) if the paragraph includes two pieces of analysis for both quotes that clearly and specifically connect each piece of evidence to the claim, explaining its importance and relevance to the text; Meets (4) if it includes two pieces of analysis for both quotes that connect the evidence to the claim and explain its relevance; Developing (3.5) if it omits one or more pieces of analysis or the analysis weakly connects evidence to claim, offering more summary than explanation; and Does Not Meet (2.5) if it fails to include all four pieces of commentary or consists merely of summary with no connection to the text. Assign the highest band for which all criteria are met, then output a numeric score (5, 4, 3.5, 2.5), the corresponding descriptor, targeted feedback on each element, and a brief overall comment.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-05-19T15:33:27.265Z",
+                "updated_at": "2025-05-19T15:33:27.265Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "532ba6a3-8965-4bbb-9571-0a428ba0aab5",
+            "section_id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+            "title": "Body Paragraph #2",
+            "description": "<p><span style=\"color: rgb(3, 7, 18);\">Your second body paragraph will be graded on how well you support your claim with evidence. To earn full credit, include two well-chosen quotes that clearly support your argument and introduce each quote smoothly. Partial credit is given if the quotes are present but weak, off-topic, or lack proper introductions. You’ll lose points if one or both quotes are missing or fail to support your claim.</span></p>",
+            "order": 3,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 20,
+            "created_at": "2025-05-19T15:33:27.450Z",
+            "updated_at": "2025-05-19T15:33:27.450Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "0e5aac0f-b745-4e2c-b63c-e095c1024004",
+                "objective_id": "532ba6a3-8965-4bbb-9571-0a428ba0aab5",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 20,
+                "data": {
+                  "model": "gemini-2.5-flash-preview-04-17",
+                  "platform": "gemini",
+                  "max_tokens": 2000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria`\nFirst, review the entire essay to determine whether it is about Romeo and Juliet by William Shakespeare. Only proceed if the Pre-Check passes. If it fails, return a score of zero. \n\n1)  The third paragraph is the Body Paragraph #1: Evaluate the student’s use of quotations against four performance bands—Exceeds (5) if the paragraph includes two well-chosen quotes that strongly support the claim with clear, strong introductions to both; Meets (4) if it includes two quotes that support the claim with basic introductions; Developing (3.5) if it includes two quotes but one or both are poorly chosen, fail to support the claim, or lack an introduction; and Does Not Meet (2.5) if it does not include two quotes or they do not support the claim. Assign the highest band for which all criteria are met, then output a numeric score (5, 4, 3.5, 2.5), the corresponding descriptor, targeted feedback on each element, and a brief overall comment.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-05-19T15:33:27.537Z",
+                "updated_at": "2025-05-19T15:33:27.537Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "114c7e03-cdab-47f0-8288-6a8d97efa43c",
+            "section_id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+            "title": "Body Paragraph #2 Commentary",
+            "description": "<p>This part of your paragraph is graded on how well you explain your evidence. To earn full credit, include two pieces of analysis for each quote (four total) that clearly explain how the quote supports your claim and why it matters in the context of the text. Partial credit is given if the analysis is weak, vague, or leans too much on summary. You’ll lose points if your commentary is missing, lacks clear connections, or simply restates the quote without explaining its relevance.</p>",
+            "order": 4,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 20,
+            "created_at": "2025-05-19T15:33:27.627Z",
+            "updated_at": "2025-05-19T15:33:27.627Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "280f4776-1f6b-42e3-b075-1e607560ced9",
+                "objective_id": "114c7e03-cdab-47f0-8288-6a8d97efa43c",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 20,
+                "data": {
+                  "model": "gemini-2.5-flash-preview-04-17",
+                  "platform": "gemini",
+                  "max_tokens": 2000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria`\nFirst, review the entire essay to determine whether it is about Romeo and Juliet by William Shakespeare. Only proceed if the Pre-Check passes. If it fails, return a score of zero. \n\n1)  The third paragraph is the Body Paragraph #2: Evaluate the student’s analysis of evidence against four performance bands—Exceeds (5) if the paragraph includes two pieces of analysis for both quotes that clearly and specifically connect each piece of evidence to the claim, explaining its importance and relevance to the text; Meets (4) if it includes two pieces of analysis for both quotes that connect the evidence to the claim and explain its relevance; Developing (3.5) if it omits one or more pieces of analysis or the analysis weakly connects evidence to claim, offering more summary than explanation; and Does Not Meet (2.5) if it fails to include all four pieces of commentary or consists merely of summary with no connection to the text. Assign the highest band for which all criteria are met, then output a numeric score (5, 4, 3.5, 2.5), the corresponding descriptor, targeted feedback on each element, and a brief overall comment.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-05-19T15:33:27.723Z",
+                "updated_at": "2025-05-19T15:33:27.723Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "ef34ba19-2e0c-4278-9ee9-1189c92d6c50",
+            "section_id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+            "title": "V4 Conclusion Paragraph",
+            "description": "<p>Your conclusion is graded on how well it wraps up your essay. To earn full credit, restate your thesis in a new way, clearly summarize your main points, and explain the overall message or lesson of the text. Partial credit is given if one of these elements is weak or missing. You’ll lose points if the thesis is simply copied, not included, or if the conclusion lacks a summary or a discussion of the text’s larger meaning.</p>",
+            "order": 5,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 15,
+            "created_at": "2025-05-19T15:33:27.829Z",
+            "updated_at": "2025-05-19T15:33:27.829Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "7edbddce-61c5-4988-a2f5-2963c876fe76",
+                "objective_id": "ef34ba19-2e0c-4278-9ee9-1189c92d6c50",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 15,
+                "data": {
+                  "model": "gemini-2.5-flash-preview-04-17",
+                  "platform": "gemini",
+                  "max_tokens": 2000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria`\nFirst, review the entire essay to determine whether it is about Romeo and Juliet by William Shakespeare. Only proceed if the Pre-Check passes. If it fails, return a score of zero. \n\n1)  The fourth paragraph is the Conclusion paragraph: evaluate the student’s concluding paragraph against four performance bands—Exceeds (5) if it restates the thesis in fresh language, strongly summarizes the main points, and delivers an insightful discussion of the overall message/lesson; Meets (4) if it restates the thesis, summarizes the main points, and discusses the overall message/lesson; Developing (3.5) if it is missing or weak on one of those components (restated thesis, summary of main points, or discussion of the overall message); and Does Not Meet (2.5) if the thesis is merely copied or missing, the summary of main points is absent, or the overall message/lesson is omitted. Assign the highest band for which all criteria are met, then output a numeric score (5, 4, 3.5, or 2.5), the corresponding descriptor, targeted feedback on the conclusion’s strengths and weaknesses, and a brief overall comment.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-05-19T15:33:27.932Z",
+                "updated_at": "2025-05-19T15:33:27.932Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          },
+          {
+            "id": "2ee75322-7a00-43b0-bb20-bc6db468e324",
+            "section_id": "12eaf5ca-aa4f-4291-9a38-128e34887033",
+            "title": "Overall Structure / Format ",
+            "description": "<p>Your writing will be graded on how well you follow MLA format, use correct grammar, and vary your sentence structure. To earn the highest score, make sure you have few or no grammar mistakes, follow MLA rules, use sophisticated language, and include a mix of short and long sentences. Points will be taken off if there are format mistakes, grammar errors, or if your sentences are too simple or repetitive.</p>",
+            "order": 6,
+            "assessmentable": null,
+            "evaluation_type": "ai",
+            "points": 20,
+            "created_at": "2025-05-19T15:33:28.035Z",
+            "updated_at": "2025-05-19T15:33:28.035Z",
+            "deleted_at": null,
+            "resource_attachments": [],
+            "resources": [],
+            "resource_file_links": [],
+            "evaluations": [
+              {
+                "id": "d8dcc64d-68d5-4fba-87a1-34b04d2c250f",
+                "objective_id": "2ee75322-7a00-43b0-bb20-bc6db468e324",
+                "evaluation_type": "ai",
+                "order": 0,
+                "points": 20,
+                "data": {
+                  "model": "gemini-2.5-flash-preview-04-17",
+                  "platform": "gemini",
+                  "max_tokens": 2000,
+                  "temperature": "0.1",
+                  "user_prompt": "`Grading Criteria`\nFirst, review the entire essay to determine whether it is about Romeo and Juliet by William Shakespeare. Only proceed if the Pre-Check passes. If it fails, return a score of zero. \n\n1) The Structure/Format category: evaluate the student’s use of MLA format, grammar, sentence structure, and sentence variety against four performance bands—Exceeds (5) if MLA format is followed with few or no grammatical errors, sentences are sophisticated, and there is clear variety in sentence length; Meets (4) if MLA format is followed with 2 or fewer errors, sentence structure is strong, and there is some variety in language and length; Developing (3.5) if 2 or more aspects of MLA format are missing, there are 4 or more errors, or sentence structure is basic; and Does Not Meet (2.5) if 3 or more aspects of MLA format are missing and there are 5 or more errors. Deduct 1 point if the title of the play is not italicized and another 1 point if proper nouns (such as character names or places) are not capitalized. Assign the highest band for which all criteria are met, then apply any necessary point deductions. Output a numeric score (5, 4, 3.5, or 2.5), the corresponding descriptor, targeted feedback on structure/format strengths and weaknesses, and a brief overall comment.",
+                  "system_prompt": "You are an educational assessment and feedback specialist working in a project-based education platform. Your role is to pre-grade ‘student_submission’ for a classroom teacher using the ‘Scoring Rubric’ and ‘Grading Criteria’ listed below. All feedback must be appropriate in a school setting. Student feedback must be encouraging and support learning. \n\n1) Review the student-submitted files.\n1.1) The student file is the included JSON file.\n\n2) Evaluate the student-submitted files using the Grading Criteria and this scoring rubric.\n2.1) 0 Points: No work or completely irrelevant; no evidence of understanding.\n2.2) 1 Point: Minimal engagement; responses are incorrect or off-topic, showing inadequate understanding.\n2.3) 2 Points: Partial understanding; incomplete or flawed responses.\n2.4) 3 Points: Satisfactory understanding; generally correct with minor errors.\n2.5) 4 Points: Proficient understanding; accurate and detailed with minor omissions.\n2.6) 5 Points: Exemplary mastery; thorough, insightful, error-free, exceeding expectations.\n\n\n3) Provide Formative Feedback to the Student:\n3.1) For each criterion, provide specific, targeted feedback explaining why the student received their score. If the student lost points, include one concrete step they can take to improve. Keep feedback clear and constructive in two sentences.\n3.2) Overall Feedback: Tailor overall feedback based on the total score\n3.2.a) Score = 5: Congratulate them on their performance. Limit feedback to 1 sentence.\n3.2.b) Score between 3–4: Provide specific improvement areas to reach full mastery. Limit feedback to 3 sentences.\n3.2.c) Score between 0–2: Focus on specific, actionable guidance to help the student meet the basic requirements. Limit feedback to 2 sentences.\n\n4) Provide a Critical Assessment to the Classroom Teacher:\n4.1) For each criterion, clearly justify the assigned score by referencing specific gaps or errors.\n4.2) Overall Assessment: Summarize criterion feedback and improvement areas so the teacher understands the student’s performance."
+                },
+                "created_at": "2025-05-19T15:33:28.136Z",
+                "updated_at": "2025-05-19T15:33:28.136Z",
+                "failure_message": null,
+                "deleted_at": null,
+                "template_id": null,
+                "template_format": null
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "template_file_ready": true
+  }
