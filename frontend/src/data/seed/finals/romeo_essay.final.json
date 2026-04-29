@@ -1,0 +1,257 @@
+{
+  "edusperience_title": "Romeo and Juliet Consequences Essay",
+  "source_file": "edusperiences/romeo_essay.json",
+  "inferred_grade_bands": [
+    "9-10",
+    "11-12"
+  ],
+  "standards_db": "categorized-standards/California/CA-ELA.json",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> LLM curation (Claude Sonnet)",
+  "notes": "High-school 4-paragraph argumentative essay on the consequences of Romeo and Juliet's actions.",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "Essay Header",
+      "description": "Insert MLA-style heading at top-left.",
+      "alignments": [],
+      "note": "Logistical formatting. No ELA standard applies."
+    },
+    {
+      "path": "sections[0].objectives[1]",
+      "title": "Essay Title",
+      "description": "Title your essay (assigned title: 'Romeo and Juliet Consequences Essay').",
+      "alignments": [
+        {
+          "code": "W.9-10.4",
+          "confidence": "low",
+          "rationale": "Task-appropriate writing convention; but the prescribed title leaves little author discretion."
+        }
+      ]
+    },
+    {
+      "path": "sections[0].objectives[2]",
+      "title": "Essay Sections",
+      "description": "Insert Section Break (continuous) so GradeFlow can identify sections.",
+      "alignments": [],
+      "note": "Platform-specific document structure. No ELA standard applies."
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Introduction Paragraph",
+      "description": "Follow Introduction Paragraph requirements in the instructions.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.a",
+          "confidence": "high",
+          "rationale": "Introduce precise claim(s) and establish clear relationships among claim(s), reasons, and evidence."
+        },
+        {
+          "code": "W.9-10.1",
+          "confidence": "high",
+          "rationale": "Write arguments to support claims — the overall argument-writing standard."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Hook and Thesis Statement",
+      "description": "Write a powerful hook and a clear thesis statement.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.a",
+          "confidence": "high",
+          "rationale": "Introduce a precise claim — the thesis itself — and hook the reader into the argument's framing."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[2]",
+      "title": "First Body Paragraph",
+      "description": "Topic sentence, two quotes, commentary linking to thesis.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Develop claim(s) fairly, supplying evidence for each."
+        },
+        {
+          "code": "RL.9-10.1",
+          "confidence": "high",
+          "rationale": "Cite strong and thorough textual evidence from Shakespeare's play to support analysis."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[3]",
+      "title": "Second Body Paragraph",
+      "description": "Topic sentence, two quotes, commentary (as in first body paragraph).",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Develop claims with evidence."
+        },
+        {
+          "code": "RL.9-10.1",
+          "confidence": "high",
+          "rationale": "Cite textual evidence from the play."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[4]",
+      "title": "Body Paragraph Evidence",
+      "description": "Verify both body paragraphs are in correct sections and have required structure.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Quality of evidence/development within each body paragraph."
+        },
+        {
+          "code": "W.9-10.1.c",
+          "confidence": "medium",
+          "rationale": "Linking words/phrases that clarify relationships between claims, reasons, and evidence."
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[5]",
+      "title": "Conclusion Paragraph",
+      "description": "Restate thesis in new words, summarize points, leave final impression.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.e",
+          "confidence": "high",
+          "rationale": "Provide a concluding statement or section that follows from and supports the argument."
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "File Name",
+      "description": "Follow the file naming convention.",
+      "alignments": [],
+      "note": "Logistical. No ELA standard applies."
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "title": "Intro Paragraph (Teacher Review)",
+      "description": "Hook, background (title/author), summary, thesis — graded by teacher.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.a",
+          "confidence": "high",
+          "rationale": "Intro + thesis framing — core of the argument introduction."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[1]",
+      "title": "Body Paragraph #1 (Teacher Review — evidence)",
+      "description": "Two well-chosen quotes, each properly introduced.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Evidence selection and integration graded here."
+        },
+        {
+          "code": "RL.9-10.1",
+          "confidence": "high",
+          "rationale": "Citation of strong textual evidence from the play."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[2]",
+      "title": "Body Paragraph #1 Commentary",
+      "description": "Two pieces of analysis per quote explaining its support of the thesis.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Developing claims with reasoning — the commentary-on-evidence work."
+        },
+        {
+          "code": "RL.9-10.2",
+          "confidence": "medium",
+          "rationale": "Determine a theme or central idea and analyze in detail its development — what commentary ties back to."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[3]",
+      "title": "Body Paragraph #2 (Teacher Review — evidence)",
+      "description": "Same criteria as body #1: two well-chosen quotes properly introduced.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Evidence selection and integration."
+        },
+        {
+          "code": "RL.9-10.1",
+          "confidence": "high",
+          "rationale": "Citation of textual evidence."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[4]",
+      "title": "Body Paragraph #2 Commentary",
+      "description": "Analysis per quote explaining thesis support.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.b",
+          "confidence": "high",
+          "rationale": "Developing claims with reasoning."
+        },
+        {
+          "code": "RL.9-10.2",
+          "confidence": "medium",
+          "rationale": "Analyzing theme development through commentary."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[5]",
+      "title": "V4 Conclusion Paragraph",
+      "description": "Restate thesis, summarize, explain overall message/lesson.",
+      "alignments": [
+        {
+          "code": "W.9-10.1.e",
+          "confidence": "high",
+          "rationale": "Provide a concluding statement or section that follows from and supports the argument."
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[6]",
+      "title": "Overall Structure / Format",
+      "description": "MLA format, correct grammar, varied sentence structure.",
+      "alignments": [
+        {
+          "code": "L.9-10.1",
+          "confidence": "high",
+          "rationale": "Conventions of standard English grammar and usage."
+        },
+        {
+          "code": "L.9-10.2",
+          "confidence": "high",
+          "rationale": "Capitalization, punctuation, and spelling."
+        },
+        {
+          "code": "L.9-10.3",
+          "confidence": "high",
+          "rationale": "Apply knowledge of language — vary sentence structure for effect."
+        },
+        {
+          "code": "W.9-10.4",
+          "confidence": "medium",
+          "rationale": "Produce clear, coherent writing appropriate to task and purpose."
+        }
+      ]
+    }
+  ]
+}

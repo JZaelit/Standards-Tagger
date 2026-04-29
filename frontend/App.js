@@ -13,6 +13,7 @@ import AddAssignmentScreen from './src/screens/AddAssignmentScreen';
 import AddCurriculumScreen from './src/screens/AddCurriculumScreen';
 import OutputScreen from './src/screens/OutputScreen';
 import CurriculumDetailScreen from './src/screens/CurriculumDetailScreen';
+import DashboardScreen from './src/screens/DashboardScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -52,6 +53,7 @@ export default function App() {
         <Stack.Screen name="AddCurriculum" component={AddCurriculumScreen} />
         <Stack.Screen name="Output" component={OutputScreen} />
         <Stack.Screen name="CurriculumDetail" component={CurriculumDetailScreen} />
+        <Stack.Screen name="Dashboard" component={DashboardScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

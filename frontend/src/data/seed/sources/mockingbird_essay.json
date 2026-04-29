@@ -1,0 +1,60 @@
+{
+  "title": "Mockingbird Essay",
+  "description": "<p>You will write a literary analysis essay examining Harper Lee's \"To Kill a Mockingbird.\" Your essay will present a clear, arguable thesis exploring a specific aspect of the novel while demonstrating your technical proficiency in modern document creation and formatting.</p>",
+  "sections": [
+    {
+      "title": "File Name",
+      "description": "Follow the file naming convention of: Your Name | Period # | Assignment Name",
+      "objectives": [
+        {
+          "title": "Naming Convention",
+          "description": "Follow the file naming convention of: Your Name | Period # | Assignment Name",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "Essay Objectives",
+      "description": "These tasks will outline the objective requirements for your essay.",
+      "objectives": [
+        {
+          "title": "Essay Length",
+          "description": "Your essay must be 500-1000 words and contain at least five paragraphs. ",
+          "evaluation_type": "platform",
+          "points": 40
+        },
+        {
+          "title": "Essay Elements",
+          "description": "Include two hyperlinks and two images that are relevant information this essay. ",
+          "evaluation_type": "platform",
+          "points": 20
+        },
+        {
+          "title": "Essay Content",
+          "description": "Include character names, locations, scenes, etc... in your text. ",
+          "evaluation_type": "platform",
+          "points": 30
+        }
+      ]
+    },
+    {
+      "title": "AI Evaluations",
+      "description": "AI Evaluations",
+      "objectives": [
+        {
+          "title": "Subjective AI",
+          "description": "Subjective AI Evaluations covering Depth of Analysis, Clarity and Coherence, Engagement and Originality, Use of Textual Evidence, and Emotional and Intellectual Impact.",
+          "evaluation_type": "ai",
+          "points": 50
+        },
+        {
+          "title": "Objective AI",
+          "description": "Objective: Spelling, Grammar and Syntax, Formatting, Organized Ideas into Paragraphs, and LEngth. ",
+          "evaluation_type": "ai",
+          "points": 50
+        }
+      ]
+    }
+  ]
+}

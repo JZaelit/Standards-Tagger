@@ -1,0 +1,187 @@
+{
+  "edusperience_id": null,
+  "edusperience_title": "Resume V2",
+  "source_file": "edusperiences/resume.json",
+  "inferred_grade_bands": ["9-10", "11-12"],
+  "standards_db": "categorized-standards/California/CA-ELA.json",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> LLM curation (Claude Sonnet)",
+  "notes": "High-school resume project. Career-prep writing for a specific audience. Most content-writing objectives map to W.9-10.2 (informative/explanatory) and W.9-10.4 (clear coherent writing). Many logistical formatting objectives are intentionally unaligned.",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "Headings",
+      "description": "Insert five section headings styled as heading3.",
+      "alignments": [],
+      "note": "Logistical document structure. No ELA standard applies."
+    },
+    {
+      "path": "sections[0].objectives[1]",
+      "title": "File Name",
+      "description": "Rename your file using the naming convention.",
+      "alignments": [],
+      "note": "Logistical. No ELA standard applies."
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Your Name",
+      "description": "Add your full name at the top of the document.",
+      "alignments": [],
+      "note": "Logistical. No ELA standard applies."
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Contact Details",
+      "description": "Add phone, email, and location with a delimiter between elements.",
+      "alignments": [
+        {"code": "W.9-10.4", "confidence": "low",
+         "rationale": "Task-appropriate formatting is part of producing writing for a clear purpose and audience, though this item is largely logistical."}
+      ]
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "Insert Section: {{var:OBJECTIVE}}",
+      "description": "Insert a horizontal line and section break before the OBJECTIVE heading.",
+      "alignments": [],
+      "note": "Logistical document structure. No ELA standard applies."
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "title": "Write Summary Section",
+      "description": "Write a concise summary statement (2-4 sentences) describing yourself as a candidate.",
+      "alignments": [
+        {"code": "W.9-10.2", "confidence": "high",
+         "rationale": "Write informative/explanatory texts to examine and convey complex ideas — the summary statement is a compressed piece of informative self-description."},
+        {"code": "W.9-10.2.a", "confidence": "high",
+         "rationale": "Introduce a topic and organize complex ideas — the summary must open the resume by framing who you are."},
+        {"code": "W.9-10.4", "confidence": "high",
+         "rationale": "Produce clear, coherent writing appropriate to task, purpose, and audience — a resume summary is highly audience-specific."}
+      ]
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "title": "Insert Section: {{var:EDUCATION}}",
+      "description": "Insert a horizontal line and section break before the EDUCATION heading.",
+      "alignments": [],
+      "note": "Logistical. No ELA standard applies."
+    },
+    {
+      "path": "sections[3].objectives[1]",
+      "title": "High School",
+      "description": "Add your high school name, location, and graduation date.",
+      "alignments": [
+        {"code": "W.9-10.4", "confidence": "low",
+         "rationale": "Producing writing appropriate to purpose/format. Mostly mechanical data entry."}
+      ]
+    },
+    {
+      "path": "sections[4].objectives[0]",
+      "title": "Insert Section: {{var:EXPERIENCE}}",
+      "description": "Insert a horizontal line and section break before the EXPERIENCE heading.",
+      "alignments": [],
+      "note": "Logistical. No ELA standard applies."
+    },
+    {
+      "path": "sections[4].objectives[1]",
+      "title": "Experience #1",
+      "description": "Add a role or position with location, dates, and bullet-point accomplishments.",
+      "alignments": [
+        {"code": "W.9-10.2.b", "confidence": "high",
+         "rationale": "Develop the topic with well-chosen, relevant facts — this is exactly the work of writing strong experience bullets."},
+        {"code": "W.9-10.2.d", "confidence": "high",
+         "rationale": "Use precise language and domain-specific vocabulary — strong resume bullets lean on active verbs and precise nouns."},
+        {"code": "W.9-10.4", "confidence": "high",
+         "rationale": "Produce clear, coherent writing appropriate to task and audience."}
+      ]
+    },
+    {
+      "path": "sections[4].objectives[2]",
+      "title": "Experience #2",
+      "description": "Add a second experience with the same structure as #1.",
+      "alignments": [
+        {"code": "W.9-10.2.b", "confidence": "high",
+         "rationale": "Same as Experience #1 — develop content with relevant, well-chosen details."},
+        {"code": "W.9-10.2.d", "confidence": "high",
+         "rationale": "Precise language and domain-specific vocabulary."},
+        {"code": "W.9-10.4", "confidence": "high",
+         "rationale": "Clear, coherent writing for the stated task."}
+      ]
+    },
+    {
+      "path": "sections[5].objectives[0]",
+      "title": "Insert Section: {{var:SKILLS}}",
+      "description": "Insert a horizontal line and section break before the SKILLS heading.",
+      "alignments": [],
+      "note": "Logistical. No ELA standard applies."
+    },
+    {
+      "path": "sections[5].objectives[1]",
+      "title": "Table",
+      "description": "Insert a 1-row 2-column table listing skills.",
+      "alignments": [
+        {"code": "W.9-10.6", "confidence": "medium",
+         "rationale": "Use technology to produce and publish — inserting and populating a structured table in a word processor touches the production-with-technology standard."},
+        {"code": "L.9-10.6", "confidence": "medium",
+         "rationale": "Acquire and use accurate general academic and domain-specific words and phrases — the skills list forces precise vocabulary choice."}
+      ]
+    },
+    {
+      "path": "sections[6].objectives[0]",
+      "title": "Insert Section: Custom",
+      "description": "Insert a horizontal line and section break before a custom heading.",
+      "alignments": [],
+      "note": "Logistical. No ELA standard applies."
+    },
+    {
+      "path": "sections[6].objectives[1]",
+      "title": "Custom Section Content",
+      "description": "Use AI and/or the internet to research a custom section topic and write content.",
+      "alignments": [
+        {"code": "W.9-10.7", "confidence": "high",
+         "rationale": "Conduct short research projects to answer a question or solve a problem — the task explicitly directs research before writing."},
+        {"code": "W.9-10.8", "confidence": "high",
+         "rationale": "Gather relevant information from multiple authoritative sources and integrate it — this is the AI-and-internet research step."},
+        {"code": "W.9-10.2", "confidence": "high",
+         "rationale": "Write informative/explanatory texts — the output is a written informative section."}
+      ]
+    },
+    {
+      "path": "sections[7].objectives[0]",
+      "title": "Summary and Formatting (Teacher Review)",
+      "description": "Review summary section has all required elements; check formatting.",
+      "alignments": [
+        {"code": "W.9-10.2.a", "confidence": "high",
+         "rationale": "Teacher is checking the intro/framing quality of the summary."},
+        {"code": "W.9-10.4", "confidence": "high",
+         "rationale": "Checking clear, coherent writing appropriate to task, purpose, audience."},
+        {"code": "W.9-10.5", "confidence": "medium",
+         "rationale": "Revising — the teacher review step invites strengthening the writing."}
+      ]
+    },
+    {
+      "path": "sections[7].objectives[1]",
+      "title": "Education and Experience (Teacher Review)",
+      "description": "Verify education and experience sections are complete with required elements.",
+      "alignments": [
+        {"code": "W.9-10.2.b", "confidence": "high",
+         "rationale": "Teacher checks whether content has well-chosen, relevant details."},
+        {"code": "W.9-10.4", "confidence": "high",
+         "rationale": "Check that writing is clear and appropriate for a resume context."},
+        {"code": "L.9-10.1", "confidence": "medium",
+         "rationale": "Conventions of standard English grammar and usage in finished draft."},
+        {"code": "L.9-10.2", "confidence": "medium",
+         "rationale": "Capitalization, punctuation, and spelling."}
+      ]
+    },
+    {
+      "path": "sections[7].objectives[2]",
+      "title": "Skills (Teacher Review)",
+      "description": "Review skills table is correctly formatted and populated.",
+      "alignments": [
+        {"code": "W.9-10.6", "confidence": "medium",
+         "rationale": "Technology-based production of the skills table."},
+        {"code": "L.9-10.6", "confidence": "medium",
+         "rationale": "Checking use of accurate academic and domain-specific vocabulary in skills list."}
+      ]
+    }
+  ]
+}

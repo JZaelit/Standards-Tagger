@@ -106,6 +106,47 @@ def section_title_from_alignment(final_data: dict, section_idx: int) -> str:
     return ""
 
 
+def load_source(source_rel: str) -> dict | None:
+    """Return a minimal, human-readable subset of an edusperience source
+    JSON: only the fields useful for browsing the original lesson.
+
+    We deliberately drop IDs, timestamps, rubric-engine internals,
+    resource attachments, and template metadata. Description fields are
+    preserved as-is (they're typically HTML from the source CMS) and are
+    rendered with innerHTML in the dashboard, so this assumes the source
+    files are trusted (your own data)."""
+    if not source_rel:
+        return None
+    src_path = ROOT / source_rel
+    if not src_path.exists():
+        return None
+    try:
+        edu = json.loads(src_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return None
+    out_sections = []
+    for sec in edu.get("sections", []) or []:
+        out_objs = []
+        for obj in sec.get("objectives", []) or []:
+            out_objs.append({
+                "title": obj.get("title", "") or "",
+                "description": obj.get("description", "") or "",
+                "evaluation_type": obj.get("evaluation_type", "") or "",
+                "points": obj.get("points"),
+            })
+        out_sections.append({
+            "title": sec.get("title", "") or "",
+            "description": sec.get("description", "") or "",
+            "objectives": out_objs,
+        })
+    return {
+        "path": source_rel,
+        "title": edu.get("title", "") or "",
+        "description": edu.get("description", "") or "",
+        "sections": out_sections,
+    }
+
+
 def process_final(final_path: Path) -> dict:
     """Load a .final.json, enrich its alignments, and return a dashboard
     edusperience record."""
@@ -149,6 +190,8 @@ def process_final(final_path: Path) -> dict:
         "subject": subject,
         "notes": data.get("notes", ""),
         "inferred_grade_bands": data.get("inferred_grade_bands", []),
+        "source_file": data.get("source_file", ""),
+        "source": load_source(data.get("source_file", "")),
         "objectives": enriched_objs,
         "n_total": len(enriched_objs),
         "n_aligned": n_aligned,
@@ -289,6 +332,49 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
                   background: #fafbfc; padding: 10px 12px; border-radius: 6px;
                   border: 1px dashed var(--line); }
   .edu-meta { color: var(--mute); font-size: 12px; margin-top: 2px; }
+  .src-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+             margin-top: 10px; padding: 8px 12px; background: #fafbfc;
+             border: 1px solid var(--line); border-radius: 6px;
+             font-size: 12px; color: var(--mute); }
+  .src-bar .src-path { font-family: "SF Mono", Menlo, Consolas, monospace;
+                       color: var(--ink); font-size: 12px; }
+  .src-bar button { font-size: 12px; padding: 4px 10px; background: var(--panel);
+                    border: 1px solid var(--line); border-radius: 4px;
+                    cursor: pointer; color: var(--ink); }
+  .src-bar button:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .src-bar button.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .src-bar .src-toggle { display: inline-flex; gap: 4px; margin-left: auto; }
+  .src-bar .src-missing { color: var(--lo); font-style: italic; }
+  .src-panel { margin-top: 10px; padding: 14px 16px; background: #fafbfc;
+               border: 1px solid var(--line); border-radius: 6px; }
+  .src-panel h3 { margin: 0 0 6px 0; font-size: 16px; font-weight: 600;
+                  color: var(--ink); text-transform: none; letter-spacing: normal; }
+  .src-panel .src-desc { color: #374151; font-size: 13px; line-height: 1.55;
+                         margin-bottom: 12px; }
+  .src-panel .src-desc p { margin: 0 0 6px 0; }
+  .src-panel .src-desc:last-child { margin-bottom: 0; }
+  .src-section { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .src-section h4 { margin: 0 0 4px 0; font-size: 13px; font-weight: 600;
+                    color: var(--ink); text-transform: uppercase;
+                    letter-spacing: 0.04em; }
+  .src-section .src-sec-desc { color: var(--mute); font-size: 12px;
+                               margin-bottom: 8px; }
+  .src-objs { list-style: none; padding: 0; margin: 0; display: flex;
+              flex-direction: column; gap: 8px; }
+  .src-obj { padding: 8px 10px; background: var(--panel); border: 1px solid var(--line);
+             border-radius: 4px; transition: background 0.4s ease; }
+  .src-obj.flash { background: var(--accent-soft); border-color: var(--accent); }
+  .src-obj .src-obj-title { font-weight: 600; font-size: 13px; }
+  .src-obj .src-obj-desc { color: #374151; font-size: 12px; margin-top: 4px; }
+  .src-obj .src-obj-meta { color: var(--mute); font-size: 11px; margin-top: 4px;
+                           font-family: "SF Mono", Menlo, Consolas, monospace; }
+  .src-raw { background: #1c1f24; color: #e5e7eb; padding: 12px;
+             border-radius: 4px; overflow-x: auto; font-size: 11px;
+             line-height: 1.5; max-height: 60vh; }
+  .src-raw pre { margin: 0; font-family: "SF Mono", Menlo, Consolas, monospace; }
+  .view-source-link { font-size: 11px; color: var(--accent); cursor: pointer;
+                      margin-top: 6px; display: inline-block; text-decoration: none; }
+  .view-source-link:hover { text-decoration: underline; }
   @media (max-width: 800px) {
     .summary { grid-template-columns: repeat(2, 1fr); }
     .obj { grid-template-columns: 1fr; }
@@ -461,6 +547,125 @@ function renderChip(a) {
   return chip;
 }
 
+// Per-edusperience source-panel state, keyed by slug.
+// { open: bool, view: 'rendered' | 'raw' }
+const SRC_STATE = {};
+function srcState(slug) {
+  if (!SRC_STATE[slug]) SRC_STATE[slug] = { open: false, view: 'rendered' };
+  return SRC_STATE[slug];
+}
+
+function parseObjectivePath(path) {
+  // 'sections[2].objectives[1]' -> { sec: 2, obj: 1 }
+  const m = /sections\[(\d+)\]\.objectives\[(\d+)\]/.exec(path || '');
+  if (!m) return null;
+  return { sec: parseInt(m[1], 10), obj: parseInt(m[2], 10) };
+}
+
+function buildSourceBar(e) {
+  const bar = el('div','src-bar');
+  if (!e.source) {
+    bar.appendChild(el('span','src-missing',
+      `Source file not embedded${e.source_file ? ' ('+esc(e.source_file)+' missing or unreadable)' : ''}.`));
+    return bar;
+  }
+  bar.appendChild(document.createTextNode('Source:'));
+  bar.appendChild(el('span','src-path', esc(e.source.path || e.source_file || '')));
+  const st = srcState(e.slug);
+  const toggle = el('div','src-toggle');
+  const btnView = el('button', st.open ? 'active' : '');
+  btnView.textContent = st.open ? 'Hide source' : 'View source';
+  btnView.onclick = () => { st.open = !st.open; renderContent(); };
+  toggle.appendChild(btnView);
+  if (st.open) {
+    const btnRendered = el('button', st.view === 'rendered' ? 'active' : '');
+    btnRendered.textContent = 'Rendered';
+    btnRendered.onclick = () => { st.view = 'rendered'; renderContent(); };
+    toggle.appendChild(btnRendered);
+    const btnRaw = el('button', st.view === 'raw' ? 'active' : '');
+    btnRaw.textContent = 'Raw JSON';
+    btnRaw.onclick = () => { st.view = 'raw'; renderContent(); };
+    toggle.appendChild(btnRaw);
+  }
+  bar.appendChild(toggle);
+  return bar;
+}
+
+function buildSourcePanel(e) {
+  const st = srcState(e.slug);
+  if (!st.open || !e.source) return null;
+  const panel = el('div','src-panel');
+  panel.id = `src-${e.slug}`;
+  if (st.view === 'raw') {
+    const wrap = el('div','src-raw');
+    const pre = document.createElement('pre');
+    pre.textContent = JSON.stringify(e.source, null, 2);
+    wrap.appendChild(pre);
+    panel.appendChild(wrap);
+    return panel;
+  }
+  // Rendered view. Source `description` and section/objective `description`
+  // values are HTML from the source CMS; render with innerHTML.
+  if (e.source.title) {
+    panel.appendChild(el('h3', null, esc(e.source.title)));
+  }
+  if (e.source.description) {
+    const desc = el('div','src-desc');
+    desc.innerHTML = e.source.description;
+    panel.appendChild(desc);
+  }
+  (e.source.sections || []).forEach((sec, i) => {
+    const secEl = el('div','src-section');
+    secEl.id = `src-${e.slug}-sec-${i}`;
+    secEl.appendChild(el('h4', null, `Section ${i+1}: ${esc(sec.title || '')}`));
+    if (sec.description) {
+      const sd = el('div','src-sec-desc');
+      sd.innerHTML = sec.description;
+      secEl.appendChild(sd);
+    }
+    const list = document.createElement('ul');
+    list.className = 'src-objs';
+    (sec.objectives || []).forEach((obj, j) => {
+      const li = document.createElement('li');
+      li.className = 'src-obj';
+      li.id = `src-${e.slug}-${i}-${j}`;
+      li.appendChild(el('div','src-obj-title', esc(obj.title || '')));
+      if (obj.description) {
+        const od = el('div','src-obj-desc');
+        od.innerHTML = obj.description;
+        li.appendChild(od);
+      }
+      const metaParts = [];
+      if (obj.evaluation_type) metaParts.push(esc(obj.evaluation_type));
+      if (obj.points != null) metaParts.push(`${obj.points} pt`);
+      metaParts.push(`sections[${i}].objectives[${j}]`);
+      li.appendChild(el('div','src-obj-meta', metaParts.join(' \u00b7 ')));
+      list.appendChild(li);
+    });
+    secEl.appendChild(list);
+    panel.appendChild(secEl);
+  });
+  return panel;
+}
+
+function jumpToSource(slug, secIdx, objIdx) {
+  const st = srcState(slug);
+  const wasOpenInRendered = st.open && st.view === 'rendered';
+  st.open = true;
+  st.view = 'rendered';
+  if (!wasOpenInRendered) renderContent();
+  // After re-render the DOM has the new IDs; defer to next frame.
+  requestAnimationFrame(() => {
+    const target = document.getElementById(`src-${slug}-${secIdx}-${objIdx}`);
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.classList.remove('flash');
+    void target.offsetWidth; // restart animation
+    target.classList.add('flash');
+    setTimeout(() => target.classList.remove('flash'), 1500);
+  });
+}
+
 function renderContent() {
   const q = document.getElementById('q').value.toLowerCase().trim();
   const onlyAligned = document.getElementById('onlyAligned').checked;
@@ -479,6 +684,9 @@ function renderContent() {
       nt.style.marginTop = '6px';
       panel.appendChild(nt);
     }
+    panel.appendChild(buildSourceBar(e));
+    const srcPanel = buildSourcePanel(e);
+    if (srcPanel) panel.appendChild(srcPanel);
     let currentSec = -1;
     for (const o of e.objectives) {
       const matchQ = !q ||
@@ -503,6 +711,14 @@ function renderContent() {
         const nt = el('div','edu-meta', esc('Note: ' + o.note));
         nt.style.marginTop = '6px';
         left.appendChild(nt);
+      }
+      const parsed = parseObjectivePath(o.path);
+      if (e.source && parsed) {
+        const link = el('a','view-source-link');
+        link.href = '#';
+        link.textContent = 'View original \u2192';
+        link.onclick = (ev) => { ev.preventDefault(); jumpToSource(e.slug, parsed.sec, parsed.obj); };
+        left.appendChild(link);
       }
       row.appendChild(left);
       const right = el('div','codes');
@@ -568,8 +784,10 @@ def main(argv: list[str] | None = None) -> int:
         f"TF-IDF shortlist -> heuristic rerank -> LLM curation."
     )
 
+    payload_json = json.dumps(payload, ensure_ascii=False)
+    payload_json = payload_json.replace("</", "<\\/")
     html = HTML_TEMPLATE.replace("__SUBTITLE__", subtitle)
-    html = html.replace("__DATA__", json.dumps(payload, ensure_ascii=False))
+    html = html.replace("__DATA__", payload_json)
     args.out.write_text(html, encoding="utf-8")
     print(f"Wrote {args.out}")
     print(f"  edusperiences: {len(edus)} ({n_ela} ELA, {n_math} math, {n_hist} history)")
@@ -580,35 +798,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-UBJECT_ORDER = {"ela": 0, "math": 1, "history": 2}
-    edus.sort(key=lambda e: (SUBJECT_ORDER.get(e["subject"], 99), e["title"].lower()))
-
-    summary = build_summary(edus)
-    payload = {"edusperiences": edus, "summary": summary}
-
-    n_ela = summary["by_subject"].get("ela", 0)
-    n_math = summary["by_subject"].get("math", 0)
-    n_hist = summary["by_subject"].get("history", 0)
-    parts = []
-    if n_ela:  parts.append(f"{n_ela} ELA")
-    if n_math: parts.append(f"{n_math} Math")
-    if n_hist: parts.append(f"{n_hist} History")
-    n_total = n_ela + n_math + n_hist
-    subtitle = (
-        f"California - {' + '.join(parts)} edusperience"
-        f"{'s' if n_total != 1 else ''}. "
-        f"TF-IDF shortlist -> heuristic rerank -> LLM curation."
-    )
-
-    html = HTML_TEMPLATE.replace("__SUBTITLE__", subtitle)
-    html = html.replace("__DATA__", json.dumps(payload, ensure_ascii=False))
-    args.out.write_text(html, encoding="utf-8")
-    print(f"Wrote {args.out}")
-    print(f"  edusperiences: {len(edus)} ({n_ela} ELA, {n_math} math, {n_hist} history)")
-    print(f"  total objectives: {summary['total_objectives']}, aligned {summary['aligned_objectives']} ({summary['pct_aligned']}%)")
-    print(f"  code assignments: {summary['total_code_assignments']}, distinct {summary['distinct_codes']}")
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
