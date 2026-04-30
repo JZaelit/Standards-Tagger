@@ -1,0 +1,14 @@
+# Python dependencies for tools/*.py.
+#
+# Install with:
+#   pip install -r tools/requirements.txt
+
+# Stage 1 (TF-IDF shortlist) and rerank tooling
+numpy>=1.26
+scikit-learn>=1.4
+
+# Stage 3 (LLM curation)
+anthropic>=0.40
+
+# PDF generation (tools/make_pdf.py)
+reportlab>=4.0
