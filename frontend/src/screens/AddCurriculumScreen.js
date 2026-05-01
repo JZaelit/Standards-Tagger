@@ -1,4 +1,17 @@
-import React, { useState } from 'react';
+// Create / edit form for a curriculum.
+//
+//   navigation.navigate('AddCurriculum')                  -> create mode
+//                                                            (search library, then upload)
+//   navigation.navigate('AddCurriculum', { curriculum })  -> edit mode
+//                                                            (skip search, pre-fill upload form)
+//
+// Edit mode is only valid for user-created curricula. Seed/library entries
+// are read-only; the screen bounces back with an error toast if asked.
+//
+// Uses the shared FilePicker and SubjectPicker so the affordances stay in
+// sync with AddAssignmentScreen.
+
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -8,32 +21,46 @@ import {
   ScrollView,
   ActivityIndicator,
 } from 'react-native';
-import * as DocumentPicker from 'expo-document-picker';
 import { dataClient } from '../lib/dataClient';
+import { useToast } from '../components/Toast';
+import TopNav from '../components/TopNav';
+import SubjectPicker from '../components/SubjectPicker';
+import FilePicker from '../components/FilePicker';
 import { colors, typography } from '../theme';
 
-const ACCEPTED_TYPES = [
-  'application/pdf',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-  'application/vnd.ms-powerpoint',
-  'text/plain',
-];
+export default function AddCurriculumScreen({ navigation, route }) {
+  const editing = route?.params?.curriculum || null;
+  const isEdit = !!editing && !editing.is_seed;
 
-export default function AddCurriculumScreen({ navigation }) {
-  const [step, setStep] = useState('search'); // 'search' | 'upload'
+  // In edit mode jump straight to the form. In create mode start at search.
+  const [step, setStep] = useState(isEdit ? 'form' : 'search');
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
   const [searched, setSearched] = useState(false);
 
-  // Upload form
-  const [title, setTitle] = useState('');
-  const [grade, setGrade] = useState('');
+  // Form fields - pre-filled in edit mode.
+  const [title, setTitle] = useState(editing?.title || '');
+  const [grade, setGrade] = useState(editing?.grade || '');
+  const [subject, setSubject] = useState(editing?.subject || '');
   const [file, setFile] = useState(null);
-  const [isPublic, setIsPublic] = useState(true);
+  const [existingFileName, setExistingFileName] = useState(
+    editing?.file_name || null,
+  );
+  const [isPublic, setIsPublic] = useState(
+    editing ? editing.is_public !== false : true,
+  );
   const [loading, setLoading] = useState(false);
+
+  const toast = useToast();
+
+  useEffect(() => {
+    if (editing && editing.is_seed) {
+      toast.show('Library curricula are read-only', { tone: 'danger' });
+      navigation.goBack();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSearch = async () => {
     if (!query.trim()) return;
@@ -47,196 +74,203 @@ export default function AddCurriculumScreen({ navigation }) {
 
   const handleAddFromLibrary = async (curriculum) => {
     await dataClient.curricula.addToUser(curriculum.id);
+    toast.show(`Added "${curriculum.title}" to your list`, { tone: 'success' });
     navigation.goBack();
   };
 
-  const handlePickFile = async () => {
-    const result = await DocumentPicker.getDocumentAsync({
-      type: ACCEPTED_TYPES,
-      copyToCacheDirectory: true,
-    });
-    if (!result.canceled && result.assets?.length > 0) {
-      setFile(result.assets[0]);
-    }
+  const handleFilePicked = (asset) => {
+    setFile(asset);
+    setExistingFileName(null);
   };
 
-  const handleUpload = async () => {
+  const handleFileClear = () => {
+    setFile(null);
+    setExistingFileName(null);
+  };
+
+  const handleSubmit = async () => {
     if (!title.trim() || !grade.trim()) return;
     setLoading(true);
+    const fileName = file?.name ?? existingFileName ?? null;
     try {
-      await dataClient.curricula.create({
-        title: title.trim(),
-        grade: grade.trim(),
-        file_name: file?.name || null,
-        is_public: isPublic,
-      });
-      setLoading(false);
-      navigation.goBack();
+      if (isEdit) {
+        const updated = await dataClient.curricula.update(editing.id, {
+          title: title.trim(),
+          grade: grade.trim(),
+          subject: subject || null,
+          // Only overwrite file_name when the user picked or cleared the
+          // file (otherwise the existing filename stays put).
+          file_name: fileName,
+          is_public: isPublic,
+        });
+        if (!updated) throw new Error('Could not update curriculum.');
+        setLoading(false);
+        toast.show('Saved changes', { tone: 'success' });
+        navigation.goBack();
+      } else {
+        await dataClient.curricula.create({
+          title: title.trim(),
+          grade: grade.trim(),
+          subject: subject || null,
+          file_name: fileName,
+          is_public: isPublic,
+        });
+        setLoading(false);
+        toast.show('Curriculum added', { tone: 'success' });
+        navigation.goBack();
+      }
     } catch (e) {
       setLoading(false);
+      toast.show(e.message || 'Could not save curriculum.', { tone: 'danger' });
     }
   };
 
+  const submitLabel = isEdit ? 'Save Changes' : 'Save Curriculum';
+  const screenTitle = isEdit ? 'Edit Curriculum' : 'Add Curriculum';
+
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.back}>← Back</Text>
-        </TouchableOpacity>
-        <Text style={styles.title}>Add Curriculum</Text>
-      </View>
+    <View style={styles.container}>
+      <TopNav navigation={navigation} currentRoute="AddCurriculum" />
+      <ScrollView contentContainerStyle={styles.content}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={styles.back}>← Back</Text>
+          </TouchableOpacity>
+          <Text style={styles.title}>{screenTitle}</Text>
+        </View>
 
-      {step === 'search' ? (
-        <View style={styles.card}>
-          <Text style={styles.sectionTitle}>Search the Library</Text>
-          <Text style={styles.hint}>Find an existing curriculum before uploading a new one.</Text>
+        {step === 'search' && !isEdit ? (
+          <View style={styles.card}>
+            <Text style={styles.sectionTitle}>Search the Library</Text>
+            <Text style={styles.hint}>
+              Find an existing curriculum before uploading a new one.
+            </Text>
 
-          <View style={styles.searchRow}>
+            <View style={styles.searchRow}>
+              <TextInput
+                style={styles.searchInput}
+                placeholder="Search by title..."
+                placeholderTextColor={colors.textLight}
+                value={query}
+                onChangeText={setQuery}
+                onSubmitEditing={handleSearch}
+                returnKeyType="search"
+              />
+              <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>
+                {searching ? (
+                  <ActivityIndicator color="#fff" size="small" />
+                ) : (
+                  <Text style={styles.searchButtonText}>Search</Text>
+                )}
+              </TouchableOpacity>
+            </View>
+
+            {searched && searchResults.length === 0 && (
+              <Text style={styles.noResults}>No results found in the library.</Text>
+            )}
+
+            {searchResults.map((c) => (
+              <TouchableOpacity
+                key={c.id}
+                style={styles.resultRow}
+                onPress={() => handleAddFromLibrary(c)}
+              >
+                <View style={styles.resultInfo}>
+                  <Text style={styles.resultTitle}>{c.title}</Text>
+                  <Text style={styles.resultGrade}>Grade {c.grade}</Text>
+                </View>
+                <Text style={styles.addText}>+ Add</Text>
+              </TouchableOpacity>
+            ))}
+
+            <TouchableOpacity
+              style={styles.uploadInstead}
+              onPress={() => setStep('form')}
+            >
+              <Text style={styles.uploadInsteadText}>
+                {searched && searchResults.length === 0
+                  ? 'Upload new curriculum'
+                  : "Don't see it? Upload new curriculum"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <View style={styles.card}>
+            {!isEdit ? (
+              <TouchableOpacity onPress={() => setStep('search')} style={styles.backToSearch}>
+                <Text style={styles.back}>← Back to search</Text>
+              </TouchableOpacity>
+            ) : null}
+
+            <Text style={styles.sectionTitle}>
+              {isEdit ? 'Curriculum Details' : 'Upload New Curriculum'}
+            </Text>
+
+            <Text style={styles.label}>Curriculum Title *</Text>
             <TextInput
-              style={styles.searchInput}
-              placeholder="Search by title..."
+              style={styles.input}
+              placeholder="e.g. California Common Core Math"
               placeholderTextColor={colors.textLight}
-              value={query}
-              onChangeText={setQuery}
-              onSubmitEditing={handleSearch}
-              returnKeyType="search"
+              value={title}
+              onChangeText={setTitle}
             />
-            <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>
-              {searching ? (
-                <ActivityIndicator color="#fff" size="small" />
+
+            <Text style={styles.label}>Grade *</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="e.g. 5th"
+              placeholderTextColor={colors.textLight}
+              value={grade}
+              onChangeText={setGrade}
+            />
+
+            <Text style={styles.label}>Subject</Text>
+            <SubjectPicker value={subject} onChange={setSubject} />
+
+            <Text style={styles.label}>Curriculum File</Text>
+            <FilePicker
+              file={file}
+              existingFileName={existingFileName}
+              onPick={handleFilePicked}
+              onClear={handleFileClear}
+              hintLabel="PDF, DOCX, PPTX, XLSX, or TXT"
+            />
+
+            <TouchableOpacity
+              style={styles.toggleRow}
+              onPress={() => setIsPublic(!isPublic)}
+            >
+              <View style={[styles.toggle, isPublic && styles.toggleOn]}>
+                <View style={[styles.toggleThumb, isPublic && styles.toggleThumbOn]} />
+              </View>
+              <View style={styles.toggleLabel}>
+                <Text style={styles.toggleTitle}>
+                  {isPublic ? 'Add to shared library' : 'Keep private'}
+                </Text>
+                <Text style={styles.toggleHint}>
+                  {isPublic
+                    ? 'Other teachers can find and use this curriculum'
+                    : 'Only visible to you'}
+                </Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.button, (!title.trim() || !grade.trim()) && styles.buttonDisabled]}
+              onPress={handleSubmit}
+              disabled={loading || !title.trim() || !grade.trim()}
+            >
+              {loading ? (
+                <ActivityIndicator color="#fff" />
               ) : (
-                <Text style={styles.searchButtonText}>Search</Text>
+                <Text style={styles.buttonText}>{submitLabel}</Text>
               )}
             </TouchableOpacity>
           </View>
-
-          {searched && searchResults.length === 0 && (
-            <Text style={styles.noResults}>No results found in the library.</Text>
-          )}
-
-          {searchResults.map((c) => (
-            <TouchableOpacity
-              key={c.id}
-              style={styles.resultRow}
-              onPress={() => handleAddFromLibrary(c)}
-            >
-              <View style={styles.resultInfo}>
-                <Text style={styles.resultTitle}>{c.title}</Text>
-                <Text style={styles.resultGrade}>Grade {c.grade}</Text>
-              </View>
-              <Text style={styles.addText}>+ Add</Text>
-            </TouchableOpacity>
-          ))}
-
-          <TouchableOpacity
-            style={styles.uploadInstead}
-            onPress={() => setStep('upload')}
-          >
-            <Text style={styles.uploadInsteadText}>
-              {searched && searchResults.length === 0
-                ? "Upload new curriculum"
-                : "Don't see it? Upload new curriculum"}
-            </Text>
-          </TouchableOpacity>
-        </View>
-      ) : (
-        <View style={styles.card}>
-          <TouchableOpacity onPress={() => setStep('search')} style={styles.backToSearch}>
-            <Text style={styles.back}>← Back to search</Text>
-          </TouchableOpacity>
-
-          <Text style={styles.sectionTitle}>Upload New Curriculum</Text>
-
-          <Text style={styles.label}>Curriculum Title *</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="e.g. California Common Core Math"
-            placeholderTextColor={colors.textLight}
-            value={title}
-            onChangeText={setTitle}
-          />
-
-          <Text style={styles.label}>Grade *</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="e.g. 5th"
-            placeholderTextColor={colors.textLight}
-            value={grade}
-            onChangeText={setGrade}
-          />
-
-          <Text style={styles.label}>Curriculum File</Text>
-          <TouchableOpacity style={styles.filePicker} onPress={handlePickFile}>
-            {file ? (
-              <View style={styles.fileSelected}>
-                <Text style={styles.fileIcon}>{getFileIcon(file.name)}</Text>
-                <View style={styles.fileInfo}>
-                  <Text style={styles.fileName} numberOfLines={1}>{file.name}</Text>
-                  <Text style={styles.fileSize}>{formatSize(file.size)}</Text>
-                </View>
-                <TouchableOpacity onPress={() => setFile(null)} style={styles.fileRemove}>
-                  <Text style={styles.fileRemoveText}>✕</Text>
-                </TouchableOpacity>
-              </View>
-            ) : (
-              <View style={styles.fileEmpty}>
-                <Text style={styles.fileUploadIcon}>↑</Text>
-                <Text style={styles.filePrompt}>Click to upload file</Text>
-                <Text style={styles.fileTypes}>PDF, DOCX, PPTX, or TXT</Text>
-              </View>
-            )}
-          </TouchableOpacity>
-
-          {/* Privacy toggle */}
-          <TouchableOpacity
-            style={styles.toggleRow}
-            onPress={() => setIsPublic(!isPublic)}
-          >
-            <View style={[styles.toggle, isPublic && styles.toggleOn]}>
-              <View style={[styles.toggleThumb, isPublic && styles.toggleThumbOn]} />
-            </View>
-            <View style={styles.toggleLabel}>
-              <Text style={styles.toggleTitle}>
-                {isPublic ? 'Add to shared library' : 'Keep private'}
-              </Text>
-              <Text style={styles.toggleHint}>
-                {isPublic
-                  ? 'Other teachers can find and use this curriculum'
-                  : 'Only visible to you'}
-              </Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.button, (!title.trim() || !grade.trim()) && styles.buttonDisabled]}
-            onPress={handleUpload}
-            disabled={loading || !title.trim() || !grade.trim()}
-          >
-            {loading ? (
-              <ActivityIndicator color="#fff" />
-            ) : (
-              <Text style={styles.buttonText}>Save Curriculum</Text>
-            )}
-          </TouchableOpacity>
-        </View>
-      )}
-    </ScrollView>
+        )}
+      </ScrollView>
+    </View>
   );
-}
-
-function getFileIcon(name = '') {
-  const ext = name.split('.').pop().toLowerCase();
-  if (ext === 'pdf') return '📄';
-  if (ext === 'docx' || ext === 'doc') return '📝';
-  if (ext === 'pptx' || ext === 'ppt') return '📊';
-  return '📃';
-}
-
-function formatSize(bytes) {
-  if (!bytes) return '';
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
 const styles = StyleSheet.create({
@@ -304,30 +338,6 @@ const styles = StyleSheet.create({
     color: colors.textPrimary,
     backgroundColor: colors.background,
   },
-  filePicker: {
-    borderWidth: 2,
-    borderColor: colors.border,
-    borderStyle: 'dashed',
-    borderRadius: 10,
-    overflow: 'hidden',
-  },
-  fileEmpty: { alignItems: 'center', paddingVertical: 28, gap: 6 },
-  fileUploadIcon: { fontSize: 22, color: colors.textLight },
-  filePrompt: { fontSize: 14, fontWeight: '600', color: colors.textSecondary },
-  fileTypes: { fontSize: 12, color: colors.textLight },
-  fileSelected: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 14,
-    gap: 12,
-    backgroundColor: colors.primaryLight,
-  },
-  fileIcon: { fontSize: 24 },
-  fileInfo: { flex: 1 },
-  fileName: { fontSize: 14, fontWeight: '600', color: colors.textPrimary },
-  fileSize: { fontSize: 12, color: colors.textSecondary, marginTop: 2 },
-  fileRemove: { padding: 4 },
-  fileRemoveText: { fontSize: 14, color: colors.textSecondary, fontWeight: '600' },
   toggleRow: {
     flexDirection: 'row',
     alignItems: 'center',

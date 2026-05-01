@@ -13,6 +13,7 @@ import { previewText, parseHtmlBlocks } from '../lib/htmlText';
 import { colors, typography, shadows } from '../theme';
 import SourcePanel from '../components/SourcePanel';
 import ObjectiveRow from '../components/ObjectiveRow';
+import TopNav from '../components/TopNav';
 
 function StatPill({ label, value }) {
   return (
@@ -80,20 +81,18 @@ export default function OutputScreen({ route, navigation }) {
   }
 
   return (
-    <ScrollView
-      ref={scrollRef}
-      style={styles.container}
-      contentContainerStyle={styles.content}
-    >
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.back}>{'\u2190 Back'}</Text>
-        </TouchableOpacity>
-        <Text style={styles.title}>{detail?.name || assignment?.name || 'Output'}</Text>
-        <Text style={styles.subtitle}>
-          {`${(detail?.subject || assignment?.subject || 'ela').toUpperCase()} \u00b7 Grade ${detail?.grade || assignment?.grade || ''}`}
-        </Text>
-      </View>
+    <View style={styles.container}>
+      <TopNav navigation={navigation} currentRoute="Output" />
+      <ScrollView ref={scrollRef} contentContainerStyle={styles.content}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={styles.back}>{'\u2190 Back'}</Text>
+          </TouchableOpacity>
+          <Text style={styles.title}>{detail?.name || assignment?.name || 'Output'}</Text>
+          <Text style={styles.subtitle}>
+            {`${(detail?.subject || assignment?.subject || 'ela').toUpperCase()} \u00b7 Grade ${detail?.grade || assignment?.grade || ''}`}
+          </Text>
+        </View>
 
       {/* Summary card */}
       <View style={styles.box}>
@@ -115,10 +114,38 @@ export default function OutputScreen({ route, navigation }) {
             value={curriculum ? curriculum.title : 'Unlinked'}
           />
         </View>
+        {detail?.file_name || assignment?.file_name ? (
+          <Text style={styles.fileLine}>
+            {`\ud83d\udcce ${detail?.file_name || assignment?.file_name}`}
+          </Text>
+        ) : null}
         {detail?.notes ? (
           <Text style={styles.notes}>{detail.notes}</Text>
         ) : null}
       </View>
+
+      {/* Pending-tagging callout for user-created assignments that have
+          no alignments yet. Explains why the page is mostly empty so the
+          user doesn't think it's broken. */}
+      {detail && detail.is_seed === false && (detail.n_total || 0) === 0 ? (
+        <View style={styles.pendingCard}>
+          <Text style={styles.pendingTitle}>Awaiting AI tagger</Text>
+          <Text style={styles.pendingBody}>
+            This assignment is saved but hasn&apos;t been tagged yet. Tagging will
+            run automatically once the AI pipeline is connected. In the
+            meantime you can edit the details, attach a file, or link a
+            curriculum from the Workspace.
+          </Text>
+          <TouchableOpacity
+            style={styles.pendingBtn}
+            onPress={() =>
+              navigation.navigate('AddAssignment', { assignment: detail })
+            }
+          >
+            <Text style={styles.pendingBtnText}>Edit assignment</Text>
+          </TouchableOpacity>
+        </View>
+      ) : null}
 
       {/* Source viewer */}
       {detail?.source ? (
@@ -177,6 +204,15 @@ export default function OutputScreen({ route, navigation }) {
                       sourceRef.current.jumpTo(o.section_idx, o.objective_idx);
                     }
                   }}
+                  onOpenInCurriculum={
+                    curriculum
+                      ? (code) =>
+                          navigation.navigate('CurriculumDetail', {
+                            curriculum,
+                            focusCode: code,
+                          })
+                      : undefined
+                  }
                 />
               ))}
             </View>
@@ -184,19 +220,20 @@ export default function OutputScreen({ route, navigation }) {
         )}
       </View>
 
-      {/* Assignment description (kept from the original screen — handy for
-          quick reference at the bottom). */}
-      <View style={styles.box}>
-        <Text style={styles.sectionLabel}>Assignment description</Text>
-        {parseHtmlBlocks(assignment?.description || detail?.description).length === 0 ? (
-          <Text style={styles.empty}>(none)</Text>
-        ) : (
-          parseHtmlBlocks(assignment?.description || detail?.description).map((b, i) => (
-            <Text key={i} style={styles.descBody}>{b}</Text>
-          ))
-        )}
-      </View>
-    </ScrollView>
+        {/* Assignment description (kept from the original screen — handy for
+            quick reference at the bottom). */}
+        <View style={styles.box}>
+          <Text style={styles.sectionLabel}>Assignment description</Text>
+          {parseHtmlBlocks(assignment?.description || detail?.description).length === 0 ? (
+            <Text style={styles.empty}>(none)</Text>
+          ) : (
+            parseHtmlBlocks(assignment?.description || detail?.description).map((b, i) => (
+              <Text key={i} style={styles.descBody}>{b}</Text>
+            ))
+          )}
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
@@ -281,6 +318,45 @@ const styles = StyleSheet.create({
     color: colors.textSecondary,
     fontStyle: 'italic',
     lineHeight: 19,
+  },
+  fileLine: {
+    marginTop: 12,
+    fontSize: 13,
+    color: colors.textSecondary,
+    fontWeight: '500',
+  },
+  pendingCard: {
+    backgroundColor: '#fef3c7',
+    borderColor: '#fcd34d',
+    borderWidth: 1,
+    borderRadius: 12,
+    padding: 18,
+    gap: 8,
+  },
+  pendingTitle: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#92400e',
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  pendingBody: {
+    fontSize: 13,
+    color: '#78350f',
+    lineHeight: 19,
+  },
+  pendingBtn: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#fbbf24',
+    borderRadius: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    marginTop: 4,
+  },
+  pendingBtnText: {
+    color: '#78350f',
+    fontWeight: '700',
+    fontSize: 13,
   },
   alignmentHeader: {
     flexDirection: 'row',

@@ -68,7 +68,9 @@ function getAssignmentDetail(id) {
   };
 }
 
-function createAssignment({ name, grade, description, curriculum_id }) {
+function createAssignment({
+  name, grade, description, curriculum_id, subject, file_name,
+}) {
   ensureInitialized();
   const userAssignments = storage.get(KEY_USER_ASSIGNMENTS, []);
   const row = {
@@ -77,11 +79,77 @@ function createAssignment({ name, grade, description, curriculum_id }) {
     grade: (grade || '').trim(),
     description: (description || '').trim(),
     curriculum_id: curriculum_id || null,
+    subject: (subject || '').trim().toLowerCase() || null,
+    file_name: file_name || null,
     user_id: 'local',
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
     is_seed: false,
   };
   storage.set(KEY_USER_ASSIGNMENTS, [row, ...userAssignments]);
+  return row;
+}
+
+// Patch fields on a user-created assignment. Refuses to touch seeded rows
+// (they live in the bundled SEED dataset, not localStorage). Returns the
+// updated row, or null if the id wasn't found / belongs to a seed.
+function updateAssignment(id, patch) {
+  ensureInitialized();
+  if (!id) return null;
+  if (SEED.assignmentById(id)) return null;
+  const rows = storage.get(KEY_USER_ASSIGNMENTS, []);
+  const idx = rows.findIndex((a) => a.id === id);
+  if (idx === -1) return null;
+  const allowed = [
+    'name', 'grade', 'description',
+    'curriculum_id', 'subject', 'file_name',
+  ];
+  const next = { ...rows[idx] };
+  for (const k of allowed) {
+    if (Object.prototype.hasOwnProperty.call(patch || {}, k)) {
+      const v = patch[k];
+      if (k === 'subject') {
+        next[k] = typeof v === 'string'
+          ? (v.trim().toLowerCase() || null)
+          : (v ?? null);
+      } else {
+        next[k] = typeof v === 'string' ? v.trim() : v ?? null;
+      }
+    }
+  }
+  next.updated_at = new Date().toISOString();
+  const updated = [...rows];
+  updated[idx] = next;
+  storage.set(KEY_USER_ASSIGNMENTS, updated);
+  return next;
+}
+
+// Hard-delete a user-created assignment. Refuses to touch seeded rows.
+// Returns the removed row + its prior list index so callers can implement
+// an undo by re-inserting at the same position.
+function deleteAssignment(id) {
+  ensureInitialized();
+  if (!id) return null;
+  if (SEED.assignmentById(id)) return null;
+  const rows = storage.get(KEY_USER_ASSIGNMENTS, []);
+  const idx = rows.findIndex((a) => a.id === id);
+  if (idx === -1) return null;
+  const removed = rows[idx];
+  const next = rows.slice(0, idx).concat(rows.slice(idx + 1));
+  storage.set(KEY_USER_ASSIGNMENTS, next);
+  return { row: removed, index: idx };
+}
+
+// Re-insert a previously-deleted user assignment at a specific index.
+// Used by the undo-toast flow on EvalScreen.
+function restoreAssignment(row, index) {
+  ensureInitialized();
+  if (!row || !row.id) return null;
+  if (SEED.assignmentById(row.id)) return null;
+  const rows = storage.get(KEY_USER_ASSIGNMENTS, []);
+  const safeIdx = Math.max(0, Math.min(rows.length, index ?? 0));
+  const next = rows.slice(0, safeIdx).concat([row], rows.slice(safeIdx));
+  storage.set(KEY_USER_ASSIGNMENTS, next);
   return row;
 }
 
@@ -128,7 +196,7 @@ function adoptCurriculum(id) {
   storage.set(KEY_USER_ADOPTIONS, [...adopted, id]);
 }
 
-function createCurriculum({ title, grade, file_name, is_public }) {
+function createCurriculum({ title, grade, file_name, is_public, subject }) {
   ensureInitialized();
   const userCurricula = storage.get(KEY_USER_CURRICULA, []);
   const row = {
@@ -139,15 +207,101 @@ function createCurriculum({ title, grade, file_name, is_public }) {
     is_public: is_public !== false,
     uploaded_by: 'local',
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
     standards_db: null,
     standards_count: 0,
-    subject: null,
+    subject: (subject || '').trim().toLowerCase() || null,
     is_seed: false,
   };
   storage.set(KEY_USER_CURRICULA, [row, ...userCurricula]);
   // Auto-adopt your own uploads.
   adoptCurriculum(row.id);
   return row;
+}
+
+// Patch fields on a user-created curriculum. Refuses to touch seed rows
+// (the bundled CA-* curricula are read-only). Returns the updated row, or
+// null if id is unknown / belongs to a seed.
+function updateCurriculum(id, patch) {
+  ensureInitialized();
+  if (!id) return null;
+  if (SEED.curriculumById(id)) return null;
+  const rows = storage.get(KEY_USER_CURRICULA, []);
+  const idx = rows.findIndex((c) => c.id === id);
+  if (idx === -1) return null;
+  const allowed = ['title', 'grade', 'file_name', 'is_public', 'subject'];
+  const next = { ...rows[idx] };
+  for (const k of allowed) {
+    if (Object.prototype.hasOwnProperty.call(patch || {}, k)) {
+      const v = patch[k];
+      if (k === 'subject') {
+        next[k] = typeof v === 'string'
+          ? (v.trim().toLowerCase() || null)
+          : (v ?? null);
+      } else {
+        next[k] = typeof v === 'string' ? v.trim() : v;
+      }
+    }
+  }
+  next.updated_at = new Date().toISOString();
+  const updated = [...rows];
+  updated[idx] = next;
+  storage.set(KEY_USER_CURRICULA, updated);
+  return next;
+}
+
+// Hard-delete a user-created curriculum. Refuses to touch seed rows.
+// Returns { row, index, was_adopted } so callers can implement undo.
+// Note: assignments referencing this curriculum are NOT cascaded; they
+// gracefully fall back to "Unlinked" in OutputScreen via the null lookup.
+function deleteCurriculum(id) {
+  ensureInitialized();
+  if (!id) return null;
+  if (SEED.curriculumById(id)) return null;
+  const rows = storage.get(KEY_USER_CURRICULA, []);
+  const idx = rows.findIndex((c) => c.id === id);
+  if (idx === -1) return null;
+  const removed = rows[idx];
+  const next = rows.slice(0, idx).concat(rows.slice(idx + 1));
+  storage.set(KEY_USER_CURRICULA, next);
+  // Also drop the adoption link, if any.
+  const adopted = storage.get(KEY_USER_ADOPTIONS, []);
+  const wasAdopted = adopted.includes(id);
+  if (wasAdopted) {
+    storage.set(
+      KEY_USER_ADOPTIONS,
+      adopted.filter((a) => a !== id),
+    );
+  }
+  return { row: removed, index: idx, was_adopted: wasAdopted };
+}
+
+function restoreCurriculum(row, index, wasAdopted) {
+  ensureInitialized();
+  if (!row || !row.id) return null;
+  if (SEED.curriculumById(row.id)) return null;
+  const rows = storage.get(KEY_USER_CURRICULA, []);
+  const safeIdx = Math.max(0, Math.min(rows.length, index ?? 0));
+  const next = rows.slice(0, safeIdx).concat([row], rows.slice(safeIdx));
+  storage.set(KEY_USER_CURRICULA, next);
+  if (wasAdopted) adoptCurriculum(row.id);
+  return row;
+}
+
+// "Remove from my list" semantic for library/seed curricula. The
+// curriculum itself stays in the public library; only the user's adoption
+// link is removed. Returns true if it was adopted (so callers can offer
+// re-adopt as undo). For user-created rows, prefer deleteCurriculum.
+function unadoptCurriculum(id) {
+  ensureInitialized();
+  if (!id) return false;
+  const adopted = storage.get(KEY_USER_ADOPTIONS, []);
+  if (!adopted.includes(id)) return false;
+  storage.set(
+    KEY_USER_ADOPTIONS,
+    adopted.filter((a) => a !== id),
+  );
+  return true;
 }
 
 // ----- Standards -----
@@ -208,6 +362,53 @@ function standardsUsedBy(curriculumId) {
     }
   }
   return [...usedCodes].map((code) => recordIndex[code]).filter(Boolean);
+}
+
+// Cross-curriculum lookup: find which curriculum a standards code belongs
+// to, plus the record itself. Used by the Dashboard to navigate from a
+// global "top codes" view into the right CurriculumDetail screen with
+// the focus-flash. Returns null if the code isn't in any seeded
+// curriculum's standards index.
+function findStandardByCode(code) {
+  if (!code) return null;
+  for (const c of SEED.curricula) {
+    const rec = SEED.standardsIndexByCurriculumId[c.id]?.[code];
+    if (rec) {
+      return { curriculum_id: c.id, curriculum: c, record: rec };
+    }
+  }
+  return null;
+}
+
+// Reverse index: for a given curriculum, which assignments use each code?
+// Returns a plain object: { 'A-SSE.A.1.b': [{id, name, stem}, ...], ... }.
+// Computed once per curriculum and consumed by CurriculumDetailScreen so
+// the per-row "Used in:" links don't need to re-scan all assignments per
+// rendered row.
+//
+// Only includes seed assignments today (the only ones with curated
+// alignments). User-created rows have empty objective sets in the
+// placeholder phase, so they never contribute to the usage map.
+function standardsUsageMap(curriculumId) {
+  const map = {};
+  for (const a of SEED.assignments) {
+    if (a.curriculum_id !== curriculumId) continue;
+    const detail = SEED.assignmentDetail(a.stem);
+    if (!detail) continue;
+    const ref = { id: a.id, name: a.name, stem: a.stem };
+    for (const o of detail.objectives) {
+      for (const al of o.alignments || []) {
+        if (!al || !al.code) continue;
+        if (!map[al.code]) map[al.code] = [];
+        // Avoid duplicates when one assignment uses the same code on
+        // multiple objectives.
+        if (!map[al.code].some((x) => x.id === ref.id)) {
+          map[al.code].push(ref);
+        }
+      }
+    }
+  }
+  return map;
 }
 
 // Returns counts by strand/category/skill_category and by grade for the
@@ -332,6 +533,10 @@ export const dataClient = {
     get: (id) => wait(getAssignment(id)),
     detail: (id) => wait(getAssignmentDetail(id)),
     create: (input) => wait(createAssignment(input)),
+    update: (id, patch) => wait(updateAssignment(id, patch)),
+    // Returns { row, index } for undo, or null if id is unknown / seed.
+    delete: (id) => wait(deleteAssignment(id)),
+    restore: (row, index) => wait(restoreAssignment(row, index)),
   },
   curricula: {
     listForUser: () => wait(listAdoptedCurricula()),
@@ -340,11 +545,23 @@ export const dataClient = {
     get: (id) => wait(getCurriculum(id)),
     addToUser: (id) => { adoptCurriculum(id); return wait(undefined); },
     create: (input) => wait(createCurriculum(input)),
+    update: (id, patch) => wait(updateCurriculum(id, patch)),
+    // Returns { row, index, was_adopted } for undo, or null if id is unknown / seed.
+    delete: (id) => wait(deleteCurriculum(id)),
+    restore: (row, index, wasAdopted) =>
+      wait(restoreCurriculum(row, index, wasAdopted)),
+    // Remove from this user's adopted list (library curricula). Returns
+    // true if it was adopted before, so callers can show an undo.
+    unadopt: (id) => wait(unadoptCurriculum(id)),
   },
   standards: {
     byCurriculum: (id, opts) => wait(standardsByCurriculum(id, opts)),
     usedBy: (id) => wait(standardsUsedBy(id)),
     summary: (id) => wait(standardsSummary(id)),
+    // { code -> [{id, name, stem}, ...] } for the curriculum's used codes.
+    usageMap: (id) => wait(standardsUsageMap(id)),
+    // Cross-curriculum: { curriculum_id, curriculum, record } | null.
+    findByCode: (code) => wait(findStandardByCode(code)),
   },
   dashboard: {
     summary: () => wait(dashboardSummary()),
