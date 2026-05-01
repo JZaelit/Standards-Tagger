@@ -1,6 +1,13 @@
 // One row in the per-assignment alignment view. Left column: objective title,
 // description, path, optional note, and a "View original" link. Right column:
 // the StandardChip stack, or a "no standard applies" fallback.
+//
+// Each StandardChip becomes interactive:
+//   - Tap the chip body  -> jump to source (calls onViewSource)
+//   - Tap the code badge -> open in curriculum (calls onOpenInCurriculum)
+//
+// onOpenInCurriculum is parameterised by code so the screen can navigate
+// to the right curriculum + focus on that specific standard row.
 
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
@@ -19,6 +26,7 @@ export default function ObjectiveRow({
   showStandardText = true,
   hasSource = false,
   onViewSource,
+  onOpenInCurriculum,
 }) {
   const o = objective || {};
   const alignments = o.alignments || [];
@@ -50,7 +58,15 @@ export default function ObjectiveRow({
           </View>
         ) : (
           alignments.map((a, i) => (
-            <StandardChip key={i} alignment={a} showText={showStandardText} />
+            <StandardChip
+              key={i}
+              alignment={a}
+              showText={showStandardText}
+              onJumpToSource={hasSource && onViewSource ? onViewSource : undefined}
+              onOpenInCurriculum={
+                onOpenInCurriculum ? () => onOpenInCurriculum(a.code) : undefined
+              }
+            />
           ))
         )}
       </View>

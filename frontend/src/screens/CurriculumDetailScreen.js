@@ -6,7 +6,7 @@
 // User-uploaded curricula (no bundled standards DB) get a friendly empty
 // state explaining that standards will appear once their pipeline runs.
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import {
   View,
   Text,
@@ -20,13 +20,16 @@ import { colors, typography, shadows } from '../theme';
 import StandardsSummary from '../components/StandardsSummary';
 import StandardsFilterBar from '../components/StandardsFilterBar';
 import StandardRow from '../components/StandardRow';
+import TopNav from '../components/TopNav';
 
 const PAGE_INCREMENT = 100;
 
 export default function CurriculumDetailScreen({ route, navigation }) {
-  const { curriculum } = route.params || {};
+  const { curriculum, focusCode } = route.params || {};
   const [summary, setSummary] = useState(null);
   const [usedCodes, setUsedCodes] = useState(new Set());
+  // { code -> [{id, name, stem}, ...] } - which assignments use each code.
+  const [usageMap, setUsageMap] = useState({});
   const [allRows, setAllRows] = useState([]); // unfiltered records
   const [loading, setLoading] = useState(true);
 
@@ -36,26 +39,64 @@ export default function CurriculumDetailScreen({ route, navigation }) {
   const [usedOnly, setUsedOnly] = useState(true);
   const [renderLimit, setRenderLimit] = useState(PAGE_INCREMENT);
 
+  // Focus-from-elsewhere: when navigated here with route.params.focusCode,
+  // we pre-fill the search with that code, expand the renderLimit far
+  // enough to include it, and trigger a one-shot row highlight.
+  const focusedCode = useRef(focusCode || null).current;
+  const [highlightCode, setHighlightCode] = useState(focusCode || null);
+  const flatListRef = useRef(null);
+
   useEffect(() => {
     let cancelled = false;
     const load = async () => {
-      const [s, page, used] = await Promise.all([
+      const [s, page, used, uMap] = await Promise.all([
         dataClient.standards.summary(curriculum.id),
         dataClient.standards.byCurriculum(curriculum.id),
         dataClient.standards.usedBy(curriculum.id),
+        dataClient.standards.usageMap(curriculum.id),
       ]);
       if (cancelled) return;
       setSummary(s);
       setAllRows(page.rows || []);
       setUsedCodes(new Set((used || []).map((r) => r.code)));
+      setUsageMap(uMap || {});
       // If "used only" produces nothing (e.g. user has no assignments under
-      // this curriculum), default to showing the full DB instead.
+      // this curriculum), default to showing the full DB instead. When
+      // focused on a specific code, also turn off used-only so the
+      // standard is reachable even if it's not currently in usage.
       if (!used || used.length === 0) setUsedOnly(false);
+      if (focusedCode) {
+        setUsedOnly(false);
+        setQuery(focusedCode);
+      }
       setLoading(false);
     };
     load();
     return () => { cancelled = true; };
-  }, [curriculum?.id]);
+  }, [curriculum?.id, focusedCode]);
+
+  // After the focused row mounts, scroll the FlatList to it. Best-effort:
+  // FlatList's scrollToIndex requires the row to be within the rendered
+  // window, so we expand renderLimit first if needed.
+  const onListReady = useCallback(() => {
+    if (!focusedCode || !allRows.length) return;
+    const idx = allRows.findIndex((r) => r.code === focusedCode);
+    if (idx === -1) return;
+    if (idx >= renderLimit) {
+      setRenderLimit(Math.ceil((idx + 5) / PAGE_INCREMENT) * PAGE_INCREMENT);
+    }
+    setTimeout(() => {
+      try {
+        flatListRef.current?.scrollToIndex({ index: idx, animated: true, viewPosition: 0.2 });
+      } catch (e) {
+        // scrollToIndex can throw if the index isn't yet mounted; the
+        // user can scroll manually as a fallback.
+      }
+    }, 100);
+    // Auto-clear the highlight after a few seconds in case the user
+    // doesn't scroll (the StandardRow runs its own fade animation too).
+    setTimeout(() => setHighlightCode(null), 4000);
+  }, [focusedCode, allRows, renderLimit]);
 
   const filtered = useMemo(() => {
     let rows = allRows;
@@ -97,6 +138,7 @@ export default function CurriculumDetailScreen({ route, navigation }) {
 
   return (
     <View style={styles.container}>
+      <TopNav navigation={navigation} currentRoute="CurriculumDetail" />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={styles.back}>{'\u2190 Back'}</Text>
@@ -106,11 +148,24 @@ export default function CurriculumDetailScreen({ route, navigation }) {
       </View>
 
       <FlatList
+        ref={flatListRef}
         contentContainerStyle={styles.listContent}
         data={visible}
         keyExtractor={(r) => r.code + (r.full_code || '')}
+        onContentSizeChange={onListReady}
+        onScrollToIndexFailed={() => { /* swallow; user can scroll */ }}
         renderItem={({ item }) => (
-          <StandardRow rec={item} used={usedCodes.has(item.code)} />
+          <StandardRow
+            rec={item}
+            used={usedCodes.has(item.code)}
+            usedBy={usageMap[item.code]}
+            highlight={highlightCode === item.code}
+            onOpenAssignment={(a) =>
+              navigation.navigate('Output', {
+                assignment: { id: a.id, name: a.name, stem: a.stem },
+              })
+            }
+          />
         )}
         ListHeaderComponent={
           <View style={styles.headerCard}>

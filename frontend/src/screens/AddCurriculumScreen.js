@@ -21,6 +21,7 @@ import {
 import * as DocumentPicker from 'expo-document-picker';
 import { dataClient } from '../lib/dataClient';
 import { useToast } from '../components/Toast';
+import TopNav from '../components/TopNav';
 import { colors, typography } from '../theme';
 
 const ACCEPTED_TYPES = [
@@ -134,13 +135,15 @@ export default function AddCurriculumScreen({ navigation, route }) {
   const screenTitle = isEdit ? 'Edit Curriculum' : 'Add Curriculum';
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.back}>← Back</Text>
-        </TouchableOpacity>
-        <Text style={styles.title}>{screenTitle}</Text>
-      </View>
+    <View style={styles.container}>
+      <TopNav navigation={navigation} currentRoute="AddCurriculum" />
+      <ScrollView contentContainerStyle={styles.content}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={styles.back}>← Back</Text>
+          </TouchableOpacity>
+          <Text style={styles.title}>{screenTitle}</Text>
+        </View>
 
       {step === 'search' && !isEdit ? (
         <View style={styles.card}>
@@ -289,7 +292,8 @@ export default function AddCurriculumScreen({ navigation, route }) {
           </TouchableOpacity>
         </View>
       )}
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 

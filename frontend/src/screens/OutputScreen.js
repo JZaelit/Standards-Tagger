@@ -13,6 +13,7 @@ import { previewText, parseHtmlBlocks } from '../lib/htmlText';
 import { colors, typography, shadows } from '../theme';
 import SourcePanel from '../components/SourcePanel';
 import ObjectiveRow from '../components/ObjectiveRow';
+import TopNav from '../components/TopNav';
 
 function StatPill({ label, value }) {
   return (
@@ -80,20 +81,18 @@ export default function OutputScreen({ route, navigation }) {
   }
 
   return (
-    <ScrollView
-      ref={scrollRef}
-      style={styles.container}
-      contentContainerStyle={styles.content}
-    >
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.back}>{'\u2190 Back'}</Text>
-        </TouchableOpacity>
-        <Text style={styles.title}>{detail?.name || assignment?.name || 'Output'}</Text>
-        <Text style={styles.subtitle}>
-          {`${(detail?.subject || assignment?.subject || 'ela').toUpperCase()} \u00b7 Grade ${detail?.grade || assignment?.grade || ''}`}
-        </Text>
-      </View>
+    <View style={styles.container}>
+      <TopNav navigation={navigation} currentRoute="Output" />
+      <ScrollView ref={scrollRef} contentContainerStyle={styles.content}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={styles.back}>{'\u2190 Back'}</Text>
+          </TouchableOpacity>
+          <Text style={styles.title}>{detail?.name || assignment?.name || 'Output'}</Text>
+          <Text style={styles.subtitle}>
+            {`${(detail?.subject || assignment?.subject || 'ela').toUpperCase()} \u00b7 Grade ${detail?.grade || assignment?.grade || ''}`}
+          </Text>
+        </View>
 
       {/* Summary card */}
       <View style={styles.box}>
@@ -177,6 +176,15 @@ export default function OutputScreen({ route, navigation }) {
                       sourceRef.current.jumpTo(o.section_idx, o.objective_idx);
                     }
                   }}
+                  onOpenInCurriculum={
+                    curriculum
+                      ? (code) =>
+                          navigation.navigate('CurriculumDetail', {
+                            curriculum,
+                            focusCode: code,
+                          })
+                      : undefined
+                  }
                 />
               ))}
             </View>
@@ -184,19 +192,20 @@ export default function OutputScreen({ route, navigation }) {
         )}
       </View>
 
-      {/* Assignment description (kept from the original screen — handy for
-          quick reference at the bottom). */}
-      <View style={styles.box}>
-        <Text style={styles.sectionLabel}>Assignment description</Text>
-        {parseHtmlBlocks(assignment?.description || detail?.description).length === 0 ? (
-          <Text style={styles.empty}>(none)</Text>
-        ) : (
-          parseHtmlBlocks(assignment?.description || detail?.description).map((b, i) => (
-            <Text key={i} style={styles.descBody}>{b}</Text>
-          ))
-        )}
-      </View>
-    </ScrollView>
+        {/* Assignment description (kept from the original screen — handy for
+            quick reference at the bottom). */}
+        <View style={styles.box}>
+          <Text style={styles.sectionLabel}>Assignment description</Text>
+          {parseHtmlBlocks(assignment?.description || detail?.description).length === 0 ? (
+            <Text style={styles.empty}>(none)</Text>
+          ) : (
+            parseHtmlBlocks(assignment?.description || detail?.description).map((b, i) => (
+              <Text key={i} style={styles.descBody}>{b}</Text>
+            ))
+          )}
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 

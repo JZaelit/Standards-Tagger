@@ -26,6 +26,7 @@ import { colors, typography, shadows } from '../theme';
 import StatCard from '../components/StatCard';
 import PipelineSteps from '../components/PipelineSteps';
 import TopCodesBar from '../components/TopCodesBar';
+import TopNav from '../components/TopNav';
 
 function ConfidenceMix({ mix }) {
   const total = (mix?.high || 0) + (mix?.medium || 0) + (mix?.low || 0) || 1;
@@ -196,13 +197,10 @@ export default function DashboardScreen({ navigation }) {
     .join(' \u00b7 ');
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <View style={styles.headerRow}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.back}>{'\u2190 Back'}</Text>
-        </TouchableOpacity>
-      </View>
-      <Text style={styles.title}>Standards Alignment Dashboard</Text>
+    <View style={styles.container}>
+      <TopNav navigation={navigation} currentRoute="Dashboard" />
+      <ScrollView contentContainerStyle={styles.content}>
+        <Text style={styles.title}>Standards Alignment Dashboard</Text>
       <Text style={styles.subtitle}>
         {`California - ${subjectsTxt} edusperiences. ` +
           'TF-IDF shortlist \u2192 heuristic rerank \u2192 LLM curation.'}
@@ -272,7 +270,8 @@ export default function DashboardScreen({ navigation }) {
           ))}
         </View>
       </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 
@@ -291,16 +290,6 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     gap: 14,
-  },
-  headerRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  back: {
-    color: colors.primary,
-    fontWeight: '600',
-    fontSize: 15,
   },
   title: {
     ...typography.heading,

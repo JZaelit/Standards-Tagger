@@ -20,6 +20,7 @@ import {
 } from 'react-native';
 import { dataClient } from '../lib/dataClient';
 import { useToast } from '../components/Toast';
+import TopNav from '../components/TopNav';
 import { colors, typography } from '../theme';
 
 export default function AddAssignmentScreen({ navigation, route }) {
@@ -91,15 +92,17 @@ export default function AddAssignmentScreen({ navigation, route }) {
   const submitLabel = isEdit ? 'Save Changes' : 'Save Assignment';
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Text style={styles.back}>← Back</Text>
-        </TouchableOpacity>
-        <Text style={styles.title}>
-          {isEdit ? 'Edit Assignment' : 'New Assignment'}
-        </Text>
-      </View>
+    <View style={styles.container}>
+      <TopNav navigation={navigation} currentRoute="AddAssignment" />
+      <ScrollView contentContainerStyle={styles.content}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={styles.back}>← Back</Text>
+          </TouchableOpacity>
+          <Text style={styles.title}>
+            {isEdit ? 'Edit Assignment' : 'New Assignment'}
+          </Text>
+        </View>
 
       <View style={styles.card}>
         <Text style={styles.label}>Assignment Name *</Text>
@@ -176,8 +179,9 @@ export default function AddAssignmentScreen({ navigation, route }) {
             <Text style={styles.buttonText}>{submitLabel}</Text>
           )}
         </TouchableOpacity>
-      </View>
-    </ScrollView>
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 

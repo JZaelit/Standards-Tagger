@@ -345,6 +345,37 @@ function standardsUsedBy(curriculumId) {
   return [...usedCodes].map((code) => recordIndex[code]).filter(Boolean);
 }
 
+// Reverse index: for a given curriculum, which assignments use each code?
+// Returns a plain object: { 'A-SSE.A.1.b': [{id, name, stem}, ...], ... }.
+// Computed once per curriculum and consumed by CurriculumDetailScreen so
+// the per-row "Used in:" links don't need to re-scan all assignments per
+// rendered row.
+//
+// Only includes seed assignments today (the only ones with curated
+// alignments). User-created rows have empty objective sets in the
+// placeholder phase, so they never contribute to the usage map.
+function standardsUsageMap(curriculumId) {
+  const map = {};
+  for (const a of SEED.assignments) {
+    if (a.curriculum_id !== curriculumId) continue;
+    const detail = SEED.assignmentDetail(a.stem);
+    if (!detail) continue;
+    const ref = { id: a.id, name: a.name, stem: a.stem };
+    for (const o of detail.objectives) {
+      for (const al of o.alignments || []) {
+        if (!al || !al.code) continue;
+        if (!map[al.code]) map[al.code] = [];
+        // Avoid duplicates when one assignment uses the same code on
+        // multiple objectives.
+        if (!map[al.code].some((x) => x.id === ref.id)) {
+          map[al.code].push(ref);
+        }
+      }
+    }
+  }
+  return map;
+}
+
 // Returns counts by strand/category/skill_category and by grade for the
 // summary header on CurriculumDetailScreen. Returns null when the curriculum
 // has no bundled standards (user-uploaded curricula in the placeholder phase).
@@ -492,6 +523,8 @@ export const dataClient = {
     byCurriculum: (id, opts) => wait(standardsByCurriculum(id, opts)),
     usedBy: (id) => wait(standardsUsedBy(id)),
     summary: (id) => wait(standardsSummary(id)),
+    // { code -> [{id, name, stem}, ...] } for the curriculum's used codes.
+    usageMap: (id) => wait(standardsUsageMap(id)),
   },
   dashboard: {
     summary: () => wait(dashboardSummary()),
