@@ -60,6 +60,69 @@ const mixStyles = StyleSheet.create({
 
 const SUBJECT_LABEL = { ela: 'ELA', math: 'Math', history: 'History' };
 
+// Clickable per-subject breakdown bar. Replaces the old static subtitle so
+// teachers can jump straight from "we have 4 ELA assignments" to the
+// workspace filtered to just ELA.
+function SubjectBreakdown({ bySubject, onPress }) {
+  const entries = Object.entries(bySubject || {});
+  if (!entries.length) return null;
+  return (
+    <View style={subjectStyles.row}>
+      {entries.map(([subject, count]) => (
+        <TouchableOpacity
+          key={subject}
+          onPress={() => onPress && onPress(subject)}
+          style={subjectStyles.pill}
+          accessibilityRole="link"
+          accessibilityLabel={`Filter workspace to ${SUBJECT_LABEL[subject] || subject}`}
+        >
+          <Text style={subjectStyles.pillCount}>{count}</Text>
+          <Text style={subjectStyles.pillLabel}>
+            {SUBJECT_LABEL[subject] || subject.toUpperCase()}
+          </Text>
+          <Text style={subjectStyles.pillArrow}>{'\u2192'}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
+}
+
+const subjectStyles = StyleSheet.create({
+  row: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginBottom: 4,
+  },
+  pill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: colors.white,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: colors.border,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+  },
+  pillCount: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: colors.primaryDark,
+  },
+  pillLabel: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: colors.textPrimary,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  pillArrow: {
+    fontSize: 12,
+    color: colors.textSecondary,
+  },
+});
+
 function EdusperienceCard({ edu, onPress }) {
   const subjLabel = SUBJECT_LABEL[edu.subject] || edu.subject;
   const pct =
@@ -196,6 +259,22 @@ export default function DashboardScreen({ navigation }) {
     .map(([k, v]) => `${v} ${SUBJECT_LABEL[k] || k}`)
     .join(' \u00b7 ');
 
+  // Wired-up cross-navigation:
+  //  - subject pill: jump to the workspace with that subject filter applied.
+  //  - top-codes row: jump to the standard's curriculum, focused on it.
+  const navigateToSubject = (subject) => {
+    navigation.navigate('Eval', { subjectFilter: subject });
+  };
+
+  const navigateToCode = async (code) => {
+    const found = await dataClient.standards.findByCode(code);
+    if (!found) return;
+    navigation.navigate('CurriculumDetail', {
+      curriculum: found.curriculum,
+      focusCode: code,
+    });
+  };
+
   return (
     <View style={styles.container}>
       <TopNav navigation={navigation} currentRoute="Dashboard" />
@@ -205,6 +284,13 @@ export default function DashboardScreen({ navigation }) {
         {`California - ${subjectsTxt} edusperiences. ` +
           'TF-IDF shortlist \u2192 heuristic rerank \u2192 LLM curation.'}
       </Text>
+
+      {/* Subject filter pills - clicking jumps to the workspace with
+          that subject filter pre-applied. Replaces the static subtitle. */}
+      <SubjectBreakdown
+        bySubject={summary.by_subject || {}}
+        onPress={navigateToSubject}
+      />
 
       {/* Stat cards */}
       <View style={styles.cardsRow}>
@@ -248,7 +334,10 @@ export default function DashboardScreen({ navigation }) {
         <Text style={styles.sectionLabel}>
           Top codes (across all curated edusperiences)
         </Text>
-        <TopCodesBar topCodes={summary.top_codes || []} />
+        <TopCodesBar
+          topCodes={summary.top_codes || []}
+          onCodePress={navigateToCode}
+        />
       </View>
 
       {/* Edusperiences */}

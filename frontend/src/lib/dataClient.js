@@ -364,6 +364,22 @@ function standardsUsedBy(curriculumId) {
   return [...usedCodes].map((code) => recordIndex[code]).filter(Boolean);
 }
 
+// Cross-curriculum lookup: find which curriculum a standards code belongs
+// to, plus the record itself. Used by the Dashboard to navigate from a
+// global "top codes" view into the right CurriculumDetail screen with
+// the focus-flash. Returns null if the code isn't in any seeded
+// curriculum's standards index.
+function findStandardByCode(code) {
+  if (!code) return null;
+  for (const c of SEED.curricula) {
+    const rec = SEED.standardsIndexByCurriculumId[c.id]?.[code];
+    if (rec) {
+      return { curriculum_id: c.id, curriculum: c, record: rec };
+    }
+  }
+  return null;
+}
+
 // Reverse index: for a given curriculum, which assignments use each code?
 // Returns a plain object: { 'A-SSE.A.1.b': [{id, name, stem}, ...], ... }.
 // Computed once per curriculum and consumed by CurriculumDetailScreen so
@@ -544,6 +560,8 @@ export const dataClient = {
     summary: (id) => wait(standardsSummary(id)),
     // { code -> [{id, name, stem}, ...] } for the curriculum's used codes.
     usageMap: (id) => wait(standardsUsageMap(id)),
+    // Cross-curriculum: { curriculum_id, curriculum, record } | null.
+    findByCode: (code) => wait(findStandardByCode(code)),
   },
   dashboard: {
     summary: () => wait(dashboardSummary()),

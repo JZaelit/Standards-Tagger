@@ -383,7 +383,7 @@ function ListSkeleton({ density }) {
 
 // ---------- Screen ----------
 
-export default function EvalScreen({ navigation }) {
+export default function EvalScreen({ navigation, route }) {
   const [assignments, setAssignments] = useState([]);
   const [curricula, setCurricula] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -395,6 +395,20 @@ export default function EvalScreen({ navigation }) {
   const [evalState, setEvalState] = useState(initialState);
 
   useEffect(() => { saveEvalState(evalState); }, [evalState]);
+
+  // Cross-navigation: Dashboard sends users here with a pre-applied
+  // subject filter via route.params.subjectFilter. We override the
+  // persisted subjects array on first focus, then strip the param so a
+  // back-nav doesn't re-trigger.
+  useEffect(() => {
+    const sf = route?.params?.subjectFilter;
+    if (!sf) return;
+    setEvalState((s) => ({
+      ...s,
+      assignments: { ...s.assignments, subjects: [sf] },
+    }));
+    navigation.setParams({ subjectFilter: undefined });
+  }, [route?.params?.subjectFilter, navigation]);
 
   const setDensity = (density) => setEvalState((s) => ({ ...s, density }));
   const patchAssignments = (patch) =>
