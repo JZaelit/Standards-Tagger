@@ -79,9 +79,64 @@ function createAssignment({ name, grade, description, curriculum_id }) {
     curriculum_id: curriculum_id || null,
     user_id: 'local',
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
     is_seed: false,
   };
   storage.set(KEY_USER_ASSIGNMENTS, [row, ...userAssignments]);
+  return row;
+}
+
+// Patch fields on a user-created assignment. Refuses to touch seeded rows
+// (they live in the bundled SEED dataset, not localStorage). Returns the
+// updated row, or null if the id wasn't found / belongs to a seed.
+function updateAssignment(id, patch) {
+  ensureInitialized();
+  if (!id) return null;
+  if (SEED.assignmentById(id)) return null;
+  const rows = storage.get(KEY_USER_ASSIGNMENTS, []);
+  const idx = rows.findIndex((a) => a.id === id);
+  if (idx === -1) return null;
+  const allowed = ['name', 'grade', 'description', 'curriculum_id'];
+  const next = { ...rows[idx] };
+  for (const k of allowed) {
+    if (Object.prototype.hasOwnProperty.call(patch || {}, k)) {
+      const v = patch[k];
+      next[k] = typeof v === 'string' ? v.trim() : v ?? null;
+    }
+  }
+  next.updated_at = new Date().toISOString();
+  const updated = [...rows];
+  updated[idx] = next;
+  storage.set(KEY_USER_ASSIGNMENTS, updated);
+  return next;
+}
+
+// Hard-delete a user-created assignment. Refuses to touch seeded rows.
+// Returns the removed row + its prior list index so callers can implement
+// an undo by re-inserting at the same position.
+function deleteAssignment(id) {
+  ensureInitialized();
+  if (!id) return null;
+  if (SEED.assignmentById(id)) return null;
+  const rows = storage.get(KEY_USER_ASSIGNMENTS, []);
+  const idx = rows.findIndex((a) => a.id === id);
+  if (idx === -1) return null;
+  const removed = rows[idx];
+  const next = rows.slice(0, idx).concat(rows.slice(idx + 1));
+  storage.set(KEY_USER_ASSIGNMENTS, next);
+  return { row: removed, index: idx };
+}
+
+// Re-insert a previously-deleted user assignment at a specific index.
+// Used by the undo-toast flow on EvalScreen.
+function restoreAssignment(row, index) {
+  ensureInitialized();
+  if (!row || !row.id) return null;
+  if (SEED.assignmentById(row.id)) return null;
+  const rows = storage.get(KEY_USER_ASSIGNMENTS, []);
+  const safeIdx = Math.max(0, Math.min(rows.length, index ?? 0));
+  const next = rows.slice(0, safeIdx).concat([row], rows.slice(safeIdx));
+  storage.set(KEY_USER_ASSIGNMENTS, next);
   return row;
 }
 
@@ -332,6 +387,10 @@ export const dataClient = {
     get: (id) => wait(getAssignment(id)),
     detail: (id) => wait(getAssignmentDetail(id)),
     create: (input) => wait(createAssignment(input)),
+    update: (id, patch) => wait(updateAssignment(id, patch)),
+    // Returns { row, index } for undo, or null if id is unknown / seed.
+    delete: (id) => wait(deleteAssignment(id)),
+    restore: (row, index) => wait(restoreAssignment(row, index)),
   },
   curricula: {
     listForUser: () => wait(listAdoptedCurricula()),

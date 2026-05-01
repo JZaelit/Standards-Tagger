@@ -1,4 +1,14 @@
-import React, { useState, useEffect } from 'react';
+// Create / edit form for an assignment.
+//
+//   navigation.navigate('AddAssignment')                  -> create mode
+//   navigation.navigate('AddAssignment', { assignment })  -> edit mode
+//
+// Edit mode pre-fills fields from `route.params.assignment` and calls
+// dataClient.assignments.update on save. Seed assignments cannot be edited
+// (the dataClient refuses to touch them); the screen guards against this
+// by returning the user to the previous screen with an error toast.
+
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -9,25 +19,40 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { dataClient } from '../lib/dataClient';
+import { useToast } from '../components/Toast';
 import { colors, typography } from '../theme';
 
-export default function AddAssignmentScreen({ navigation }) {
-  const [name, setName] = useState('');
-  const [grade, setGrade] = useState('');
-  const [description, setDescription] = useState('');
+export default function AddAssignmentScreen({ navigation, route }) {
+  const editing = route?.params?.assignment || null;
+  const isEdit = !!editing && !editing.is_seed;
+
+  const [name, setName] = useState(editing?.name || '');
+  const [grade, setGrade] = useState(editing?.grade || '');
+  const [description, setDescription] = useState(editing?.description || '');
   const [curricula, setCurricula] = useState([]);
-  const [selectedCurriculum, setSelectedCurriculum] = useState(null);
+  const [selectedCurriculum, setSelectedCurriculum] = useState(
+    editing?.curriculum_id || null,
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [fetchingCurricula, setFetchingCurricula] = useState(true);
 
+  const toast = useToast();
+
   useEffect(() => {
+    // Guard: a seed assignment can't be edited; bounce back with a toast.
+    if (editing && editing.is_seed) {
+      toast.show('Seed assignments are read-only', { tone: 'danger' });
+      navigation.goBack();
+      return;
+    }
     const fetchCurricula = async () => {
       const data = await dataClient.curricula.listForUser();
       setCurricula(data || []);
       setFetchingCurricula(false);
     };
     fetchCurricula();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = async () => {
@@ -35,19 +60,35 @@ export default function AddAssignmentScreen({ navigation }) {
     setError('');
     setLoading(true);
     try {
-      await dataClient.assignments.create({
-        name: name.trim(),
-        grade: grade.trim(),
-        description: description.trim(),
-        curriculum_id: selectedCurriculum,
-      });
-      setLoading(false);
-      navigation.goBack();
+      if (isEdit) {
+        const updated = await dataClient.assignments.update(editing.id, {
+          name: name.trim(),
+          grade: grade.trim(),
+          description: description.trim(),
+          curriculum_id: selectedCurriculum,
+        });
+        if (!updated) throw new Error('Could not update assignment.');
+        setLoading(false);
+        toast.show('Saved changes', { tone: 'success' });
+        navigation.goBack();
+      } else {
+        await dataClient.assignments.create({
+          name: name.trim(),
+          grade: grade.trim(),
+          description: description.trim(),
+          curriculum_id: selectedCurriculum,
+        });
+        setLoading(false);
+        toast.show('Assignment created', { tone: 'success' });
+        navigation.goBack();
+      }
     } catch (e) {
       setLoading(false);
       setError(e.message || 'Could not save assignment.');
     }
   };
+
+  const submitLabel = isEdit ? 'Save Changes' : 'Save Assignment';
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -55,7 +96,9 @@ export default function AddAssignmentScreen({ navigation }) {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={styles.back}>← Back</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>New Assignment</Text>
+        <Text style={styles.title}>
+          {isEdit ? 'Edit Assignment' : 'New Assignment'}
+        </Text>
       </View>
 
       <View style={styles.card}>
@@ -130,7 +173,7 @@ export default function AddAssignmentScreen({ navigation }) {
           {loading ? (
             <ActivityIndicator color="#fff" />
           ) : (
-            <Text style={styles.buttonText}>Save Assignment</Text>
+            <Text style={styles.buttonText}>{submitLabel}</Text>
           )}
         </TouchableOpacity>
       </View>
