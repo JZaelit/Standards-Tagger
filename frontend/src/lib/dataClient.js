@@ -68,7 +68,9 @@ function getAssignmentDetail(id) {
   };
 }
 
-function createAssignment({ name, grade, description, curriculum_id }) {
+function createAssignment({
+  name, grade, description, curriculum_id, subject, file_name,
+}) {
   ensureInitialized();
   const userAssignments = storage.get(KEY_USER_ASSIGNMENTS, []);
   const row = {
@@ -77,6 +79,8 @@ function createAssignment({ name, grade, description, curriculum_id }) {
     grade: (grade || '').trim(),
     description: (description || '').trim(),
     curriculum_id: curriculum_id || null,
+    subject: (subject || '').trim().toLowerCase() || null,
+    file_name: file_name || null,
     user_id: 'local',
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
@@ -96,12 +100,21 @@ function updateAssignment(id, patch) {
   const rows = storage.get(KEY_USER_ASSIGNMENTS, []);
   const idx = rows.findIndex((a) => a.id === id);
   if (idx === -1) return null;
-  const allowed = ['name', 'grade', 'description', 'curriculum_id'];
+  const allowed = [
+    'name', 'grade', 'description',
+    'curriculum_id', 'subject', 'file_name',
+  ];
   const next = { ...rows[idx] };
   for (const k of allowed) {
     if (Object.prototype.hasOwnProperty.call(patch || {}, k)) {
       const v = patch[k];
-      next[k] = typeof v === 'string' ? v.trim() : v ?? null;
+      if (k === 'subject') {
+        next[k] = typeof v === 'string'
+          ? (v.trim().toLowerCase() || null)
+          : (v ?? null);
+      } else {
+        next[k] = typeof v === 'string' ? v.trim() : v ?? null;
+      }
     }
   }
   next.updated_at = new Date().toISOString();
@@ -183,7 +196,7 @@ function adoptCurriculum(id) {
   storage.set(KEY_USER_ADOPTIONS, [...adopted, id]);
 }
 
-function createCurriculum({ title, grade, file_name, is_public }) {
+function createCurriculum({ title, grade, file_name, is_public, subject }) {
   ensureInitialized();
   const userCurricula = storage.get(KEY_USER_CURRICULA, []);
   const row = {
@@ -197,7 +210,7 @@ function createCurriculum({ title, grade, file_name, is_public }) {
     updated_at: new Date().toISOString(),
     standards_db: null,
     standards_count: 0,
-    subject: null,
+    subject: (subject || '').trim().toLowerCase() || null,
     is_seed: false,
   };
   storage.set(KEY_USER_CURRICULA, [row, ...userCurricula]);
@@ -216,12 +229,18 @@ function updateCurriculum(id, patch) {
   const rows = storage.get(KEY_USER_CURRICULA, []);
   const idx = rows.findIndex((c) => c.id === id);
   if (idx === -1) return null;
-  const allowed = ['title', 'grade', 'file_name', 'is_public'];
+  const allowed = ['title', 'grade', 'file_name', 'is_public', 'subject'];
   const next = { ...rows[idx] };
   for (const k of allowed) {
     if (Object.prototype.hasOwnProperty.call(patch || {}, k)) {
       const v = patch[k];
-      next[k] = typeof v === 'string' ? v.trim() : v;
+      if (k === 'subject') {
+        next[k] = typeof v === 'string'
+          ? (v.trim().toLowerCase() || null)
+          : (v ?? null);
+      } else {
+        next[k] = typeof v === 'string' ? v.trim() : v;
+      }
     }
   }
   next.updated_at = new Date().toISOString();

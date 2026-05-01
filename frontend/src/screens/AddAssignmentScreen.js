@@ -4,9 +4,13 @@
 //   navigation.navigate('AddAssignment', { assignment })  -> edit mode
 //
 // Edit mode pre-fills fields from `route.params.assignment` and calls
-// dataClient.assignments.update on save. Seed assignments cannot be edited
-// (the dataClient refuses to touch them); the screen guards against this
-// by returning the user to the previous screen with an error toast.
+// dataClient.assignments.update on save. Seed assignments cannot be
+// edited; the screen guards against this and bounces back with a toast.
+//
+// Adds a subject picker (ELA / Math / History / Other...) and an optional
+// file attachment. The file is a placeholder for the AI tagger that lives
+// in the next chunk - we capture name/size today so the row can show
+// "current: foo.pdf" and the future pipeline knows what to fetch.
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -21,6 +25,8 @@ import {
 import { dataClient } from '../lib/dataClient';
 import { useToast } from '../components/Toast';
 import TopNav from '../components/TopNav';
+import SubjectPicker from '../components/SubjectPicker';
+import FilePicker from '../components/FilePicker';
 import { colors, typography } from '../theme';
 
 export default function AddAssignmentScreen({ navigation, route }) {
@@ -30,10 +36,18 @@ export default function AddAssignmentScreen({ navigation, route }) {
   const [name, setName] = useState(editing?.name || '');
   const [grade, setGrade] = useState(editing?.grade || '');
   const [description, setDescription] = useState(editing?.description || '');
+  const [subject, setSubject] = useState(editing?.subject || '');
+  const [file, setFile] = useState(null);
+  const [existingFileName, setExistingFileName] = useState(
+    editing?.file_name || null,
+  );
   const [curricula, setCurricula] = useState([]);
   const [selectedCurriculum, setSelectedCurriculum] = useState(
     editing?.curriculum_id || null,
   );
+  // Track whether the user has explicitly set the subject so picking a
+  // curriculum doesn't keep clobbering their choice.
+  const [subjectTouched, setSubjectTouched] = useState(!!editing?.subject);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [fetchingCurricula, setFetchingCurricula] = useState(true);
@@ -41,7 +55,6 @@ export default function AddAssignmentScreen({ navigation, route }) {
   const toast = useToast();
 
   useEffect(() => {
-    // Guard: a seed assignment can't be edited; bounce back with a toast.
     if (editing && editing.is_seed) {
       toast.show('Seed assignments are read-only', { tone: 'danger' });
       navigation.goBack();
@@ -56,10 +69,36 @@ export default function AddAssignmentScreen({ navigation, route }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Auto-fill subject from the picked curriculum unless the user has
+  // already touched the subject picker themselves. This is the smart-fill
+  // for the common case ("link to CA-MATH" -> subject becomes 'math').
+  useEffect(() => {
+    if (subjectTouched) return;
+    if (!selectedCurriculum) return;
+    const c = curricula.find((x) => x.id === selectedCurriculum);
+    if (c?.subject) setSubject(c.subject);
+  }, [selectedCurriculum, curricula, subjectTouched]);
+
+  const handleSubjectChange = (s) => {
+    setSubject(s);
+    setSubjectTouched(true);
+  };
+
+  const handleFilePicked = (asset) => {
+    setFile(asset);
+    setExistingFileName(null);
+  };
+
+  const handleFileClear = () => {
+    setFile(null);
+    setExistingFileName(null);
+  };
+
   const handleSubmit = async () => {
     if (!name.trim() || !grade.trim()) return;
     setError('');
     setLoading(true);
+    const payloadFileName = file?.name || existingFileName || null;
     try {
       if (isEdit) {
         const updated = await dataClient.assignments.update(editing.id, {
@@ -67,6 +106,8 @@ export default function AddAssignmentScreen({ navigation, route }) {
           grade: grade.trim(),
           description: description.trim(),
           curriculum_id: selectedCurriculum,
+          subject: subject || null,
+          file_name: payloadFileName,
         });
         if (!updated) throw new Error('Could not update assignment.');
         setLoading(false);
@@ -78,6 +119,8 @@ export default function AddAssignmentScreen({ navigation, route }) {
           grade: grade.trim(),
           description: description.trim(),
           curriculum_id: selectedCurriculum,
+          subject: subject || null,
+          file_name: payloadFileName,
         });
         setLoading(false);
         toast.show('Assignment created', { tone: 'success' });
@@ -104,81 +147,93 @@ export default function AddAssignmentScreen({ navigation, route }) {
           </Text>
         </View>
 
-      <View style={styles.card}>
-        <Text style={styles.label}>Assignment Name *</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="e.g. Fraction Word Problems"
-          placeholderTextColor={colors.textLight}
-          value={name}
-          onChangeText={setName}
-        />
+        <View style={styles.card}>
+          <Text style={styles.label}>Assignment Name *</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="e.g. Fraction Word Problems"
+            placeholderTextColor={colors.textLight}
+            value={name}
+            onChangeText={setName}
+          />
 
-        <Text style={styles.label}>Grade *</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="e.g. 5th"
-          placeholderTextColor={colors.textLight}
-          value={grade}
-          onChangeText={setGrade}
-        />
+          <Text style={styles.label}>Grade *</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="e.g. 5th"
+            placeholderTextColor={colors.textLight}
+            value={grade}
+            onChangeText={setGrade}
+          />
 
-        <Text style={styles.label}>Description</Text>
-        <TextInput
-          style={[styles.input, styles.textarea]}
-          placeholder="Describe the assignment..."
-          placeholderTextColor={colors.textLight}
-          value={description}
-          onChangeText={setDescription}
-          multiline
-          numberOfLines={4}
-          textAlignVertical="top"
-        />
+          <Text style={styles.label}>Subject</Text>
+          <SubjectPicker value={subject} onChange={handleSubjectChange} />
 
-        <Text style={styles.label}>Link to Curriculum</Text>
-        {fetchingCurricula ? (
-          <ActivityIndicator color={colors.primary} />
-        ) : curricula.length === 0 ? (
-          <Text style={styles.hint}>No curricula yet — add one first.</Text>
-        ) : (
-          <View style={styles.curriculumList}>
-            {curricula.map((c) => (
-              <TouchableOpacity
-                key={c.id}
-                style={[
-                  styles.curriculumOption,
-                  selectedCurriculum === c.id && styles.curriculumOptionSelected,
-                ]}
-                onPress={() =>
-                  setSelectedCurriculum(selectedCurriculum === c.id ? null : c.id)
-                }
-              >
-                <Text
-                  style={[
-                    styles.curriculumOptionText,
-                    selectedCurriculum === c.id && styles.curriculumOptionTextSelected,
-                  ]}
-                >
-                  {c.title} — Grade {c.grade}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        )}
+          <Text style={styles.label}>Description</Text>
+          <TextInput
+            style={[styles.input, styles.textarea]}
+            placeholder="Describe the assignment..."
+            placeholderTextColor={colors.textLight}
+            value={description}
+            onChangeText={setDescription}
+            multiline
+            numberOfLines={4}
+            textAlignVertical="top"
+          />
 
-        {error ? <Text style={styles.error}>{error}</Text> : null}
+          <Text style={styles.label}>Attachment (optional)</Text>
+          <FilePicker
+            file={file}
+            existingFileName={existingFileName}
+            onPick={handleFilePicked}
+            onClear={handleFileClear}
+            hintLabel="PDF, DOCX, PPTX, XLSX, or TXT"
+          />
 
-        <TouchableOpacity
-          style={[styles.button, (!name.trim() || !grade.trim()) && styles.buttonDisabled]}
-          onPress={handleSubmit}
-          disabled={loading || !name.trim() || !grade.trim()}
-        >
-          {loading ? (
-            <ActivityIndicator color="#fff" />
+          <Text style={styles.label}>Link to Curriculum</Text>
+          {fetchingCurricula ? (
+            <ActivityIndicator color={colors.primary} />
+          ) : curricula.length === 0 ? (
+            <Text style={styles.hint}>No curricula yet — add one first.</Text>
           ) : (
-            <Text style={styles.buttonText}>{submitLabel}</Text>
+            <View style={styles.curriculumList}>
+              {curricula.map((c) => (
+                <TouchableOpacity
+                  key={c.id}
+                  style={[
+                    styles.curriculumOption,
+                    selectedCurriculum === c.id && styles.curriculumOptionSelected,
+                  ]}
+                  onPress={() =>
+                    setSelectedCurriculum(selectedCurriculum === c.id ? null : c.id)
+                  }
+                >
+                  <Text
+                    style={[
+                      styles.curriculumOptionText,
+                      selectedCurriculum === c.id && styles.curriculumOptionTextSelected,
+                    ]}
+                  >
+                    {c.title} — Grade {c.grade}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           )}
-        </TouchableOpacity>
+
+          {error ? <Text style={styles.error}>{error}</Text> : null}
+
+          <TouchableOpacity
+            style={[styles.button, (!name.trim() || !grade.trim()) && styles.buttonDisabled]}
+            onPress={handleSubmit}
+            disabled={loading || !name.trim() || !grade.trim()}
+          >
+            {loading ? (
+              <ActivityIndicator color="#fff" />
+            ) : (
+              <Text style={styles.buttonText}>{submitLabel}</Text>
+            )}
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>

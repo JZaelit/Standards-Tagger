@@ -142,26 +142,58 @@ function ProgressBar({ pct }) {
   );
 }
 
+function StatusPill({ status }) {
+  if (!status) return null;
+  const stylesByKind = {
+    sample: styles.statusSample,
+    tagged: styles.statusTagged,
+    pending: styles.statusPending,
+  };
+  const labelByKind = {
+    sample: 'SAMPLE',
+    tagged: 'TAGGED',
+    pending: 'PENDING',
+  };
+  return (
+    <Text style={[styles.statusPill, stylesByKind[status]]}>
+      {labelByKind[status]}
+    </Text>
+  );
+}
+
+// Derive the at-a-glance status pill for an assignment row. Order matters:
+// seeds always read as SAMPLE; otherwise the presence of any aligned
+// objective is what differentiates a tagged assignment from a pending one.
+function statusOf(item) {
+  if (item.is_seed) return 'sample';
+  if (item.n_aligned && item.n_aligned > 0) return 'tagged';
+  return 'pending';
+}
+
 function AssignmentCard({ item, onPress, onEdit, onDelete }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const desc = previewText(item.description);
   const isEditable = !item.is_seed;
   const pct =
     item.n_total > 0 ? Math.round((100 * item.n_aligned) / item.n_total) : null;
+  const status = statusOf(item);
   return (
     <View style={styles.cardWrap}>
       <TouchableOpacity style={styles.card} onPress={() => onPress(item)}>
         <View style={styles.cardHeaderRow}>
           <Text style={styles.cardTitle} numberOfLines={2}>{item.name}</Text>
-          {item.is_seed ? (
-            <Text style={styles.seedPill}>SAMPLE</Text>
-          ) : null}
+          <StatusPill status={status} />
         </View>
         <Text style={styles.cardSub}>
-          {`Grade ${item.grade}${item.subject ? ` \u00b7 ${SUBJECT_LABEL[item.subject] || item.subject}` : ''}`}
+          {`Grade ${item.grade}${item.subject ? ` \u00b7 ${SUBJECT_LABEL[item.subject] || item.subject.toUpperCase()}` : ''}`}
         </Text>
         {desc ? (
           <Text style={styles.cardDesc} numberOfLines={2}>{desc}</Text>
+        ) : null}
+        {item.file_name ? (
+          <Text style={styles.cardFile} numberOfLines={1}>
+            {`\ud83d\udcce ${item.file_name}`}
+          </Text>
         ) : null}
         {item.n_total != null && item.n_total > 0 ? (
           <View style={styles.cardProgress}>
@@ -170,6 +202,10 @@ function AssignmentCard({ item, onPress, onEdit, onDelete }) {
               {`${item.n_aligned}/${item.n_total} aligned (${pct}%)`}
             </Text>
           </View>
+        ) : status === 'pending' ? (
+          <Text style={styles.pendingHint}>
+            Awaiting AI tagger
+          </Text>
         ) : null}
       </TouchableOpacity>
       {isEditable ? (
@@ -199,6 +235,7 @@ function CompactAssignmentRow({ item, onPress, onEdit, onDelete }) {
   const isEditable = !item.is_seed;
   const pct =
     item.n_total > 0 ? Math.round((100 * item.n_aligned) / item.n_total) : null;
+  const status = statusOf(item);
   return (
     <View style={styles.compactRow}>
       <TouchableOpacity
@@ -210,15 +247,13 @@ function CompactAssignmentRow({ item, onPress, onEdit, onDelete }) {
           <Text style={styles.compactMetaText}>{`Grade ${item.grade}`}</Text>
           {item.subject ? (
             <Text style={styles.compactMetaText}>
-              {SUBJECT_LABEL[item.subject] || item.subject}
+              {SUBJECT_LABEL[item.subject] || item.subject.toUpperCase()}
             </Text>
           ) : null}
           {pct != null ? (
             <Text style={styles.compactMetaTextStrong}>{`${pct}%`}</Text>
           ) : null}
-          {item.is_seed ? (
-            <Text style={styles.compactSeedPill}>SAMPLE</Text>
-          ) : null}
+          <StatusPill status={status} />
         </View>
       </TouchableOpacity>
       {isEditable ? (
@@ -1016,7 +1051,46 @@ const styles = StyleSheet.create({
     paddingVertical: 1,
     letterSpacing: 0.5,
   },
-  // Pills (sample marker on cards)
+  // Tagging status pill (TAGGED / PENDING / SAMPLE) on assignment rows.
+  statusPill: {
+    fontSize: 9,
+    fontWeight: '700',
+    borderRadius: 4,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    letterSpacing: 0.5,
+    overflow: 'hidden',
+    borderWidth: 1,
+  },
+  statusSample: {
+    color: colors.textSecondary,
+    backgroundColor: colors.background,
+    borderColor: colors.border,
+  },
+  statusTagged: {
+    color: '#0e7a3e',
+    backgroundColor: '#dcfce7',
+    borderColor: '#86efac',
+  },
+  statusPending: {
+    color: '#a86e00',
+    backgroundColor: '#fef3c7',
+    borderColor: '#fcd34d',
+  },
+  cardFile: {
+    marginTop: 6,
+    fontSize: 12,
+    color: colors.textSecondary,
+    fontWeight: '500',
+  },
+  pendingHint: {
+    marginTop: 8,
+    fontSize: 11,
+    color: colors.textLight,
+    fontStyle: 'italic',
+  },
+  // Pills (sample/library marker on curriculum cards - kept since
+  // curricula don't have a tagging status).
   seedPill: {
     fontSize: 9,
     fontWeight: '700',

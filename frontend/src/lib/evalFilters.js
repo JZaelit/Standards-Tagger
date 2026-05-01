@@ -62,10 +62,18 @@ export function filterAssignments(rows, state) {
     out = out.filter((a) => !a.is_seed);
   }
   if (subjects && subjects.length && subjects.length < ALL_SUBJECTS.length) {
-    // User-created assignments often have no subject; treat them as
-    // matching every filter so they don't disappear when filtering.
+    // The pills only cover known subjects (ELA / Math / History). Two
+    // categories ALWAYS pass regardless of which pills are active so
+    // they don't get accidentally hidden:
+    //   - User-created with no subject (placeholder phase)
+    //   - Custom subjects like 'art' or 'pe' that don't have a pill
     const allow = new Set(subjects);
-    out = out.filter((a) => !a.subject || allow.has(a.subject));
+    out = out.filter((a) => {
+      if (!a.subject) return true;
+      const known = ALL_SUBJECTS.includes(a.subject);
+      if (!known) return true;
+      return allow.has(a.subject);
+    });
   }
   if (search && search.trim()) {
     const q = search.trim().toLowerCase();
