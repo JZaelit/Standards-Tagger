@@ -194,6 +194,7 @@ function createCurriculum({ title, grade, file_name, is_public }) {
     is_public: is_public !== false,
     uploaded_by: 'local',
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
     standards_db: null,
     standards_count: 0,
     subject: null,
@@ -203,6 +204,85 @@ function createCurriculum({ title, grade, file_name, is_public }) {
   // Auto-adopt your own uploads.
   adoptCurriculum(row.id);
   return row;
+}
+
+// Patch fields on a user-created curriculum. Refuses to touch seed rows
+// (the bundled CA-* curricula are read-only). Returns the updated row, or
+// null if id is unknown / belongs to a seed.
+function updateCurriculum(id, patch) {
+  ensureInitialized();
+  if (!id) return null;
+  if (SEED.curriculumById(id)) return null;
+  const rows = storage.get(KEY_USER_CURRICULA, []);
+  const idx = rows.findIndex((c) => c.id === id);
+  if (idx === -1) return null;
+  const allowed = ['title', 'grade', 'file_name', 'is_public'];
+  const next = { ...rows[idx] };
+  for (const k of allowed) {
+    if (Object.prototype.hasOwnProperty.call(patch || {}, k)) {
+      const v = patch[k];
+      next[k] = typeof v === 'string' ? v.trim() : v;
+    }
+  }
+  next.updated_at = new Date().toISOString();
+  const updated = [...rows];
+  updated[idx] = next;
+  storage.set(KEY_USER_CURRICULA, updated);
+  return next;
+}
+
+// Hard-delete a user-created curriculum. Refuses to touch seed rows.
+// Returns { row, index, was_adopted } so callers can implement undo.
+// Note: assignments referencing this curriculum are NOT cascaded; they
+// gracefully fall back to "Unlinked" in OutputScreen via the null lookup.
+function deleteCurriculum(id) {
+  ensureInitialized();
+  if (!id) return null;
+  if (SEED.curriculumById(id)) return null;
+  const rows = storage.get(KEY_USER_CURRICULA, []);
+  const idx = rows.findIndex((c) => c.id === id);
+  if (idx === -1) return null;
+  const removed = rows[idx];
+  const next = rows.slice(0, idx).concat(rows.slice(idx + 1));
+  storage.set(KEY_USER_CURRICULA, next);
+  // Also drop the adoption link, if any.
+  const adopted = storage.get(KEY_USER_ADOPTIONS, []);
+  const wasAdopted = adopted.includes(id);
+  if (wasAdopted) {
+    storage.set(
+      KEY_USER_ADOPTIONS,
+      adopted.filter((a) => a !== id),
+    );
+  }
+  return { row: removed, index: idx, was_adopted: wasAdopted };
+}
+
+function restoreCurriculum(row, index, wasAdopted) {
+  ensureInitialized();
+  if (!row || !row.id) return null;
+  if (SEED.curriculumById(row.id)) return null;
+  const rows = storage.get(KEY_USER_CURRICULA, []);
+  const safeIdx = Math.max(0, Math.min(rows.length, index ?? 0));
+  const next = rows.slice(0, safeIdx).concat([row], rows.slice(safeIdx));
+  storage.set(KEY_USER_CURRICULA, next);
+  if (wasAdopted) adoptCurriculum(row.id);
+  return row;
+}
+
+// "Remove from my list" semantic for library/seed curricula. The
+// curriculum itself stays in the public library; only the user's adoption
+// link is removed. Returns true if it was adopted (so callers can offer
+// re-adopt as undo). For user-created rows, prefer deleteCurriculum.
+function unadoptCurriculum(id) {
+  ensureInitialized();
+  if (!id) return false;
+  const adopted = storage.get(KEY_USER_ADOPTIONS, []);
+  if (!adopted.includes(id)) return false;
+  storage.set(
+    KEY_USER_ADOPTIONS,
+    adopted.filter((a) => a !== id),
+  );
+  return true;
 }
 
 // ----- Standards -----
@@ -399,6 +479,14 @@ export const dataClient = {
     get: (id) => wait(getCurriculum(id)),
     addToUser: (id) => { adoptCurriculum(id); return wait(undefined); },
     create: (input) => wait(createCurriculum(input)),
+    update: (id, patch) => wait(updateCurriculum(id, patch)),
+    // Returns { row, index, was_adopted } for undo, or null if id is unknown / seed.
+    delete: (id) => wait(deleteCurriculum(id)),
+    restore: (row, index, wasAdopted) =>
+      wait(restoreCurriculum(row, index, wasAdopted)),
+    // Remove from this user's adopted list (library curricula). Returns
+    // true if it was adopted before, so callers can show an undo.
+    unadopt: (id) => wait(unadoptCurriculum(id)),
   },
   standards: {
     byCurriculum: (id, opts) => wait(standardsByCurriculum(id, opts)),

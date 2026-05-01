@@ -1,4 +1,14 @@
-import React, { useState } from 'react';
+// Create / edit form for a curriculum.
+//
+//   navigation.navigate('AddCurriculum')                  -> create mode
+//                                                            (search library, then upload)
+//   navigation.navigate('AddCurriculum', { curriculum })  -> edit mode
+//                                                            (skip search, pre-fill upload form)
+//
+// Edit mode is only valid for user-created curricula. Seed/library entries
+// are read-only; the screen bounces back with an error toast if asked.
+
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -10,6 +20,7 @@ import {
 } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import { dataClient } from '../lib/dataClient';
+import { useToast } from '../components/Toast';
 import { colors, typography } from '../theme';
 
 const ACCEPTED_TYPES = [
@@ -21,19 +32,41 @@ const ACCEPTED_TYPES = [
   'text/plain',
 ];
 
-export default function AddCurriculumScreen({ navigation }) {
-  const [step, setStep] = useState('search'); // 'search' | 'upload'
+export default function AddCurriculumScreen({ navigation, route }) {
+  const editing = route?.params?.curriculum || null;
+  const isEdit = !!editing && !editing.is_seed;
+
+  // In edit mode jump straight to the form. In create mode start at search.
+  const [step, setStep] = useState(isEdit ? 'form' : 'search');
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
   const [searched, setSearched] = useState(false);
 
-  // Upload form
-  const [title, setTitle] = useState('');
-  const [grade, setGrade] = useState('');
+  // Form fields - pre-filled in edit mode.
+  const [title, setTitle] = useState(editing?.title || '');
+  const [grade, setGrade] = useState(editing?.grade || '');
+  // file is the freshly-picked DocumentPicker asset, only set when the
+  // user picks a new file. existingFileName preserves the prior filename
+  // so edit mode can show "current: foo.pdf" without re-uploading.
   const [file, setFile] = useState(null);
-  const [isPublic, setIsPublic] = useState(true);
+  const [existingFileName, setExistingFileName] = useState(
+    editing?.file_name || null,
+  );
+  const [isPublic, setIsPublic] = useState(
+    editing ? editing.is_public !== false : true,
+  );
   const [loading, setLoading] = useState(false);
+
+  const toast = useToast();
+
+  useEffect(() => {
+    if (editing && editing.is_seed) {
+      toast.show('Library curricula are read-only', { tone: 'danger' });
+      navigation.goBack();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSearch = async () => {
     if (!query.trim()) return;
@@ -47,6 +80,7 @@ export default function AddCurriculumScreen({ navigation }) {
 
   const handleAddFromLibrary = async (curriculum) => {
     await dataClient.curricula.addToUser(curriculum.id);
+    toast.show(`Added "${curriculum.title}" to your list`, { tone: 'success' });
     navigation.goBack();
   };
 
@@ -57,25 +91,47 @@ export default function AddCurriculumScreen({ navigation }) {
     });
     if (!result.canceled && result.assets?.length > 0) {
       setFile(result.assets[0]);
+      // Once a new file is picked, the prior filename is irrelevant.
+      setExistingFileName(null);
     }
   };
 
-  const handleUpload = async () => {
+  const handleSubmit = async () => {
     if (!title.trim() || !grade.trim()) return;
     setLoading(true);
     try {
-      await dataClient.curricula.create({
-        title: title.trim(),
-        grade: grade.trim(),
-        file_name: file?.name || null,
-        is_public: isPublic,
-      });
-      setLoading(false);
-      navigation.goBack();
+      if (isEdit) {
+        const updated = await dataClient.curricula.update(editing.id, {
+          title: title.trim(),
+          grade: grade.trim(),
+          // Only overwrite file_name when the user picked a new file
+          // (otherwise keep the existing filename intact).
+          ...(file ? { file_name: file.name } : {}),
+          is_public: isPublic,
+        });
+        if (!updated) throw new Error('Could not update curriculum.');
+        setLoading(false);
+        toast.show('Saved changes', { tone: 'success' });
+        navigation.goBack();
+      } else {
+        await dataClient.curricula.create({
+          title: title.trim(),
+          grade: grade.trim(),
+          file_name: file?.name || null,
+          is_public: isPublic,
+        });
+        setLoading(false);
+        toast.show('Curriculum added', { tone: 'success' });
+        navigation.goBack();
+      }
     } catch (e) {
       setLoading(false);
+      toast.show(e.message || 'Could not save curriculum.', { tone: 'danger' });
     }
   };
+
+  const submitLabel = isEdit ? 'Save Changes' : 'Save Curriculum';
+  const screenTitle = isEdit ? 'Edit Curriculum' : 'Add Curriculum';
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -83,10 +139,10 @@ export default function AddCurriculumScreen({ navigation }) {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text style={styles.back}>← Back</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>Add Curriculum</Text>
+        <Text style={styles.title}>{screenTitle}</Text>
       </View>
 
-      {step === 'search' ? (
+      {step === 'search' && !isEdit ? (
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>Search the Library</Text>
           <Text style={styles.hint}>Find an existing curriculum before uploading a new one.</Text>
@@ -130,22 +186,26 @@ export default function AddCurriculumScreen({ navigation }) {
 
           <TouchableOpacity
             style={styles.uploadInstead}
-            onPress={() => setStep('upload')}
+            onPress={() => setStep('form')}
           >
             <Text style={styles.uploadInsteadText}>
               {searched && searchResults.length === 0
-                ? "Upload new curriculum"
+                ? 'Upload new curriculum'
                 : "Don't see it? Upload new curriculum"}
             </Text>
           </TouchableOpacity>
         </View>
       ) : (
         <View style={styles.card}>
-          <TouchableOpacity onPress={() => setStep('search')} style={styles.backToSearch}>
-            <Text style={styles.back}>← Back to search</Text>
-          </TouchableOpacity>
+          {!isEdit ? (
+            <TouchableOpacity onPress={() => setStep('search')} style={styles.backToSearch}>
+              <Text style={styles.back}>← Back to search</Text>
+            </TouchableOpacity>
+          ) : null}
 
-          <Text style={styles.sectionTitle}>Upload New Curriculum</Text>
+          <Text style={styles.sectionTitle}>
+            {isEdit ? 'Curriculum Details' : 'Upload New Curriculum'}
+          </Text>
 
           <Text style={styles.label}>Curriculum Title *</Text>
           <TextInput
@@ -178,6 +238,16 @@ export default function AddCurriculumScreen({ navigation }) {
                   <Text style={styles.fileRemoveText}>✕</Text>
                 </TouchableOpacity>
               </View>
+            ) : existingFileName ? (
+              <View style={styles.fileSelected}>
+                <Text style={styles.fileIcon}>{getFileIcon(existingFileName)}</Text>
+                <View style={styles.fileInfo}>
+                  <Text style={styles.fileName} numberOfLines={1}>
+                    {existingFileName}
+                  </Text>
+                  <Text style={styles.fileSize}>current file - tap to replace</Text>
+                </View>
+              </View>
             ) : (
               <View style={styles.fileEmpty}>
                 <Text style={styles.fileUploadIcon}>↑</Text>
@@ -187,7 +257,6 @@ export default function AddCurriculumScreen({ navigation }) {
             )}
           </TouchableOpacity>
 
-          {/* Privacy toggle */}
           <TouchableOpacity
             style={styles.toggleRow}
             onPress={() => setIsPublic(!isPublic)}
@@ -209,13 +278,13 @@ export default function AddCurriculumScreen({ navigation }) {
 
           <TouchableOpacity
             style={[styles.button, (!title.trim() || !grade.trim()) && styles.buttonDisabled]}
-            onPress={handleUpload}
+            onPress={handleSubmit}
             disabled={loading || !title.trim() || !grade.trim()}
           >
             {loading ? (
               <ActivityIndicator color="#fff" />
             ) : (
-              <Text style={styles.buttonText}>Save Curriculum</Text>
+              <Text style={styles.buttonText}>{submitLabel}</Text>
             )}
           </TouchableOpacity>
         </View>

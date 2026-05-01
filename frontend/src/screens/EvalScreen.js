@@ -13,6 +13,7 @@ import { colors, shadows, typography } from '../theme';
 import Menu, { MenuTrigger } from '../components/Menu';
 import SkeletonRow from '../components/SkeletonRow';
 import { useToast } from '../components/Toast';
+import { useConfirm } from '../components/ConfirmDialog';
 
 function ColumnHeader({ title, onAdd, addLabel = '+ Add' }) {
   return (
@@ -65,17 +66,38 @@ function AssignmentCard({ item, onPress, onEdit, onDelete }) {
   );
 }
 
-function CurriculumCard({ item, onPress }) {
+function CurriculumCard({ item, onPress, onEdit, onDelete, onUnadopt }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  // Seed/library curricula are read-only and only support "remove from
+  // my list" (unadopt). User-created curricula support full edit/delete.
+  const isLibrary = item.is_seed !== false;
+  const options = isLibrary
+    ? [{ label: 'Remove from my list', onPress: () => onUnadopt(item) }]
+    : [
+        { label: 'Edit', onPress: () => onEdit(item) },
+        { label: 'Delete', onPress: () => onDelete(item), destructive: true },
+      ];
   return (
-    <TouchableOpacity style={styles.card} onPress={() => onPress(item)}>
-      <View style={styles.cardHeaderRow}>
-        <Text style={styles.cardTitle} numberOfLines={2}>{item.title}</Text>
-        {item.is_seed === false ? null : (
-          <Text style={styles.seedPill}>SAMPLE</Text>
-        )}
+    <View style={styles.cardWrap}>
+      <TouchableOpacity style={styles.card} onPress={() => onPress(item)}>
+        <View style={styles.cardHeaderRow}>
+          <Text style={styles.cardTitle} numberOfLines={2}>{item.title}</Text>
+          {isLibrary ? <Text style={styles.seedPill}>LIBRARY</Text> : null}
+        </View>
+        <Text style={styles.cardSub}>Grade {item.grade}</Text>
+      </TouchableOpacity>
+      <View style={styles.cardMenuAnchor}>
+        <MenuTrigger
+          onPress={() => setMenuOpen(true)}
+          accessibilityLabel={`Actions for ${item.title}`}
+        />
       </View>
-      <Text style={styles.cardSub}>Grade {item.grade}</Text>
-    </TouchableOpacity>
+      <Menu
+        visible={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        options={options}
+      />
+    </View>
   );
 }
 
@@ -107,6 +129,7 @@ export default function EvalScreen({ navigation }) {
   const [curricula, setCurricula] = useState([]);
   const [loading, setLoading] = useState(true);
   const toast = useToast();
+  const confirm = useConfirm();
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -155,6 +178,73 @@ export default function EvalScreen({ navigation }) {
             const list = await dataClient.assignments.list();
             setAssignments(list || []);
           }
+        },
+      },
+    });
+  };
+
+  const handleEditCurriculum = (curriculum) => {
+    navigation.navigate('AddCurriculum', { curriculum });
+  };
+
+  // User-created curricula: confirm-dialog (destructive, dangles assignment
+  // links) then hard-delete with undo. Different from assignment delete
+  // because dropping a curriculum has wider consequences.
+  const handleDeleteCurriculum = async (curriculum) => {
+    const ok = await confirm({
+      title: `Delete "${curriculum.title}"?`,
+      body:
+        'Assignments using this curriculum will lose their link. ' +
+        'You can undo this action for a few seconds.',
+      confirmLabel: 'Delete',
+      destructive: true,
+    });
+    if (!ok) return;
+    const prior = curricula;
+    setCurricula((rows) => rows.filter((c) => c.id !== curriculum.id));
+    const removed = await dataClient.curricula.delete(curriculum.id);
+    if (!removed) {
+      setCurricula(prior);
+      toast.show('Could not delete curriculum', { tone: 'danger' });
+      return;
+    }
+    toast.show(`Deleted "${curriculum.title}"`, {
+      durationMs: 5000,
+      action: {
+        label: 'Undo',
+        onPress: async () => {
+          const restored = await dataClient.curricula.restore(
+            removed.row,
+            removed.index,
+            removed.was_adopted,
+          );
+          if (restored) {
+            const list = await dataClient.curricula.listForUser();
+            setCurricula(list || []);
+          }
+        },
+      },
+    });
+  };
+
+  // Library/seed curricula: just unadopt. No confirm needed - the curriculum
+  // itself stays in the public library and can be re-adopted via search.
+  const handleUnadoptCurriculum = async (curriculum) => {
+    const prior = curricula;
+    setCurricula((rows) => rows.filter((c) => c.id !== curriculum.id));
+    const wasAdopted = await dataClient.curricula.unadopt(curriculum.id);
+    if (!wasAdopted) {
+      setCurricula(prior);
+      return;
+    }
+    toast.show(`Removed "${curriculum.title}" from your list`, {
+      durationMs: 5000,
+      action: {
+        label: 'Undo',
+        onPress: async () => {
+          await dataClient.curricula.addToUser(curriculum.id);
+          const list = await dataClient.curricula.listForUser();
+          setCurricula(list || []);
         },
       },
     });
@@ -238,6 +328,9 @@ export default function EvalScreen({ navigation }) {
                   onPress={(item) =>
                     navigation.navigate('CurriculumDetail', { curriculum: item })
                   }
+                  onEdit={handleEditCurriculum}
+                  onDelete={handleDeleteCurriculum}
+                  onUnadopt={handleUnadoptCurriculum}
                 />
               ))
             )}
