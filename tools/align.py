@@ -37,6 +37,7 @@ SUBJECTS = {
             "subgroup", "is_anchor", "text",
         ],
         "label": "ela",
+        "standards_group": "CA-ELA",
     },
     "math": {
         "standards_path": ROOT / "categorized-standards" / "California" / "CA-MATH.json",
@@ -50,6 +51,7 @@ SUBJECTS = {
             "text",
         ],
         "label": "math",
+        "standards_group": "CA-MATH",
     },
     "history": {
         "standards_path": ROOT / "categorized-standards" / "California" / "CA-HISTORY.json",
@@ -62,6 +64,7 @@ SUBJECTS = {
             "text",
         ],
         "label": "history",
+        "standards_group": "CA-HISTORY",
     },
     "science": {
         "standards_path": ROOT / "categorized-standards" / "California" / "CA-NGSS.json",
@@ -76,6 +79,7 @@ SUBJECTS = {
             "statement", "clarification", "assessment_boundary", "text",
         ],
         "label": "science",
+        "standards_group": "CA-NGSS",
     },
 }
 
@@ -206,10 +210,13 @@ def iter_objectives(edu):
 # ---------- Per-subject shortlist run ----------
 def run_subject(edu, edu_title, edu_desc, source_file, subject, top_k):
     cfg = SUBJECTS[subject]
-    standards = json.load(open(cfg["standards_path"]))
+    with open(cfg["standards_path"], encoding="utf-8") as f:
+        standards = json.load(f)
     vec, X = build_index(standards, cfg["index_fields"])
     print(f"  [{subject}] indexed {len(standards)} standards "
           f"(tfidf matrix {X.shape})", file=sys.stderr)
+
+    sg = cfg.get("standards_group", "")  # short DB label e.g. "CA-MATH"
 
     out_objs = []
     for obj in iter_objectives(edu):
@@ -218,6 +225,10 @@ def run_subject(edu, edu_title, edu_desc, source_file, subject, top_k):
             q = f"{edu_title}. {q}"
         cands = shortlist_standards(q, vec, X, standards,
                                     cfg["candidate_fields"], top_k=top_k)
+        # Stamp every candidate with its source DB label so downstream
+        # rerank / curation / rendering can show "CA-MATH" / "CA-ELA" etc.
+        for c in cands:
+            c["standards_group"] = sg
         out_objs.append({**obj, "candidates": cands})
 
     return {
@@ -227,6 +238,7 @@ def run_subject(edu, edu_title, edu_desc, source_file, subject, top_k):
         "source_file": source_file,
         "subject": subject,
         "standards_db": str(cfg["standards_path"].relative_to(ROOT)),
+        "standards_group": sg,
         "retrieval_method": "tfidf_1-2grams_sublinear",
         "top_k": top_k,
         "objectives": out_objs,

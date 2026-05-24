@@ -58,6 +58,22 @@ def enrich_alignment(a: dict, rec: dict | None, subject: str) -> dict:
         out["text"] = rec.get("text", "")
         out["is_skill"] = bool(rec.get("is_skill"))
         out["course_title"] = rec.get("course_title", "")
+    elif subject == "science":
+        # NGSS Performance Expectations: badge = DCI domain (PS/LS/ESS/ETS),
+        # subgroup = topic name (e.g. "Motion and Stability: Forces and Interactions")
+        out["badge"] = rec.get("domain", "NGSS")
+        out["badge_name"] = rec.get("domain_name", "")
+        out["topic"] = rec.get("topic", "")
+        out["topic_name"] = rec.get("topic_name", "")
+        out["subgroup"] = rec.get("topic_name", "")
+        out["grade"] = rec.get("grade") or rec.get("grade_band") or ""
+        out["text"] = rec.get("text", "") or rec.get("statement", "")
+        out["statement"] = rec.get("statement", "")
+        out["clarification"] = rec.get("clarification", "")
+        out["assessment_boundary"] = rec.get("assessment_boundary", "")
+        out["engineering"] = bool(rec.get("engineering"))
+        out["modeling"] = bool(rec.get("modeling"))
+        out["ca_addition"] = bool(rec.get("ca_addition"))
     else:  # math
         if rec.get("is_practice"):
             out["badge"] = "MP"
@@ -319,6 +335,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .badge.low { color: var(--lo); background: var(--lo-bg); }
   .badge.strand, .badge.category { color: white; font-weight: 500; }
   .code-chip .grade { font-size: 11px; color: var(--mute); }
+  .code-chip .db-group { font-size: 10px; font-weight: 600; letter-spacing: 0.04em;
+                        color: #4b5563; background: #eef1f6;
+                        padding: 2px 6px; border-radius: 4px;
+                        font-family: "SF Mono", Menlo, Consolas, monospace; }
   .code-chip .subgroup { font-size: 11px; color: var(--mute); font-style: italic; }
   .code-chip .star { font-size: 11px; color: var(--accent); font-weight: 700; }
   .code-chip .std-text { font-size: 12px; color: #374151; padding: 6px 8px;
@@ -394,7 +414,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   <div class="panel">
     <h2>Pipeline</h2>
     <div class="pipeline">
-      <div class="step"><div class="n">STAGE 1</div><div class="t">TF-IDF Shortlist</div><div class="d">CA-ELA: 1,078 standards. CA-MATH: 519 standards. CA-HISTORY: 642 standards. 1-2 ngrams + sublinear TF, top-15 candidates per objective by cosine similarity.</div></div>
+      <div class="step"><div class="n">STAGE 1</div><div class="t">TF-IDF Shortlist</div><div class="d">CA-ELA: 1,078. CA-MATH: 519. CA-HISTORY: 642. CA-NGSS: 208. 1-2 ngrams + sublinear TF, top-15 candidates per objective by cosine similarity.</div></div>
       <div class="step"><div class="n">STAGE 2</div><div class="t">Heuristic Rerank</div><div class="d">Subject auto-detection. Grade-band inference and keyword-to-strand/domain boost rules. Hard-skip for purely metacognitive objectives.</div></div>
       <div class="step"><div class="n">STAGE 3</div><div class="t">LLM Curation</div><div class="d">Claude reads shortlist+rerank and commits codes per objective with confidence and rationale.</div></div>
     </div>
@@ -426,6 +446,8 @@ const STRAND_COLOR = {
   CST: '#3e6dd2', REP: '#a86e00', HI: '#7a31b5',
   // History grade-12 Economics + content shorthands
   Econ: '#0a6e6e', HSS: '#365d7a',
+  // NGSS DCI domains
+  PS: '#2854c5', LS: '#0e7a3e', ESS: '#a86e00', ETS: '#56429a', NGSS: '#365d7a',
 };
 function strandColor(code, badge) {
   if (badge && STRAND_COLOR[badge]) return STRAND_COLOR[badge];
@@ -456,7 +478,7 @@ function renderSummary() {
     {label: 'Objectives', value: s.total_objectives, sub: `${s.aligned_objectives} aligned (${s.pct_aligned}%)`},
     {label: 'Code assignments', value: s.total_code_assignments, sub: `${s.distinct_codes} distinct codes`},
     {label: 'High confidence', value: s.confidence_mix.high, sub: `${s.confidence_mix.medium} med \u00b7 ${s.confidence_mix.low} low`},
-    {label: 'Standards DBs', value: 3, sub: 'CA-ELA + CA-MATH + CA-HISTORY'},
+    {label: 'Standards DBs', value: 4, sub: 'CA-ELA + CA-MATH + CA-HISTORY + CA-NGSS'},
   ];
   const wrap = document.getElementById('summary');
   for (const c of cards) {
@@ -531,6 +553,11 @@ function renderChip(a) {
     const sb = el('span', cls, esc(badgeText));
     sb.style.background = strandColor(a.code, badgeText);
     top.appendChild(sb);
+  }
+  // Standards-group pill (CA-ELA / CA-MATH / CA-HISTORY / CA-NGSS).
+  if (a.standards_group) {
+    const sgPill = el('span','db-group', esc(a.standards_group));
+    top.appendChild(sgPill);
   }
   if (a.grade) top.appendChild(el('span','grade', 'Grade ' + esc(a.grade)));
   if (a.subgroup) top.appendChild(el('span','subgroup', '\u00b7 ' + esc(a.subgroup)));
@@ -725,6 +752,7 @@ function renderContent() {
       if (o.alignments.length === 0) {
         const fallback = e.subject === 'math'    ? 'No math standard applies.'
                        : e.subject === 'history' ? 'No history standard applies.'
+                       : e.subject === 'science' ? 'No NGSS standard applies.'
                        : 'No ELA standard applies.';
         const n = el('div','no-alignment', esc(o.note || fallback));
         right.appendChild(n);
@@ -764,7 +792,7 @@ def main(argv: list[str] | None = None) -> int:
 
     edus = [process_final(fp) for fp in final_files]
     # Sort: ELA first, then math, then history, alphabetical within
-    SUBJECT_ORDER = {"ela": 0, "math": 1, "history": 2}
+    SUBJECT_ORDER = {"ela": 0, "math": 1, "history": 2, "science": 3}
     edus.sort(key=lambda e: (SUBJECT_ORDER.get(e["subject"], 99), e["title"].lower()))
 
     summary = build_summary(edus)
@@ -773,11 +801,13 @@ def main(argv: list[str] | None = None) -> int:
     n_ela = summary["by_subject"].get("ela", 0)
     n_math = summary["by_subject"].get("math", 0)
     n_hist = summary["by_subject"].get("history", 0)
+    n_sci = summary["by_subject"].get("science", 0)
     parts = []
     if n_ela:  parts.append(f"{n_ela} ELA")
     if n_math: parts.append(f"{n_math} Math")
     if n_hist: parts.append(f"{n_hist} History")
-    n_total = n_ela + n_math + n_hist
+    if n_sci:  parts.append(f"{n_sci} Science")
+    n_total = n_ela + n_math + n_hist + n_sci
     subtitle = (
         f"California - {' + '.join(parts)} edusperience"
         f"{'s' if n_total != 1 else ''}. "
@@ -790,7 +820,7 @@ def main(argv: list[str] | None = None) -> int:
     html = html.replace("__DATA__", payload_json)
     args.out.write_text(html, encoding="utf-8")
     print(f"Wrote {args.out}")
-    print(f"  edusperiences: {len(edus)} ({n_ela} ELA, {n_math} math, {n_hist} history)")
+    print(f"  edusperiences: {len(edus)} ({n_ela} ELA, {n_math} math, {n_hist} history, {n_sci} science)")
     print(f"  total objectives: {summary['total_objectives']}, aligned {summary['aligned_objectives']} ({summary['pct_aligned']}%)")
     print(f"  code assignments: {summary['total_code_assignments']}, distinct {summary['distinct_codes']}")
     return 0

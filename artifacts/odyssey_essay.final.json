@@ -25,7 +25,8 @@
         {
           "code": "W.9-10.4",
           "confidence": "low",
-          "rationale": "Producing writing appropriate to task and purpose touches format conventions, though MLA heading itself is largely logistical."
+          "rationale": "Producing writing appropriate to task and purpose touches format conventions, though MLA heading itself is largely logistical.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -37,7 +38,8 @@
         {
           "code": "W.9-10.4",
           "confidence": "medium",
-          "rationale": "Writing a title tied to task and purpose falls under producing clear and coherent writing."
+          "rationale": "Writing a title tied to task and purpose falls under producing clear and coherent writing.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -49,12 +51,14 @@
         {
           "code": "W.9-10.5",
           "confidence": "high",
-          "rationale": "Develop and strengthen writing as needed by planning, revising, editing — prewriting is the 'planning' phase."
+          "rationale": "Develop and strengthen writing as needed by planning, revising, editing — prewriting is the 'planning' phase.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "W.9-10.1.a",
           "confidence": "high",
-          "rationale": "Introduce precise claim(s), distinguish from alternate claims, and create organization — the intro/thesis frame."
+          "rationale": "Introduce precise claim(s), distinguish from alternate claims, and create organization — the intro/thesis frame.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -66,12 +70,14 @@
         {
           "code": "W.9-10.5",
           "confidence": "high",
-          "rationale": "Planning body-paragraph structure is part of the writing process."
+          "rationale": "Planning body-paragraph structure is part of the writing process.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Develop claims and counterclaims fairly, supplying evidence for each."
+          "rationale": "Develop claims and counterclaims fairly, supplying evidence for each.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -83,12 +89,14 @@
         {
           "code": "W.9-10.5",
           "confidence": "high",
-          "rationale": "Planning stage of the writing process."
+          "rationale": "Planning stage of the writing process.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "W.9-10.1.e",
           "confidence": "medium",
-          "rationale": "Provide a concluding statement or section that follows from and supports the argument."
+          "rationale": "Provide a concluding statement or section that follows from and supports the argument.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -107,12 +115,14 @@
         {
           "code": "W.9-10.1",
           "confidence": "high",
-          "rationale": "Write arguments to support claims with valid reasoning — the overarching argument-writing standard."
+          "rationale": "Write arguments to support claims with valid reasoning — the overarching argument-writing standard.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "W.9-10.1.a",
           "confidence": "high",
-          "rationale": "Introduce precise claim(s) and create an organization that establishes clear relationships among claim(s), counterclaims, reasons, and evidence."
+          "rationale": "Introduce precise claim(s) and create an organization that establishes clear relationships among claim(s), counterclaims, reasons, and evidence.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -124,17 +134,20 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Develop claim(s) fairly, supplying evidence for each while pointing out strengths and limitations."
+          "rationale": "Develop claim(s) fairly, supplying evidence for each while pointing out strengths and limitations.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "W.9-10.1.c",
           "confidence": "high",
-          "rationale": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify relationships."
+          "rationale": "Use words, phrases, and clauses to link the major sections of the text, create cohesion, and clarify relationships.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "RL.9-10.1",
           "confidence": "high",
-          "rationale": "Cite strong and thorough textual evidence to support analysis — the quote-selection and quote-handling part."
+          "rationale": "Cite strong and thorough textual evidence to support analysis — the quote-selection and quote-handling part.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -146,7 +159,8 @@
         {
           "code": "W.9-10.5",
           "confidence": "high",
-          "rationale": "Revising to ensure the plan is reflected — editing/revising phase of writing."
+          "rationale": "Revising to ensure the plan is reflected — editing/revising phase of writing.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -158,7 +172,8 @@
         {
           "code": "W.9-10.1.a",
           "confidence": "high",
-          "rationale": "Introduce precise claim(s) and establish significance — this is the thesis-and-framing check."
+          "rationale": "Introduce precise claim(s) and establish significance — this is the thesis-and-framing check.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -170,12 +185,14 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Develop claim(s) and supply evidence — graded on quote integration and support."
+          "rationale": "Develop claim(s) and supply evidence — graded on quote integration and support.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "RL.9-10.3",
           "confidence": "medium",
-          "rationale": "Analyze how complex characters (Odysseus) develop and advance themes (heroism)."
+          "rationale": "Analyze how complex characters (Odysseus) develop and advance themes (heroism).",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -187,19 +204,23 @@
         {
           "code": "W.9-10.1.d",
           "confidence": "high",
-          "rationale": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline."
+          "rationale": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "L.9-10.3",
           "confidence": "medium",
-          "rationale": "Apply knowledge of language to make effective choices — vary sentence structure for meaning and style."
+          "rationale": "Apply knowledge of language to make effective choices — vary sentence structure for meaning and style.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "L.9-10.1",
           "confidence": "medium",
-          "rationale": "Conventions of standard English grammar and usage in the polished draft."
+          "rationale": "Conventions of standard English grammar and usage in the polished draft.",
+          "standards_group": "CA-ELA"
         }
       ]
     }
-  ]
+  ],
+  "standards_group": "CA-ELA"
 }

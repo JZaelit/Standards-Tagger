@@ -1,0 +1,492 @@
+{
+  "edusperience_id": "061dc3fd-e5ac-4507-adf9-43e9f4ce7f55",
+  "edusperience_title": "50-30-20 Budget - Dev",
+  "source_file": "edusperiences/budget.json",
+  "subject": "math",
+  "inferred_grade_bands": [
+    "9-12"
+  ],
+  "standards_db": "categorized-standards/California/CA-MATH.json",
+  "standards_group": "CA-MATH",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> heuristic auto-pick",
+  "notes": "Auto-curated via run_alignment.py (heuristic mode, no LLM in the loop).",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "Watch Me",
+      "description": "Watch the \" Watch Me \" video linked in cell D1 . This video will introduce you to important GradeFlow features and show you exactly what you need to do to complete this task. You can also watch the task video(s) for step-by-step instructions .",
+      "alignments": [],
+      "note": "logistical/operational objective, no MATH standard applies"
+    },
+    {
+      "path": "sections[0].objectives[1]",
+      "title": "Personal Information",
+      "description": "Enter the following information for your budget. Use Gemini (or other AI) and Prompt#001 to research careers and income. In cell C2 , type your first and last name. In cell C3 , type the career you plan to have. In cell C4 , enter your age as a number. In cell C5 , type the city and state (or country) where you plan to live. Watch the task video(s) for step-by-step instructions .",
+      "alignments": [],
+      "note": "logistical/operational objective, no MATH standard applies"
+    },
+    {
+      "path": "sections[0].objectives[2]",
+      "title": "Tax and Income",
+      "description": "Use Gemini (or other AI) and Prompt#002 in the Resources File to research effective tax rate and income. In cell C6 , enter your total effective tax rate as a decimal (for example, 0.22 for 22%). In cell C7 , enter your annual gross income (your salary before taxes). Format this cell as currency.",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Annual Net Pay",
+      "description": "In cell C8 , write a formula that calculates your estimated annual net pay (income after taxes). Your formula must reference cells C6 and C7 , use multiplication and subtraction operators, and include parentheses for the correct order of operations. Format the cell as currency. EXAMPLE : [Annual Gross Income] * (1-[Effective Tax Rate])",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Monthly Net Pay",
+      "description": "In cell C9 , write a formula that calculates your estimated monthly net pay by dividing your Estimated Annual Net Pay by 12. Your formula must reference cell C8 and use the division operator. Format the cell as currency. EXAMPLE : [Estimated Annual Net Pay] / [Months in a Year]",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "Housing",
+      "description": "In cell B12 , type either \"Rent\" or \"Mortgage\" depending on your housing plan. In cell C12 , enter the monthly dollar amount you expect to pay. Format C12 as currency. Practice writing your own CTF Prompt to help you with the research. Watch the task video for step-by-step instructions .",
+      "alignments": [
+        {
+          "code": "A-SSE.B.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.A.1.b",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "title": "Needs List",
+      "description": "List at least SEVEN needs in cells B12 through B26 . Include notes to help your teacher and AI understand the particulars of the cost. For example, a few words describing your housing, vehicle, etc... Write a C/T/F Prompt (context, task, format) to help you research 'Need' expenses and their expected amounts based on your location, salary, and personal preferences. For each 'Need', enter the estimated monthly cost in the matching row of column C . Format all dollar amounts as currency. Research realistic costs for your chosen location. Use actual prices or reasonable estimates based on the local cost of living, not guesses. Your listed needs and their monthly costs will be reviewed using AI to check whether they are realistic for your career, salary, and location.",
+      "alignments": [
+        {
+          "code": "A-CED.A.3",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[2]",
+      "title": "Sum Function",
+      "description": "In cell D27 , use the SUM() function to add up all of your monthly need costs. The value1 argument must be the range of C12:C26 . Format the cell as currency. EXAMPLE : SUM ( value1 )",
+      "alignments": [
+        {
+          "code": "F-IF.A.1",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(add(ing|ition)?|subtract(ing|ion)?|multipl(y|ic",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "F-IF.A.2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(add(ing|ition)?|subtract(ing|ion)?|multipl(y|ic",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "F-BF.A.1",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(add(ing|ition)?|subtract(ing|ion)?|multipl(y|ic",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[3]",
+      "title": "% Monthly Net Pay",
+      "description": "In cell E27 , write a formula that divides your Need Subtotal ( D27 ) by your Estimated Monthly Net Pay ( C9 ). Use an absolute row reference for Estimated Monthly Net Pay so this formula still works if you copy it to other subtotal rows later. Format the cell as a percentage. EXAMPLE : [Need Subtotal] / [Estimated Monthly Net Pay]",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(ratio|proportion(al)?|percent(age)?|unit rate|p",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(ratio|proportion(al)?|percent(age)?|unit rate|p",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "title": "Entertainment",
+      "description": "In cell B30 , type \"Entertainment.\" In cell C30 , enter the monthly dollar amount you plan to spend on entertainment. Format C30 as currency.",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[1]",
+      "title": "Wants List",
+      "description": "List at least SEVEN wants in cells B30 through B44 . For each want, enter the estimated monthly cost in the matching row of column C . Format all dollar amounts as currency. Include notes to help your teacher and AI understand the particulars of the cost. For example, a few words describing what your entertainment, travel, shopping, etc.... looks like.",
+      "alignments": [
+        {
+          "code": "A-CED.A.3",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "G-MG.A.3",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "low",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[2]",
+      "title": "Reusing Formulas",
+      "description": "In this task you'll learn how to copy and paste cell formulas and formatting for use in other areas or your spreadsheet. Watch the task video(s) for step-by-step instructions and to learn why this method works in this situation . Select cells D27 and E27 , and copy them. Select cells D45 and E45 , and paste. If you want be build the formula manually, follow these instructions. In cell D45 , use the SUM() function to add up all of your monthly want costs. Your formula should sum the range C30:C44 . Format the cell as currency. EXAMPLE : SUM ( value1 )",
+      "alignments": [
+        {
+          "code": "F-BF.A.2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(add(ing|ition)?|subtract(ing|ion)?|multipl(y|ic",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "F-IF.A.1",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(add(ing|ition)?|subtract(ing|ion)?|multipl(y|ic",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[3]",
+      "title": "% Monthly Net Pay",
+      "description": "In this task you'll learn how to copy and paste cell formulas and formatting for use in other areas or your spreadsheet. Watch the task video(s) for step-by-step instructions and to learn why this method works in this situation . Select cells D27 and E27 , and copy them. Select cells D45 and E45 , and paste. If you want be build the formula manually, follow these instructions. In cell E45 , write a formula that divides your Wants Subtotal ( D45 ) by your Estimated Monthly Net Pay. Use the absolute row reference C$9 . Format the cell as a percentage. EXAMPLE : [Want Subtotal] / [Estimated Monthly Net Pay]",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(ratio|proportion(al)?|percent(age)?|unit rate|p",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(ratio|proportion(al)?|percent(age)?|unit rate|p",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[4].objectives[0]",
+      "title": "Emergency Fund",
+      "description": "In cell B48 , type \"Emergency Fund.\" In cell C48 , enter the monthly dollar amount you plan to set aside for emergencies. Format C48 as currency.",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "F-IF.A.1",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-REI.D.10",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[4].objectives[1]",
+      "title": "Financials List",
+      "description": "List at least FOUR financial goals in cells B48 through B52 . For each goal, enter the estimated monthly contribution in the matching row of column C . Format all dollar amounts as currency. Include notes to help your teacher and AI understand the particulars of the cost. For example, a few words describing what your emergency fund, retirement accounts, and financial goals look like. Write a CTF prompt to help or use the prompt used for the Wants and ask AI to rewrite it for use on Financial Goals section.",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-CED.A.3",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "N-CN.C.8",
+          "confidence": "low",
+          "rationale": "grade-band match (grade 9-12)",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[4].objectives[2]",
+      "title": "Modify Copied Formulas",
+      "description": "In this task you'll learn how to copy, paste, and adjust cell formulas and formatting in other areas or your spreadsheet. Watch the task video(s) for step-by-step instructions and to learn why this method works in this situation . Select cells D45 and E45 , and copy them. Select cells D53 and E53 , and paste. If you want be build the formula manually, follow these instructions. In cell D53 , use the SUM() function to add up all of your monthly financial goal contributions. Your formula should sum the range C48:C52 . Format the cell as currency. EXAMPLE : SUM ( value1 )",
+      "alignments": [
+        {
+          "code": "F-BF.A.2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(add(ing|ition)?|subtract(ing|ion)?|multipl(y|ic",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "F-IF.A.1",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(add(ing|ition)?|subtract(ing|ion)?|multipl(y|ic",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "F-BF.A.1.b",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(add(ing|ition)?|subtract(ing|ion)?|multipl(y|ic",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[4].objectives[3]",
+      "title": "% Monthly Net Pay",
+      "description": "In this task you'll learn how to copy, paste, and adjust cell formulas and formatting in other areas or your spreadsheet. Watch the task video(s) for step-by-step instructions and to learn why this method works in this situation . Select cells D45 and E45 , and copy them. Select cells D53 and E53 , and paste. If you want be build the formula manually, follow these instructions. In cell E53 , write a formula that divides your Financial Goals Subtotal ( D53 ) by your Estimated Monthly Net Pay. Use the absolute row reference C$9 . Format the cell as a percentage. EXAMPLE : [Financials Subtotal] / [Estimated Monthly Net Pay]",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(ratio|proportion(al)?|percent(age)?|unit rate|p",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(ratio|proportion(al)?|percent(age)?|unit rate|p",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[5].objectives[0]",
+      "title": "Total Spending",
+      "description": "In cell D55 , write a formula that adds your three subtotals together: Needs Subtotal ( D27 ), Wants Subtotal ( D45 ), and Financial Goals Subtotal ( D53 ). Use the addition operator. Format the cell as currency. EXAMPLE : [Needs Subtotal] + [Wants Subtotal] + [Financials Subtotal]",
+      "alignments": [
+        {
+          "code": "A-SSE.B.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[5].objectives[1]",
+      "title": "Remaining Funds",
+      "description": "In cell D56 , write a formula that subtracts your Total Spending ( D55 ) from your Estimated Monthly Net Pay ( C9 ). This shows how much money is left over (or how much you are over budget). Format the cell as currency. In cells E55 and E56 , write formulas that divide each row's dollar amount by your Estimated Monthly Net Pay using the absolute row reference C$9 . Format both cells as percentages. EXAMPLE : [Total Spending] / [Estimated Monthly Net Pay] [Remaining Funds] / [Estimated Monthly Net Pay]",
+      "alignments": [
+        {
+          "code": "A-SSE.B.3.c",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-SSE.B.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "S-IC.A.2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[5].objectives[2]",
+      "title": "Pie Chart",
+      "description": "Create a pie chart that visualizes how your budget is divided across Needs, Wants, Financial Goals, and Remaining Funds. Select your four sets of cells (label and value), then and insert a chart. Setup: In the Chart Editor, choose any pie chart style. Set \"Combine ranges\" to \"Vertically\" so all four categories appear as slices in a single chart. Customize: Change the chart title to 50/30/20: [Your Name] (use your actual name). Move the chart legend to either the right or left side. Under the Pie Chart settings, turn on labels and set them to show percentages. Watch the task video for step-by-step instructions.",
+      "alignments": [
+        {
+          "code": "S-ID.A.4",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "A-CED.A.2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[6].objectives[0]",
+      "title": "Notes",
+      "description": "You must complete the \"Notes\" section for at least EIGHT items in your budget. Focus on the ones that are the highest dollar amounts or most general. For example, housing, entertainment, vehicle, etc.... Include notes that help your teacher and an AI to understand the dollar amount. For example; the year, make, and model of a car. The number of rooms, SQFT, and if you have roommates for housing. Also what you will do with your entertainment or travel funds.",
+      "alignments": [
+        {
+          "code": "MP.4",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade None); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "MP.7",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade None); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "G-GPE.A.2",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12); matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[6].objectives[1]",
+      "title": "Spreadsheet Reflection",
+      "description": "Write a reflection (at least 25 words) about what you learned from building this spreadsheet. What spreadsheet skills were new to you? What did you find most helpful? What did you find most difficult?",
+      "alignments": [],
+      "note": "reflective/metacognitive objective, no MATH standard applies"
+    },
+    {
+      "path": "sections[6].objectives[2]",
+      "title": "50/30/20 Reflection",
+      "description": "Write a reflection (at least 25 words) about what you learned from building a 50/30/20 budget based on income and research. What did you find most interesting? What did you find most helpful? What did you find most difficult?",
+      "alignments": [],
+      "note": "reflective/metacognitive objective, no MATH standard applies"
+    },
+    {
+      "path": "sections[6].objectives[3]",
+      "title": "AI Reflection",
+      "description": "Write a reflection (at least 25 words) about what you learned from building a 50/30/20 budget based on income and research. What did you find most interesting? What did you find most helpful? What did you find most difficult?",
+      "alignments": [],
+      "note": "reflective/metacognitive objective, no MATH standard applies"
+    },
+    {
+      "path": "sections[7].objectives[0]",
+      "title": "Budget Realism",
+      "description": "Your budget should tell a believable financial story. The career you chose, the location you picked, the salary you researched, and the expenses you listed should all connect logically. A realistic budget is not about being perfect. It is about showing that you thought carefully about what life actually costs for someone in your situation.",
+      "alignments": [
+        {
+          "code": "F-LE.B.5",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[7].objectives[1]",
+      "title": "Reflection Quality",
+      "description": "Your three reflections are a chance to show what you actually took away from this project. Strong reflections describe specific things you learned, challenges you faced, or decisions you made. They go beyond general statements and show that you are thinking critically about your own learning.",
+      "alignments": [
+        {
+          "code": "S-MD.A.2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade 9-12); keyword boost applied; matched rule: \\b(probabilit(y|ies)|likelihood|chance|random|simu",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    },
+    {
+      "path": "sections[7].objectives[2]",
+      "title": "Accuracy and Completeness",
+      "description": "The 50/30/20 rule only works if items are placed in the right category. This task checks whether your needs, wants, and financial goals are properly sorted and whether your overall budget shows an intentional plan rather than random numbers. The pie chart configuration is included here as well.",
+      "alignments": [
+        {
+          "code": "G-SRT.8.1",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12); matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "N-Q.A.3",
+          "confidence": "medium",
+          "rationale": "grade-band match (grade 9-12); matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        },
+        {
+          "code": "7.RP.A.2.c",
+          "confidence": "low",
+          "rationale": "keyword boost applied; matched rule: \\b(budget|income|tax(es)?|expense|spending|sav(e|i",
+          "standards_group": "CA-MATH"
+        }
+      ]
+    }
+  ]
+}

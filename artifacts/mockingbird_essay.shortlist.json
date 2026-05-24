@@ -2,8 +2,10 @@
   "edusperience_id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
   "edusperience_title": "Mockingbird Essay",
   "edusperience_description": "You will write a literary analysis essay examining Harper Lee's \"To Kill a Mockingbird.\" Your essay will present a clear, arguable thesis exploring a specific aspect of the novel while demonstrating your technical proficiency in modern document creation and formatting.",
-  "source_file": "edusperiences/mockingbird_essay.json",
-  "standards_db": "categorized-standards/California/CA-ELA.json",
+  "source_file": "edusperiences\\mockingbird_essay.json",
+  "subject": "ela",
+  "standards_db": "categorized-standards\\California\\CA-ELA.json",
+  "standards_group": "CA-ELA",
   "retrieval_method": "tfidf_1-2grams_sublinear",
   "top_k": 15,
   "objectives": [
@@ -23,7 +25,8 @@
           "grade_band": "6-12",
           "subgroup": "Conventions of Standard English",
           "is_anchor": false,
-          "text": "Apply the understanding that usage is a matter of convention, can change over time, and is sometimes contested."
+          "text": "Apply the understanding that usage is a matter of convention, can change over time, and is sometimes contested.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07781273142066733,
@@ -33,7 +36,8 @@
           "grade_band": "K-5",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Give and follow three- and four-step oral directions."
+          "text": "Give and follow three- and four-step oral directions.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07451822533133136,
@@ -43,7 +47,8 @@
           "grade_band": "6-12",
           "subgroup": "Integration of Knowledge and Ideas",
           "is_anchor": false,
-          "text": "Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means of understanding how authors of fiction use or alter history."
+          "text": "Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means of understanding how authors of fiction use or alter history.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07299940726737052,
@@ -53,7 +58,8 @@
           "grade_band": "6-12",
           "subgroup": "Integration of Knowledge and Ideas",
           "is_anchor": false,
-          "text": "Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth- century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics."
+          "text": "Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth- century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06998549587401992,
@@ -63,7 +69,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Apply grade 7 Reading standards to literature (e.g., “Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means of understanding how authors of fiction use or alter history”)."
+          "text": "Apply grade 7 Reading standards to literature (e.g., “Compare and contrast a fictional portrayal of a time, place, or character and a historical account of the same period as a means of understanding how authors of fiction use or alter history”).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06929941505794669,
@@ -73,7 +80,8 @@
           "grade_band": "K-5",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Understand and follow one- and two- step oral directions."
+          "text": "Understand and follow one- and two- step oral directions.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06761625983657021,
@@ -83,7 +91,8 @@
           "grade_band": "K-5",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Give, restate, and follow simple two-step directions."
+          "text": "Give, restate, and follow simple two-step directions.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06595666156600583,
@@ -93,7 +102,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Apply grades 11–12 Reading standards to literature (e.g., “Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth-century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics”)."
+          "text": "Apply grades 11–12 Reading standards to literature (e.g., “Demonstrate knowledge of eighteenth-, nineteenth- and early-twentieth-century foundational works of American literature, including how two or more texts from the same period treat similar themes or topics”).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06349607296685732,
@@ -103,7 +113,8 @@
           "grade_band": "K-5",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Follow agreed-upon rules for discussions and carry out assigned roles."
+          "text": "Follow agreed-upon rules for discussions and carry out assigned roles.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06349607296685732,
@@ -113,7 +124,8 @@
           "grade_band": "K-5",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Follow agreed-upon rules for discussions and carry out assigned roles."
+          "text": "Follow agreed-upon rules for discussions and carry out assigned roles.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.0572988096265256,
@@ -123,7 +135,8 @@
           "grade_band": "K-5",
           "subgroup": "Print Concepts",
           "is_anchor": false,
-          "text": "Follow words from left to right, top to bottom, and page by page."
+          "text": "Follow words from left to right, top to bottom, and page by page.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.05654891382229451,
@@ -133,7 +146,8 @@
           "grade_band": "K-5",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Follow agreed-upon rules for discussions (e.g., listening to others with care, speaking one at a time about the topics and texts under discussion)."
+          "text": "Follow agreed-upon rules for discussions (e.g., listening to others with care, speaking one at a time about the topics and texts under discussion).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.05434370611475411,
@@ -143,7 +157,8 @@
           "grade_band": "K-5",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Follow agreed-upon rules for discussions (e.g., listening to others and taking turns speaking about the topics and texts under discussion)."
+          "text": "Follow agreed-upon rules for discussions (e.g., listening to others and taking turns speaking about the topics and texts under discussion).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.05069814380059161,
@@ -153,7 +168,8 @@
           "grade_band": "6-12",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed."
+          "text": "Follow rules for collegial discussions, set specific goals and deadlines, and define individual roles as needed.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.04885478204133061,
@@ -163,7 +179,8 @@
           "grade_band": "K-5",
           "subgroup": "Comprehension and Collaboration",
           "is_anchor": false,
-          "text": "Pose and respond to specific questions to clarify or follow up on information, and make comments that contribute to the discussion and link to the remarks of others."
+          "text": "Pose and respond to specific questions to clarify or follow up on information, and make comments that contribute to the discussion and link to the remarks of others.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -183,7 +200,8 @@
           "grade_band": "K-5",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text."
+          "text": "Identify the main topic of a multiparagraph text as well as the focus of specific paragraphs within the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.17728617056173002,
@@ -193,7 +211,8 @@
           "grade_band": "K-5",
           "subgroup": "Integration of Knowledge and Ideas",
           "is_anchor": false,
-          "text": "Describe the logical connection between particular sentences and paragraphs in a text (e.g., comparison, cause/effect, first/second/ third in a sequence)."
+          "text": "Describe the logical connection between particular sentences and paragraphs in a text (e.g., comparison, cause/effect, first/second/ third in a sequence).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.16741922148287247,
@@ -203,7 +222,8 @@
           "grade_band": "6-12",
           "subgroup": "Craft and Structure",
           "is_anchor": false,
-          "text": "Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, or larger portions of a text (e.g., a section or chapter)."
+          "text": "Analyze in detail how an author’s ideas or claims are developed and refined by particular sentences, paragraphs, or larger portions of a text (e.g., a section or chapter).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.16732895256778701,
@@ -213,7 +233,8 @@
           "grade_band": "6-12",
           "subgroup": "Craft and Structure",
           "is_anchor": false,
-          "text": "Analyze in detail how a complex primary source is structured, including how key sentences, paragraphs, and larger portions of the text contribute to the whole."
+          "text": "Analyze in detail how a complex primary source is structured, including how key sentences, paragraphs, and larger portions of the text contribute to the whole.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.1672050040798622,
@@ -223,7 +244,8 @@
           "grade_band": "K-5",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Introduce a topic clearly and group related information in paragraphs and sections; include formatting (e.g., headings), illustrations, and multimedia when useful to aiding comprehension."
+          "text": "Introduce a topic clearly and group related information in paragraphs and sections; include formatting (e.g., headings), illustrations, and multimedia when useful to aiding comprehension.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.1568529443310949,
@@ -233,7 +255,8 @@
           "grade_band": null,
           "subgroup": "Craft and Structure",
           "is_anchor": true,
-          "text": "Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the text (e.g., a section, chapter, scene, or stanza) relate to each other and the whole."
+          "text": "Analyze the structure of texts, including how specific sentences, paragraphs, and larger portions of the text (e.g., a section, chapter, scene, or stanza) relate to each other and the whole.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.08885446878597571,
@@ -243,7 +266,8 @@
           "grade_band": "6-12",
           "subgroup": "Vocabulary Acquisition and Use",
           "is_anchor": false,
-          "text": "Use the relationship between particular words to better understand each of the words."
+          "text": "Use the relationship between particular words to better understand each of the words.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.0701298424409374,
@@ -253,7 +277,8 @@
           "grade_band": "K-5",
           "subgroup": "Vocabulary Acquisition and Use",
           "is_anchor": false,
-          "text": "Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words."
+          "text": "Use the relationship between particular words (e.g., synonyms, antonyms, homographs) to better understand each of the words.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07010537220834988,
@@ -263,7 +288,8 @@
           "grade_band": "6-12",
           "subgroup": "Vocabulary Acquisition and Use",
           "is_anchor": false,
-          "text": "Use the relationship between particular words (e.g., synonym/antonym, analogy) to better understand each of the words."
+          "text": "Use the relationship between particular words (e.g., synonym/antonym, analogy) to better understand each of the words.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06886297516278442,
@@ -273,7 +299,8 @@
           "grade_band": "K-5",
           "subgroup": "Conventions of Standard English",
           "is_anchor": false,
-          "text": "Use conventional spelling for words with common spelling patterns and for frequently occurring irregular words."
+          "text": "Use conventional spelling for words with common spelling patterns and for frequently occurring irregular words.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06793710001741082,
@@ -283,7 +310,8 @@
           "grade_band": "6-12",
           "subgroup": "Vocabulary Acquisition and Use",
           "is_anchor": false,
-          "text": "Use the relationship between particular words (e.g., cause/effect, part/whole, item/category) to better understand each of the words."
+          "text": "Use the relationship between particular words (e.g., cause/effect, part/whole, item/category) to better understand each of the words.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06697417507242064,
@@ -293,7 +321,8 @@
           "grade_band": "K-5",
           "subgroup": "Phonics and Word Recognition",
           "is_anchor": false,
-          "text": "Decode two-syllable words following basic patterns by breaking the words into syllables."
+          "text": "Decode two-syllable words following basic patterns by breaking the words into syllables.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06692326740266073,
@@ -303,7 +332,8 @@
           "grade_band": "K-5",
           "subgroup": "Knowledge of Language",
           "is_anchor": false,
-          "text": "Choose words and phrases for effect.*"
+          "text": "Choose words and phrases for effect.*",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06600897641176585,
@@ -313,7 +343,8 @@
           "grade_band": "K-5",
           "subgroup": "Vocabulary Acquisition and Use",
           "is_anchor": false,
-          "text": "Demonstrate understanding of words by relating them to their opposites (antonyms) and to words with similar but not identical meanings (synonyms)."
+          "text": "Demonstrate understanding of words by relating them to their opposites (antonyms) and to words with similar but not identical meanings (synonyms).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.0624211966570156,
@@ -323,7 +354,8 @@
           "grade_band": "K-5",
           "subgroup": "Phonological Awareness",
           "is_anchor": false,
-          "text": "Add or substitute individual sounds (phonemes) in simple, one-syllable words to make new words."
+          "text": "Add or substitute individual sounds (phonemes) in simple, one-syllable words to make new words.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -343,7 +375,8 @@
           "grade_band": "K-5",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Recall relevant information from experiences or gather relevant information from print and digital sources; take notes, paraphrase, and categorize information, and provide a list of sources."
+          "text": "Recall relevant information from experiences or gather relevant information from print and digital sources; take notes, paraphrase, and categorize information, and provide a list of sources.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.176440504268592,
@@ -353,7 +386,8 @@
           "grade_band": "6-12",
           "subgroup": "Presentation of Knowledge and Ideas",
           "is_anchor": false,
-          "text": "Include multimedia components (e.g., graphics, images, music, sound) and visual displays in presentations to clarify information."
+          "text": "Include multimedia components (e.g., graphics, images, music, sound) and visual displays in presentations to clarify information.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.17156536800402972,
@@ -363,7 +397,8 @@
           "grade_band": "K-5",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Recall relevant information from experiences or gather relevant information from print and digital sources; summarize or paraphrase information in notes and finished work, and provide a list of sources."
+          "text": "Recall relevant information from experiences or gather relevant information from print and digital sources; summarize or paraphrase information in notes and finished work, and provide a list of sources.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.1500765492214974,
@@ -373,7 +408,8 @@
           "grade_band": "K-5",
           "subgroup": "Craft and Structure",
           "is_anchor": false,
-          "text": "Use text features and search tools (e.g., key words, sidebars, hyperlinks) to locate information relevant to a given topic efficiently."
+          "text": "Use text features and search tools (e.g., key words, sidebars, hyperlinks) to locate information relevant to a given topic efficiently.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.12322885150120305,
@@ -383,7 +419,8 @@
           "grade_band": null,
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": true,
-          "text": "Gather relevant information from multiple print and digital sources, assess the credibility and accuracy of each source, and integrate the information while avoiding plagiarism."
+          "text": "Gather relevant information from multiple print and digital sources, assess the credibility and accuracy of each source, and integrate the information while avoiding plagiarism.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.10704160354615998,
@@ -393,7 +430,8 @@
           "grade_band": "K-5",
           "subgroup": "Integration of Knowledge and Ideas",
           "is_anchor": false,
-          "text": "Explain how specific images (e.g., a diagram showing how a machine works) contribute to and clarify a text."
+          "text": "Explain how specific images (e.g., a diagram showing how a machine works) contribute to and clarify a text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.1054419137854605,
@@ -403,7 +441,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Gather relevant information from multiple print and digital sources; assess the credibility of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and providing basic bibliographic information for sources."
+          "text": "Gather relevant information from multiple print and digital sources; assess the credibility of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and providing basic bibliographic information for sources.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09073207828098717,
@@ -413,7 +452,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation."
+          "text": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09073207828098717,
@@ -423,7 +463,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation."
+          "text": "Gather relevant information from multiple print and digital sources, using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09037858737816037,
@@ -433,7 +474,8 @@
           "grade_band": "K-5",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Introduce a topic and group related information together; include illustrations when useful to aiding comprehension."
+          "text": "Introduce a topic and group related information together; include illustrations when useful to aiding comprehension.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.08554696454179683,
@@ -443,7 +485,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and following a standard format for citation including footnotes and endnotes."
+          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and following a standard format for citation including footnotes and endnotes.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.08430565614827017,
@@ -453,7 +496,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Gather relevant information from multiple authoritative print and digital sources (primary and secondary), using advanced searches effectively; assess the usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and following a standard format for citation."
+          "text": "Gather relevant information from multiple authoritative print and digital sources (primary and secondary), using advanced searches effectively; assess the usefulness of each source in answering the research question; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and following a standard format for citation.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.08321113149344982,
@@ -463,7 +507,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Gather relevant information from multiple print and digital sources (primary and secondary), using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation."
+          "text": "Gather relevant information from multiple print and digital sources (primary and secondary), using search terms effectively; assess the credibility and accuracy of each source; and quote or paraphrase the data and conclusions of others while avoiding plagiarism and following a standard format for citation.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.08126704443682978,
@@ -473,7 +518,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limitations of each source in terms of the specific task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and overreliance on any one source and following a standard format for citation."
+          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limitations of each source in terms of the specific task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and overreliance on any one source and following a standard format for citation.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.08117029765273356,
@@ -483,7 +529,8 @@
           "grade_band": "6-12",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limitations of each source in terms of the task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and overreliance on any one source and following a standard format for citation including footnotes and endnotes."
+          "text": "Gather relevant information from multiple authoritative print and digital sources, using advanced searches effectively; assess the strengths and limitations of each source in terms of the task, purpose, and audience; integrate information into the text selectively to maintain the flow of ideas, avoiding plagiarism and overreliance on any one source and following a standard format for citation including footnotes and endnotes.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -503,7 +550,8 @@
           "grade_band": "K-5",
           "subgroup": "Conventions of Standard English",
           "is_anchor": false,
-          "text": "Capitalize holidays, product names, and geographic names."
+          "text": "Capitalize holidays, product names, and geographic names.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.16641112534732247,
@@ -513,7 +561,8 @@
           "grade_band": "K-5",
           "subgroup": "Conventions of Standard English",
           "is_anchor": false,
-          "text": "Capitalize dates and names of people."
+          "text": "Capitalize dates and names of people.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.13187251481856654,
@@ -523,7 +572,8 @@
           "grade_band": "K-5",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Describe in depth a character, setting, or event in a story or drama, drawing on specific details in the text (e.g., a character’s thoughts, words, or actions)."
+          "text": "Describe in depth a character, setting, or event in a story or drama, drawing on specific details in the text (e.g., a character’s thoughts, words, or actions).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.1231328466984494,
@@ -533,7 +583,8 @@
           "grade_band": "K-5",
           "subgroup": "Research to Build and Present Knowledge",
           "is_anchor": false,
-          "text": "Apply grade 4 Reading standards to literature (e.g., “Describe in depth a character, setting, or event in a story or drama, drawing on specific details in the text [e.g., a character’s thoughts, words, or actions].”)."
+          "text": "Apply grade 4 Reading standards to literature (e.g., “Describe in depth a character, setting, or event in a story or drama, drawing on specific details in the text [e.g., a character’s thoughts, words, or actions].”).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.11817897949113813,
@@ -543,7 +594,8 @@
           "grade_band": "K-5",
           "subgroup": "Craft and Structure",
           "is_anchor": false,
-          "text": "Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular story, drama, or poem."
+          "text": "Explain how a series of chapters, scenes, or stanzas fits together to provide the overall structure of a particular story, drama, or poem.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.0806171126608077,
@@ -553,7 +605,8 @@
           "grade_band": "K-5",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Introduce a topic and group related information together; include illustrations when useful to aiding comprehension."
+          "text": "Introduce a topic and group related information together; include illustrations when useful to aiding comprehension.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07790740464196973,
@@ -563,7 +616,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Write arguments focused on discipline-specific content."
+          "text": "Write arguments focused on discipline-specific content.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07790740464196973,
@@ -573,7 +627,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Write arguments focused on discipline-specific content."
+          "text": "Write arguments focused on discipline-specific content.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07790740464196973,
@@ -583,7 +638,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Write arguments focused on discipline-specific content."
+          "text": "Write arguments focused on discipline-specific content.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07409832906097207,
@@ -593,7 +649,8 @@
           "grade_band": "K-5",
           "subgroup": "Integration of Knowledge and Ideas",
           "is_anchor": false,
-          "text": "Explain how specific aspects of a text’s illustrations contribute to what is conveyed by the words in a story (e.g., create mood, emphasize aspects of a character or setting)."
+          "text": "Explain how specific aspects of a text’s illustrations contribute to what is conveyed by the words in a story (e.g., create mood, emphasize aspects of a character or setting).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.07321020870530165,
@@ -603,7 +660,8 @@
           "grade_band": "K-5",
           "subgroup": "Craft and Structure",
           "is_anchor": false,
-          "text": "Acknowledge differences in the points of view of characters, including by speaking in a different voice for each character when reading dialogue aloud."
+          "text": "Acknowledge differences in the points of view of characters, including by speaking in a different voice for each character when reading dialogue aloud.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06770045562541764,
@@ -613,7 +671,8 @@
           "grade_band": null,
           "subgroup": "Craft and Structure",
           "is_anchor": true,
-          "text": "Assess how point of view or purpose shapes the content and style of a text."
+          "text": "Assess how point of view or purpose shapes the content and style of a text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.0674488925097912,
@@ -623,7 +682,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Analyze how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision."
+          "text": "Analyze how particular lines of dialogue or incidents in a story or drama propel the action, reveal aspects of a character, or provoke a decision.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06455201553116763,
@@ -633,7 +693,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Write informative/explanatory texts to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+          "text": "Write informative/explanatory texts to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.06455201553116763,
@@ -643,7 +704,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Write informative/explanatory texts to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content."
+          "text": "Write informative/explanatory texts to examine a topic and convey ideas, concepts, and information through the selection, organization, and analysis of relevant content.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -663,7 +725,8 @@
           "grade_band": "6-12",
           "subgroup": "Conventions of Standard English",
           "is_anchor": false,
-          "text": "Ensure that pronouns are in the proper case (subjective, objective, possessive)."
+          "text": "Ensure that pronouns are in the proper case (subjective, objective, possessive).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.16433419656217138,
@@ -673,7 +736,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite specific textual evidence to support analysis of science and technical texts."
+          "text": "Cite specific textual evidence to support analysis of science and technical texts.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.16289317955649638,
@@ -683,7 +747,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+          "text": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.16101929552010705,
@@ -693,7 +758,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+          "text": "Cite textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.16089044312728096,
@@ -703,7 +769,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite specific textual evidence to support analysis of primary and secondary sources."
+          "text": "Cite specific textual evidence to support analysis of primary and secondary sources.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.15268000472744986,
@@ -713,7 +780,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite several pieces of textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+          "text": "Cite several pieces of textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.15113372365050476,
@@ -723,7 +791,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite several pieces of textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+          "text": "Cite several pieces of textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.14544309974224523,
@@ -733,7 +802,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite the textual evidence that most strongly supports an analysis of what the text says explicitly as well as inferences drawn from the text."
+          "text": "Cite the textual evidence that most strongly supports an analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.14532307217186044,
@@ -743,7 +813,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.14410456272839722,
@@ -753,7 +824,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite the textual evidence that most strongly supports an analysis of what the text says explicitly as well as inferences drawn from the text."
+          "text": "Cite the textual evidence that most strongly supports an analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.14398781600711777,
@@ -763,7 +835,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text."
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.12769506208408155,
@@ -773,7 +846,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite specific textual evidence to support analysis of science and technical texts, attending to the precise details of explanations or descriptions."
+          "text": "Cite specific textual evidence to support analysis of science and technical texts, attending to the precise details of explanations or descriptions.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.12357806254714065,
@@ -783,7 +857,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite specific textual evidence to support analysis of primary and secondary sources, attending to such features as the date and origin of the information."
+          "text": "Cite specific textual evidence to support analysis of primary and secondary sources, attending to such features as the date and origin of the information.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.11846341904499282,
@@ -793,7 +868,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite specific textual evidence to support analysis of primary and secondary sources, connecting insights gained from specific details to an understanding of the text as a whole."
+          "text": "Cite specific textual evidence to support analysis of primary and secondary sources, connecting insights gained from specific details to an understanding of the text as a whole.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.11680334992660707,
@@ -803,7 +879,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain."
+          "text": "Cite strong and thorough textual evidence to support analysis of what the text says explicitly as well as inferences drawn from the text, including determining where the text leaves matters uncertain.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -823,7 +900,8 @@
           "grade_band": "K-5",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Introduce a topic clearly and group related information in paragraphs and sections; include formatting (e.g., headings), illustrations, and multimedia when useful to aiding comprehension."
+          "text": "Introduce a topic clearly and group related information in paragraphs and sections; include formatting (e.g., headings), illustrations, and multimedia when useful to aiding comprehension.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.11808518143789754,
@@ -833,7 +911,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Determine two or more central ideas in a text and analyze their development over the course of the text; provide an objective summary of the text."
+          "text": "Determine two or more central ideas in a text and analyze their development over the course of the text; provide an objective summary of the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.11083362580885477,
@@ -843,7 +922,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Establish and maintain a formal style and objective tone."
+          "text": "Establish and maintain a formal style and objective tone.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.10393583029361483,
@@ -853,7 +933,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Determine a theme or central idea of a text and analyze its development over the course of the text; provide an objective summary of the text."
+          "text": "Determine a theme or central idea of a text and analyze its development over the course of the text; provide an objective summary of the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.10141108629165926,
@@ -863,7 +944,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.10141108629165926,
@@ -873,7 +955,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.10141108629165926,
@@ -883,7 +966,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.10141108629165926,
@@ -893,7 +977,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09943859229737328,
@@ -903,7 +988,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Determine a central idea of a text and analyze its development over the course of the text, including its relationship to supporting ideas; provide an objective summary of the text."
+          "text": "Determine a central idea of a text and analyze its development over the course of the text, including its relationship to supporting ideas; provide an objective summary of the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09831610433546557,
@@ -913,7 +999,8 @@
           "grade_band": "6-12",
           "subgroup": "Knowledge of Language",
           "is_anchor": false,
-          "text": "Vary syntax for effect, consulting references (e.g., Tufte’s Artful Sentences) for guidance as needed; apply an understanding of syntax to the study of complex texts when reading."
+          "text": "Vary syntax for effect, consulting references (e.g., Tufte’s Artful Sentences) for guidance as needed; apply an understanding of syntax to the study of complex texts when reading.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09581083555791522,
@@ -923,7 +1010,8 @@
           "grade_band": "6-12",
           "subgroup": "Conventions of Standard English",
           "is_anchor": false,
-          "text": "Ensure that pronouns are in the proper case (subjective, objective, possessive)."
+          "text": "Ensure that pronouns are in the proper case (subjective, objective, possessive).",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.0936760474030037,
@@ -933,7 +1021,8 @@
           "grade_band": "6-12",
           "subgroup": "Key Ideas and Details",
           "is_anchor": false,
-          "text": "Determine two or more central ideas of a text and analyze their development over the course of the text, including how they interact and build on one another to provide a complex analysis; provide an objective summary of the text."
+          "text": "Determine two or more central ideas of a text and analyze their development over the course of the text, including how they interact and build on one another to provide a complex analysis; provide an objective summary of the text.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09002843339828615,
@@ -943,7 +1032,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09002843339828615,
@@ -953,7 +1043,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "standards_group": "CA-ELA"
         },
         {
           "score": 0.09002843339828615,
@@ -963,7 +1054,8 @@
           "grade_band": "6-12",
           "subgroup": "Text Types and Purposes",
           "is_anchor": false,
-          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing."
+          "text": "Establish and maintain a formal style and objective tone while attending to the norms and conventions of the discipline in which they are writing.",
+          "standards_group": "CA-ELA"
         }
       ]
     }

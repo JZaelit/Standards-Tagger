@@ -2,7 +2,10 @@
   "edusperience_id": null,
   "edusperience_title": "Resume V2",
   "source_file": "edusperiences/resume.json",
-  "inferred_grade_bands": ["9-10", "11-12"],
+  "inferred_grade_bands": [
+    "9-10",
+    "11-12"
+  ],
   "standards_db": "categorized-standards/California/CA-ELA.json",
   "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> LLM curation (Claude Sonnet)",
   "notes": "High-school resume project. Career-prep writing for a specific audience. Most content-writing objectives map to W.9-10.2 (informative/explanatory) and W.9-10.4 (clear coherent writing). Many logistical formatting objectives are intentionally unaligned.",
@@ -33,8 +36,12 @@
       "title": "Contact Details",
       "description": "Add phone, email, and location with a delimiter between elements.",
       "alignments": [
-        {"code": "W.9-10.4", "confidence": "low",
-         "rationale": "Task-appropriate formatting is part of producing writing for a clear purpose and audience, though this item is largely logistical."}
+        {
+          "code": "W.9-10.4",
+          "confidence": "low",
+          "rationale": "Task-appropriate formatting is part of producing writing for a clear purpose and audience, though this item is largely logistical.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -49,12 +56,24 @@
       "title": "Write Summary Section",
       "description": "Write a concise summary statement (2-4 sentences) describing yourself as a candidate.",
       "alignments": [
-        {"code": "W.9-10.2", "confidence": "high",
-         "rationale": "Write informative/explanatory texts to examine and convey complex ideas — the summary statement is a compressed piece of informative self-description."},
-        {"code": "W.9-10.2.a", "confidence": "high",
-         "rationale": "Introduce a topic and organize complex ideas — the summary must open the resume by framing who you are."},
-        {"code": "W.9-10.4", "confidence": "high",
-         "rationale": "Produce clear, coherent writing appropriate to task, purpose, and audience — a resume summary is highly audience-specific."}
+        {
+          "code": "W.9-10.2",
+          "confidence": "high",
+          "rationale": "Write informative/explanatory texts to examine and convey complex ideas — the summary statement is a compressed piece of informative self-description.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.2.a",
+          "confidence": "high",
+          "rationale": "Introduce a topic and organize complex ideas — the summary must open the resume by framing who you are.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.4",
+          "confidence": "high",
+          "rationale": "Produce clear, coherent writing appropriate to task, purpose, and audience — a resume summary is highly audience-specific.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -69,8 +88,12 @@
       "title": "High School",
       "description": "Add your high school name, location, and graduation date.",
       "alignments": [
-        {"code": "W.9-10.4", "confidence": "low",
-         "rationale": "Producing writing appropriate to purpose/format. Mostly mechanical data entry."}
+        {
+          "code": "W.9-10.4",
+          "confidence": "low",
+          "rationale": "Producing writing appropriate to purpose/format. Mostly mechanical data entry.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -85,12 +108,24 @@
       "title": "Experience #1",
       "description": "Add a role or position with location, dates, and bullet-point accomplishments.",
       "alignments": [
-        {"code": "W.9-10.2.b", "confidence": "high",
-         "rationale": "Develop the topic with well-chosen, relevant facts — this is exactly the work of writing strong experience bullets."},
-        {"code": "W.9-10.2.d", "confidence": "high",
-         "rationale": "Use precise language and domain-specific vocabulary — strong resume bullets lean on active verbs and precise nouns."},
-        {"code": "W.9-10.4", "confidence": "high",
-         "rationale": "Produce clear, coherent writing appropriate to task and audience."}
+        {
+          "code": "W.9-10.2.b",
+          "confidence": "high",
+          "rationale": "Develop the topic with well-chosen, relevant facts — this is exactly the work of writing strong experience bullets.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.2.d",
+          "confidence": "high",
+          "rationale": "Use precise language and domain-specific vocabulary — strong resume bullets lean on active verbs and precise nouns.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.4",
+          "confidence": "high",
+          "rationale": "Produce clear, coherent writing appropriate to task and audience.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -98,12 +133,24 @@
       "title": "Experience #2",
       "description": "Add a second experience with the same structure as #1.",
       "alignments": [
-        {"code": "W.9-10.2.b", "confidence": "high",
-         "rationale": "Same as Experience #1 — develop content with relevant, well-chosen details."},
-        {"code": "W.9-10.2.d", "confidence": "high",
-         "rationale": "Precise language and domain-specific vocabulary."},
-        {"code": "W.9-10.4", "confidence": "high",
-         "rationale": "Clear, coherent writing for the stated task."}
+        {
+          "code": "W.9-10.2.b",
+          "confidence": "high",
+          "rationale": "Same as Experience #1 — develop content with relevant, well-chosen details.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.2.d",
+          "confidence": "high",
+          "rationale": "Precise language and domain-specific vocabulary.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.4",
+          "confidence": "high",
+          "rationale": "Clear, coherent writing for the stated task.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -118,10 +165,18 @@
       "title": "Table",
       "description": "Insert a 1-row 2-column table listing skills.",
       "alignments": [
-        {"code": "W.9-10.6", "confidence": "medium",
-         "rationale": "Use technology to produce and publish — inserting and populating a structured table in a word processor touches the production-with-technology standard."},
-        {"code": "L.9-10.6", "confidence": "medium",
-         "rationale": "Acquire and use accurate general academic and domain-specific words and phrases — the skills list forces precise vocabulary choice."}
+        {
+          "code": "W.9-10.6",
+          "confidence": "medium",
+          "rationale": "Use technology to produce and publish — inserting and populating a structured table in a word processor touches the production-with-technology standard.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "L.9-10.6",
+          "confidence": "medium",
+          "rationale": "Acquire and use accurate general academic and domain-specific words and phrases — the skills list forces precise vocabulary choice.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -136,12 +191,24 @@
       "title": "Custom Section Content",
       "description": "Use AI and/or the internet to research a custom section topic and write content.",
       "alignments": [
-        {"code": "W.9-10.7", "confidence": "high",
-         "rationale": "Conduct short research projects to answer a question or solve a problem — the task explicitly directs research before writing."},
-        {"code": "W.9-10.8", "confidence": "high",
-         "rationale": "Gather relevant information from multiple authoritative sources and integrate it — this is the AI-and-internet research step."},
-        {"code": "W.9-10.2", "confidence": "high",
-         "rationale": "Write informative/explanatory texts — the output is a written informative section."}
+        {
+          "code": "W.9-10.7",
+          "confidence": "high",
+          "rationale": "Conduct short research projects to answer a question or solve a problem — the task explicitly directs research before writing.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.8",
+          "confidence": "high",
+          "rationale": "Gather relevant information from multiple authoritative sources and integrate it — this is the AI-and-internet research step.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.2",
+          "confidence": "high",
+          "rationale": "Write informative/explanatory texts — the output is a written informative section.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -149,12 +216,24 @@
       "title": "Summary and Formatting (Teacher Review)",
       "description": "Review summary section has all required elements; check formatting.",
       "alignments": [
-        {"code": "W.9-10.2.a", "confidence": "high",
-         "rationale": "Teacher is checking the intro/framing quality of the summary."},
-        {"code": "W.9-10.4", "confidence": "high",
-         "rationale": "Checking clear, coherent writing appropriate to task, purpose, audience."},
-        {"code": "W.9-10.5", "confidence": "medium",
-         "rationale": "Revising — the teacher review step invites strengthening the writing."}
+        {
+          "code": "W.9-10.2.a",
+          "confidence": "high",
+          "rationale": "Teacher is checking the intro/framing quality of the summary.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.4",
+          "confidence": "high",
+          "rationale": "Checking clear, coherent writing appropriate to task, purpose, audience.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.5",
+          "confidence": "medium",
+          "rationale": "Revising — the teacher review step invites strengthening the writing.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -162,14 +241,30 @@
       "title": "Education and Experience (Teacher Review)",
       "description": "Verify education and experience sections are complete with required elements.",
       "alignments": [
-        {"code": "W.9-10.2.b", "confidence": "high",
-         "rationale": "Teacher checks whether content has well-chosen, relevant details."},
-        {"code": "W.9-10.4", "confidence": "high",
-         "rationale": "Check that writing is clear and appropriate for a resume context."},
-        {"code": "L.9-10.1", "confidence": "medium",
-         "rationale": "Conventions of standard English grammar and usage in finished draft."},
-        {"code": "L.9-10.2", "confidence": "medium",
-         "rationale": "Capitalization, punctuation, and spelling."}
+        {
+          "code": "W.9-10.2.b",
+          "confidence": "high",
+          "rationale": "Teacher checks whether content has well-chosen, relevant details.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "W.9-10.4",
+          "confidence": "high",
+          "rationale": "Check that writing is clear and appropriate for a resume context.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "L.9-10.1",
+          "confidence": "medium",
+          "rationale": "Conventions of standard English grammar and usage in finished draft.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "L.9-10.2",
+          "confidence": "medium",
+          "rationale": "Capitalization, punctuation, and spelling.",
+          "standards_group": "CA-ELA"
+        }
       ]
     },
     {
@@ -177,11 +272,20 @@
       "title": "Skills (Teacher Review)",
       "description": "Review skills table is correctly formatted and populated.",
       "alignments": [
-        {"code": "W.9-10.6", "confidence": "medium",
-         "rationale": "Technology-based production of the skills table."},
-        {"code": "L.9-10.6", "confidence": "medium",
-         "rationale": "Checking use of accurate academic and domain-specific vocabulary in skills list."}
+        {
+          "code": "W.9-10.6",
+          "confidence": "medium",
+          "rationale": "Technology-based production of the skills table.",
+          "standards_group": "CA-ELA"
+        },
+        {
+          "code": "L.9-10.6",
+          "confidence": "medium",
+          "rationale": "Checking use of accurate academic and domain-specific vocabulary in skills list.",
+          "standards_group": "CA-ELA"
+        }
       ]
     }
-  ]
+  ],
+  "standards_group": "CA-ELA"
 }

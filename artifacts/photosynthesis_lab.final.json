@@ -1,0 +1,173 @@
+{
+  "edusperience_id": "demo-photosynthesis-lab",
+  "edusperience_title": "Photosynthesis Lab: Energy Flow in a Leaf",
+  "source_file": "edusperiences/photosynthesis_lab.json",
+  "subject": "science",
+  "inferred_grade_bands": [
+    "MS"
+  ],
+  "standards_db": "categorized-standards/California/CA-NGSS.json",
+  "standards_group": "CA-NGSS",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> heuristic auto-pick",
+  "notes": "Auto-curated via run_alignment.py (heuristic mode, no LLM in the loop).",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "Watch Me",
+      "description": "Watch the introductory video on photosynthesis and cellular respiration.",
+      "alignments": [
+        {
+          "code": "MS-LS1-6",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-LS1-7",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "HS-LS2-5",
+          "confidence": "high",
+          "rationale": "keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        }
+      ]
+    },
+    {
+      "path": "sections[0].objectives[1]",
+      "title": "Equation Review",
+      "description": "Write out the balanced chemical equation for photosynthesis: 6 CO2 + 6 H2O + light energy -> C6H12O6 + 6 O2. Identify reactants and products.",
+      "alignments": [
+        {
+          "code": "MS-LS1-6",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-LS1-7",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-LS2-3",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Hypothesis",
+      "description": "Develop a testable hypothesis predicting how oxygen production rate changes with light intensity. Justify your prediction using the photosynthesis reaction.",
+      "alignments": [
+        {
+          "code": "MS-LS1-6",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-LS2-2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-PS4-2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Variables",
+      "description": "Identify the independent variable, dependent variable, and at least three controlled variables for the experiment. Explain why each control matters.",
+      "alignments": [
+        {
+          "code": "MS-LS1-3",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[2]",
+      "title": "Procedure and Data Collection",
+      "description": "Plan and conduct an investigation that measures oxygen bubble production from Elodea sprigs at five different light intensities. Record data in a structured table with units.",
+      "alignments": [
+        {
+          "code": "MS-LS1-1",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "Producer Role",
+      "description": "Explain how plants act as producers in a food web. Trace the path of carbon and energy from sunlight through a producer, to a primary consumer, to a secondary consumer.",
+      "alignments": [
+        {
+          "code": "MS-LS1-6",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-LS2-3",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-LS2-2",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        }
+      ]
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "title": "Carbon Cycle Diagram",
+      "description": "Construct a diagram of the carbon cycle showing how photosynthesis, cellular respiration, decomposition, and combustion move carbon between the atmosphere, biosphere, hydrosphere, and geosphere.",
+      "alignments": [
+        {
+          "code": "HS-LS2-5",
+          "confidence": "high",
+          "rationale": "keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-LS1-6",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        },
+        {
+          "code": "MS-LS1-7",
+          "confidence": "high",
+          "rationale": "grade-band match (grade MS); keyword boost applied; matched rule: \\b(energy|kinetic|potential|thermal|heat|electric(",
+          "standards_group": "CA-NGSS"
+        }
+      ]
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "title": "Lab Reflection",
+      "description": "Write a 100+ word reflection on what surprised you about the lab results, what sources of error you noticed, and how you would refine the experiment if you ran it again.",
+      "alignments": [],
+      "note": "reflective/metacognitive objective, no SCIENCE standard applies"
+    }
+  ]
+}

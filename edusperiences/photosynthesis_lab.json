@@ -1,0 +1,104 @@
+{
+  "id": "demo-photosynthesis-lab",
+  "title": "Photosynthesis Lab: Energy Flow in a Leaf",
+  "description": "High-school biology investigation into how plants convert light energy into chemical energy and how that energy moves through an ecosystem. Students design an experiment, collect data on oxygen production at different light intensities, and connect their findings to the broader carbon cycle and the role of plants as producers in food webs.",
+  "status": "draft",
+  "sections": [
+    {
+      "id": "demo-sec-0",
+      "title": "Setup and Background",
+      "order": 0,
+      "description": "Students review the chemistry of photosynthesis and prepare lab materials.",
+      "objectives": [
+        {
+          "id": "demo-obj-0-0",
+          "title": "Watch Me",
+          "description": "Watch the introductory video on photosynthesis and cellular respiration.",
+          "order": 0,
+          "evaluation_type": "completion",
+          "points": 0
+        },
+        {
+          "id": "demo-obj-0-1",
+          "title": "Equation Review",
+          "description": "Write out the balanced chemical equation for photosynthesis: 6 CO2 + 6 H2O + light energy -> C6H12O6 + 6 O2. Identify reactants and products.",
+          "order": 1,
+          "evaluation_type": "rubric",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "id": "demo-sec-1",
+      "title": "Experimental Design",
+      "order": 1,
+      "description": "Design and run an investigation to measure how light intensity affects oxygen production by aquatic plants.",
+      "objectives": [
+        {
+          "id": "demo-obj-1-0",
+          "title": "Hypothesis",
+          "description": "Develop a testable hypothesis predicting how oxygen production rate changes with light intensity. Justify your prediction using the photosynthesis reaction.",
+          "order": 0,
+          "evaluation_type": "rubric",
+          "points": 10
+        },
+        {
+          "id": "demo-obj-1-1",
+          "title": "Variables",
+          "description": "Identify the independent variable, dependent variable, and at least three controlled variables for the experiment. Explain why each control matters.",
+          "order": 1,
+          "evaluation_type": "rubric",
+          "points": 10
+        },
+        {
+          "id": "demo-obj-1-2",
+          "title": "Procedure and Data Collection",
+          "description": "Plan and conduct an investigation that measures oxygen bubble production from Elodea sprigs at five different light intensities. Record data in a structured table with units.",
+          "order": 2,
+          "evaluation_type": "rubric",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "id": "demo-sec-2",
+      "title": "Energy Flow and Ecosystems",
+      "order": 2,
+      "description": "Connect cellular-level photosynthesis to ecosystem-level energy and matter flow.",
+      "objectives": [
+        {
+          "id": "demo-obj-2-0",
+          "title": "Producer Role",
+          "description": "Explain how plants act as producers in a food web. Trace the path of carbon and energy from sunlight through a producer, to a primary consumer, to a secondary consumer.",
+          "order": 0,
+          "evaluation_type": "rubric",
+          "points": 10
+        },
+        {
+          "id": "demo-obj-2-1",
+          "title": "Carbon Cycle Diagram",
+          "description": "Construct a diagram of the carbon cycle showing how photosynthesis, cellular respiration, decomposition, and combustion move carbon between the atmosphere, biosphere, hydrosphere, and geosphere.",
+          "order": 1,
+          "evaluation_type": "rubric",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "id": "demo-sec-3",
+      "title": "Reflection",
+      "order": 3,
+      "description": "Reflect on the investigation and what it taught you about energy flow.",
+      "objectives": [
+        {
+          "id": "demo-obj-3-0",
+          "title": "Lab Reflection",
+          "description": "Write a 100+ word reflection on what surprised you about the lab results, what sources of error you noticed, and how you would refine the experiment if you ran it again.",
+          "order": 0,
+          "evaluation_type": "rubric",
+          "points": 10
+        }
+      ]
+    }
+  ]
+}

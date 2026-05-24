@@ -44,7 +44,8 @@ def load_standards(rel_path: str) -> dict:
     if rel_path in _STANDARDS_CACHE:
         return _STANDARDS_CACHE[rel_path]
     full = ROOT / rel_path
-    arr = json.load(open(full))
+    with open(full, encoding="utf-8") as f:
+        arr = json.load(f)
     by_code = {r["code"]: r for r in arr}
     _STANDARDS_CACHE[rel_path] = by_code
     return by_code
@@ -323,6 +324,13 @@ def code_chip(al: dict, styles, std_by_code: dict):
         f'<font color="white" backcolor="{color.hexval()}" '
         f'name="Helvetica-Bold" size="7">&nbsp;{esc(badge)}&nbsp;</font>',
         styles["code_meta"])
+    # Standards-group pill (CA-ELA / CA-MATH / CA-HISTORY / CA-NGSS).
+    sg = al.get("standards_group", "")
+    sg_para = Paragraph(
+        f'<font color="#6b7280" backcolor="#eef1f6" '
+        f'name="Helvetica-Bold" size="6">&nbsp;{esc(sg)}&nbsp;</font>'
+        if sg else "",
+        styles["code_meta"])
     grade_para = Paragraph(f'<font size="8" color="#6b7280">Grade {esc(grade)}</font>',
                            styles["code_meta"])
     subgroup_para = Paragraph(f'<font size="8" color="#6b7280"><i>{esc(subhead)}</i></font>',
@@ -335,18 +343,18 @@ def code_chip(al: dict, styles, std_by_code: dict):
         f'{esc(conf_level.upper())}</font>',
         styles["code_meta"])
 
-    header_row = [[code_para, strand_para, grade_para, subgroup_para, conf_para]]
+    header_row = [[code_para, strand_para, sg_para, grade_para, subgroup_para, conf_para]]
     header = Table(header_row,
-                   colWidths=[0.9 * inch, 0.6 * inch, 0.6 * inch,
-                              1.7 * inch, 1.0 * inch])
+                   colWidths=[0.9 * inch, 0.55 * inch, 0.7 * inch, 0.55 * inch,
+                              1.45 * inch, 0.7 * inch])
     header.setStyle(TableStyle([
         ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
         ("LEFTPADDING", (0, 0), (-1, -1), 2),
         ("RIGHTPADDING", (0, 0), (-1, -1), 2),
         ("TOPPADDING", (0, 0), (-1, -1), 2),
         ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
-        ("BOX", (4, 0), (4, 0), 0, colors.white),
-        ("BACKGROUND", (4, 0), (4, 0), conf_bg),
+        ("BOX", (5, 0), (5, 0), 0, colors.white),
+        ("BACKGROUND", (5, 0), (5, 0), conf_bg),
     ]))
 
     # Standard text
@@ -407,7 +415,8 @@ def objective_block(obj: dict, styles, std_by_code: dict, subject_label: str):
 
 # ---- main build ------------------------------------------------- #
 def build_pdf(final_path: Path, out_path: Path):
-    data = json.load(open(final_path))
+    with open(final_path, encoding="utf-8") as f:
+        data = json.load(f)
     styles = build_styles()
 
     # Resolve which standards DB to use, infer subject from path or field
@@ -468,7 +477,8 @@ def section_title(data: dict, sec_idx: int) -> str:
     if src:
         path = ROOT / src
         if path.exists():
-            edu = json.load(open(path))
+            with open(path, encoding="utf-8") as f:
+                edu = json.load(f)
             secs = edu.get("sections", [])
             if sec_idx < len(secs):
                 t = secs[sec_idx].get("title") or ""
@@ -499,76 +509,6 @@ def main():
         out = ART_DIR / f"{stem}.alignment.pdf"
         build_pdf(fp, out)
         print(f"  -> {out}", file=sys.stderr)
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main() or 0)
-ory.append(Paragraph(f'<i>{esc(data["notes"])}</i>',
-                               ParagraphStyle(
-                                   "notes", fontSize=9, leading=12,
-                                   textColor=MUTE)))
-        story.append(Spacer(1, 8))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=LINE))
-    story.append(Spacer(1, 4))
-
-    # Group by section
-    current_section = None
-    for obj in data["objectives"]:
-        m = re.match(r"sections\[(\d+)\]\.objectives\[(\d+)\]", obj["path"])
-        sec_idx = int(m.group(1)) if m else 0
-        if sec_idx != current_section:
-            current_section = sec_idx
-            sec_title = section_title(data, sec_idx)
-            story.append(Paragraph(
-                f"Section {sec_idx + 1}: {esc(sec_title)}",
-                styles["section_header"]))
-        story.append(objective_block(obj, styles, std_by_code, subject_label))
-
-    doc.build(story)
-
-
-def section_title(data: dict, sec_idx: int) -> str:
-    src = data.get("source_file")
-    if src:
-        path = ROOT / src
-        if path.exists():
-            edu = json.load(open(path))
-            secs = edu.get("sections", [])
-            if sec_idx < len(secs):
-                t = secs[sec_idx].get("title") or ""
-                t = re.sub(r"<[^>]+>", " ", t)
-                return re.sub(r"\s+", " ", t).strip()
-    return f"Section {sec_idx + 1}"
-
-
-def main():
-    p = argparse.ArgumentParser(description=__doc__,
-                                formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("finals", nargs="*", help="Paths to *.final.json files")
-    p.add_argument("--all", action="store_true",
-                   help="Process every artifacts/*.final.json")
-    args = p.parse_args()
-
-    if args.all:
-        paths = sorted(ART_DIR.glob("*.final.json"))
-    else:
-        paths = [Path(x) for x in args.finals]
-    if not paths:
-        print("No inputs", file=sys.stderr)
-        return 1
-
-    for fp in paths:
-        stem = fp.name.replace(".final.json", "")
-        out = ART_DIR / f"{stem}.alignment.pdf"
-        build_pdf(fp, out)
-        print(f"  -> {out}", file=sys.stderr)
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main() or 0)
-)
     return 0
 
 

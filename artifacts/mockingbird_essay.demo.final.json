@@ -1,0 +1,64 @@
+{
+  "edusperience_id": "d90f4ed3-798e-4b6d-be0d-0a9bf9ed3d2e",
+  "edusperience_title": "Mockingbird Essay",
+  "source_file": "edusperiences\\mockingbird_essay.json",
+  "subject": "ela",
+  "inferred_grade_bands": [
+    "9-10",
+    "11-12"
+  ],
+  "standards_db": "categorized-standards\\California\\CA-ELA.json",
+  "standards_group": "categorized-standards\\California\\CA-ELA",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> Gemini curation",
+  "notes": "Curated by gemini-1.5-flash via run_alignment.py.",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "Naming Convention",
+      "description": "Follow the file naming convention of: Your Name | Period # | Assignment Name",
+      "alignments": [],
+      "note": "The objective is purely logistical and procedural, focusing on file naming conventions for assignment submission rather than academic content standards."
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Essay Length",
+      "description": "Your essay must be 500-1000 words and contain at least five paragraphs.",
+      "alignments": [],
+      "note": "The objective specifies logistical formatting requirements (a word count of 500-1000 words and a minimum of five paragraphs) rather than academic skills or standards related to reading comprehension or text analysis."
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Essay Elements",
+      "description": "Include two hyperlinks and two images that are relevant information this essay.",
+      "alignments": [
+        {
+          "code": "CCRA.W.8",
+          "confidence": "medium",
+          "rationale": "The objective requires students to locate and integrate digital sources (hyperlinks and images containing relevant information) into their essay, which aligns with gathering and integrating information from digital sources.",
+          "standards_group": "categorized-standards\\California\\CA-ELA"
+        }
+      ]
+    },
+    {
+      "path": "sections[1].objectives[2]",
+      "title": "Essay Content",
+      "description": "Include character names, locations, scenes, etc... in your text.",
+      "alignments": [],
+      "note": "None of the candidates align well with this objective. The objective focuses on the writing process (specifically including narrative elements like character names, locations, and scenes in an essay), whereas the candidate standards either address argumentative writing (WHST.9-10.1, WHST.11-12.1) or reading comprehension/analysis of existing texts (RL.4.3, RL.8.3, CCRA.R.6)."
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "Subjective AI",
+      "description": "Subjective AI Evaluations covering Depth of Analysis, Clarity and Coherence, Engagement and Originality, Use of Textual Evidence, and Emotional and Intellectual Impact.",
+      "alignments": [],
+      "note": "The objective focuses on evaluating AI-generated outputs across various subjective writing criteria (e.g., clarity, coherence, engagement, emotional impact). The candidate standards are strictly limited to citing textual evidence for reading comprehension in specific disciplines, which does not align with the core focus of evaluating AI performance or writing quality."
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "title": "Objective AI",
+      "description": "Objective: Spelling, Grammar and Syntax, Formatting, Organized Ideas into Paragraphs, and LEngth.",
+      "alignments": [],
+      "note": "None of the candidate standards align well with the objective. The candidates focus on maintaining a formal style/objective tone or varying syntax for rhetorical effect, whereas the objective targets basic writing conventions and mechanics (spelling, grammar, formatting, paragraph organization, and length)."
+    }
+  ]
+}

@@ -24,7 +24,8 @@
         {
           "code": "W.9-10.4",
           "confidence": "low",
-          "rationale": "Task-appropriate writing convention; but the prescribed title leaves little author discretion."
+          "rationale": "Task-appropriate writing convention; but the prescribed title leaves little author discretion.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -43,12 +44,14 @@
         {
           "code": "W.9-10.1.a",
           "confidence": "high",
-          "rationale": "Introduce precise claim(s) and establish clear relationships among claim(s), reasons, and evidence."
+          "rationale": "Introduce precise claim(s) and establish clear relationships among claim(s), reasons, and evidence.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "W.9-10.1",
           "confidence": "high",
-          "rationale": "Write arguments to support claims — the overall argument-writing standard."
+          "rationale": "Write arguments to support claims — the overall argument-writing standard.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -60,7 +63,8 @@
         {
           "code": "W.9-10.1.a",
           "confidence": "high",
-          "rationale": "Introduce a precise claim — the thesis itself — and hook the reader into the argument's framing."
+          "rationale": "Introduce a precise claim — the thesis itself — and hook the reader into the argument's framing.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -72,12 +76,14 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Develop claim(s) fairly, supplying evidence for each."
+          "rationale": "Develop claim(s) fairly, supplying evidence for each.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "RL.9-10.1",
           "confidence": "high",
-          "rationale": "Cite strong and thorough textual evidence from Shakespeare's play to support analysis."
+          "rationale": "Cite strong and thorough textual evidence from Shakespeare's play to support analysis.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -89,12 +95,14 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Develop claims with evidence."
+          "rationale": "Develop claims with evidence.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "RL.9-10.1",
           "confidence": "high",
-          "rationale": "Cite textual evidence from the play."
+          "rationale": "Cite textual evidence from the play.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -106,12 +114,14 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Quality of evidence/development within each body paragraph."
+          "rationale": "Quality of evidence/development within each body paragraph.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "W.9-10.1.c",
           "confidence": "medium",
-          "rationale": "Linking words/phrases that clarify relationships between claims, reasons, and evidence."
+          "rationale": "Linking words/phrases that clarify relationships between claims, reasons, and evidence.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -123,7 +133,8 @@
         {
           "code": "W.9-10.1.e",
           "confidence": "high",
-          "rationale": "Provide a concluding statement or section that follows from and supports the argument."
+          "rationale": "Provide a concluding statement or section that follows from and supports the argument.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -142,7 +153,8 @@
         {
           "code": "W.9-10.1.a",
           "confidence": "high",
-          "rationale": "Intro + thesis framing — core of the argument introduction."
+          "rationale": "Intro + thesis framing — core of the argument introduction.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -154,12 +166,14 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Evidence selection and integration graded here."
+          "rationale": "Evidence selection and integration graded here.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "RL.9-10.1",
           "confidence": "high",
-          "rationale": "Citation of strong textual evidence from the play."
+          "rationale": "Citation of strong textual evidence from the play.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -171,12 +185,14 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Developing claims with reasoning — the commentary-on-evidence work."
+          "rationale": "Developing claims with reasoning — the commentary-on-evidence work.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "RL.9-10.2",
           "confidence": "medium",
-          "rationale": "Determine a theme or central idea and analyze in detail its development — what commentary ties back to."
+          "rationale": "Determine a theme or central idea and analyze in detail its development — what commentary ties back to.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -188,12 +204,14 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Evidence selection and integration."
+          "rationale": "Evidence selection and integration.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "RL.9-10.1",
           "confidence": "high",
-          "rationale": "Citation of textual evidence."
+          "rationale": "Citation of textual evidence.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -205,12 +223,14 @@
         {
           "code": "W.9-10.1.b",
           "confidence": "high",
-          "rationale": "Developing claims with reasoning."
+          "rationale": "Developing claims with reasoning.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "RL.9-10.2",
           "confidence": "medium",
-          "rationale": "Analyzing theme development through commentary."
+          "rationale": "Analyzing theme development through commentary.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -222,7 +242,8 @@
         {
           "code": "W.9-10.1.e",
           "confidence": "high",
-          "rationale": "Provide a concluding statement or section that follows from and supports the argument."
+          "rationale": "Provide a concluding statement or section that follows from and supports the argument.",
+          "standards_group": "CA-ELA"
         }
       ]
     },
@@ -234,24 +255,29 @@
         {
           "code": "L.9-10.1",
           "confidence": "high",
-          "rationale": "Conventions of standard English grammar and usage."
+          "rationale": "Conventions of standard English grammar and usage.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "L.9-10.2",
           "confidence": "high",
-          "rationale": "Capitalization, punctuation, and spelling."
+          "rationale": "Capitalization, punctuation, and spelling.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "L.9-10.3",
           "confidence": "high",
-          "rationale": "Apply knowledge of language — vary sentence structure for effect."
+          "rationale": "Apply knowledge of language — vary sentence structure for effect.",
+          "standards_group": "CA-ELA"
         },
         {
           "code": "W.9-10.4",
           "confidence": "medium",
-          "rationale": "Produce clear, coherent writing appropriate to task and purpose."
+          "rationale": "Produce clear, coherent writing appropriate to task and purpose.",
+          "standards_group": "CA-ELA"
         }
       ]
     }
-  ]
+  ],
+  "standards_group": "CA-ELA"
 }
