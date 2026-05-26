@@ -206,7 +206,7 @@ def iter_objectives(edu):
 # ---------- Per-subject shortlist run ----------
 def run_subject(edu, edu_title, edu_desc, source_file, subject, top_k):
     cfg = SUBJECTS[subject]
-    standards = json.load(open(cfg["standards_path"]))
+    standards = json.load(open(cfg["standards_path"], encoding="utf-8"))
     vec, X = build_index(standards, cfg["index_fields"])
     print(f"  [{subject}] indexed {len(standards)} standards "
           f"(tfidf matrix {X.shape})", file=sys.stderr)
@@ -244,7 +244,7 @@ def cmd_shortlist(args):
         return 1
 
     for inp in inputs:
-        with open(inp) as f:
+        with open(inp, encoding="utf-8") as f:
             edu = json.load(f)
 
         edu_title = clean_text(edu.get("title"))
@@ -271,7 +271,7 @@ def cmd_shortlist(args):
                 out_path = OUT_DIR / f"{stem}.shortlist.json"
             else:
                 out_path = OUT_DIR / f"{stem}.{SUBJECTS[subj]['label']}.shortlist.json"
-            with open(out_path, "w") as f:
+            with open(out_path, "w", encoding="utf-8") as f:
                 json.dump(res, f, indent=2, ensure_ascii=False)
             print(f"  -> {out_path}  ({len(res['objectives'])} objectives)",
                   file=sys.stderr)

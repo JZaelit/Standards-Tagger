@@ -14,6 +14,9 @@ const KEY_USER_ASSIGNMENTS = 'assignments';
 const KEY_USER_CURRICULA = 'curricula';
 const KEY_USER_ADOPTIONS = 'user_curriculum';
 const KEY_INITIALIZED = 'initialized';
+const KEY_USER_ALIGNMENTS = 'alignments';
+
+const TAGGER_API = 'http://localhost:5000';
 
 // On first run, pre-adopt the curricula whose seeded assignments rely on them.
 function ensureInitialized() {
@@ -57,7 +60,32 @@ function getAssignmentDetail(id) {
   if (a.is_seed && a.stem) {
     return SEED.assignmentDetail(a.stem);
   }
-  // User-created assignments have no curated alignments (no model yet).
+  // Check for stored alignment from the tagger API.
+  const alignments = storage.get(KEY_USER_ALIGNMENTS, {});
+  const alignment = alignments[id];
+  if (alignment) {
+    const objectives = (alignment.objectives || []).map((o) => {
+      const m = /sections\[(\d+)\]\.objectives\[(\d+)\]/.exec(o.path || '');
+      const sec = m ? parseInt(m[1], 10) : 0;
+      const obj = m ? parseInt(m[2], 10) : 0;
+      return {
+        ...o,
+        section_idx: sec,
+        objective_idx: obj,
+        section_title: o.section_title || `Section ${sec + 1}`,
+      };
+    });
+    return {
+      ...a,
+      source: null,
+      objectives,
+      n_total: alignment.n_total ?? objectives.length,
+      n_aligned: alignment.n_aligned ?? objectives.filter((o) => (o.alignments || []).length > 0).length,
+      standards_db: alignment.standards_db || null,
+      subject: alignment.subject || a.subject,
+    };
+  }
+  // No alignment yet — shows the "Awaiting AI tagger" pending state.
   return {
     ...a,
     source: null,
@@ -68,7 +96,7 @@ function getAssignmentDetail(id) {
   };
 }
 
-function createAssignment({
+async function createAssignment({
   name, grade, description, curriculum_id, subject, file_name,
 }) {
   ensureInitialized();
@@ -87,6 +115,41 @@ function createAssignment({
     is_seed: false,
   };
   storage.set(KEY_USER_ASSIGNMENTS, [row, ...userAssignments]);
+
+  // Call the tagger API to run the alignment pipeline.
+  if (row.description) {
+    try {
+      const resp = await fetch(`${TAGGER_API}/api/tag`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: row.name,
+          grade: row.grade,
+          subject: row.subject || 'auto',
+          description: row.description,
+        }),
+      });
+      if (resp.ok) {
+        const alignment = await resp.json();
+        const alignments = storage.get(KEY_USER_ALIGNMENTS, {});
+        alignments[row.id] = alignment;
+        storage.set(KEY_USER_ALIGNMENTS, alignments);
+        // Update subject if auto-detected
+        if (!row.subject && alignment.subject) {
+          const rows = storage.get(KEY_USER_ASSIGNMENTS, []);
+          const idx = rows.findIndex((a) => a.id === row.id);
+          if (idx !== -1) {
+            rows[idx] = { ...rows[idx], subject: alignment.subject };
+            storage.set(KEY_USER_ASSIGNMENTS, rows);
+            row.subject = alignment.subject;
+          }
+        }
+      }
+    } catch (_) {
+      // API unavailable — assignment saved without alignments, shows pending state.
+    }
+  }
+
   return row;
 }
 
@@ -532,7 +595,7 @@ export const dataClient = {
     list: () => wait(listAssignments()),
     get: (id) => wait(getAssignment(id)),
     detail: (id) => wait(getAssignmentDetail(id)),
-    create: (input) => wait(createAssignment(input)),
+    create: (input) => createAssignment(input),
     update: (id, patch) => wait(updateAssignment(id, patch)),
     // Returns { row, index } for undo, or null if id is unknown / seed.
     delete: (id) => wait(deleteAssignment(id)),

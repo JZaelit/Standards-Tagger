@@ -17,6 +17,7 @@ import AddCurriculumScreen from './src/screens/AddCurriculumScreen';
 import OutputScreen from './src/screens/OutputScreen';
 import CurriculumDetailScreen from './src/screens/CurriculumDetailScreen';
 import DashboardScreen from './src/screens/DashboardScreen';
+import CompareScreen from './src/screens/CompareScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +62,7 @@ export default function App() {
             <Stack.Screen name="Output" component={OutputScreen} />
             <Stack.Screen name="CurriculumDetail" component={CurriculumDetailScreen} />
             <Stack.Screen name="Dashboard" component={DashboardScreen} />
+            <Stack.Screen name="Compare" component={CompareScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </ConfirmDialogProvider>

@@ -24,10 +24,12 @@ const SECTION_BY_ROUTE = {
   Output: 'workspace',
   CurriculumDetail: 'workspace',
   Dashboard: 'dashboard',
+  Compare: 'compare',
 };
 
 const LINKS = [
   { id: 'workspace', label: 'Workspace', route: 'Eval' },
+  { id: 'compare', label: 'Compare', route: 'Compare' },
   { id: 'dashboard', label: 'Dashboard', route: 'Dashboard' },
 ];
 

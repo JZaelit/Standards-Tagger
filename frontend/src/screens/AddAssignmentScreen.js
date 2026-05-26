@@ -38,19 +38,9 @@ export default function AddAssignmentScreen({ navigation, route }) {
   const [description, setDescription] = useState(editing?.description || '');
   const [subject, setSubject] = useState(editing?.subject || '');
   const [file, setFile] = useState(null);
-  const [existingFileName, setExistingFileName] = useState(
-    editing?.file_name || null,
-  );
-  const [curricula, setCurricula] = useState([]);
-  const [selectedCurriculum, setSelectedCurriculum] = useState(
-    editing?.curriculum_id || null,
-  );
-  // Track whether the user has explicitly set the subject so picking a
-  // curriculum doesn't keep clobbering their choice.
-  const [subjectTouched, setSubjectTouched] = useState(!!editing?.subject);
+  const [existingFileName, setExistingFileName] = useState(editing?.file_name || null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [fetchingCurricula, setFetchingCurricula] = useState(true);
 
   const toast = useToast();
 
@@ -58,31 +48,9 @@ export default function AddAssignmentScreen({ navigation, route }) {
     if (editing && editing.is_seed) {
       toast.show('Seed assignments are read-only', { tone: 'danger' });
       navigation.goBack();
-      return;
     }
-    const fetchCurricula = async () => {
-      const data = await dataClient.curricula.listForUser();
-      setCurricula(data || []);
-      setFetchingCurricula(false);
-    };
-    fetchCurricula();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // Auto-fill subject from the picked curriculum unless the user has
-  // already touched the subject picker themselves. This is the smart-fill
-  // for the common case ("link to CA-MATH" -> subject becomes 'math').
-  useEffect(() => {
-    if (subjectTouched) return;
-    if (!selectedCurriculum) return;
-    const c = curricula.find((x) => x.id === selectedCurriculum);
-    if (c?.subject) setSubject(c.subject);
-  }, [selectedCurriculum, curricula, subjectTouched]);
-
-  const handleSubjectChange = (s) => {
-    setSubject(s);
-    setSubjectTouched(true);
-  };
 
   const handleFilePicked = (asset) => {
     setFile(asset);
@@ -105,7 +73,6 @@ export default function AddAssignmentScreen({ navigation, route }) {
           name: name.trim(),
           grade: grade.trim(),
           description: description.trim(),
-          curriculum_id: selectedCurriculum,
           subject: subject || null,
           file_name: payloadFileName,
         });
@@ -118,7 +85,6 @@ export default function AddAssignmentScreen({ navigation, route }) {
           name: name.trim(),
           grade: grade.trim(),
           description: description.trim(),
-          curriculum_id: selectedCurriculum,
           subject: subject || null,
           file_name: payloadFileName,
         });
@@ -167,7 +133,7 @@ export default function AddAssignmentScreen({ navigation, route }) {
           />
 
           <Text style={styles.label}>Subject</Text>
-          <SubjectPicker value={subject} onChange={handleSubjectChange} />
+          <SubjectPicker value={subject} onChange={setSubject} />
 
           <Text style={styles.label}>Description</Text>
           <TextInput
@@ -189,37 +155,6 @@ export default function AddAssignmentScreen({ navigation, route }) {
             onClear={handleFileClear}
             hintLabel="PDF, DOCX, PPTX, XLSX, or TXT"
           />
-
-          <Text style={styles.label}>Link to Curriculum</Text>
-          {fetchingCurricula ? (
-            <ActivityIndicator color={colors.primary} />
-          ) : curricula.length === 0 ? (
-            <Text style={styles.hint}>No curricula yet — add one first.</Text>
-          ) : (
-            <View style={styles.curriculumList}>
-              {curricula.map((c) => (
-                <TouchableOpacity
-                  key={c.id}
-                  style={[
-                    styles.curriculumOption,
-                    selectedCurriculum === c.id && styles.curriculumOptionSelected,
-                  ]}
-                  onPress={() =>
-                    setSelectedCurriculum(selectedCurriculum === c.id ? null : c.id)
-                  }
-                >
-                  <Text
-                    style={[
-                      styles.curriculumOptionText,
-                      selectedCurriculum === c.id && styles.curriculumOptionTextSelected,
-                    ]}
-                  >
-                    {c.title} — Grade {c.grade}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-          )}
 
           {error ? <Text style={styles.error}>{error}</Text> : null}
 
@@ -288,35 +223,6 @@ const styles = StyleSheet.create({
   textarea: {
     minHeight: 100,
     paddingTop: 10,
-  },
-  hint: {
-    color: colors.textLight,
-    fontSize: 13,
-    marginTop: 6,
-  },
-  curriculumList: {
-    gap: 8,
-    marginTop: 4,
-  },
-  curriculumOption: {
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 8,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    backgroundColor: colors.background,
-  },
-  curriculumOptionSelected: {
-    borderColor: colors.primary,
-    backgroundColor: colors.primaryLight,
-  },
-  curriculumOptionText: {
-    fontSize: 14,
-    color: colors.textPrimary,
-  },
-  curriculumOptionTextSelected: {
-    color: colors.primaryDark,
-    fontWeight: '600',
   },
   button: {
     backgroundColor: colors.primary,

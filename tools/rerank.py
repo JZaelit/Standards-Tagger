@@ -571,7 +571,7 @@ def auto_pick(top_candidates, context_text, subject, objective_title=""):
 
 # ---------------- Driver ----------------
 def process(shortlist_path, out_path, top_n):
-    d = json.load(open(shortlist_path))
+    d = json.load(open(shortlist_path, encoding="utf-8"))
     subject = d.get("subject", "ela")
     edu_context = " ".join(filter(None, [
         d.get("edusperience_title"),
@@ -630,7 +630,7 @@ def process(shortlist_path, out_path, top_n):
             "reranked_candidates": reranked,
             "auto_pick": auto,
         })
-    with open(out_path, "w") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
     print(f"  -> {out_path}  ({len(out['objectives'])} objectives, subject={subject})",
           file=sys.stderr)
