@@ -194,6 +194,9 @@ function buildAssignmentDetail(stem) {
   const sectionTitleByIdx = (src && src.sections)
     ? src.sections.map((s, i) => s.title || `Section ${i + 1}`)
     : [];
+  const sectionDescByIdx = (src && src.sections)
+    ? src.sections.map((s) => s.description || '')
+    : [];
 
   const objectives = (finalData.objectives || []).map((o) => {
     const m = /sections\[(\d+)\]\.objectives\[(\d+)\]/.exec(o.path || '');
@@ -204,6 +207,7 @@ function buildAssignmentDetail(stem) {
       section_idx: sec,
       objective_idx: obj,
       section_title: sectionTitleByIdx[sec] || `Section ${sec + 1}`,
+      section_description: sectionDescByIdx[sec] || '',
     };
   });
 

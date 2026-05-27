@@ -6,7 +6,7 @@
 // User-uploaded curricula (no bundled standards DB) get a friendly empty
 // state explaining that standards will appear once their pipeline runs.
 
-import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react';
+import React, { useMemo, useRef, useState, useCallback } from 'react';
 import {
   View,
   Text,
@@ -15,6 +15,7 @@ import {
   ActivityIndicator,
   FlatList,
 } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import { dataClient } from '../lib/dataClient';
 import { colors, typography, shadows } from '../theme';
 import StandardsSummary from '../components/StandardsSummary';
@@ -46,34 +47,33 @@ export default function CurriculumDetailScreen({ route, navigation }) {
   const [highlightCode, setHighlightCode] = useState(focusCode || null);
   const flatListRef = useRef(null);
 
-  useEffect(() => {
-    let cancelled = false;
-    const load = async () => {
-      const [s, page, used, uMap] = await Promise.all([
-        dataClient.standards.summary(curriculum.id),
-        dataClient.standards.byCurriculum(curriculum.id),
-        dataClient.standards.usedBy(curriculum.id),
-        dataClient.standards.usageMap(curriculum.id),
-      ]);
-      if (cancelled) return;
-      setSummary(s);
-      setAllRows(page.rows || []);
-      setUsedCodes(new Set((used || []).map((r) => r.code)));
-      setUsageMap(uMap || {});
-      // If "used only" produces nothing (e.g. user has no assignments under
-      // this curriculum), default to showing the full DB instead. When
-      // focused on a specific code, also turn off used-only so the
-      // standard is reachable even if it's not currently in usage.
-      if (!used || used.length === 0) setUsedOnly(false);
-      if (focusedCode) {
-        setUsedOnly(false);
-        setQuery(focusedCode);
-      }
-      setLoading(false);
-    };
-    load();
-    return () => { cancelled = true; };
-  }, [curriculum?.id, focusedCode]);
+  useFocusEffect(
+    useCallback(() => {
+      let cancelled = false;
+      setLoading(true);
+      const load = async () => {
+        const [s, page, used, uMap] = await Promise.all([
+          dataClient.standards.summary(curriculum.id),
+          dataClient.standards.byCurriculum(curriculum.id),
+          dataClient.standards.usedBy(curriculum.id),
+          dataClient.standards.usageMap(curriculum.id),
+        ]);
+        if (cancelled) return;
+        setSummary(s);
+        setAllRows(page.rows || []);
+        setUsedCodes(new Set((used || []).map((r) => r.code)));
+        setUsageMap(uMap || {});
+        if (!used || used.length === 0) setUsedOnly(false);
+        if (focusedCode) {
+          setUsedOnly(false);
+          setQuery(focusedCode);
+        }
+        setLoading(false);
+      };
+      load();
+      return () => { cancelled = true; };
+    }, [curriculum?.id, focusedCode]),
+  );
 
   // After the focused row mounts, scroll the FlatList to it. Best-effort:
   // FlatList's scrollToIndex requires the row to be within the rendered

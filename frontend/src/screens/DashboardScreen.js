@@ -12,7 +12,7 @@
 //
 //   Edusperiences (cards, tap -> Output)
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   View,
   Text,
@@ -21,6 +21,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import { dataClient } from '../lib/dataClient';
 import { colors, typography, shadows } from '../theme';
 import StatCard from '../components/StatCard';
@@ -231,21 +232,24 @@ export default function DashboardScreen({ navigation }) {
   const [edus, setEdus] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    let cancelled = false;
-    const load = async () => {
-      const [s, e] = await Promise.all([
-        dataClient.dashboard.summary(),
-        dataClient.dashboard.edusperiences(),
-      ]);
-      if (cancelled) return;
-      setSummary(s);
-      setEdus(e || []);
-      setLoading(false);
-    };
-    load();
-    return () => { cancelled = true; };
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      let cancelled = false;
+      setLoading(true);
+      const load = async () => {
+        const [s, e] = await Promise.all([
+          dataClient.dashboard.summary(),
+          dataClient.dashboard.edusperiences(),
+        ]);
+        if (cancelled) return;
+        setSummary(s);
+        setEdus(e || []);
+        setLoading(false);
+      };
+      load();
+      return () => { cancelled = true; };
+    }, []),
+  );
 
   if (loading || !summary) {
     return (

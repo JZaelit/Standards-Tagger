@@ -20,6 +20,7 @@ import {
   filterCurricula,
   sortCurricula,
   mergeEvalState,
+  uniqueGrades,
 } from '../lib/evalFilters';
 import { colors, shadows, typography } from '../theme';
 import Menu, { MenuTrigger } from '../components/Menu';
@@ -57,11 +58,11 @@ function ColumnHeader({ title, count, onAdd, addLabel = '+ Add' }) {
   );
 }
 
-function SearchField({ value, onChange, placeholder }) {
+function SearchField({ value, onChange, placeholder, large = false }) {
   return (
-    <View style={styles.searchWrap}>
+    <View style={[styles.searchWrap, large && styles.searchWrapLarge]}>
       <TextInput
-        style={styles.searchInput}
+        style={[styles.searchInput, large && styles.searchInputLarge]}
         placeholder={placeholder}
         placeholderTextColor={colors.textLight}
         value={value}
@@ -101,18 +102,102 @@ function SortButton({ value, options, onChange }) {
   );
 }
 
-function Pill({ label, active, onPress }) {
+function FilterDropdown({ label, value, options, onChange }) {
+  const [open, setOpen] = useState(false);
+  const selected = options.find((o) => o.value === value);
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={[styles.pill, active && styles.pillActive]}
-      accessibilityRole="button"
-      accessibilityState={{ selected: active }}
-    >
-      <Text style={[styles.pillText, active && styles.pillTextActive]}>
-        {label}
-      </Text>
-    </TouchableOpacity>
+    <>
+      <TouchableOpacity
+        style={styles.filterDropdown}
+        onPress={() => setOpen(true)}
+        accessibilityRole="button"
+        accessibilityLabel={`${label}: ${selected?.label || value}`}
+      >
+        <Text style={styles.filterDropdownLabel}>{label}</Text>
+        <Text style={styles.filterDropdownValue} numberOfLines={1}>
+          {selected?.label || value}
+        </Text>
+        <Text style={styles.filterDropdownCaret}>{'\u25be'}</Text>
+      </TouchableOpacity>
+      <Menu
+        visible={open}
+        onClose={() => setOpen(false)}
+        anchor="center"
+        options={options.map((opt) => ({
+          label: opt.label,
+          onPress: () => onChange(opt.value),
+        }))}
+      />
+    </>
+  );
+}
+
+function AssignmentFilterBar({
+  state,
+  gradeOptions,
+  onSearch,
+  onSort,
+  onSubject,
+  onAlignment,
+  onGrade,
+  onHideSamples,
+}) {
+  const statusOptions = [
+    { value: 'all', label: 'All' },
+    { value: 'raw', label: 'Raw' },
+    { value: 'aligned', label: 'Aligned' },
+  ];
+  const subjectOptions = [
+    { value: 'all', label: 'All' },
+    ...ALL_SUBJECTS.map((s) => ({
+      value: s,
+      label: SUBJECT_LABEL[s] || s,
+    })),
+  ];
+  const gradeOpts = [
+    { value: 'all', label: 'All' },
+    ...gradeOptions.map((g) => ({ value: g, label: g })),
+  ];
+
+  return (
+    <View style={styles.filterCard}>
+      <SearchField
+        value={state.search}
+        onChange={onSearch}
+        placeholder="Search EduSperiences..."
+        large
+      />
+      <View style={styles.filterDropdownRow}>
+        <FilterDropdown
+          label="Status"
+          value={state.alignment}
+          options={statusOptions}
+          onChange={onAlignment}
+        />
+        <FilterDropdown
+          label="Subject"
+          value={state.subject}
+          options={subjectOptions}
+          onChange={onSubject}
+        />
+        <FilterDropdown
+          label="Grade"
+          value={state.grade}
+          options={gradeOpts}
+          onChange={onGrade}
+        />
+        <SortButton
+          value={state.sort}
+          options={['recent', 'name', 'aligned']}
+          onChange={onSort}
+        />
+        <ToggleSwitch
+          label="Hide samples"
+          value={state.hideSamples}
+          onChange={onHideSamples}
+        />
+      </View>
+    </View>
   );
 }
 
@@ -146,13 +231,13 @@ function StatusPill({ status }) {
   if (!status) return null;
   const stylesByKind = {
     sample: styles.statusSample,
-    tagged: styles.statusTagged,
-    pending: styles.statusPending,
+    aligned: styles.statusAligned,
+    raw: styles.statusRaw,
   };
   const labelByKind = {
     sample: 'SAMPLE',
-    tagged: 'TAGGED',
-    pending: 'PENDING',
+    aligned: 'ALIGNED',
+    raw: 'RAW',
   };
   return (
     <Text style={[styles.statusPill, stylesByKind[status]]}>
@@ -166,17 +251,22 @@ function StatusPill({ status }) {
 // objective is what differentiates a tagged assignment from a pending one.
 function statusOf(item) {
   if (item.is_seed) return 'sample';
-  if (item.n_aligned && item.n_aligned > 0) return 'tagged';
-  return 'pending';
+  if (item.n_aligned && item.n_aligned > 0) return 'aligned';
+  return 'raw';
 }
 
 function AssignmentCard({ item, onPress, onEdit, onDelete }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const desc = previewText(item.description);
-  const isEditable = !item.is_seed;
   const pct =
     item.n_total > 0 ? Math.round((100 * item.n_aligned) / item.n_total) : null;
   const status = statusOf(item);
+  const menuOptions = item.is_seed
+    ? [{ label: 'Delete sample', onPress: () => onDelete(item), destructive: true }]
+    : [
+        { label: 'Edit', onPress: () => onEdit(item) },
+        { label: 'Delete', onPress: () => onDelete(item), destructive: true },
+      ];
   return (
     <View style={styles.cardWrap}>
       <TouchableOpacity style={styles.card} onPress={() => onPress(item)}>
@@ -202,40 +292,38 @@ function AssignmentCard({ item, onPress, onEdit, onDelete }) {
               {`${item.n_aligned}/${item.n_total} aligned (${pct}%)`}
             </Text>
           </View>
-        ) : status === 'pending' ? (
+        ) : status === 'raw' ? (
           <Text style={styles.pendingHint}>
-            Awaiting AI tagger
+            Raw — open to align
           </Text>
         ) : null}
       </TouchableOpacity>
-      {isEditable ? (
-        <>
-          <View style={styles.cardMenuAnchor}>
-            <MenuTrigger
-              onPress={() => setMenuOpen(true)}
-              accessibilityLabel={`Actions for ${item.name}`}
-            />
-          </View>
-          <Menu
-            visible={menuOpen}
-            onClose={() => setMenuOpen(false)}
-            options={[
-              { label: 'Edit', onPress: () => onEdit(item) },
-              { label: 'Delete', onPress: () => onDelete(item), destructive: true },
-            ]}
-          />
-        </>
-      ) : null}
+      <View style={styles.cardMenuAnchor}>
+        <MenuTrigger
+          onPress={() => setMenuOpen(true)}
+          accessibilityLabel={`Actions for ${item.name}`}
+        />
+      </View>
+      <Menu
+        visible={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        options={menuOptions}
+      />
     </View>
   );
 }
 
 function CompactAssignmentRow({ item, onPress, onEdit, onDelete }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isEditable = !item.is_seed;
   const pct =
     item.n_total > 0 ? Math.round((100 * item.n_aligned) / item.n_total) : null;
   const status = statusOf(item);
+  const menuOptions = item.is_seed
+    ? [{ label: 'Delete sample', onPress: () => onDelete(item), destructive: true }]
+    : [
+        { label: 'Edit', onPress: () => onEdit(item) },
+        { label: 'Delete', onPress: () => onDelete(item), destructive: true },
+      ];
   return (
     <View style={styles.compactRow}>
       <TouchableOpacity
@@ -256,31 +344,27 @@ function CompactAssignmentRow({ item, onPress, onEdit, onDelete }) {
           <StatusPill status={status} />
         </View>
       </TouchableOpacity>
-      {isEditable ? (
-        <>
-          <MenuTrigger
-            onPress={() => setMenuOpen(true)}
-            accessibilityLabel={`Actions for ${item.name}`}
-          />
-          <Menu
-            visible={menuOpen}
-            onClose={() => setMenuOpen(false)}
-            options={[
-              { label: 'Edit', onPress: () => onEdit(item) },
-              { label: 'Delete', onPress: () => onDelete(item), destructive: true },
-            ]}
-          />
-        </>
-      ) : null}
+      <MenuTrigger
+        onPress={() => setMenuOpen(true)}
+        accessibilityLabel={`Actions for ${item.name}`}
+      />
+      <Menu
+        visible={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        options={menuOptions}
+      />
     </View>
   );
 }
 
 function CurriculumCard({ item, onPress, onEdit, onDelete, onUnadopt }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isLibrary = item.is_seed !== false;
-  const options = isLibrary
-    ? [{ label: 'Remove from my list', onPress: () => onUnadopt(item) }]
+  const isSeed = item.is_seed !== false;
+  const options = isSeed
+    ? [
+        { label: 'Remove from my list', onPress: () => onUnadopt(item) },
+        { label: 'Delete sample', onPress: () => onDelete(item), destructive: true },
+      ]
     : [
         { label: 'Edit', onPress: () => onEdit(item) },
         { label: 'Delete', onPress: () => onDelete(item), destructive: true },
@@ -290,7 +374,7 @@ function CurriculumCard({ item, onPress, onEdit, onDelete, onUnadopt }) {
       <TouchableOpacity style={styles.card} onPress={() => onPress(item)}>
         <View style={styles.cardHeaderRow}>
           <Text style={styles.cardTitle} numberOfLines={2}>{item.title}</Text>
-          {isLibrary ? <Text style={styles.seedPill}>LIBRARY</Text> : null}
+          {isSeed ? <Text style={styles.seedPill}>SAMPLE</Text> : null}
         </View>
         <Text style={styles.cardSub}>
           {`Grade ${item.grade}${item.subject ? ` \u00b7 ${SUBJECT_LABEL[item.subject] || item.subject}` : ''}`}
@@ -318,9 +402,12 @@ function CurriculumCard({ item, onPress, onEdit, onDelete, onUnadopt }) {
 
 function CompactCurriculumRow({ item, onPress, onEdit, onDelete, onUnadopt }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isLibrary = item.is_seed !== false;
-  const options = isLibrary
-    ? [{ label: 'Remove from my list', onPress: () => onUnadopt(item) }]
+  const isSeed = item.is_seed !== false;
+  const options = isSeed
+    ? [
+        { label: 'Remove from my list', onPress: () => onUnadopt(item) },
+        { label: 'Delete sample', onPress: () => onDelete(item), destructive: true },
+      ]
     : [
         { label: 'Edit', onPress: () => onEdit(item) },
         { label: 'Delete', onPress: () => onDelete(item), destructive: true },
@@ -405,7 +492,7 @@ export default function EvalScreen({ navigation, route }) {
     if (!sf) return;
     setEvalState((s) => ({
       ...s,
-      assignments: { ...s.assignments, subjects: [sf] },
+      assignments: { ...s.assignments, subject: sf },
     }));
     navigation.setParams({ subjectFilter: undefined });
   }, [route?.params?.subjectFilter, navigation]);
@@ -481,15 +568,18 @@ export default function EvalScreen({ navigation, route }) {
       toast.show('Could not delete assignment', { tone: 'danger' });
       return;
     }
-    toast.show(`Deleted "${assignment.name}"`, {
-      durationMs: 5000,
-      action: {
-        label: 'Undo',
-        onPress: async () => {
-          await dataClient.assignments.restore(removed.row, removed.index);
-          fetchData();
-        },
-      },
+    const label = removed.hidden_seed ? 'Removed sample' : 'Deleted';
+    toast.show(`${label} "${assignment.name}"`, {
+      durationMs: removed.hidden_seed ? 3000 : 5000,
+      action: removed.hidden_seed
+        ? undefined
+        : {
+            label: 'Undo',
+            onPress: async () => {
+              await dataClient.assignments.restore(removed.row, removed.index);
+              fetchData();
+            },
+          },
     });
   };
 
@@ -499,11 +589,11 @@ export default function EvalScreen({ navigation, route }) {
 
   const handleDeleteCurriculum = async (curriculum) => {
     const ok = await confirm({
-      title: `Delete "${curriculum.title}"?`,
-      body:
-        'Assignments using this curriculum will lose their link. ' +
-        'You can undo this action for a few seconds.',
-      confirmLabel: 'Delete',
+      title: curriculum.is_seed ? `Remove sample "${curriculum.title}"?` : `Delete "${curriculum.title}"?`,
+      body: curriculum.is_seed
+        ? 'This hides the bundled sample from your workspace.'
+        : 'Assignments using this curriculum will lose their link. You can undo this action for a few seconds.',
+      confirmLabel: curriculum.is_seed ? 'Remove' : 'Delete',
       destructive: true,
     });
     if (!ok) return;
@@ -515,17 +605,20 @@ export default function EvalScreen({ navigation, route }) {
       toast.show('Could not delete curriculum', { tone: 'danger' });
       return;
     }
-    toast.show(`Deleted "${curriculum.title}"`, {
-      durationMs: 5000,
-      action: {
-        label: 'Undo',
-        onPress: async () => {
-          await dataClient.curricula.restore(
-            removed.row, removed.index, removed.was_adopted,
-          );
-          fetchData();
-        },
-      },
+    const label = removed.hidden_seed ? 'Removed sample' : 'Deleted';
+    toast.show(`${label} "${curriculum.title}"`, {
+      durationMs: removed.hidden_seed ? 3000 : 5000,
+      action: removed.hidden_seed
+        ? undefined
+        : {
+            label: 'Undo',
+            onPress: async () => {
+              await dataClient.curricula.restore(
+                removed.row, removed.index, removed.was_adopted,
+              );
+              fetchData();
+            },
+          },
     });
   };
 
@@ -551,16 +644,14 @@ export default function EvalScreen({ navigation, route }) {
 
   // ---------- Render ----------
 
+  const gradeOptions = useMemo(
+    () => uniqueGrades(assignments),
+    [assignments],
+  );
+
   const isCompact = evalState.density === 'compact';
   const aState = evalState.assignments;
   const cState = evalState.curricula;
-
-  const toggleSubject = (s) => {
-    const set = new Set(aState.subjects);
-    if (set.has(s)) set.delete(s);
-    else set.add(s);
-    patchAssignments({ subjects: [...set] });
-  };
 
   return (
     <View style={styles.container}>
@@ -592,41 +683,22 @@ export default function EvalScreen({ navigation, route }) {
         {/* ------ Assignments column ------ */}
         <View style={styles.column}>
           <ColumnHeader
-            title="Assignments"
+            title="EduSperiences"
             count={visibleAssignments.length}
             onAdd={() => navigation.navigate('AddAssignment')}
-            addLabel="+ New"
+            addLabel="+ Upload"
           />
 
-          <View style={styles.toolbar}>
-            <SearchField
-              value={aState.search}
-              onChange={(v) => patchAssignments({ search: v })}
-              placeholder="Search assignments..."
-            />
-            <View style={styles.toolbarRow}>
-              <SortButton
-                value={aState.sort}
-                options={['recent', 'name', 'aligned']}
-                onChange={(v) => patchAssignments({ sort: v })}
-              />
-              <ToggleSwitch
-                label="Hide samples"
-                value={aState.hideSamples}
-                onChange={(v) => patchAssignments({ hideSamples: v })}
-              />
-            </View>
-            <View style={styles.pillRow}>
-              {ALL_SUBJECTS.map((s) => (
-                <Pill
-                  key={s}
-                  label={SUBJECT_LABEL[s] || s}
-                  active={aState.subjects.includes(s)}
-                  onPress={() => toggleSubject(s)}
-                />
-              ))}
-            </View>
-          </View>
+          <AssignmentFilterBar
+            state={aState}
+            gradeOptions={gradeOptions}
+            onSearch={(v) => patchAssignments({ search: v })}
+            onSort={(v) => patchAssignments({ sort: v })}
+            onSubject={(v) => patchAssignments({ subject: v })}
+            onAlignment={(v) => patchAssignments({ alignment: v })}
+            onGrade={(v) => patchAssignments({ grade: v })}
+            onHideSamples={(v) => patchAssignments({ hideSamples: v })}
+          />
 
           <ScrollView contentContainerStyle={isCompact ? styles.compactList : styles.list}>
             {loading ? (
@@ -639,7 +711,7 @@ export default function EvalScreen({ navigation, route }) {
                     : 'No assignments match these filters.'
                 }
                 ctaLabel={
-                  assignments.length === 0 ? '+ Create your first assignment' : null
+                  assignments.length === 0 ? '+ Upload your first EduSperience' : null
                 }
                 onCta={() => navigation.navigate('AddAssignment')}
               />
@@ -842,6 +914,58 @@ const styles = StyleSheet.create({
   toolbar: {
     gap: 8,
     marginBottom: 12,
+  },
+  filterCard: {
+    backgroundColor: colors.white,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: colors.border,
+    padding: 10,
+    gap: 10,
+    marginBottom: 12,
+  },
+  filterDropdownRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    gap: 8,
+  },
+  filterDropdown: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    minWidth: 120,
+    paddingVertical: 7,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.background,
+  },
+  filterDropdownLabel: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: colors.textSecondary,
+    textTransform: 'uppercase',
+    letterSpacing: 0.3,
+  },
+  filterDropdownValue: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: colors.textPrimary,
+    maxWidth: 72,
+  },
+  filterDropdownCaret: {
+    fontSize: 11,
+    color: colors.textSecondary,
+    marginLeft: 'auto',
+  },
+  searchWrapLarge: {
+    width: '100%',
+  },
+  searchInputLarge: {
+    paddingVertical: 12,
+    fontSize: 15,
   },
   toolbarRow: {
     flexDirection: 'row',
@@ -1081,12 +1205,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
     borderColor: colors.border,
   },
-  statusTagged: {
+  statusAligned: {
     color: '#0e7a3e',
     backgroundColor: '#dcfce7',
     borderColor: '#86efac',
   },
-  statusPending: {
+  statusRaw: {
     color: '#a86e00',
     backgroundColor: '#fef3c7',
     borderColor: '#fcd34d',

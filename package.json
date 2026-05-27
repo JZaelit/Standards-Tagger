@@ -1,0 +1,10 @@
+{
+  "name": "standards-tagger",
+  "private": true,
+  "scripts": {
+    "web": "npm run web --prefix frontend",
+    "start": "npm start --prefix frontend",
+    "install:frontend": "npm install --prefix frontend",
+    "gemini-proxy": "python3 tools/gemini_proxy.py"
+  }
+}

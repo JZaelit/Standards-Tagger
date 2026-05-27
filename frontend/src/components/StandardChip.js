@@ -1,78 +1,38 @@
-// One alignment chip: code badge (strand-colored), confidence badge, optional
-// strand/category badge, optional grade + subgroup, "Why this maps" rationale,
-// optional standard text. Mirrors the HTML dashboard's renderChip().
-//
-// Two click affordances:
-//   - Tap the chip body to jump to where this objective lives in the source
-//     (parent passes onJumpToSource).
-//   - Tap the code badge specifically to open this code in its curriculum
-//     (parent passes onOpenInCurriculum). The badge is the "what is this
-//     code?" affordance; the chip body is the "where in this lesson?" one.
-//
-// Props:
-//   alignment            { code, confidence, rationale, badge?, strand?,
-//                          grade?, subgroup?, text?, modeling?, plus_standard? }
-//   showText             show standard text block (default true)
-//   onJumpToSource       optional: tap the chip body to jump to source
-//   onOpenInCurriculum   optional: tap the code badge to open in curriculum
+// One alignment chip: code badge, confidence badge, rationale, expandable
+// "View in Source" panel showing the specific lesson excerpt for this standard.
 
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { strandColor, confidenceColors } from '../lib/strandColor';
+import StandardCodeLink from './StandardCodeLink';
+import ExpandableText from './ExpandableText';
 import { colors, shadows } from '../theme';
 
 export default function StandardChip({
   alignment,
   showText = true,
+  objectiveContext,
+  sourceExcerpt = '',
   onJumpToSource,
   onOpenInCurriculum,
 }) {
+  const [expanded, setExpanded] = useState(false);
   const a = alignment || {};
+  const ctx = objectiveContext || {};
   const codeColor = strandColor(a.code, a.badge || a.strand);
   const conf = confidenceColors(a.confidence);
   const badgeText = a.badge || a.strand;
-
-  const ChipWrapper = onJumpToSource ? TouchableOpacity : View;
-  const wrapperProps = onJumpToSource
-    ? {
-        onPress: onJumpToSource,
-        activeOpacity: 0.85,
-        accessibilityRole: 'button',
-        accessibilityLabel: `Jump to ${a.code} in the source`,
-      }
-    : {};
-
-  // The code badge is its own touchable so the cross-link to the curriculum
-  // doesn't fire the chip-body's source-jump handler.
-  const CodeWrapper = onOpenInCurriculum ? TouchableOpacity : View;
-  const codeProps = onOpenInCurriculum
-    ? {
-        onPress: onOpenInCurriculum,
-        accessibilityRole: 'link',
-        accessibilityLabel: `Open ${a.code} in its curriculum`,
-        // Stop the press from bubbling to the parent TouchableOpacity on web.
-        // RN's onPress doesn't bubble on native, so this is safe noop there.
-        ...(Platform.OS === 'web'
-          ? { onPressIn: (e) => e?.stopPropagation && e.stopPropagation() }
-          : {}),
-        style: [styles.code, styles.codeLinked, { color: codeColor }],
-      }
-    : { style: [styles.code, { color: codeColor }] };
+  const canExpand = !!(onJumpToSource && (sourceExcerpt || ctx.title || ctx.path));
 
   return (
-    <ChipWrapper style={[styles.chip, onJumpToSource && styles.chipClickable]} {...wrapperProps}>
+    <View style={styles.chip}>
       <View style={styles.topRow}>
-        <CodeWrapper {...codeProps}>
-          <Text
-            style={[
-              styles.codeText,
-              { color: codeColor },
-              onOpenInCurriculum && styles.codeTextLinked,
-            ]}
-          >
-            {a.code}
-          </Text>
-        </CodeWrapper>
+        <StandardCodeLink
+          code={a.code}
+          standardText={a.text}
+          color={codeColor}
+          onPress={onOpenInCurriculum || undefined}
+        />
 
         {a.confidence ? (
           <View style={[styles.pill, { backgroundColor: conf.bg }]}>
@@ -117,13 +77,64 @@ export default function StandardChip({
 
       <View style={styles.rationale}>
         <Text style={styles.rationaleLabel}>Why this maps</Text>
-        <Text style={styles.rationaleBody}>{a.rationale || ''}</Text>
+        <ExpandableText
+          text={a.rationale || ''}
+          bodyStyle={styles.rationaleBody}
+          maxChars={120}
+          moreLabel="Show full rationale"
+          lessLabel="Show less"
+        />
       </View>
 
-      {onJumpToSource ? (
-        <Text style={styles.jumpHint}>{'Tap chip to view in source \u2192'}</Text>
+      {canExpand ? (
+        <>
+          <TouchableOpacity
+            style={styles.expandBtn}
+            onPress={() => setExpanded((v) => !v)}
+            accessibilityRole="button"
+            accessibilityState={{ expanded }}
+          >
+            <Text style={styles.expandBtnText}>
+              {expanded ? 'Hide Source Match' : 'View in Source'}
+            </Text>
+            <Text style={styles.expandChevron}>
+              {expanded ? '\u25B2' : '\u25BC'}
+            </Text>
+          </TouchableOpacity>
+
+          {expanded ? (
+            <View style={styles.expandPanel}>
+              <Text style={styles.expandSectionLabel}>
+                Where in the lesson
+              </Text>
+              {ctx.sectionTitle ? (
+                <Text style={styles.expandMeta}>
+                  {`Section: ${ctx.sectionTitle}`}
+                </Text>
+              ) : null}
+              {sourceExcerpt ? (
+                <Text style={styles.expandExcerpt}>{sourceExcerpt}</Text>
+              ) : null}
+              {ctx.path ? (
+                <Text style={styles.expandPath}>{ctx.path}</Text>
+              ) : null}
+
+              <TouchableOpacity
+                style={styles.jumpBtn}
+                onPress={() => {
+                  onJumpToSource();
+                  setExpanded(false);
+                }}
+              >
+                <Text style={styles.jumpBtnText}>
+                  Highlight in Source Panel
+                </Text>
+              </TouchableOpacity>
+            </View>
+          ) : null}
+        </>
       ) : null}
-    </ChipWrapper>
+    </View>
   );
 }
 
@@ -135,11 +146,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     ...shadows.card,
-  },
-  chipClickable: {
-    // Subtle hover/press feedback on web; on native the activeOpacity
-    // setting on TouchableOpacity carries the affordance.
-    ...(Platform.OS === 'web' ? { cursor: 'pointer' } : null),
+    ...(Platform.OS === 'web' ? { overflow: 'visible' } : null),
   },
   topRow: {
     flexDirection: 'row',
@@ -147,33 +154,75 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 8,
     marginBottom: 6,
+    ...(Platform.OS === 'web' ? { overflow: 'visible' } : null),
   },
-  // Container around the code text. Padding/background on the container
-  // so the touch target is the whole pill, not just the glyph.
-  code: {
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 4,
-    backgroundColor: '#eef1f6',
+  expandBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.white,
   },
-  codeLinked: {
-    ...(Platform.OS === 'web' ? { cursor: 'pointer' } : null),
-  },
-  codeText: {
-    fontFamily: 'Menlo',
-    fontSize: 13,
+  expandBtnText: {
+    fontSize: 12,
     fontWeight: '700',
+    color: colors.textPrimary,
   },
-  codeTextLinked: {
-    textDecorationLine: 'underline',
-  },
-  jumpHint: {
+  expandChevron: {
     fontSize: 10,
-    color: colors.primary,
-    fontWeight: '600',
+    fontWeight: '700',
+    color: colors.textSecondary,
+  },
+  expandPanel: {
     marginTop: 8,
+    padding: 12,
+    borderRadius: 6,
+    borderLeftWidth: 4,
+    borderLeftColor: colors.border,
+    backgroundColor: colors.background,
+    gap: 4,
+  },
+  expandSectionLabel: {
+    fontSize: 10,
+    fontWeight: '700',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
+    color: colors.textSecondary,
+  },
+  expandMeta: {
+    fontSize: 12,
+    color: colors.textSecondary,
+    fontWeight: '600',
+  },
+  expandExcerpt: {
+    fontSize: 13,
+    color: colors.textPrimary,
+    lineHeight: 19,
+    fontWeight: '600',
+  },
+  expandPath: {
+    fontSize: 10,
+    color: colors.textLight,
+    fontFamily: 'Menlo',
+    marginTop: 4,
+  },
+  jumpBtn: {
+    marginTop: 10,
+    alignSelf: 'flex-start',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 6,
+    backgroundColor: colors.primary,
+  },
+  jumpBtnText: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: '700',
   },
   pill: {
     paddingHorizontal: 8,
