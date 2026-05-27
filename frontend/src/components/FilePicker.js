@@ -21,6 +21,7 @@ import * as DocumentPicker from 'expo-document-picker';
 import { colors } from '../theme';
 
 export const ACCEPTED_DOC_TYPES = [
+  'application/json',
   'application/pdf',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
   'application/msword',
@@ -31,11 +32,28 @@ export const ACCEPTED_DOC_TYPES = [
   'text/plain',
 ];
 
-const DEFAULT_HINT = 'PDF, DOCX, PPTX, XLSX, or TXT';
+/** Primary EduSperience upload types (JSON + documents). */
+export const ACCEPTED_EDUSPERIENCE_TYPES = [
+  'application/json',
+  'application/pdf',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/msword',
+];
+
+/** Primary standards upload types. */
+export const ACCEPTED_STANDARDS_TYPES = [
+  'application/json',
+  'application/pdf',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/msword',
+];
+
+const DEFAULT_HINT = 'JSON, PDF, or DOCX';
 
 export function getFileIcon(name = '') {
   const ext = name.split('.').pop().toLowerCase();
   if (ext === 'pdf') return '📄';
+  if (ext === 'json') return '📋';
   if (ext === 'docx' || ext === 'doc') return '📝';
   if (ext === 'pptx' || ext === 'ppt') return '📊';
   if (ext === 'xlsx' || ext === 'xls') return '📈';
@@ -56,6 +74,7 @@ export default function FilePicker({
   onClear,
   accept = ACCEPTED_DOC_TYPES,
   hintLabel = DEFAULT_HINT,
+  placeholderNote = 'File is stored locally on this device.',
 }) {
   const handlePick = async () => {
     const result = await DocumentPicker.getDocumentAsync({
@@ -100,9 +119,7 @@ export default function FilePicker({
           <Text style={styles.uploadIcon}>{'\u2191'}</Text>
           <Text style={styles.prompt}>Click to upload file</Text>
           <Text style={styles.types}>{hintLabel}</Text>
-          <Text style={styles.placeholderNote}>
-            File is stored as a placeholder; AI tagging runs once available.
-          </Text>
+          <Text style={styles.placeholderNote}>{placeholderNote}</Text>
         </View>
       )}
     </TouchableOpacity>

@@ -1,16 +1,7 @@
-// Create / edit form for an assignment.
+// Create / edit form for an assignment (EduSperience).
 //
-//   navigation.navigate('AddAssignment')                  -> create mode
-//   navigation.navigate('AddAssignment', { assignment })  -> edit mode
-//
-// Edit mode pre-fills fields from `route.params.assignment` and calls
-// dataClient.assignments.update on save. Seed assignments cannot be
-// edited; the screen guards against this and bounces back with a toast.
-//
-// Adds a subject picker (ELA / Math / History / Other...) and an optional
-// file attachment. The file is a placeholder for the AI tagger that lives
-// in the next chunk - we capture name/size today so the row can show
-// "current: foo.pdf" and the future pipeline knows what to fetch.
+// Upload is decoupled from alignment: attach JSON (primary), PDF, or DOCX;
+// JSON parses locally; documents use Gemini when a key is set.
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -23,10 +14,11 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { dataClient } from '../lib/dataClient';
+import { ingestEdusperienceUpload, isJsonUpload } from '../lib/parseUpload';
 import { useToast } from '../components/Toast';
 import TopNav from '../components/TopNav';
 import SubjectPicker from '../components/SubjectPicker';
-import FilePicker from '../components/FilePicker';
+import FilePicker, { ACCEPTED_EDUSPERIENCE_TYPES } from '../components/FilePicker';
 import { colors, typography } from '../theme';
 
 export default function AddAssignmentScreen({ navigation, route }) {
@@ -41,48 +33,19 @@ export default function AddAssignmentScreen({ navigation, route }) {
   const [existingFileName, setExistingFileName] = useState(
     editing?.file_name || null,
   );
-  const [curricula, setCurricula] = useState([]);
-  const [selectedCurriculum, setSelectedCurriculum] = useState(
-    editing?.curriculum_id || null,
-  );
-  // Track whether the user has explicitly set the subject so picking a
-  // curriculum doesn't keep clobbering their choice.
-  const [subjectTouched, setSubjectTouched] = useState(!!editing?.subject);
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('');
   const [error, setError] = useState('');
-  const [fetchingCurricula, setFetchingCurricula] = useState(true);
 
   const toast = useToast();
 
   useEffect(() => {
     if (editing && editing.is_seed) {
-      toast.show('Seed assignments are read-only', { tone: 'danger' });
+      toast.show('Sample assignments are read-only', { tone: 'danger' });
       navigation.goBack();
-      return;
     }
-    const fetchCurricula = async () => {
-      const data = await dataClient.curricula.listForUser();
-      setCurricula(data || []);
-      setFetchingCurricula(false);
-    };
-    fetchCurricula();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // Auto-fill subject from the picked curriculum unless the user has
-  // already touched the subject picker themselves. This is the smart-fill
-  // for the common case ("link to CA-MATH" -> subject becomes 'math').
-  useEffect(() => {
-    if (subjectTouched) return;
-    if (!selectedCurriculum) return;
-    const c = curricula.find((x) => x.id === selectedCurriculum);
-    if (c?.subject) setSubject(c.subject);
-  }, [selectedCurriculum, curricula, subjectTouched]);
-
-  const handleSubjectChange = (s) => {
-    setSubject(s);
-    setSubjectTouched(true);
-  };
 
   const handleFilePicked = (asset) => {
     setFile(asset);
@@ -96,43 +59,82 @@ export default function AddAssignmentScreen({ navigation, route }) {
 
   const handleSubmit = async () => {
     if (!name.trim() || !grade.trim()) return;
+    if (!isEdit && !file) {
+      setError('Attach a JSON, PDF, or DOCX EduSperience file.');
+      return;
+    }
+
     setError('');
     setLoading(true);
-    const payloadFileName = file?.name || existingFileName || null;
+    setStatus('Saving…');
+
     try {
+      let assignmentId = editing?.id;
+      const payloadFileName = file?.name ?? existingFileName ?? null;
+
       if (isEdit) {
         const updated = await dataClient.assignments.update(editing.id, {
           name: name.trim(),
           grade: grade.trim(),
           description: description.trim(),
-          curriculum_id: selectedCurriculum,
           subject: subject || null,
           file_name: payloadFileName,
         });
         if (!updated) throw new Error('Could not update assignment.');
-        setLoading(false);
-        toast.show('Saved changes', { tone: 'success' });
-        navigation.goBack();
+        assignmentId = updated.id;
       } else {
-        await dataClient.assignments.create({
+        const created = await dataClient.assignments.create({
           name: name.trim(),
           grade: grade.trim(),
           description: description.trim(),
-          curriculum_id: selectedCurriculum,
           subject: subject || null,
           file_name: payloadFileName,
         });
-        setLoading(false);
-        toast.show('Assignment created', { tone: 'success' });
-        navigation.goBack();
+        assignmentId = created.id;
       }
+
+      if (file) {
+        setStatus(
+          isJsonUpload(file.name, file.mimeType)
+            ? 'Parsing JSON…'
+            : 'Parsing document with Gemini…',
+        );
+        const { raw, normalized } = await ingestEdusperienceUpload({
+          file,
+          entityId: assignmentId,
+        });
+        await dataClient.assignments.saveParsed(assignmentId, {
+          ...normalized,
+          sections: raw.sections || [],
+        });
+
+        await dataClient.assignments.update(assignmentId, {
+          name: (raw.title || name).trim(),
+          grade: (raw.grade || grade).trim(),
+          subject: raw.subject || subject || null,
+          description: (raw.description || description).trim(),
+          file_name: payloadFileName,
+        });
+
+        const objCount = normalized.objectives?.length ?? 0;
+        setLoading(false);
+        setStatus('');
+        toast.show(`Saved — ${objCount} objectives extracted`, { tone: 'success' });
+      } else {
+        setLoading(false);
+        setStatus('');
+        toast.show('Saved changes', { tone: 'success' });
+      }
+
+      navigation.goBack();
     } catch (e) {
       setLoading(false);
+      setStatus('');
       setError(e.message || 'Could not save assignment.');
     }
   };
 
-  const submitLabel = isEdit ? 'Save Changes' : 'Save Assignment';
+  const submitLabel = isEdit ? 'Save Changes' : 'Upload EduSperience';
 
   return (
     <View style={styles.container}>
@@ -143,15 +145,29 @@ export default function AddAssignmentScreen({ navigation, route }) {
             <Text style={styles.back}>← Back</Text>
           </TouchableOpacity>
           <Text style={styles.title}>
-            {isEdit ? 'Edit Assignment' : 'New Assignment'}
+            {isEdit ? 'Edit Assignment' : 'Upload EduSperience'}
+          </Text>
+          <Text style={styles.hint}>
+            Upload only — pick standards and run the tagger later on the Align tab.
           </Text>
         </View>
 
         <View style={styles.card}>
-          <Text style={styles.label}>Assignment Name *</Text>
+          <Text style={styles.label}>EduSperience document *</Text>
+          <FilePicker
+            file={file}
+            existingFileName={existingFileName}
+            onPick={handleFilePicked}
+            onClear={handleFileClear}
+            accept={ACCEPTED_EDUSPERIENCE_TYPES}
+            hintLabel="JSON, PDF, or DOCX"
+            placeholderNote="JSON parses instantly on this device. PDF/DOCX use Gemini when you add an API key."
+          />
+
+          <Text style={styles.label}>Display name *</Text>
           <TextInput
             style={styles.input}
-            placeholder="e.g. Fraction Word Problems"
+            placeholder="Filled from document when possible"
             placeholderTextColor={colors.textLight}
             value={name}
             onChangeText={setName}
@@ -160,71 +176,41 @@ export default function AddAssignmentScreen({ navigation, route }) {
           <Text style={styles.label}>Grade *</Text>
           <TextInput
             style={styles.input}
-            placeholder="e.g. 5th"
+            placeholder="e.g. 9-10"
             placeholderTextColor={colors.textLight}
             value={grade}
             onChangeText={setGrade}
           />
 
           <Text style={styles.label}>Subject</Text>
-          <SubjectPicker value={subject} onChange={handleSubjectChange} />
+          <SubjectPicker value={subject} onChange={setSubject} />
 
           <Text style={styles.label}>Description</Text>
           <TextInput
             style={[styles.input, styles.textarea]}
-            placeholder="Describe the assignment..."
+            placeholder="Optional summary"
             placeholderTextColor={colors.textLight}
             value={description}
             onChangeText={setDescription}
             multiline
-            numberOfLines={4}
+            numberOfLines={3}
             textAlignVertical="top"
           />
 
-          <Text style={styles.label}>Attachment (optional)</Text>
-          <FilePicker
-            file={file}
-            existingFileName={existingFileName}
-            onPick={handleFilePicked}
-            onClear={handleFileClear}
-            hintLabel="PDF, DOCX, PPTX, XLSX, or TXT"
-          />
-
-          <Text style={styles.label}>Link to Curriculum</Text>
-          {fetchingCurricula ? (
-            <ActivityIndicator color={colors.primary} />
-          ) : curricula.length === 0 ? (
-            <Text style={styles.hint}>No curricula yet — add one first.</Text>
-          ) : (
-            <View style={styles.curriculumList}>
-              {curricula.map((c) => (
-                <TouchableOpacity
-                  key={c.id}
-                  style={[
-                    styles.curriculumOption,
-                    selectedCurriculum === c.id && styles.curriculumOptionSelected,
-                  ]}
-                  onPress={() =>
-                    setSelectedCurriculum(selectedCurriculum === c.id ? null : c.id)
-                  }
-                >
-                  <Text
-                    style={[
-                      styles.curriculumOptionText,
-                      selectedCurriculum === c.id && styles.curriculumOptionTextSelected,
-                    ]}
-                  >
-                    {c.title} — Grade {c.grade}
-                  </Text>
-                </TouchableOpacity>
-              ))}
+          {status ? (
+            <View style={styles.statusRow}>
+              <ActivityIndicator color={colors.primary} size="small" />
+              <Text style={styles.statusText}>{status}</Text>
             </View>
-          )}
+          ) : null}
 
           {error ? <Text style={styles.error}>{error}</Text> : null}
 
           <TouchableOpacity
-            style={[styles.button, (!name.trim() || !grade.trim()) && styles.buttonDisabled]}
+            style={[
+              styles.button,
+              (!name.trim() || !grade.trim() || loading) && styles.buttonDisabled,
+            ]}
             onPress={handleSubmit}
             disabled={loading || !name.trim() || !grade.trim()}
           >
@@ -241,28 +227,17 @@ export default function AddAssignmentScreen({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.background,
-  },
+  container: { flex: 1, backgroundColor: colors.background },
   content: {
     padding: 24,
     maxWidth: 640,
     width: '100%',
     alignSelf: 'center',
   },
-  header: {
-    marginBottom: 20,
-  },
-  back: {
-    color: colors.primary,
-    fontWeight: '600',
-    fontSize: 15,
-    marginBottom: 10,
-  },
-  title: {
-    ...typography.heading,
-  },
+  header: { marginBottom: 20 },
+  back: { color: colors.primary, fontWeight: '600', fontSize: 15, marginBottom: 10 },
+  title: { ...typography.heading },
+  hint: { fontSize: 13, color: colors.textSecondary, marginTop: 6, lineHeight: 19 },
   card: {
     backgroundColor: colors.white,
     borderRadius: 16,
@@ -270,11 +245,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
   },
-  label: {
-    ...typography.label,
-    marginBottom: 6,
-    marginTop: 16,
-  },
+  label: { ...typography.label, marginBottom: 6, marginTop: 16 },
   input: {
     borderWidth: 1,
     borderColor: colors.border,
@@ -285,39 +256,9 @@ const styles = StyleSheet.create({
     color: colors.textPrimary,
     backgroundColor: colors.background,
   },
-  textarea: {
-    minHeight: 100,
-    paddingTop: 10,
-  },
-  hint: {
-    color: colors.textLight,
-    fontSize: 13,
-    marginTop: 6,
-  },
-  curriculumList: {
-    gap: 8,
-    marginTop: 4,
-  },
-  curriculumOption: {
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 8,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-    backgroundColor: colors.background,
-  },
-  curriculumOptionSelected: {
-    borderColor: colors.primary,
-    backgroundColor: colors.primaryLight,
-  },
-  curriculumOptionText: {
-    fontSize: 14,
-    color: colors.textPrimary,
-  },
-  curriculumOptionTextSelected: {
-    color: colors.primaryDark,
-    fontWeight: '600',
-  },
+  textarea: { minHeight: 80, paddingTop: 10 },
+  statusRow: { flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 16 },
+  statusText: { fontSize: 13, color: colors.textSecondary },
   button: {
     backgroundColor: colors.primary,
     borderRadius: 8,
@@ -325,18 +266,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 28,
   },
-  buttonDisabled: {
-    opacity: 0.5,
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: '700',
-    fontSize: 15,
-  },
-  error: {
-    color: colors.danger,
-    fontSize: 13,
-    marginTop: 12,
-    textAlign: 'center',
-  },
+  buttonDisabled: { opacity: 0.5 },
+  buttonText: { color: '#fff', fontWeight: '700', fontSize: 15 },
+  error: { color: colors.danger, fontSize: 13, marginTop: 12, textAlign: 'center' },
 });

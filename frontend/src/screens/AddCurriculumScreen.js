@@ -22,10 +22,11 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { dataClient } from '../lib/dataClient';
+import { ingestStandardsUpload, isJsonUpload } from '../lib/parseUpload';
 import { useToast } from '../components/Toast';
 import TopNav from '../components/TopNav';
 import SubjectPicker from '../components/SubjectPicker';
-import FilePicker from '../components/FilePicker';
+import FilePicker, { ACCEPTED_STANDARDS_TYPES } from '../components/FilePicker';
 import { colors, typography } from '../theme';
 
 export default function AddCurriculumScreen({ navigation, route }) {
@@ -51,6 +52,7 @@ export default function AddCurriculumScreen({ navigation, route }) {
     editing ? editing.is_public !== false : true,
   );
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('');
 
   const toast = useToast();
 
@@ -90,37 +92,62 @@ export default function AddCurriculumScreen({ navigation, route }) {
 
   const handleSubmit = async () => {
     if (!title.trim() || !grade.trim()) return;
+    if (!isEdit && !file) {
+      toast.show('Attach a JSON, PDF, or DOCX standards file.', { tone: 'danger' });
+      return;
+    }
     setLoading(true);
+    setStatus('Saving…');
     const fileName = file?.name ?? existingFileName ?? null;
     try {
+      let curriculumId = editing?.id;
       if (isEdit) {
         const updated = await dataClient.curricula.update(editing.id, {
           title: title.trim(),
           grade: grade.trim(),
           subject: subject || null,
-          // Only overwrite file_name when the user picked or cleared the
-          // file (otherwise the existing filename stays put).
           file_name: fileName,
           is_public: isPublic,
         });
         if (!updated) throw new Error('Could not update curriculum.');
-        setLoading(false);
-        toast.show('Saved changes', { tone: 'success' });
-        navigation.goBack();
+        curriculumId = updated.id;
       } else {
-        await dataClient.curricula.create({
+        const created = await dataClient.curricula.create({
           title: title.trim(),
           grade: grade.trim(),
           subject: subject || null,
           file_name: fileName,
           is_public: isPublic,
         });
-        setLoading(false);
-        toast.show('Curriculum added', { tone: 'success' });
-        navigation.goBack();
+        curriculumId = created.id;
       }
+
+      if (file) {
+        setStatus(
+          isJsonUpload(file.name, file.mimeType)
+            ? 'Parsing JSON…'
+            : 'Parsing document with Gemini…',
+        );
+        const { parsed } = await ingestStandardsUpload({ file, entityId: curriculumId });
+        const records = parsed.records || [];
+        await dataClient.standards.saveForCurriculum(curriculumId, records);
+        await dataClient.curricula.update(curriculumId, {
+          title: (parsed.title || title).trim(),
+          grade: (parsed.grade || grade).trim(),
+          subject: parsed.subject || subject || null,
+          standards_count: records.length,
+        });
+        toast.show(`Saved — ${records.length} standards extracted`, { tone: 'success' });
+      } else {
+        toast.show('Saved changes', { tone: 'success' });
+      }
+
+      setLoading(false);
+      setStatus('');
+      navigation.goBack();
     } catch (e) {
       setLoading(false);
+      setStatus('');
       toast.show(e.message || 'Could not save curriculum.', { tone: 'danger' });
     }
   };
@@ -203,7 +230,11 @@ export default function AddCurriculumScreen({ navigation, route }) {
             ) : null}
 
             <Text style={styles.sectionTitle}>
-              {isEdit ? 'Curriculum Details' : 'Upload New Curriculum'}
+              {isEdit ? 'Standards Details' : 'Upload Standards'}
+            </Text>
+            <Text style={styles.hint}>
+              Upload JSON (instant parse), PDF, or DOCX. Gemini is only needed for
+              documents, not .json files.
             </Text>
 
             <Text style={styles.label}>Curriculum Title *</Text>
@@ -227,13 +258,15 @@ export default function AddCurriculumScreen({ navigation, route }) {
             <Text style={styles.label}>Subject</Text>
             <SubjectPicker value={subject} onChange={setSubject} />
 
-            <Text style={styles.label}>Curriculum File</Text>
+            <Text style={styles.label}>Standards File *</Text>
             <FilePicker
               file={file}
               existingFileName={existingFileName}
               onPick={handleFilePicked}
               onClear={handleFileClear}
-              hintLabel="PDF, DOCX, PPTX, XLSX, or TXT"
+              accept={ACCEPTED_STANDARDS_TYPES}
+              hintLabel="JSON, PDF, or DOCX"
+              placeholderNote="Use CA-ELA.json shape, or PDF/DOCX with a Gemini key."
             />
 
             <TouchableOpacity
@@ -254,6 +287,13 @@ export default function AddCurriculumScreen({ navigation, route }) {
                 </Text>
               </View>
             </TouchableOpacity>
+
+            {status ? (
+              <View style={styles.statusRow}>
+                <ActivityIndicator color={colors.primary} size="small" />
+                <Text style={styles.statusText}>{status}</Text>
+              </View>
+            ) : null}
 
             <TouchableOpacity
               style={[styles.button, (!title.trim() || !grade.trim()) && styles.buttonDisabled]}
@@ -377,4 +417,11 @@ const styles = StyleSheet.create({
   },
   buttonDisabled: { opacity: 0.5 },
   buttonText: { color: '#fff', fontWeight: '700', fontSize: 15 },
+  statusRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    marginTop: 16,
+  },
+  statusText: { fontSize: 13, color: colors.textSecondary },
 });
