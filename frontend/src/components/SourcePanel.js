@@ -5,9 +5,8 @@
 //
 // Two view modes via an internal toggle: Rendered (formatted) and Raw JSON.
 //
-// jumpToObjective(secIdx, objIdx) is exposed via ref so the parent screen
-// can scroll to and flash the matching objective when the user clicks
-// "View original" from an alignment row.
+// jumpToObjective(secIdx, objIdx, opts?) scrolls to and highlights the
+// matching objective. opts.highlightExcerpt marks the exact phrase inline.
 
 import React, {
   forwardRef,
@@ -28,7 +27,36 @@ import {
   Platform,
 } from 'react-native';
 import { colors, shadows, typography } from '../theme';
-import { parseHtmlBlocks } from '../lib/htmlText';
+import { parseHtmlBlocks, stripHtml, findExcerptSpan } from '../lib/htmlText';
+
+function HighlightedDescription({ html, excerpt, active }) {
+  const plain = stripHtml(html || '');
+  if (!active || !excerpt || !plain) {
+    return parseHtmlBlocks(html).map((b, k) => (
+      <Text key={k} style={styles.objDesc}>{b}</Text>
+    ));
+  }
+
+  const span = findExcerptSpan(plain, excerpt);
+  if (!span) {
+    return (
+      <>
+        {parseHtmlBlocks(html).map((b, k) => (
+          <Text key={k} style={styles.objDesc}>{b}</Text>
+        ))}
+        <Text style={styles.highlightExcerpt}>{`\u201c${excerpt}\u201d`}</Text>
+      </>
+    );
+  }
+
+  return (
+    <Text style={styles.objDesc}>
+      {plain.slice(0, span.start)}
+      <Text style={styles.excerptMark}>{span.match}</Text>
+      {plain.slice(span.end)}
+    </Text>
+  );
+}
 
 const SourcePanel = forwardRef(function SourcePanel(
   { source, onScrollRequest, scrollViewRef },
@@ -36,16 +64,15 @@ const SourcePanel = forwardRef(function SourcePanel(
 ) {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState('rendered'); // 'rendered' | 'raw'
-  const objLayoutsRef = useRef({}); // key -> Animated.Value (current bg color)
-  const objYRef = useRef({}); // key -> y-position inside SourcePanel's parent ScrollView
+  const objLayoutsRef = useRef({});
+  const objYRef = useRef({});
+  const objBoxRefs = useRef({});
+  const [activeFlash, setActiveFlash] = useState(null);
   const containerRef = useRef(null);
 
   const keyOf = (sec, obj) => `${sec}-${obj}`;
 
   const handleObjLayout = useCallback((sec, obj, e) => {
-    // We capture the y of each objective relative to the parent ScrollView so
-    // jumpToObjective can scroll to it. e.nativeEvent.layout.y is relative to
-    // this view; we add the panel's own Y to it on demand using measure().
     objYRef.current[keyOf(sec, obj)] = e.nativeEvent.layout.y;
   }, []);
 
@@ -56,47 +83,69 @@ const SourcePanel = forwardRef(function SourcePanel(
     return objLayoutsRef.current[key];
   };
 
-  const flashObjective = (sec, obj) => {
+  const flashObjective = (sec, obj, opts = {}) => {
     const key = keyOf(sec, obj);
+    setActiveFlash({
+      key,
+      standardCode: opts.standardCode || null,
+      highlightExcerpt: opts.highlightExcerpt || null,
+    });
     const anim = ensureFlashAnim(key);
     anim.setValue(0);
     Animated.sequence([
       Animated.timing(anim, { toValue: 1, duration: 250, useNativeDriver: false }),
-      Animated.delay(900),
-      Animated.timing(anim, { toValue: 0, duration: 600, useNativeDriver: false }),
-    ]).start();
+      Animated.delay(3500),
+      Animated.timing(anim, { toValue: 0, duration: 700, useNativeDriver: false }),
+    ]).start(() => {
+      setActiveFlash(null);
+    });
   };
 
-  const jumpTo = (sec, obj) => {
+  const scrollToObjective = (sec, obj, opts, onDone) => {
+    const key = keyOf(sec, obj);
+    const domNode = objBoxRefs.current[key];
+
+    if (Platform.OS === 'web' && domNode?.scrollIntoView) {
+      domNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      onDone();
+      return;
+    }
+
+    const localY = objYRef.current[key];
+    const node = containerRef.current && findNodeHandle(containerRef.current);
+    const scrollNode = scrollViewRef?.current
+      ? findNodeHandle(scrollViewRef.current)
+      : null;
+
+    if (localY != null && node && scrollNode && UIManager.measureLayout) {
+      UIManager.measureLayout(
+        node,
+        scrollNode,
+        () => onDone(),
+        (x, y) => {
+          const targetY = (y || 0) + localY - 80;
+          scrollViewRef.current?.scrollTo?.({
+            y: Math.max(0, targetY),
+            animated: true,
+          });
+          onDone();
+        },
+      );
+      return;
+    }
+
+    if (onScrollRequest) {
+      onScrollRequest({ sec, obj, ...opts });
+    }
+    onDone();
+  };
+
+  const jumpTo = (sec, obj, opts = {}) => {
     setOpen(true);
     setView('rendered');
-    // Scroll on next tick so the panel has expanded and laid out.
     setTimeout(() => {
-      const localY = objYRef.current[keyOf(sec, obj)];
-      const node = containerRef.current && findNodeHandle(containerRef.current);
-      const scrollNode = scrollViewRef && scrollViewRef.current
-        ? findNodeHandle(scrollViewRef.current)
-        : null;
-      if (localY != null && node && scrollNode && UIManager.measureLayout) {
-        UIManager.measureLayout(
-          node,
-          scrollNode,
-          () => {},
-          (x, y) => {
-            const targetY = (y || 0) + localY - 40;
-            if (scrollViewRef.current?.scrollTo) {
-              scrollViewRef.current.scrollTo({ y: Math.max(0, targetY), animated: true });
-            }
-            flashObjective(sec, obj);
-          }
-        );
-      } else if (onScrollRequest) {
-        onScrollRequest({ sec, obj });
-        flashObjective(sec, obj);
-      } else {
-        flashObjective(sec, obj);
-      }
-    }, 80);
+      scrollToObjective(sec, obj, opts, () => flashObjective(sec, obj, opts));
+    }, 120);
   };
 
   useImperativeHandle(ref, () => ({ jumpTo }), [scrollViewRef]);
@@ -111,6 +160,7 @@ const SourcePanel = forwardRef(function SourcePanel(
   }
 
   const blocks = view === 'rendered' ? parseHtmlBlocks(source.description) : [];
+  const rawJson = JSON.stringify(source, null, 2);
 
   return (
     <View ref={containerRef}>
@@ -155,13 +205,20 @@ const SourcePanel = forwardRef(function SourcePanel(
         view === 'raw' ? (
           <View style={styles.rawWrap}>
             <ScrollView
-              horizontal
-              style={styles.rawScroll}
-              contentContainerStyle={{ padding: 12 }}
+              style={styles.rawScrollVertical}
+              contentContainerStyle={styles.rawScrollContent}
+              nestedScrollEnabled
+              showsVerticalScrollIndicator
             >
-              <Text style={styles.rawText} selectable>
-                {JSON.stringify(source, null, 2)}
-              </Text>
+              <ScrollView
+                horizontal
+                nestedScrollEnabled
+                showsHorizontalScrollIndicator
+              >
+                <Text style={styles.rawText} selectable>
+                  {rawJson}
+                </Text>
+              </ScrollView>
             </ScrollView>
           </View>
         ) : (
@@ -184,29 +241,42 @@ const SourcePanel = forwardRef(function SourcePanel(
                 {(sec.objectives || []).map((obj, j) => {
                   const key = keyOf(i, j);
                   const flash = ensureFlashAnim(key);
+                  const meta = activeFlash?.key === key ? activeFlash : null;
                   const bg = flash.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [colors.white, colors.primaryLight],
+                    outputRange: [colors.white, '#fef9c3'],
                   });
                   const border = flash.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [colors.border, colors.primary],
+                    outputRange: [colors.border, '#ca8a04'],
                   });
                   return (
                     <Animated.View
                       key={j}
+                      ref={(el) => {
+                        if (el) objBoxRefs.current[key] = el;
+                      }}
                       onLayout={(e) => handleObjLayout(i, j, e)}
                       style={[
                         styles.objBox,
-                        { backgroundColor: bg, borderColor: border },
+                        { backgroundColor: bg, borderColor: border, borderWidth: 2 },
                       ]}
                     >
+                      {meta?.standardCode ? (
+                        <View style={styles.taggedBadge}>
+                          <Text style={styles.taggedBadgeText}>
+                            {`Match: ${meta.standardCode}`}
+                          </Text>
+                        </View>
+                      ) : null}
                       <Text style={styles.objTitle}>
                         {obj.title || ''}
                       </Text>
-                      {parseHtmlBlocks(obj.description).map((b, k) => (
-                        <Text key={k} style={styles.objDesc}>{b}</Text>
-                      ))}
+                      <HighlightedDescription
+                        html={obj.description}
+                        excerpt={meta?.highlightExcerpt}
+                        active={!!meta}
+                      />
                       <Text style={styles.objMeta}>
                         {[
                           obj.evaluation_type,
@@ -325,8 +395,21 @@ const styles = StyleSheet.create({
   objBox: {
     padding: 10,
     borderRadius: 6,
-    borderWidth: 1,
     marginBottom: 8,
+  },
+  taggedBadge: {
+    alignSelf: 'flex-start',
+    borderRadius: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    marginBottom: 6,
+    backgroundColor: '#ca8a04',
+  },
+  taggedBadgeText: {
+    color: '#fff',
+    fontSize: 11,
+    fontWeight: '700',
+    fontFamily: 'Menlo',
   },
   objTitle: {
     fontSize: 13,
@@ -340,6 +423,21 @@ const styles = StyleSheet.create({
     lineHeight: 17,
     marginTop: 2,
   },
+  excerptMark: {
+    backgroundColor: '#fde047',
+    color: colors.textPrimary,
+    fontWeight: '700',
+    paddingHorizontal: 2,
+    borderRadius: 2,
+  },
+  highlightExcerpt: {
+    fontSize: 12,
+    color: colors.textPrimary,
+    lineHeight: 17,
+    fontWeight: '700',
+    fontStyle: 'italic',
+    marginTop: 6,
+  },
   objMeta: {
     fontSize: 11,
     color: colors.textSecondary,
@@ -350,11 +448,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#1c1f24',
     borderRadius: 6,
     marginTop: 8,
-    maxHeight: 420,
+    height: 420,
     overflow: 'hidden',
+    ...(Platform.OS === 'web' ? { overflow: 'auto' } : null),
   },
-  rawScroll: {
-    maxHeight: 420,
+  rawScrollVertical: {
+    flex: 1,
+  },
+  rawScrollContent: {
+    padding: 12,
+    flexGrow: 1,
   },
   rawText: {
     color: '#e5e7eb',

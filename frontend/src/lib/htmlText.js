@@ -63,6 +63,29 @@ export function previewText(html, maxLen = 220) {
 // Good enough for the source-panel rendered view: paragraphs render as
 // separate lines with normal spacing; tags like <span style="..."> are
 // flattened to their inner text (no inline color rendering).
+// Locate an excerpt inside plain text for inline highlighting. Returns
+// { start, end, match } using the substring from text, or null.
+export function findExcerptSpan(text, excerpt) {
+  if (!text || !excerpt) return null;
+  const t = String(text);
+  const e = String(excerpt).trim();
+  if (!e) return null;
+
+  let idx = t.indexOf(e);
+  if (idx >= 0) {
+    return { start: idx, end: idx + e.length, match: t.slice(idx, idx + e.length) };
+  }
+
+  const lowerT = t.toLowerCase();
+  const lowerE = e.toLowerCase();
+  idx = lowerT.indexOf(lowerE);
+  if (idx >= 0) {
+    return { start: idx, end: idx + lowerE.length, match: t.slice(idx, idx + lowerE.length) };
+  }
+
+  return null;
+}
+
 export function parseHtmlBlocks(html) {
   if (!html) return [];
   const text = String(html)

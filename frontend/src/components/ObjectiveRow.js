@@ -1,17 +1,12 @@
-// One row in the per-assignment alignment view. Left column: objective title,
-// description, path, optional note, and a "View original" link. Right column:
-// the StandardChip stack, or a "no standard applies" fallback.
-//
-// Each StandardChip becomes interactive:
-//   - Tap the chip body  -> jump to source (calls onViewSource)
-//   - Tap the code badge -> open in curriculum (calls onOpenInCurriculum)
-//
-// onOpenInCurriculum is parameterised by code so the screen can navigate
-// to the right curriculum + focus on that specific standard row.
+// One row in the per-assignment alignment view. Left column: objective title
+// and description. Right column: the StandardChip stack with expandable
+// source-match panels.
 
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import StandardChip from './StandardChip';
+import { stripHtml } from '../lib/htmlText';
+import { sourceExcerptForAlignment } from '../lib/sourceExcerpt';
 import { colors, typography } from '../theme';
 
 const FALLBACK_BY_SUBJECT = {
@@ -25,30 +20,32 @@ export default function ObjectiveRow({
   subject = 'ela',
   showStandardText = true,
   hasSource = false,
-  onViewSource,
+  onJumpToSource,
   onOpenInCurriculum,
 }) {
   const o = objective || {};
   const alignments = o.alignments || [];
   const fallback = FALLBACK_BY_SUBJECT[subject] || 'No standard applies.';
+  const title = o.title || o.objective_title || '';
+  const description = stripHtml(o.description || o.objective_description || '');
+
+  const objectiveContext = {
+    title,
+    description,
+    path: o.path || '',
+    sectionTitle: o.section_title || '',
+    sectionDescription: o.section_description || '',
+  };
 
   return (
     <View style={styles.row}>
       <View style={styles.left}>
-        <Text style={styles.title}>{o.title || ''}</Text>
-        {o.description ? (
-          <Text style={styles.desc}>{o.description}</Text>
-        ) : null}
-        {o.path ? (
-          <Text style={styles.path}>{o.path}</Text>
+        {title ? <Text style={styles.title}>{title}</Text> : null}
+        {description ? (
+          <Text style={styles.desc}>{description}</Text>
         ) : null}
         {o.note ? (
           <Text style={styles.note}>{`Note: ${o.note}`}</Text>
-        ) : null}
-        {hasSource && onViewSource ? (
-          <TouchableOpacity onPress={onViewSource}>
-            <Text style={styles.viewOriginal}>{'View original \u2192'}</Text>
-          </TouchableOpacity>
         ) : null}
       </View>
       <View style={styles.right}>
@@ -57,17 +54,26 @@ export default function ObjectiveRow({
             <Text style={styles.emptyText}>{o.note || fallback}</Text>
           </View>
         ) : (
-          alignments.map((a, i) => (
+          alignments.map((a, i) => {
+            const sourceExcerpt = sourceExcerptForAlignment(description, a, alignments);
+            return (
             <StandardChip
               key={i}
               alignment={a}
               showText={showStandardText}
-              onJumpToSource={hasSource && onViewSource ? onViewSource : undefined}
+              objectiveContext={objectiveContext}
+              sourceExcerpt={sourceExcerpt}
+              onJumpToSource={
+                hasSource && onJumpToSource
+                  ? () => onJumpToSource(a, sourceExcerpt)
+                  : undefined
+              }
               onOpenInCurriculum={
                 onOpenInCurriculum ? () => onOpenInCurriculum(a.code) : undefined
               }
             />
-          ))
+            );
+          })
         )}
       </View>
     </View>
@@ -99,24 +105,13 @@ const styles = StyleSheet.create({
     ...typography.body,
     fontSize: 13,
     marginTop: 4,
-  },
-  path: {
-    fontSize: 11,
-    color: colors.textLight,
-    fontFamily: 'Menlo',
-    marginTop: 6,
+    lineHeight: 19,
   },
   note: {
     fontSize: 12,
     color: colors.textSecondary,
     fontStyle: 'italic',
     marginTop: 6,
-  },
-  viewOriginal: {
-    color: colors.primary,
-    fontSize: 12,
-    fontWeight: '600',
-    marginTop: 8,
   },
   empty: {
     backgroundColor: colors.background,

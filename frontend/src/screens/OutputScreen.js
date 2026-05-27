@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   View,
   Text,
@@ -9,10 +9,13 @@ import {
   Switch,
 } from 'react-native';
 import { dataClient } from '../lib/dataClient';
-import { previewText, parseHtmlBlocks } from '../lib/htmlText';
+import { assignmentIsRaw } from '../lib/evalFilters';
+import { parseHtmlBlocks } from '../lib/htmlText';
 import { colors, typography, shadows } from '../theme';
 import SourcePanel from '../components/SourcePanel';
 import ObjectiveRow from '../components/ObjectiveRow';
+import AlignPanel from '../components/AlignPanel';
+import SectionVisibilityToggle from '../components/SectionVisibilityToggle';
 import TopNav from '../components/TopNav';
 
 function StatPill({ label, value }) {
@@ -34,26 +37,34 @@ export default function OutputScreen({ route, navigation }) {
   const scrollRef = useRef(null);
   const sourceRef = useRef(null);
 
-  useEffect(() => {
-    let cancelled = false;
-    const load = async () => {
+  const loadDetail = useCallback(async (opts = {}) => {
+    if (opts.showSpinner !== false) {
       setLoading(true);
-      const [d, curr] = await Promise.all([
-        dataClient.assignments.detail(assignment?.id),
-        assignment?.curriculum_id
-          ? dataClient.curricula.get(assignment.curriculum_id)
-          : Promise.resolve(null),
-      ]);
-      if (cancelled) return;
-      setDetail(d);
-      setCurriculum(curr);
-      setLoading(false);
-    };
-    load();
-    return () => { cancelled = true; };
+    }
+    const d = await dataClient.assignments.detail(assignment?.id);
+    const cId = d?.alignment_curriculum_id || d?.curriculum_id || assignment?.curriculum_id;
+    const c = cId ? await dataClient.curricula.get(cId) : null;
+    setDetail(d);
+    setCurriculum(c);
+    setLoading(false);
   }, [assignment?.id, assignment?.curriculum_id]);
 
-  if (loading) {
+  useEffect(() => {
+    loadDetail({ showSpinner: true });
+  }, [loadDetail]);
+
+  const handleSectionToggle = useCallback(async (sectionIdx, currentlyExcluded) => {
+    const idx = Number(sectionIdx);
+    await dataClient.assignments.setSectionIncluded(
+      assignment?.id,
+      idx,
+      currentlyExcluded,
+    );
+    const d = await dataClient.assignments.detail(assignment?.id);
+    setDetail(d);
+  }, [assignment?.id]);
+
+  if (loading && !detail) {
     return (
       <View style={[styles.container, styles.center]}>
         <ActivityIndicator color={colors.primary} size="large" />
@@ -61,24 +72,28 @@ export default function OutputScreen({ route, navigation }) {
     );
   }
 
+  const isRaw = detail && assignmentIsRaw(detail);
   const hasObjectives = detail && detail.objectives && detail.objectives.length > 0;
+  const hasAlignments = detail && (detail.n_aligned || 0) > 0;
   const subject = detail?.subject || 'ela';
 
-  // Group the objectives by section_idx for the section headers in the
-  // alignment view (mirrors the dashboard's per-edusperience tab).
   const groupedSections = [];
   let lastSecIdx = -Infinity;
   for (const o of detail?.objectives || []) {
     if (o.section_idx !== lastSecIdx) {
+      const srcSec = detail?.source?.sections?.[o.section_idx];
       groupedSections.push({
         idx: o.section_idx,
         title: o.section_title,
+        description: o.section_description || srcSec?.description || '',
         rows: [],
       });
       lastSecIdx = o.section_idx;
     }
     groupedSections[groupedSections.length - 1].rows.push(o);
   }
+
+  const excludedSections = new Set((detail?.excluded_sections || []).map(Number));
 
   return (
     <View style={styles.container}>
@@ -88,142 +103,183 @@ export default function OutputScreen({ route, navigation }) {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text style={styles.back}>{'\u2190 Back'}</Text>
           </TouchableOpacity>
-          <Text style={styles.title}>{detail?.name || assignment?.name || 'Output'}</Text>
+          <Text style={styles.title}>{detail?.name || assignment?.name || 'EduSperience'}</Text>
           <Text style={styles.subtitle}>
             {`${(detail?.subject || assignment?.subject || 'ela').toUpperCase()} \u00b7 Grade ${detail?.grade || assignment?.grade || ''}`}
+            {isRaw ? ' \u00b7 RAW' : hasAlignments ? ' \u00b7 ALIGNED' : ''}
           </Text>
         </View>
 
-      {/* Summary card */}
-      <View style={styles.box}>
-        <View style={styles.statsRow}>
-          <StatPill
-            label="Objectives"
-            value={`${detail?.n_aligned ?? 0}/${detail?.n_total ?? 0}`}
-          />
-          <StatPill
-            label="Aligned"
-            value={
-              detail && detail.n_total > 0
-                ? `${Math.round((100 * detail.n_aligned) / detail.n_total)}%`
-                : '0%'
-            }
-          />
-          <StatPill
-            label="Curriculum"
-            value={curriculum ? curriculum.title : 'Unlinked'}
-          />
+        <View style={styles.box}>
+          <View style={styles.statsRow}>
+            <StatPill
+              label="Objectives"
+              value={`${detail?.n_aligned ?? 0}/${detail?.n_total ?? 0}`}
+            />
+            <StatPill
+              label="Aligned"
+              value={
+                detail && detail.n_total > 0
+                  ? `${Math.round((100 * detail.n_aligned) / detail.n_total)}%`
+                  : '0%'
+              }
+            />
+            <StatPill
+              label="Standards"
+              value={curriculum ? curriculum.title : 'Not set'}
+            />
+          </View>
+          {detail?.file_name || assignment?.file_name ? (
+            <Text style={styles.fileLine}>
+              {`\ud83d\udcce ${detail?.file_name || assignment?.file_name}`}
+            </Text>
+          ) : null}
+          {detail?.notes ? (
+            <Text style={styles.notes}>{detail.notes}</Text>
+          ) : null}
         </View>
-        {detail?.file_name || assignment?.file_name ? (
-          <Text style={styles.fileLine}>
-            {`\ud83d\udcce ${detail?.file_name || assignment?.file_name}`}
-          </Text>
-        ) : null}
-        {detail?.notes ? (
-          <Text style={styles.notes}>{detail.notes}</Text>
-        ) : null}
-      </View>
 
-      {/* Pending-tagging callout for user-created assignments that have
-          no alignments yet. Explains why the page is mostly empty so the
-          user doesn't think it's broken. */}
-      {detail && detail.is_seed === false && (detail.n_total || 0) === 0 ? (
-        <View style={styles.pendingCard}>
-          <Text style={styles.pendingTitle}>Awaiting AI tagger</Text>
-          <Text style={styles.pendingBody}>
-            This assignment is saved but hasn&apos;t been tagged yet. Tagging will
-            run automatically once the AI pipeline is connected. In the
-            meantime you can edit the details, attach a file, or link a
-            curriculum from the Workspace.
-          </Text>
+        {isRaw ? (
+          <AlignPanel
+            assignmentId={assignment?.id}
+            navigation={navigation}
+            onAligned={loadDetail}
+          />
+        ) : null}
+
+        {hasAlignments ? (
           <TouchableOpacity
-            style={styles.pendingBtn}
+            style={styles.reportLink}
             onPress={() =>
-              navigation.navigate('AddAssignment', { assignment: detail })
+              navigation.navigate('Report', { assignmentId: assignment?.id })
             }
           >
-            <Text style={styles.pendingBtnText}>Edit assignment</Text>
+            <Text style={styles.reportLinkText}>View alignment report / export PDF</Text>
           </TouchableOpacity>
-        </View>
-      ) : null}
+        ) : null}
 
-      {/* Source viewer */}
-      {detail?.source ? (
-        <View style={styles.boxFlat}>
-          <SourcePanel
-            ref={sourceRef}
-            source={detail.source}
-            scrollViewRef={scrollRef}
-          />
-        </View>
-      ) : null}
+        {detail?.source ? (
+          <View style={styles.boxFlat}>
+            <SourcePanel
+              ref={sourceRef}
+              source={detail.source}
+              scrollViewRef={scrollRef}
+            />
+          </View>
+        ) : null}
 
-      {/* Alignment list */}
-      <View style={styles.box}>
-        <View style={styles.alignmentHeader}>
-          <Text style={styles.sectionLabel}>
-            {hasObjectives ? 'Tagged Standards' : 'Standards'}
-          </Text>
-          {hasObjectives ? (
-            <View style={styles.toggleRow}>
-              <Text style={styles.toggleLabel}>Show standard text</Text>
-              <Switch
-                value={showStandardText}
-                onValueChange={setShowStandardText}
-                trackColor={{ true: colors.primary, false: colors.border }}
-                thumbColor={'#fff'}
-              />
+        <View style={styles.box}>
+          <View style={styles.alignmentHeader}>
+            <Text style={styles.sectionLabel}>
+              {hasAlignments ? 'Tagged standards' : 'Standards'}
+            </Text>
+            {hasAlignments ? (
+              <View style={styles.toggleRow}>
+                <Text style={styles.toggleLabel}>Show standard text</Text>
+                <Switch
+                  value={showStandardText}
+                  onValueChange={setShowStandardText}
+                  trackColor={{ true: colors.primary, false: colors.border }}
+                  thumbColor="#fff"
+                />
+              </View>
+            ) : null}
+          </View>
+
+          {!hasObjectives ? (
+            <View style={styles.emptyStandards}>
+              <Text style={styles.empty}>No objectives extracted yet.</Text>
+              <Text style={styles.emptyHint}>
+                {isRaw
+                  ? 'Use Align with AI above once you have a standards set selected.'
+                  : 'Upload a PDF/DOCX EduSperience to extract objectives.'}
+              </Text>
+            </View>
+          ) : !hasAlignments ? (
+            <View style={styles.emptyStandards}>
+              <Text style={styles.empty}>
+                {`${detail.n_total} objective${detail.n_total === 1 ? '' : 's'} ready to align.`}
+              </Text>
+              {isRaw ? (
+                <Text style={styles.emptyHint}>
+                  Pick a standards set in the panel above and click Align with AI.
+                </Text>
+              ) : null}
+            </View>
+          ) : (
+            groupedSections.map((sec) => {
+              const included = !excludedSections.has(sec.idx);
+              if (!included) return null;
+              return (
+              <View key={sec.idx} style={styles.sectionGroup}>
+                <View style={styles.sectionHeaderBlock}>
+                  <View style={styles.sectionHeaderRow}>
+                    <Text style={styles.sectionHdr}>
+                      {`Section ${sec.idx + 1}: ${sec.title}`}
+                    </Text>
+                    <SectionVisibilityToggle
+                      included={included}
+                      onPress={() => handleSectionToggle(sec.idx, excludedSections.has(sec.idx))}
+                    />
+                  </View>
+                  {sec.description ? (
+                    parseHtmlBlocks(sec.description).map((b, i) => (
+                      <Text key={i} style={styles.sectionDesc}>{b}</Text>
+                    ))
+                  ) : null}
+                </View>
+                {sec.rows.map((o, i) => (
+                  <ObjectiveRow
+                    key={`${sec.idx}-${o.objective_idx}-${i}`}
+                    objective={o}
+                    subject={subject}
+                    showStandardText={showStandardText}
+                    hasSource={!!detail?.source}
+                    onJumpToSource={(alignment, sourceExcerpt) => {
+                      if (sourceRef.current?.jumpTo) {
+                        sourceRef.current.jumpTo(o.section_idx, o.objective_idx, {
+                          standardCode: alignment?.code,
+                          highlightExcerpt: sourceExcerpt,
+                        });
+                      }
+                    }}
+                    onOpenInCurriculum={
+                      curriculum
+                        ? (code) =>
+                            navigation.navigate('CurriculumDetail', {
+                              curriculum,
+                              focusCode: code,
+                            })
+                        : undefined
+                    }
+                  />
+                ))}
+              </View>
+              );
+            })
+          )}
+          {hasAlignments && groupedSections.some((sec) => excludedSections.has(sec.idx)) ? (
+            <View style={styles.excludedSectionsBox}>
+              <Text style={styles.excludedSectionsTitle}>Excluded sections</Text>
+              {groupedSections
+                .filter((sec) => excludedSections.has(sec.idx))
+                .map((sec) => (
+                  <View key={`ex-${sec.idx}`} style={styles.excludedSectionRow}>
+                    <Text style={styles.excludedSectionName}>
+                      {`Section ${sec.idx + 1}: ${sec.title}`}
+                    </Text>
+                    <SectionVisibilityToggle
+                      included={false}
+                      onPress={() => handleSectionToggle(sec.idx, excludedSections.has(sec.idx))}
+                    />
+                  </View>
+                ))}
             </View>
           ) : null}
         </View>
 
-        {!hasObjectives ? (
-          <View style={styles.emptyStandards}>
-            <Text style={styles.empty}>No standards tagged yet.</Text>
-            <Text style={styles.emptyHint}>
-              {detail?.is_seed === false
-                ? 'New uploads need the AI tagger to run before standards appear here.'
-                : 'Standards will appear here after the AI tagger runs.'}
-            </Text>
-          </View>
-        ) : (
-          groupedSections.map((sec) => (
-            <View key={sec.idx} style={styles.sectionGroup}>
-              <Text style={styles.sectionHdr}>
-                {`Section ${sec.idx + 1}: ${sec.title}`}
-              </Text>
-              {sec.rows.map((o, i) => (
-                <ObjectiveRow
-                  key={`${sec.idx}-${o.objective_idx}-${i}`}
-                  objective={o}
-                  subject={subject}
-                  showStandardText={showStandardText}
-                  hasSource={!!detail?.source}
-                  onViewSource={() => {
-                    if (sourceRef.current?.jumpTo) {
-                      sourceRef.current.jumpTo(o.section_idx, o.objective_idx);
-                    }
-                  }}
-                  onOpenInCurriculum={
-                    curriculum
-                      ? (code) =>
-                          navigation.navigate('CurriculumDetail', {
-                            curriculum,
-                            focusCode: code,
-                          })
-                      : undefined
-                  }
-                />
-              ))}
-            </View>
-          ))
-        )}
-      </View>
-
-        {/* Assignment description (kept from the original screen — handy for
-            quick reference at the bottom). */}
         <View style={styles.box}>
-          <Text style={styles.sectionLabel}>Assignment description</Text>
+          <Text style={styles.sectionLabel}>Description</Text>
           {parseHtmlBlocks(assignment?.description || detail?.description).length === 0 ? (
             <Text style={styles.empty}>(none)</Text>
           ) : (
@@ -325,38 +381,13 @@ const styles = StyleSheet.create({
     color: colors.textSecondary,
     fontWeight: '500',
   },
-  pendingCard: {
-    backgroundColor: '#fef3c7',
-    borderColor: '#fcd34d',
-    borderWidth: 1,
-    borderRadius: 12,
-    padding: 18,
-    gap: 8,
-  },
-  pendingTitle: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: '#92400e',
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
-  },
-  pendingBody: {
-    fontSize: 13,
-    color: '#78350f',
-    lineHeight: 19,
-  },
-  pendingBtn: {
+  reportLink: {
     alignSelf: 'flex-start',
-    backgroundColor: '#fbbf24',
-    borderRadius: 8,
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-    marginTop: 4,
   },
-  pendingBtnText: {
-    color: '#78350f',
+  reportLinkText: {
+    color: colors.primary,
     fontWeight: '700',
-    fontSize: 13,
+    fontSize: 14,
   },
   alignmentHeader: {
     flexDirection: 'row',
@@ -381,14 +412,63 @@ const styles = StyleSheet.create({
   sectionGroup: {
     marginTop: 4,
   },
+  sectionHeaderBlock: {
+    marginTop: 14,
+    marginBottom: 6,
+    paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
+  },
+  sectionHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 0,
+    flexWrap: 'nowrap',
+  },
   sectionHdr: {
-    fontSize: 11,
-    color: colors.textSecondary,
+    fontSize: 12,
+    color: colors.textPrimary,
     fontWeight: '700',
     textTransform: 'uppercase',
     letterSpacing: 0.5,
-    marginTop: 14,
-    marginBottom: 4,
+  },
+  excludedSectionsBox: {
+    marginTop: 18,
+    paddingTop: 14,
+    borderTopWidth: 1,
+    borderTopColor: colors.border,
+    gap: 8,
+  },
+  excludedSectionsTitle: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: colors.textSecondary,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  excludedSectionRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 10,
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    backgroundColor: colors.background,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  excludedSectionName: {
+    flex: 1,
+    fontSize: 12,
+    color: colors.textSecondary,
+    fontWeight: '600',
+  },
+  sectionDesc: {
+    fontSize: 13,
+    color: colors.textSecondary,
+    lineHeight: 19,
+    marginTop: 6,
   },
   empty: {
     color: colors.textSecondary,
