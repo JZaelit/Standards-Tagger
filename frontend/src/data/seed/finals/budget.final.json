@@ -1,0 +1,258 @@
+{
+  "edusperience_id": "061dc3fd-e5ac-4507-adf9-43e9f4ce7f55",
+  "edusperience_title": "50-30-20 Budget - Dev",
+  "source_file": "edusperiences/budget.json",
+  "subject": "math",
+  "inferred_grade_bands": ["9-12"],
+  "standards_db": "categorized-standards/California/CA-MATH.json",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> LLM curation (Claude Sonnet)",
+  "notes": "Personal-finance spreadsheet project at HS Algebra/Modeling level. Most concrete math is in the formula objectives (net pay, percentages, sums) which map cleanly to A-SSE / N-Q / 7.RP. Several objectives are pure data entry, categorization, or reflective writing and have no math alignment. The pie-chart task lacks a clean CCSS-M anchor - MP.4 (modeling) is the strongest available fit.",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "Watch Me",
+      "description": "Watch the introductory video.",
+      "alignments": [],
+      "note": "Platform onboarding. No math standard applies."
+    },
+    {
+      "path": "sections[0].objectives[1]",
+      "title": "Personal Information",
+      "description": "Use AI to research careers and fill in personal info.",
+      "alignments": [],
+      "note": "Career research / data entry. No math standard applies (closest ELA alignment is W.9-10.7/8 research)."
+    },
+    {
+      "path": "sections[0].objectives[2]",
+      "title": "Tax and Income",
+      "description": "Use AI to research effective tax rate and income for a chosen career.",
+      "alignments": [
+        {"code": "N-Q.A.1", "confidence": "high",
+         "rationale": "Use units to understand problems and choose units consistently - annual gross income (USD) and effective tax rate (%) must be reported with appropriate units."},
+        {"code": "7.RP.A.3", "confidence": "medium",
+         "rationale": "Effective tax rate is a percent applied to income. Even at HS, the underlying ratio reasoning is the 7.RP percent-of-quantity skill."}
+      ]
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Annual Net Pay",
+      "description": "Write a formula: [Annual Gross Income] * (1 - [Effective Tax Rate]).",
+      "alignments": [
+        {"code": "A-SSE.A.1.b", "confidence": "high",
+         "rationale": "Interpret complicated expressions by viewing parts as a single entity - (1 - tax_rate) is the after-tax fraction acting as a single multiplier on gross income."},
+        {"code": "A-SSE.A.1.a", "confidence": "medium",
+         "rationale": "Interpret parts of an expression: identifying gross income, tax rate, and the subtraction-from-one structure."}
+      ]
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Monthly Net Pay",
+      "description": "Write a formula: annual net pay / 12.",
+      "alignments": [
+        {"code": "A-SSE.A.1.b", "confidence": "high",
+         "rationale": "Same compound-expression interpretation; annual_net / 12 reuses the annual-net result as a single quantity."},
+        {"code": "N-Q.A.1", "confidence": "medium",
+         "rationale": "Unit conversion (USD/year -> USD/month) - choosing and tracking units is the core skill here."}
+      ]
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "Housing",
+      "description": "Enter housing type and monthly cost.",
+      "alignments": [],
+      "note": "Data entry. No math standard applies."
+    },
+    {
+      "path": "sections[2].objectives[1]",
+      "title": "Needs List",
+      "description": "List at least seven needs with notes explaining each.",
+      "alignments": [],
+      "note": "Data entry and categorization with brief written notes. No math standard applies."
+    },
+    {
+      "path": "sections[2].objectives[2]",
+      "title": "Sum Function",
+      "description": "Use SUM() to total monthly need costs.",
+      "alignments": [
+        {"code": "F-IF.A.1", "confidence": "high",
+         "rationale": "SUM() is a function from a domain (range of cells) to a single output value - exactly the function-mapping definition."},
+        {"code": "F-IF.A.2", "confidence": "medium",
+         "rationale": "Use function notation and evaluate functions for inputs in their domain - SUM(C12:C26) uses spreadsheet function notation in context."}
+      ]
+    },
+    {
+      "path": "sections[2].objectives[3]",
+      "title": "% Monthly Net Pay",
+      "description": "Calculate percentage of monthly net pay spent on needs.",
+      "alignments": [
+        {"code": "7.RP.A.3", "confidence": "high",
+         "rationale": "Percent-of-quantity problem - needs subtotal as a percentage of monthly net pay is exactly this 7.RP skill, even when used at HS."},
+        {"code": "N-Q.A.1", "confidence": "medium",
+         "rationale": "Choosing units (decimal vs %) and formatting the cell as percentage."}
+      ]
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "title": "Entertainment",
+      "description": "Enter entertainment line-item cost.",
+      "alignments": [],
+      "note": "Data entry. No math standard applies."
+    },
+    {
+      "path": "sections[3].objectives[1]",
+      "title": "Wants List",
+      "description": "List at least seven wants with notes.",
+      "alignments": [],
+      "note": "Data entry and categorization. No math standard applies."
+    },
+    {
+      "path": "sections[3].objectives[2]",
+      "title": "Reusing Formulas",
+      "description": "Copy and paste cell formulas to reuse the SUM() pattern.",
+      "alignments": [
+        {"code": "MP.7", "confidence": "high",
+         "rationale": "Look for and make use of structure - recognizing the SUM-of-range pattern transfers across the Wants subtotal."},
+        {"code": "MP.8", "confidence": "medium",
+         "rationale": "Express regularity in repeated reasoning - same calculation structure applied to a different data range."}
+      ]
+    },
+    {
+      "path": "sections[3].objectives[3]",
+      "title": "% Monthly Net Pay (Wants)",
+      "description": "Calculate % of net pay spent on wants.",
+      "alignments": [
+        {"code": "7.RP.A.3", "confidence": "high",
+         "rationale": "Percent-of-quantity, identical to the Needs % task."},
+        {"code": "N-Q.A.1", "confidence": "medium",
+         "rationale": "Tracking units and formatting as percent."}
+      ]
+    },
+    {
+      "path": "sections[4].objectives[0]",
+      "title": "Emergency Fund",
+      "description": "Enter monthly emergency fund contribution.",
+      "alignments": [],
+      "note": "Data entry. No math standard applies."
+    },
+    {
+      "path": "sections[4].objectives[1]",
+      "title": "Financials List",
+      "description": "List at least four financial goals with monthly contributions.",
+      "alignments": [],
+      "note": "Data entry and categorization. No math standard applies."
+    },
+    {
+      "path": "sections[4].objectives[2]",
+      "title": "Modify Copied Formulas",
+      "description": "Copy, paste, and adjust cell formulas for the Financial Goals subtotal.",
+      "alignments": [
+        {"code": "MP.7", "confidence": "high",
+         "rationale": "Look for and make use of structure - adapting the same SUM/% pattern with adjusted ranges and absolute references."},
+        {"code": "A-SSE.A.1.b", "confidence": "low",
+         "rationale": "Treating the subtotal expression as a single quantity that the percent formula divides into monthly net pay."}
+      ]
+    },
+    {
+      "path": "sections[4].objectives[3]",
+      "title": "% Monthly Net Pay (Financials)",
+      "description": "Calculate % of net pay spent on financial goals.",
+      "alignments": [
+        {"code": "7.RP.A.3", "confidence": "high",
+         "rationale": "Percent-of-quantity, same skill as the Needs and Wants % tasks."}
+      ]
+    },
+    {
+      "path": "sections[5].objectives[0]",
+      "title": "Total Spending",
+      "description": "Formula adding the three subtotals.",
+      "alignments": [
+        {"code": "A-SSE.A.1.b", "confidence": "high",
+         "rationale": "Interpret a sum of subtotals as a compound expression - each subtotal is itself a sum, and the total is a sum-of-sums."},
+        {"code": "F-IF.A.1", "confidence": "low",
+         "rationale": "Spreadsheet sum is a function over the three subtotal inputs producing one output."}
+      ]
+    },
+    {
+      "path": "sections[5].objectives[1]",
+      "title": "Remaining Funds",
+      "description": "Formula subtracting total spending from net pay; percent formulas for E55/E56.",
+      "alignments": [
+        {"code": "A-SSE.A.1.b", "confidence": "high",
+         "rationale": "[Net Pay] - [Total Spending] reads each operand as a single quantity; same compound-expression interpretation."},
+        {"code": "7.RP.A.3", "confidence": "medium",
+         "rationale": "The accompanying percent formulas in E55/E56 are percent-of-quantity calculations."}
+      ]
+    },
+    {
+      "path": "sections[5].objectives[2]",
+      "title": "Pie Chart",
+      "description": "Create a pie chart visualizing the budget breakdown.",
+      "alignments": [
+        {"code": "MP.4", "confidence": "medium",
+         "rationale": "Model with mathematics - choosing a pie chart to represent categorical proportions of a budget is a modeling choice."},
+        {"code": "MP.5", "confidence": "low",
+         "rationale": "Use appropriate tools strategically - selecting and configuring a chart tool for the data."}
+      ],
+      "note": "CCSS-M does not directly anchor pie charts at HS; closest content standard would be middle-grades data display (6.SP), but Mathematical Practices are a more honest fit."
+    },
+    {
+      "path": "sections[6].objectives[0]",
+      "title": "Notes",
+      "description": "Write notes explaining at least eight budget items.",
+      "alignments": [
+        {"code": "MP.6", "confidence": "low",
+         "rationale": "Attend to precision - explanatory notes that pin down specifics (year/make/model, sqft, etc.) tighten the model. Primary alignment is ELA writing (W.9-10.4)."}
+      ],
+      "note": "Primarily an ELA writing task; minimal math content beyond precision-of-quantity."
+    },
+    {
+      "path": "sections[6].objectives[1]",
+      "title": "Spreadsheet Reflection",
+      "description": "Write a 25+ word reflection on spreadsheet skills learned.",
+      "alignments": [],
+      "note": "Reflective/metacognitive writing. No math standard applies."
+    },
+    {
+      "path": "sections[6].objectives[2]",
+      "title": "50/30/20 Reflection",
+      "description": "Write a 25+ word reflection on the 50/30/20 budgeting rule.",
+      "alignments": [],
+      "note": "Reflective/metacognitive writing. No math standard applies."
+    },
+    {
+      "path": "sections[6].objectives[3]",
+      "title": "AI Reflection",
+      "description": "Write a 25+ word reflection on using AI in this project.",
+      "alignments": [],
+      "note": "Reflective/metacognitive writing. No math standard applies."
+    },
+    {
+      "path": "sections[7].objectives[0]",
+      "title": "Budget Realism (Teacher Graded)",
+      "description": "Check the budget tells a believable financial story.",
+      "alignments": [
+        {"code": "F-LE.B.5", "confidence": "high",
+         "rationale": "Interpret parameters in a function in terms of context - a 'realistic' budget is precisely about whether the parameters (incomes, costs, percentages) are sensible in context."},
+        {"code": "MP.4", "confidence": "medium",
+         "rationale": "Model with mathematics - judging whether the model's assumptions and outputs are reasonable."}
+      ]
+    },
+    {
+      "path": "sections[7].objectives[1]",
+      "title": "Reflection Quality (Teacher Graded)",
+      "description": "Grade the three reflections for depth and specificity.",
+      "alignments": [],
+      "note": "Rubric for reflective writing. No math standard applies (closest ELA alignment is W.9-10.4)."
+    },
+    {
+      "path": "sections[7].objectives[2]",
+      "title": "Accuracy and Completeness (Teacher Graded)",
+      "description": "Check items are placed in the right category (Needs/Wants/Financials).",
+      "alignments": [
+        {"code": "MP.6", "confidence": "low",
+         "rationale": "Attend to precision - correct categorization is a precision-of-classification check, but this is mostly a financial-literacy / CTE rubric."}
+      ],
+      "note": "Categorization rubric. Primary discipline is financial literacy / CTE rather than CCSS-M."
+    }
+  ]
+}

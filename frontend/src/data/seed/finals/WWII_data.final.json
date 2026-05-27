@@ -1,0 +1,145 @@
+{
+  "edusperience_id": null,
+  "edusperience_title": "WWII Data Analysis: UPDATE",
+  "source_file": "edusperiences/WWII_data.json",
+  "subject": "math",
+  "inferred_grade_bands": ["9-12"],
+  "standards_db": "categorized-standards/California/CA-MATH.json",
+  "alignment_method": "hybrid: tfidf shortlist -> grade+keyword rerank -> LLM curation (Claude Sonnet)",
+  "notes": "A history-context spreadsheet/data-analysis project. Most concrete math is in the function/formula objectives (SUM, MAX, MIN, AVERAGE, XLOOKUP), which map to function-notation standards (F-IF.A.1, F-IF.A.2). The casualty-rate calculation is the strongest ratio/percent task (6.RP/7.RP). Pie- and column-chart objectives lack a clean CCSS-M anchor at HS - MP.4 modeling is the most honest fit. Reflective writing is ELA, not math.",
+  "objectives": [
+    {
+      "path": "sections[0].objectives[0]",
+      "title": "Data Test",
+      "description": "Project setup verification.",
+      "alignments": [],
+      "note": "Platform setup. No math standard applies."
+    },
+    {
+      "path": "sections[1].objectives[0]",
+      "title": "Total Military Personnel",
+      "description": "Use SUM() to total the Military Personnel column.",
+      "alignments": [
+        {"code": "F-IF.A.1", "confidence": "high",
+         "rationale": "SUM() maps a domain (range C3:C10) to a single output value - the function-mapping definition."},
+        {"code": "F-IF.A.2", "confidence": "medium",
+         "rationale": "Use function notation and evaluate functions for inputs in their domain - SUM(C3:C10) is function notation in a real context."},
+        {"code": "A-SSE.A.1.b", "confidence": "low",
+         "rationale": "The total can be interpreted as a single quantity that downstream formulas (e.g., casualty rate denominators) operate on."}
+      ]
+    },
+    {
+      "path": "sections[1].objectives[1]",
+      "title": "Total Military Deaths",
+      "description": "Copy/paste the SUM formula into the deaths column.",
+      "alignments": [
+        {"code": "F-IF.A.1", "confidence": "high",
+         "rationale": "Same function-mapping concept as Total Military Personnel, applied to a different range."},
+        {"code": "MP.7", "confidence": "medium",
+         "rationale": "Look for and make use of structure - reusing the SUM-of-range pattern across columns."}
+      ]
+    },
+    {
+      "path": "sections[2].objectives[0]",
+      "title": "Casualty Rate1",
+      "description": "Formula returning Military Deaths / Military Personnel as a percent; fill through E4:E11.",
+      "alignments": [
+        {"code": "7.RP.A.3", "confidence": "high",
+         "rationale": "Casualty rate = deaths / personnel * 100% is exactly a percent-of-quantity calculation. Even at HS, this is the underlying ratio-reasoning skill."},
+        {"code": "6.RP.A.3.c", "confidence": "medium",
+         "rationale": "Find a percent of a quantity as a rate per 100 - direct match to casualty rate as deaths per 100 personnel."},
+        {"code": "N-Q.A.1", "confidence": "medium",
+         "rationale": "Choosing units (decimal vs %) and formatting the cell as a percentage."}
+      ]
+    },
+    {
+      "path": "sections[3].objectives[0]",
+      "title": "Absolute References",
+      "description": "Insert MAX() with an absolute row reference over E3:E10.",
+      "alignments": [
+        {"code": "F-IF.A.2", "confidence": "high",
+         "rationale": "Use function notation in context - MAX(...) with absolute references is function notation that consistently evaluates over the same input range across copies."},
+        {"code": "F-IF.A.1", "confidence": "medium",
+         "rationale": "MAX is a function from a range to a single value - same domain->range mapping concept."}
+      ]
+    },
+    {
+      "path": "sections[3].objectives[1]",
+      "title": "XLOOKUP Function",
+      "description": "Insert XLOOKUP() with relative search_key and absolute lookup/result ranges.",
+      "alignments": [
+        {"code": "F-IF.A.2", "confidence": "high",
+         "rationale": "Use function notation, evaluate functions for inputs in their domain - XLOOKUP takes three explicit arguments and produces one output."},
+        {"code": "F-IF.A.1", "confidence": "medium",
+         "rationale": "XLOOKUP defines a mapping from a search key to a result via lookup and result ranges - function-mapping concept in spreadsheet form."}
+      ]
+    },
+    {
+      "path": "sections[3].objectives[2]",
+      "title": "Fill Operation",
+      "description": "Use Fill Operation to extend formulas; change D15 to MIN() and D16 to AVERAGE().",
+      "alignments": [
+        {"code": "F-IF.A.2", "confidence": "high",
+         "rationale": "Function notation in context - swapping MAX/MIN/AVERAGE over the same input range is exactly evaluating different functions on the same domain."},
+        {"code": "MP.7", "confidence": "medium",
+         "rationale": "Look for and make use of structure - the Fill Operation propagates the same structural pattern across rows."}
+      ]
+    },
+    {
+      "path": "sections[4].objectives[0]",
+      "title": "AI & Critical Thinking",
+      "description": "Use MAX/MIN/AVERAGE/XLOOKUP and AI to fill D18:E20.",
+      "alignments": [
+        {"code": "F-IF.A.2", "confidence": "high",
+         "rationale": "Composing function-notation calls (MAX/MIN/AVERAGE/XLOOKUP) over absolute ranges to produce correct values is the F-IF.A.2 evaluation skill applied broadly."},
+        {"code": "MP.5", "confidence": "medium",
+         "rationale": "Use appropriate tools strategically - selecting the right function and using AI as a problem-solving tool."}
+      ]
+    },
+    {
+      "path": "sections[5].objectives[0]",
+      "title": "Pie Chart",
+      "description": "Create a pie chart of military deaths by country.",
+      "alignments": [
+        {"code": "MP.4", "confidence": "medium",
+         "rationale": "Model with mathematics - choosing a pie chart to represent the categorical distribution of deaths across countries is a modeling choice."},
+        {"code": "MP.5", "confidence": "low",
+         "rationale": "Use appropriate tools strategically - selecting and configuring a pie chart for the data."}
+      ],
+      "note": "CCSS-M does not directly anchor pie charts at HS; the 3.MD.C.7.d auto-pick (rectilinear area) is a TF-IDF retrieval artifact, not a real fit."
+    },
+    {
+      "path": "sections[5].objectives[1]",
+      "title": "Column Chart",
+      "description": "Create a column chart of military personnel by country.",
+      "alignments": [
+        {"code": "MP.4", "confidence": "medium",
+         "rationale": "Model with mathematics - a column chart is a modeling choice for representing personnel counts by country."},
+        {"code": "6.SP.B.4", "confidence": "low",
+         "rationale": "Display numerical data in plots - middle-grades content standard that arguably extends to column-chart construction in a HS data-analysis context."}
+      ],
+      "note": "Same retrieval-gap caveat as Pie Chart; 3.MD.C.7.d auto-pick is wrong."
+    },
+    {
+      "path": "sections[6].objectives[0]",
+      "title": "Data Reflection",
+      "description": "Use AI to analyze the spreadsheet data and write a 100+ word reflection.",
+      "alignments": [],
+      "note": "Reflective writing in a history/technical context. No math standard applies (closest ELA alignment is WHST.9-10.2/4/8)."
+    },
+    {
+      "path": "sections[6].objectives[1]",
+      "title": "Spreadsheet Reflection",
+      "description": "Write a reflection on using spreadsheets in a history class.",
+      "alignments": [],
+      "note": "Reflective writing. No math standard applies."
+    },
+    {
+      "path": "sections[6].objectives[2]",
+      "title": "AI Reflection",
+      "description": "Write a reflection on using AI in this project.",
+      "alignments": [],
+      "note": "Reflective writing. No math standard applies."
+    }
+  ]
+}

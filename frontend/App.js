@@ -5,7 +5,10 @@ import { StatusBar } from 'expo-status-bar';
 import { View, ActivityIndicator } from 'react-native';
 
 import { supabase } from './src/lib/supabase';
+import { setStorageUserId } from './src/lib/storage';
 import { colors } from './src/theme';
+import { ToastProvider } from './src/components/Toast';
+import { ConfirmDialogProvider } from './src/components/ConfirmDialog';
 
 import LoginScreen from './src/screens/LoginScreen';
 import EvalScreen from './src/screens/EvalScreen';
@@ -13,6 +16,7 @@ import AddAssignmentScreen from './src/screens/AddAssignmentScreen';
 import AddCurriculumScreen from './src/screens/AddCurriculumScreen';
 import OutputScreen from './src/screens/OutputScreen';
 import CurriculumDetailScreen from './src/screens/CurriculumDetailScreen';
+import DashboardScreen from './src/screens/DashboardScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,10 +25,12 @@ export default function App() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
+      setStorageUserId(session?.user?.id || null);
       setSession(session);
     });
 
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setStorageUserId(session?.user?.id || null);
       setSession(session);
     });
 
@@ -40,19 +46,24 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <StatusBar style="dark" />
-      <Stack.Navigator
-        initialRouteName={session ? 'Eval' : 'Login'}
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Eval" component={EvalScreen} />
-        <Stack.Screen name="AddAssignment" component={AddAssignmentScreen} />
-        <Stack.Screen name="AddCurriculum" component={AddCurriculumScreen} />
-        <Stack.Screen name="Output" component={OutputScreen} />
-        <Stack.Screen name="CurriculumDetail" component={CurriculumDetailScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ToastProvider>
+      <ConfirmDialogProvider>
+        <NavigationContainer>
+          <StatusBar style="dark" />
+          <Stack.Navigator
+            initialRouteName={session ? 'Eval' : 'Login'}
+            screenOptions={{ headerShown: false }}
+          >
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Eval" component={EvalScreen} />
+            <Stack.Screen name="AddAssignment" component={AddAssignmentScreen} />
+            <Stack.Screen name="AddCurriculum" component={AddCurriculumScreen} />
+            <Stack.Screen name="Output" component={OutputScreen} />
+            <Stack.Screen name="CurriculumDetail" component={CurriculumDetailScreen} />
+            <Stack.Screen name="Dashboard" component={DashboardScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ConfirmDialogProvider>
+    </ToastProvider>
   );
 }

@@ -1,0 +1,126 @@
+{
+  "title": "WWII Data Analysis: UPDATE",
+  "description": "<p>Explore wartime figures to master core spreadsheet and AI skills. You'll create graphs, write powerful formulas and functions, use AI to analyze data and develop infographics, and reflect on experience. </p>",
+  "sections": [
+    {
+      "title": "V1 Project Setup",
+      "description": "<p><strong style=\"color: rgb(230, 0, 0);\">**Do not continue past the \"Project Setup\" section until all tasks in this section are complete.**</strong></p><p>Open the \"Data Test\" task and follow the instructions.</p>",
+      "objectives": [
+        {
+          "title": "Data Test",
+          "description": "<p><strong style=\"color: rgb(230, 0, 0);\">**Do not continue until this task passes with all points earned. **</strong></p><p><br></p><p>This task ensures your project is set up correctly and always has the correct data in the correct location. Press the evaluate button and only continue if you earn all points for this task. <span style=\"color: rgb(230, 0, 0);\">If you do not, watch the \"Recover Video\" and follow the steps. </span></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Functions",
+      "description": "<p>Warm-up with core spreadsheet functions. You’ll use <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function to total WWII military personnel and deaths, then copy formulas efficiently. Mastering these basics prevents small math errors from snowballing later.</p>",
+      "objectives": [
+        {
+          "title": "Total Military Personnel",
+          "description": "<p>Use the <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong> function to calculate the total number of Military Personnel in the cell range <strong style=\"color: rgb(255, 153, 0);\">C3:C10</strong>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Locate cell <strong style=\"color: rgb(255, 153, 0);\">C11</strong> and insert a <strong style=\"color: rgb(102, 163, 224);\">SUM()</strong><span style=\"color: rgb(3, 7, 18);\"> function.</span></li><li data-list=\"ordered\"><span class=\"ql-ui\"></span><span style=\"color: rgb(3, 7, 18);\">Use the cell range </span><strong style=\"color: rgb(255, 153, 0);\">C3:C10 </strong><span style=\"color: rgb(3, 7, 18);\">as the </span><strong style=\"color: rgb(0, 138, 0);\">value1</strong> <span style=\"color: rgb(3, 7, 18);\">argument. </span></li></ol><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">Watch the task video for step-by-step guidance.</span></p><p><br></p><p>You can use <strong>Prompt#01: Understand Instructions In Context</strong> in the project resource file for help with these instructions.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Total Military Deaths",
+          "description": "<p>Copy the formula in cell <strong style=\"color: rgb(255, 153, 0);\">C11 </strong>and paste it into cell <strong style=\"color: rgb(255, 153, 0);\">D11</strong>.</p><p><br></p><p><span style=\"color: rgb(230, 0, 0);\">Watch the task video for step-by-step guidance.</span></p><p><br></p><p>You can use <strong>Prompt#01: Understand Instructions In Context</strong> in the project resource file for help with these instructions.</p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Formulas",
+      "description": "<p>Build your own calculations. Create a Casualty Rate formula that divides deaths by personnel and multiplies by 100, then autofill it down the column. This reinforces operator order, cell references, and fill handles.</p>",
+      "objectives": [
+        {
+          "title": "Casualty Rate1",
+          "description": "<p><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">Locate cell </span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 153, 0);\">E3</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> and input a formula that returns the Casualty Rate. Next, fill it through the range of </span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 153, 0);\">E4:E11</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">.</span></p><p><br></p><p><strong style=\"background-color: rgb(255, 255, 255); color: var(--tw-prose-bold);\">Casualty Rate (%) </strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\">= </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(153, 51, 255);\">Military Deaths</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> / </span><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 102, 204);\">Military Personnel</span></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(153, 51, 255);\">Military Deaths</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> =</span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 153, 0);\"> D3</strong></p><p><span style=\"background-color: rgb(255, 255, 255); color: rgb(0, 102, 204);\">Military Personnel</span><span style=\"background-color: rgb(255, 255, 255); color: rgb(55, 65, 81);\"> = </span><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 153, 0);\">C3</strong></p>",
+          "evaluation_type": "platform",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "title": "More Functions",
+      "description": "<p>Level-up with mixed references and lookup power-tools. Combine absolute row references with MAX(), MIN(), AVERAGE(), and XLOOKUP() to identify extremes and match them back to countries—skills you’ll reuse in real-world analytics.</p>",
+      "objectives": [
+        {
+          "title": "Absolute References",
+          "description": "<p>Locate cell <strong style=\"color: rgb(255, 153, 0);\">D14</strong> and insert a <strong style=\"color: rgb(102, 163, 224);\">MAX()</strong> function. Use an <strong>absolute row reference</strong> ( <strong style=\"color: rgb(255, 153, 0);\">$</strong> ) to define the <strong>row numbers</strong> in the range of <strong style=\"color: rgb(255, 153, 0);\">E3:E10</strong>.</p><p><strong>EXAMPLE: </strong></p><p>=<strong style=\"color: rgb(102, 163, 224);\">MAX(</strong><strong style=\"color: rgb(0, 138, 0);\">value1</strong><strong style=\"color: rgb(102, 163, 224);\">)</strong></p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "XLOOKUP Function",
+          "description": "<p>Locate cell <strong style=\"color: rgb(255, 153, 0);\">E14</strong> and insert an <strong style=\"color: rgb(102, 163, 224);\">XLOOKUP()</strong> function. Use a <strong>relative </strong>cell reference to define the <strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">search_key</strong> argument. Use an <strong>absolute</strong> <strong>row</strong> reference <span style=\"color: rgb(3, 7, 18);\">( </span><strong style=\"color: rgb(255, 153, 0);\">$</strong><span style=\"color: rgb(3, 7, 18);\"> ) to define the </span><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">lookup_range</strong> and <strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">result_range</strong><span style=\"color: rgb(3, 7, 18);\"> arguments.</span></p><p><br></p><p><strong>EXAMPLE: </strong></p><p>=<strong style=\"color: rgb(102, 163, 224);\">XLOOKUP(</strong><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">search_key</strong>, <strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">lookup_range</strong><span style=\"color: rgb(3, 7, 18);\">, </span><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">result_range</strong><strong style=\"color: rgb(102, 163, 224);\">)</strong></p><p><br></p><p><strong style=\"background-color: rgb(230, 244, 234); color: rgb(19, 115, 51);\">search_key</strong> = Highest Casualty Rate cell</p><p><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">lookup_range</strong> = Casualty Rate range</p><p><strong style=\"color: rgb(19, 115, 51); background-color: rgb(230, 244, 234);\">result_range</strong><span style=\"color: rgb(3, 7, 18);\"> = </span>Country<span style=\"color: rgb(3, 7, 18);\"> range</span></p>",
+          "evaluation_type": "platform",
+          "points": 10
+        },
+        {
+          "title": "Fill Operation",
+          "description": "<p>Locate and select the cell range <strong style=\"color: rgb(255, 153, 0);\">D14:E14</strong>.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Use the Fill Operation to fill the formulas through the cell range <strong style=\"color: rgb(255, 153, 0);\">D16:E16</strong>.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select <strong style=\"color: rgb(255, 153, 0);\">D15</strong> and change the function to <strong style=\"color: rgb(102, 163, 224);\">MIN()</strong>.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Select <strong style=\"color: rgb(255, 153, 0);\">D16</strong> and change the function to <strong style=\"color: rgb(102, 163, 224);\">AVERAGE()</strong>.</li></ol>",
+          "evaluation_type": "platform",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "title": "Applied Knowledge & AI",
+      "description": "<p>Put everything together (plus a little AI help). Prompt the AI resource for formula hints, then craft advanced calculations with locked references—no hard-coded numbers allowed. Accuracy and flexibility are the keys here.</p>",
+      "objectives": [
+        {
+          "title": "AI & Critical Thinking",
+          "description": "<p>Use what you learned in previous tasks and AI to write formulas in cell range <strong style=\"color: rgb(255, 153, 0);\">D18:E20</strong> that return correct values. You must use <strong>absolute row references</strong> ( <strong style=\"color: rgb(255, 153, 0);\">$</strong> ) where appropriate and the following functions to accomplish this task. <strong style=\"color: rgb(102, 163, 224);\">MAX(), MIN(), AVERAGE(), and XLOOKUP()</strong>. No static value allowed.</p><p><br></p><p><strong>Use the following prompt from the resource File.</strong></p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span><span style=\"color: rgb(230, 0, 0);\">Prompt#10: Visual Analysis of a Spreadsheet for Formula Help</span></li><li data-list=\"ordered\"><span class=\"ql-ui\"></span><span style=\"color: rgb(230, 0, 0);\">Prompt#10.1: Help with Visual Analysis Formulas</span></li></ol>",
+          "evaluation_type": "platform",
+          "points": 30
+        }
+      ]
+    },
+    {
+      "title": "Charts",
+      "description": "<p>Turn numbers into visuals. Build a Pie Chart for military deaths and a Column Chart for military personnel so patterns and outliers jump off the page.</p>",
+      "objectives": [
+        {
+          "title": "Pie Chart",
+          "description": "<p><span style=\"color: rgb(3, 7, 18);\">Create a </span><strong style=\"color: rgb(3, 7, 18);\">Pie Chart</strong><span style=\"color: rgb(3, 7, 18);\"> that displays the number of </span><strong style=\"color: rgb(3, 7, 18);\">Military Deaths</strong><span style=\"color: rgb(3, 7, 18);\"> by Country. Select two non-contiguous ranges, </span><strong style=\"color: rgb(255, 153, 0);\">B3:B10</strong><span style=\"color: rgb(3, 7, 18);\"> and </span><strong style=\"color: rgb(255, 153, 0);\">D3:D10</strong><span style=\"color: rgb(3, 7, 18);\">.</span></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        },
+        {
+          "title": "Column Chart",
+          "description": "<p>Create a <strong>Column Chart</strong> that displays the number of <strong>Military Personnel</strong> by Country. <span style=\"color: rgb(3, 7, 18);\">Select two non-contiguous ranges, </span><strong style=\"color: rgb(255, 153, 0);\">B3:B10</strong><span style=\"color: rgb(3, 7, 18);\"> and </span><strong style=\"color: rgb(255, 153, 0);\">C3:C10</strong><span style=\"color: rgb(3, 7, 18);\">.</span></p>",
+          "evaluation_type": "platform",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Reflection",
+      "description": "<p>Step back from the spreadsheet and write a brief analysis: What stories do the numbers and charts tell, and why do casualty rates differ across these nations? Your explanation shows you can translate data into insight.</p>",
+      "objectives": [
+        {
+          "title": "Data Reflection",
+          "description": "<p>You must use <strong style=\"color: rgb(230, 0, 0);\">ChatGPT</strong> or <strong style=\"color: rgb(230, 0, 0);\">Grok</strong> for this task because they allow free users to upload Google Spreadsheets for analysis. <span style=\"color: rgb(230, 0, 0);\">Watch the task video for step-by-step instructions.</span></p><p><br></p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Use the <strong>Prompt#05: Data Analyst and Tutor</strong> from the <strong>resource file</strong> for help.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Update the prompt, then use it with your Google Sheet to get Data and Historical analysis from an AI chatbot.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>Locate cell <strong style=\"color: rgb(255, 153, 0);\">B23</strong> and write your own reflection on the experience of learn about data from an AI chatbot. <strong style=\"color: rgb(230, 0, 0);\">Do not use AI to write this. </strong><span style=\"color: rgb(230, 0, 0);\">Minimum of 100 words.</span></li></ol>",
+          "evaluation_type": "ai",
+          "points": 15
+        },
+        {
+          "title": "Spreadsheet Reflection",
+          "description": "<p>Locate cell <strong style=\"color: rgb(255, 153, 0);\">B30</strong> and write your own reflection on the experience using spreadsheets in a World History class.</p><p>What did you learn? What did you already know? What did you find most interesting or useful? How do you see yourself using spreadsheets in the future? <strong style=\"color: rgb(230, 0, 0);\">Do not use AI to write this. </strong><span style=\"color: rgb(230, 0, 0);\">Minimum of 100 words.</span></p>",
+          "evaluation_type": "ai",
+          "points": 25
+        },
+        {
+          "title": "AI Reflection",
+          "description": "<p>Locate cell <strong style=\"color: rgb(255, 153, 0);\">B44</strong> and write your own reflection on the experience using AI on this project. You must address four guiding questions below. Also, weave in the the activities covered in this project.</p><ol><li data-list=\"ordered\"><span class=\"ql-ui\"></span>What you learned</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>What you already knew.</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>What you found most interesting or useful</li><li data-list=\"ordered\"><span class=\"ql-ui\"></span>How you expect to use AI in the future</li></ol><p><br></p><p><strong style=\"color: rgb(230, 0, 0);\">Do not use AI to write this. </strong><span style=\"color: rgb(230, 0, 0);\">Minimum of 100 words.</span></p>",
+          "evaluation_type": "ai",
+          "points": 25
+        }
+      ]
+    }
+  ]
+}
