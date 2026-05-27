@@ -23,12 +23,16 @@ const SECTION_BY_ROUTE = {
   AddCurriculum: 'workspace',
   Output: 'workspace',
   CurriculumDetail: 'workspace',
+  Tag: 'workspace',
+  Report: 'workspace',
   Dashboard: 'dashboard',
+  Settings: 'settings',
 };
 
 const LINKS = [
   { id: 'workspace', label: 'Workspace', route: 'Eval' },
   { id: 'dashboard', label: 'Dashboard', route: 'Dashboard' },
+  { id: 'settings', label: 'Settings', route: 'Settings' },
 ];
 
 export default function TopNav({ navigation, currentRoute }) {
