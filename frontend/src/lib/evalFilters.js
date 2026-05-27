@@ -13,8 +13,10 @@ export const DEFAULT_EVAL_STATE = {
   assignments: {
     search: '',
     sort: 'recent', // 'recent' | 'name' | 'aligned'
-    subjects: [...ALL_SUBJECTS], // empty array means none, full list means all
+    subject: 'all', // 'all' | 'ela' | 'math' | 'history'
+    grade: 'all',
     hideSamples: false,
+    alignment: 'all', // 'all' | 'raw' | 'aligned'
   },
   curricula: {
     search: '',
@@ -34,10 +36,18 @@ export function mergeEvalState(persisted) {
       sort: ['recent', 'name', 'aligned'].includes(p.assignments?.sort)
         ? p.assignments.sort
         : 'recent',
-      subjects: Array.isArray(p.assignments?.subjects)
-        ? p.assignments.subjects.filter((s) => ALL_SUBJECTS.includes(s))
-        : [...ALL_SUBJECTS],
+      subject: ['all', ...ALL_SUBJECTS].includes(p.assignments?.subject)
+        ? p.assignments.subject
+        : (Array.isArray(p.assignments?.subjects)
+          && p.assignments.subjects.length === 1
+          && ALL_SUBJECTS.includes(p.assignments.subjects[0])
+            ? p.assignments.subjects[0]
+            : 'all'),
       hideSamples: !!p.assignments?.hideSamples,
+      alignment: ['all', 'raw', 'aligned'].includes(p.assignments?.alignment)
+        ? p.assignments.alignment
+        : 'all',
+      grade: typeof p.assignments?.grade === 'string' ? p.assignments.grade : 'all',
     },
     curricula: {
       search: typeof p.curricula?.search === 'string' ? p.curricula.search : '',
@@ -55,24 +65,38 @@ function toLower(s) {
 
 // ---------- Assignments ----------
 
+export function assignmentIsRaw(a) {
+  if (!a || a.is_seed) return false;
+  return !(a.n_aligned > 0);
+}
+
+export function assignmentIsAligned(a) {
+  if (!a) return false;
+  if (a.is_seed) return true;
+  return a.n_aligned > 0;
+}
+
 export function filterAssignments(rows, state) {
-  const { search, subjects, hideSamples } = state || {};
+  const { search, subject, hideSamples, alignment, grade } = state || {};
   let out = rows || [];
   if (hideSamples) {
     out = out.filter((a) => !a.is_seed);
   }
-  if (subjects && subjects.length && subjects.length < ALL_SUBJECTS.length) {
-    // The pills only cover known subjects (ELA / Math / History). Two
-    // categories ALWAYS pass regardless of which pills are active so
-    // they don't get accidentally hidden:
-    //   - User-created with no subject (placeholder phase)
-    //   - Custom subjects like 'art' or 'pe' that don't have a pill
-    const allow = new Set(subjects);
+  if (alignment === 'raw') {
+    out = out.filter((a) => assignmentIsRaw(a));
+  } else if (alignment === 'aligned') {
+    out = out.filter((a) => assignmentIsAligned(a));
+  }
+  if (grade && grade !== 'all') {
+    out = out.filter((a) => String(a.grade || '').trim() === String(grade));
+  }
+  if (subject && subject !== 'all') {
+    const allow = subject;
     out = out.filter((a) => {
       if (!a.subject) return true;
       const known = ALL_SUBJECTS.includes(a.subject);
       if (!known) return true;
-      return allow.has(a.subject);
+      return a.subject === allow;
     });
   }
   if (search && search.trim()) {
@@ -155,3 +179,28 @@ export const SORT_LABEL = {
   name: 'Name (A-Z)',
   aligned: 'Aligned %',
 };
+
+export const ALIGNMENT_LABEL = {
+  all: 'All',
+  raw: 'Raw',
+  aligned: 'Aligned',
+};
+
+export function gradeOrderKey(g) {
+  if (!g || g === 'all') return 999;
+  const s = String(g);
+  if (s === 'K') return 0;
+  const start = s.split('-')[0];
+  if (start === 'K') return 0;
+  const n = parseInt(start, 10);
+  return Number.isFinite(n) ? n : 998;
+}
+
+export function uniqueGrades(rows) {
+  const grades = new Set();
+  for (const row of rows || []) {
+    const g = String(row?.grade || '').trim();
+    if (g) grades.add(g);
+  }
+  return [...grades].sort((a, b) => gradeOrderKey(a) - gradeOrderKey(b));
+}
