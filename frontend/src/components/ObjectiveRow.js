@@ -5,6 +5,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import StandardChip from './StandardChip';
+import ExpandableText from './ExpandableText';
 import { stripHtml } from '../lib/htmlText';
 import { sourceExcerptForAlignment } from '../lib/sourceExcerpt';
 import { colors, typography } from '../theme';
@@ -42,7 +43,12 @@ export default function ObjectiveRow({
       <View style={styles.left}>
         {title ? <Text style={styles.title}>{title}</Text> : null}
         {description ? (
-          <Text style={styles.desc}>{description}</Text>
+          <ExpandableText
+            text={description}
+            style={styles.descWrap}
+            bodyStyle={styles.desc}
+            maxChars={180}
+          />
         ) : null}
         {o.note ? (
           <Text style={styles.note}>{`Note: ${o.note}`}</Text>
@@ -101,10 +107,13 @@ const styles = StyleSheet.create({
     ...typography.subheading,
     fontSize: 14,
   },
+  descWrap: {
+    marginTop: 4,
+  },
   desc: {
     ...typography.body,
     fontSize: 13,
-    marginTop: 4,
+    color: colors.textPrimary,
     lineHeight: 19,
   },
   note: {

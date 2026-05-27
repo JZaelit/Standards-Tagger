@@ -4,6 +4,8 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { strandColor, confidenceColors } from '../lib/strandColor';
+import StandardCodeLink from './StandardCodeLink';
+import ExpandableText from './ExpandableText';
 import { colors, shadows } from '../theme';
 
 export default function StandardChip({
@@ -22,33 +24,15 @@ export default function StandardChip({
   const badgeText = a.badge || a.strand;
   const canExpand = !!(onJumpToSource && (sourceExcerpt || ctx.title || ctx.path));
 
-  const CodeWrapper = onOpenInCurriculum ? TouchableOpacity : View;
-  const codeProps = onOpenInCurriculum
-    ? {
-        onPress: onOpenInCurriculum,
-        accessibilityRole: 'link',
-        accessibilityLabel: `Open ${a.code} in its curriculum`,
-        ...(Platform.OS === 'web'
-          ? { onPressIn: (e) => e?.stopPropagation && e.stopPropagation() }
-          : {}),
-        style: [styles.code, styles.codeLinked, { color: codeColor }],
-      }
-    : { style: [styles.code, { color: codeColor }] };
-
   return (
     <View style={styles.chip}>
       <View style={styles.topRow}>
-        <CodeWrapper {...codeProps}>
-          <Text
-            style={[
-              styles.codeText,
-              { color: codeColor },
-              onOpenInCurriculum && styles.codeTextLinked,
-            ]}
-          >
-            {a.code}
-          </Text>
-        </CodeWrapper>
+        <StandardCodeLink
+          code={a.code}
+          standardText={a.text}
+          color={codeColor}
+          onPress={onOpenInCurriculum || undefined}
+        />
 
         {a.confidence ? (
           <View style={[styles.pill, { backgroundColor: conf.bg }]}>
@@ -93,7 +77,13 @@ export default function StandardChip({
 
       <View style={styles.rationale}>
         <Text style={styles.rationaleLabel}>Why this maps</Text>
-        <Text style={styles.rationaleBody}>{a.rationale || ''}</Text>
+        <ExpandableText
+          text={a.rationale || ''}
+          bodyStyle={styles.rationaleBody}
+          maxChars={120}
+          moreLabel="Show full rationale"
+          lessLabel="Show less"
+        />
       </View>
 
       {canExpand ? (
@@ -156,6 +146,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 12,
     ...shadows.card,
+    ...(Platform.OS === 'web' ? { overflow: 'visible' } : null),
   },
   topRow: {
     flexDirection: 'row',
@@ -163,23 +154,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 8,
     marginBottom: 6,
-  },
-  code: {
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 4,
-    backgroundColor: '#eef1f6',
-  },
-  codeLinked: {
-    ...(Platform.OS === 'web' ? { cursor: 'pointer' } : null),
-  },
-  codeText: {
-    fontFamily: 'Menlo',
-    fontSize: 13,
-    fontWeight: '700',
-  },
-  codeTextLinked: {
-    textDecorationLine: 'underline',
+    ...(Platform.OS === 'web' ? { overflow: 'visible' } : null),
   },
   expandBtn: {
     flexDirection: 'row',

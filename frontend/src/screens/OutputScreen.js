@@ -16,6 +16,7 @@ import SourcePanel from '../components/SourcePanel';
 import ObjectiveRow from '../components/ObjectiveRow';
 import AlignPanel from '../components/AlignPanel';
 import SectionVisibilityToggle from '../components/SectionVisibilityToggle';
+import ExpandableText from '../components/ExpandableText';
 import TopNav from '../components/TopNav';
 
 function StatPill({ label, value }) {
@@ -224,7 +225,13 @@ export default function OutputScreen({ route, navigation }) {
                   </View>
                   {sec.description ? (
                     parseHtmlBlocks(sec.description).map((b, i) => (
-                      <Text key={i} style={styles.sectionDesc}>{b}</Text>
+                      <ExpandableText
+                        key={i}
+                        text={b}
+                        style={styles.sectionDescWrap}
+                        bodyStyle={styles.sectionDesc}
+                        maxChars={200}
+                      />
                     ))
                   ) : null}
                 </View>
@@ -464,11 +471,13 @@ const styles = StyleSheet.create({
     color: colors.textSecondary,
     fontWeight: '600',
   },
+  sectionDescWrap: {
+    marginTop: 6,
+  },
   sectionDesc: {
     fontSize: 13,
     color: colors.textSecondary,
     lineHeight: 19,
-    marginTop: 6,
   },
   empty: {
     color: colors.textSecondary,

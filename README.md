@@ -81,14 +81,6 @@ Use this for solo/local testing. For teams, prefer the proxy + `.env` setup abov
 
 ---
 
-## What needs the API key?
-
-| Feature | Key required? |
-|--------|----------------|
-| Browse samples, dashboard, standards | No |
-| Parse upload / Align with AI | Yes |
-
-Without a key, the rest of the app still works with bundled sample data.
 
 ---
 
