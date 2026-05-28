@@ -39,6 +39,26 @@ DEFAULT_MODEL = "claude-sonnet-4-5"
 DEFAULT_MAX_TOKENS = 1024
 DEFAULT_TOP_N = 5  # how many reranked candidates to show the model
 
+
+def load_dotenv() -> None:
+    """Load every KEY=VALUE from repo-root .env. Shell env always wins."""
+    env_file = ROOT / ".env"
+    if not env_file.exists():
+        return
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        val = value.strip()
+        if (val.startswith('"') and val.endswith('"')) or (
+            val.startswith("'") and val.endswith("'")
+        ):
+            val = val[1:-1]
+        if key and val and not os.environ.get(key):
+            os.environ[key] = val
+
 # Sonnet 4.5 list pricing (per million tokens). Used only for the dry-run
 # estimate; not authoritative.
 PRICE_PER_M_INPUT_USD = 3.0
@@ -313,6 +333,7 @@ def process_file(client, model, alignment_path: Path, top_n: int,
 
 
 def main():
+    load_dotenv()
     p = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,

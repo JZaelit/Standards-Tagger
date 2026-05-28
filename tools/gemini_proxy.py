@@ -17,7 +17,6 @@ from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-PORT = int(os.environ.get("GEMINI_PROXY_PORT", "8787"))
 BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 # Loaded once at startup — exact bytes from .env / environment (no JS sanitize).
@@ -26,6 +25,7 @@ SERVER_KEY_SOURCE = "none"
 
 
 def load_dotenv() -> None:
+    """Load every KEY=VALUE from repo-root .env. Shell env always wins."""
     env_file = REPO_ROOT / ".env"
     if not env_file.exists():
         return
@@ -34,15 +34,14 @@ def load_dotenv() -> None:
         if not line or line.startswith("#") or "=" not in line:
             continue
         key, _, value = line.partition("=")
-        if key.strip() != "GEMINI_API_KEY":
-            continue
+        key = key.strip()
         val = value.strip()
         if (val.startswith('"') and val.endswith('"')) or (
             val.startswith("'") and val.endswith("'")
         ):
             val = val[1:-1]
-        if val and not os.environ.get("GEMINI_API_KEY"):
-            os.environ["GEMINI_API_KEY"] = val
+        if key and val and not os.environ.get(key):
+            os.environ[key] = val
 
 
 def init_server_key() -> None:
@@ -205,8 +204,9 @@ class Handler(BaseHTTPRequestHandler):
 def main() -> None:
     init_server_key()
     verify_key_on_startup()
-    httpd = HTTPServer(("127.0.0.1", PORT), Handler)
-    print(f"Gemini proxy listening on http://127.0.0.1:{PORT}")
+    port = int(os.environ.get("GEMINI_PROXY_PORT", "8787"))
+    httpd = HTTPServer(("127.0.0.1", port), Handler)
+    print(f"Gemini proxy listening on http://127.0.0.1:{port}")
     print("Team mode: put GEMINI_API_KEY in .env, leave browser key empty.")
     httpd.serve_forever()
 
