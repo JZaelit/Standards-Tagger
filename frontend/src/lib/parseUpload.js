@@ -29,6 +29,8 @@ export function parseEdusperienceJson(data) {
         return {
           description: desc,
           label: obj.title || '',
+          evaluation_type: obj.evaluation_type || null,
+          audience: obj.audience || null,
         };
       })
       .filter((o) => o.description || o.label),

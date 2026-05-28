@@ -32,6 +32,7 @@ export default function OutputScreen({ route, navigation }) {
   const { assignment } = route.params || {};
   const [detail, setDetail] = useState(null);
   const [curriculum, setCurriculum] = useState(null);
+  const [standardTextByCode, setStandardTextByCode] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showStandardText, setShowStandardText] = useState(true);
 
@@ -43,10 +44,18 @@ export default function OutputScreen({ route, navigation }) {
       setLoading(true);
     }
     const d = await dataClient.assignments.detail(assignment?.id);
-    const cId = d?.alignment_curriculum_id || d?.curriculum_id || assignment?.curriculum_id;
-    const c = cId ? await dataClient.curricula.get(cId) : null;
+    const cIds = d?.alignment_curriculum_ids?.length
+      ? d.alignment_curriculum_ids
+      : (d?.alignment_curriculum_id || d?.curriculum_id || assignment?.curriculum_id
+          ? [d.alignment_curriculum_id || d.curriculum_id || assignment.curriculum_id]
+          : []);
+    const [c, texts] = await Promise.all([
+      cIds[0] ? dataClient.curricula.get(cIds[0]) : null,
+      cIds.length ? dataClient.standards.textByCodeForCurricula(cIds) : null,
+    ]);
     setDetail(d);
     setCurriculum(c);
+    setStandardTextByCode(texts);
     setLoading(false);
   }, [assignment?.id, assignment?.curriculum_id]);
 
@@ -64,6 +73,15 @@ export default function OutputScreen({ route, navigation }) {
     const d = await dataClient.assignments.detail(assignment?.id);
     setDetail(d);
   }, [assignment?.id]);
+
+  const handleSaveAlignments = useCallback(async (sectionIdx, objectiveIdx, alignments) => {
+    await dataClient.assignments.updateObjectiveAlignments(assignment?.id, {
+      sectionIdx,
+      objectiveIdx,
+      alignments,
+    });
+    loadDetail({ showSpinner: false });
+  }, [assignment?.id, loadDetail]);
 
   if (loading && !detail) {
     return (
@@ -127,7 +145,10 @@ export default function OutputScreen({ route, navigation }) {
             />
             <StatPill
               label="Standards"
-              value={curriculum ? curriculum.title : 'Not set'}
+              value={
+                detail?.curriculum_title
+                || (curriculum ? curriculum.title : 'Not set')
+              }
             />
           </View>
           {detail?.file_name || assignment?.file_name ? (
@@ -241,6 +262,7 @@ export default function OutputScreen({ route, navigation }) {
                     objective={o}
                     subject={subject}
                     showStandardText={showStandardText}
+                    standardTextByCode={standardTextByCode}
                     hasSource={!!detail?.source}
                     onJumpToSource={(alignment, sourceExcerpt) => {
                       if (sourceRef.current?.jumpTo) {
@@ -250,14 +272,17 @@ export default function OutputScreen({ route, navigation }) {
                         });
                       }
                     }}
-                    onOpenInCurriculum={
-                      curriculum
-                        ? (code) =>
-                            navigation.navigate('CurriculumDetail', {
-                              curriculum,
-                              focusCode: code,
-                            })
-                        : undefined
+                    onOpenInCurriculum={(code) => {
+                      dataClient.standards.findByCode(code).then((found) => {
+                        if (!found) return;
+                        navigation.navigate('CurriculumDetail', {
+                          curriculum: found.curriculum,
+                          focusCode: code,
+                        });
+                      });
+                    }}
+                    onSaveAlignments={(alignments) =>
+                      handleSaveAlignments(o.section_idx, o.objective_idx, alignments)
                     }
                   />
                 ))}

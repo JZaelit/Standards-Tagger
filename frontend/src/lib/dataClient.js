@@ -9,6 +9,7 @@
 
 import { SEED } from '../data/seed';
 import { storage } from './storage';
+import { countsTowardAlignmentCoverage } from './alignmentScope';
 
 const KEY_USER_ASSIGNMENTS = 'assignments';
 const KEY_USER_CURRICULA = 'curricula';
@@ -20,6 +21,7 @@ const KEY_USER_STANDARDS = 'user_standards_records';
 const KEY_HIDDEN_ASSIGNMENTS = 'hidden_seed_assignments';
 const KEY_HIDDEN_CURRICULA = 'hidden_seed_curricula';
 const KEY_SECTION_METRICS = 'assignment_section_metrics';
+const KEY_CURRICULUM_REVIEW_QUEUE = 'curriculum_review_queue';
 
 // On first run, pre-adopt the curricula whose seeded assignments rely on them.
 function ensureInitialized() {
@@ -57,9 +59,10 @@ function alignmentStatsForObjectives(objectives, excludedSections = new Set()) {
   const filtered = (objectives || []).filter(
     (o) => !excludedSections.has(Number(o.section_idx)),
   );
+  const inScope = filtered.filter(countsTowardAlignmentCoverage);
   return {
-    n_total: filtered.length,
-    n_aligned: filtered.filter((o) => (o.alignments || []).length > 0).length,
+    n_total: inScope.length,
+    n_aligned: inScope.filter((o) => (o.alignments || []).length > 0).length,
   };
 }
 
@@ -177,6 +180,68 @@ function saveAlignment(id, payload) {
   return map[id];
 }
 
+function standardsRecordsForCurricula(curriculumIds) {
+  const seen = new Set();
+  const merged = [];
+  for (const id of curriculumIds || []) {
+    for (const r of standardsRecordsForCurriculum(id)) {
+      const code = r?.code;
+      if (!code || seen.has(code)) continue;
+      seen.add(code);
+      merged.push(r);
+    }
+  }
+  return merged;
+}
+
+function standardsTextByCodeForCurricula(curriculumIds) {
+  const map = {};
+  for (const id of curriculumIds || []) {
+    for (const r of standardsRecordsForCurriculum(id)) {
+      if (r.code && r.text && !map[r.code]) map[r.code] = r.text;
+    }
+  }
+  return map;
+}
+
+function withAlignmentText(curriculumIds, alignments = []) {
+  const ids = Array.isArray(curriculumIds)
+    ? curriculumIds
+    : (curriculumIds ? [curriculumIds] : []);
+  const textByCode = standardsTextByCodeForCurricula(ids);
+  return (alignments || []).map((a) => {
+    const text = (a?.text || '').trim() || textByCode[a?.code] || '';
+    return { ...a, text };
+  });
+}
+
+function upsertObjectiveAlignments(id, payload) {
+  const { sectionIdx, objectiveIdx, alignments = [] } = payload || {};
+  if (!id || sectionIdx == null || objectiveIdx == null) return null;
+  const detail = getAssignmentDetail(id);
+  if (!detail || !detail.objectives?.length) return null;
+  const currIds = detail.alignment_curriculum_ids?.length
+    ? [...detail.alignment_curriculum_ids]
+    : (detail.alignment_curriculum_id || detail.curriculum_id
+        ? [detail.alignment_curriculum_id || detail.curriculum_id]
+        : []);
+  const normalized = withAlignmentText(currIds, alignments).filter((a) => a?.code);
+  const objectives = (detail.objectives || []).map((o) => {
+    if (Number(o.section_idx) !== Number(sectionIdx) || Number(o.objective_idx) !== Number(objectiveIdx)) {
+      return o;
+    }
+    return { ...o, alignments: normalized };
+  });
+  return saveAlignment(id, {
+    curriculum_id: currIds[0] || null,
+    curriculum_ids: currIds,
+    curriculum_title: detail.curriculum_title || null,
+    objectives,
+    n_total: objectives.length,
+    n_aligned: objectives.filter((o) => (o.alignments || []).length > 0).length,
+  });
+}
+
 function getUserStandardsRecords(curriculumId) {
   if (!curriculumId) return null;
   return storage.get(KEY_USER_STANDARDS, {})[curriculumId] || null;
@@ -209,8 +274,19 @@ function getAssignmentDetail(id) {
       title: o.title || o.objective_title || '',
       description: o.description || o.objective_description || '',
     }));
-    const curriculumId = alignment?.curriculum_id ?? a.curriculum_id ?? null;
+    const curriculumIds = alignment?.curriculum_ids?.length
+      ? [...alignment.curriculum_ids]
+      : (alignment?.curriculum_id ?? a.curriculum_id
+          ? [alignment.curriculum_id ?? a.curriculum_id]
+          : []);
+    const curriculumId = curriculumIds[0] ?? null;
     const curriculum = curriculumId ? getCurriculum(curriculumId) : null;
+    const curriculumTitle = alignment?.curriculum_title
+      || curriculumIds
+        .map((cid) => getCurriculum(cid)?.title)
+        .filter(Boolean)
+        .join(' + ')
+      || null;
     detail = {
       ...a,
       source: parsed
@@ -233,6 +309,8 @@ function getAssignmentDetail(id) {
       n_aligned: objectives.filter((o) => (o.alignments || []).length > 0).length,
       standards_db: curriculum?.standards_db || null,
       alignment_curriculum_id: curriculumId,
+      alignment_curriculum_ids: curriculumIds,
+      curriculum_title: curriculumTitle,
       tagged_at: alignment?.tagged_at || null,
       parse_status: parsed ? 'parsed' : (a.file_name ? 'needs_parse' : 'empty'),
       tag_status: alignment ? 'tagged' : 'pending',
@@ -388,7 +466,7 @@ function adoptCurriculum(id) {
 }
 
 function createCurriculum({
-  title, grade, file_name, is_public, subject, standards_count,
+  title, grade, file_name, is_public, subject, standards_count, grade_tags, subject_tags,
 }) {
   ensureInitialized();
   const userCurricula = storage.get(KEY_USER_CURRICULA, []);
@@ -404,6 +482,8 @@ function createCurriculum({
     standards_db: null,
     standards_count: standards_count || 0,
     subject: (subject || '').trim().toLowerCase() || null,
+    grade_tags: Array.isArray(grade_tags) ? grade_tags : [],
+    subject_tags: Array.isArray(subject_tags) ? subject_tags : [],
     is_seed: false,
   };
   storage.set(KEY_USER_CURRICULA, [row, ...userCurricula]);
@@ -421,7 +501,7 @@ function updateCurriculum(id, patch) {
   const rows = storage.get(KEY_USER_CURRICULA, []);
   const idx = rows.findIndex((c) => c.id === id);
   if (idx === -1) return null;
-  const allowed = ['title', 'grade', 'file_name', 'is_public', 'subject', 'standards_count'];
+  const allowed = ['title', 'grade', 'file_name', 'is_public', 'subject', 'standards_count', 'grade_tags', 'subject_tags'];
   const next = { ...rows[idx] };
   for (const k of allowed) {
     if (Object.prototype.hasOwnProperty.call(patch || {}, k)) {
@@ -430,6 +510,8 @@ function updateCurriculum(id, patch) {
         next[k] = typeof v === 'string'
           ? (v.trim().toLowerCase() || null)
           : (v ?? null);
+      } else if (k === 'grade_tags' || k === 'subject_tags') {
+        next[k] = Array.isArray(v) ? v : [];
       } else {
         next[k] = typeof v === 'string' ? v.trim() : v;
       }
@@ -542,6 +624,31 @@ function standardsRecordsForCurriculum(curriculumId) {
   return SEED.standardsRecordsByCurriculumId[curriculumId] || [];
 }
 
+/** { [code]: description } for tooltips and inline standard text. */
+function standardsTextByCode(curriculumId) {
+  const map = {};
+  for (const r of standardsRecordsForCurriculum(curriculumId)) {
+    if (r.code && r.text) map[r.code] = r.text;
+  }
+  return map;
+}
+
+function submitCurriculumForReview(payload) {
+  const row = {
+    id: newId('review'),
+    created_at: new Date().toISOString(),
+    status: 'pending',
+    ...payload,
+  };
+  const queue = storage.get(KEY_CURRICULUM_REVIEW_QUEUE, []);
+  storage.set(KEY_CURRICULUM_REVIEW_QUEUE, [row, ...queue]);
+  return row;
+}
+
+function listCurriculumReviewQueue() {
+  return storage.get(KEY_CURRICULUM_REVIEW_QUEUE, []);
+}
+
 function standardsByCurriculum(curriculumId, opts = {}) {
   const records = standardsRecordsForCurriculum(curriculumId);
   let filtered = records;
@@ -568,14 +675,22 @@ function standardsByCurriculum(curriculumId, opts = {}) {
   return { rows: page, total };
 }
 
+function assignmentUsesCurriculum(detail, assignment, curriculumId) {
+  const ids = detail.alignment_curriculum_ids?.length
+    ? detail.alignment_curriculum_ids
+    : (detail.alignment_curriculum_id ?? assignment.curriculum_id
+        ? [detail.alignment_curriculum_id ?? assignment.curriculum_id]
+        : []);
+  return ids.includes(curriculumId);
+}
+
 // Standards a user has actually seen used by their seed assignments under
 // this curriculum. Useful for the "Used in your assignments" filter.
 function standardsUsedBy(curriculumId) {
   const recordIndex = SEED.standardsIndexByCurriculumId[curriculumId] || {};
   const usedCodes = new Set();
   for (const { assignment: a, detail } of assignmentsWithDetailsForStats()) {
-    const cid = detail.alignment_curriculum_id ?? a.curriculum_id;
-    if (cid !== curriculumId) continue;
+    if (!assignmentUsesCurriculum(detail, a, curriculumId)) continue;
     const excluded = new Set(detail.excluded_sections || []);
     for (const o of detail.objectives) {
       if (excluded.has(o.section_idx)) continue;
@@ -623,8 +738,7 @@ function findStandardByCode(code) {
 function standardsUsageMap(curriculumId) {
   const map = {};
   for (const { assignment: a, detail } of assignmentsWithDetailsForStats()) {
-    const cid = detail.alignment_curriculum_id ?? a.curriculum_id;
-    if (cid !== curriculumId) continue;
+    if (!assignmentUsesCurriculum(detail, a, curriculumId)) continue;
     const excluded = new Set(detail.excluded_sections || []);
     const ref = { id: a.id, name: a.name, stem: a.stem };
     for (const o of detail.objectives) {
@@ -770,6 +884,7 @@ export const dataClient = {
     getParsed: (id) => wait(getParsedEdusperience(id)),
     getAlignment: (id) => wait(getAlignment(id)),
     saveAlignment: (id, payload) => wait(saveAlignment(id, payload)),
+    updateObjectiveAlignments: (id, payload) => wait(upsertObjectiveAlignments(id, payload)),
     setSectionIncluded: (id, sectionIdx, included) =>
       wait(setSectionIncluded(id, sectionIdx, included)),
     getExcludedSections: (id) => wait([...excludedSectionsForAssignment(id)]),
@@ -793,15 +908,22 @@ export const dataClient = {
   standards: {
     byCurriculum: (id, opts) => wait(standardsByCurriculum(id, opts)),
     recordsFor: (id) => wait(standardsRecordsForCurriculum(id)),
+    recordsForCurricula: (ids) => wait(standardsRecordsForCurricula(ids)),
     saveForCurriculum: (id, records) =>
       wait(saveUserStandardsRecords(id, records)),
     usedBy: (id) => wait(standardsUsedBy(id)),
     summary: (id) => wait(standardsSummary(id)),
     usageMap: (id) => wait(standardsUsageMap(id)),
     findByCode: (code) => wait(findStandardByCode(code)),
+    textByCode: (curriculumId) => wait(standardsTextByCode(curriculumId)),
+    textByCodeForCurricula: (ids) => wait(standardsTextByCodeForCurricula(ids)),
   },
   settings: {
     // Implemented in settings.js — screens import from there directly.
+  },
+  review: {
+    submitCurriculum: (payload) => wait(submitCurriculumForReview(payload)),
+    listCurricula: () => wait(listCurriculumReviewQueue()),
   },
   dashboard: {
     summary: () => wait(dashboardSummary()),

@@ -1,4 +1,4 @@
-// In-assignment alignment UI: pick a standards set and run Gemini.
+// In-assignment alignment UI: pick one or more standards sets and run Gemini.
 // Embedded on OutputScreen for raw EduSperiences (not a top-level tab).
 
 import React, { useEffect, useState } from 'react';
@@ -21,7 +21,7 @@ import { colors, typography } from '../theme';
 
 export default function AlignPanel({ assignmentId, navigation, onAligned }) {
   const [curricula, setCurricula] = useState([]);
-  const [curriculumId, setCurriculumId] = useState(null);
+  const [selectedIds, setSelectedIds] = useState([]);
   const [loadingCurricula, setLoadingCurricula] = useState(true);
   const [running, setRunning] = useState(false);
   const [status, setStatus] = useState('');
@@ -38,14 +38,33 @@ export default function AlignPanel({ assignmentId, navigation, onAligned }) {
     return () => { cancelled = true; };
   }, []);
 
+  useEffect(() => {
+    if (!assignmentId) return;
+    let cancelled = false;
+    dataClient.assignments.detail(assignmentId).then((d) => {
+      if (cancelled || !d) return;
+      const ids = d.alignment_curriculum_ids?.length
+        ? d.alignment_curriculum_ids
+        : (d.alignment_curriculum_id ? [d.alignment_curriculum_id] : []);
+      if (ids.length) setSelectedIds(ids);
+    });
+    return () => { cancelled = true; };
+  }, [assignmentId]);
+
+  const toggleCurriculum = (id) => {
+    setSelectedIds((prev) => (
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+    ));
+  };
+
   const handleRun = async () => {
     if (!hasGeminiConfigured()) {
       toast.show('Add your Gemini API key in Settings first', { tone: 'danger' });
       navigation.navigate('Settings');
       return;
     }
-    if (!curriculumId) {
-      toast.show('Select a standards set to align against', { tone: 'danger' });
+    if (!selectedIds.length) {
+      toast.show('Select at least one standards set to align against', { tone: 'danger' });
       return;
     }
 
@@ -58,12 +77,20 @@ export default function AlignPanel({ assignmentId, navigation, onAligned }) {
       const assignment = await dataClient.assignments.get(assignmentId);
 
       setStatus('Loading standards…');
-      const standardsRecords = await dataClient.standards.recordsFor(curriculumId);
+      const standardsRecords = await dataClient.standards.recordsForCurricula(selectedIds);
       if (!standardsRecords?.length) {
         throw new Error(
-          'No standards in this set. Upload a standards PDF/DOCX first.',
+          'No standards in the selected set(s). Upload a standards PDF/DOCX first.',
         );
       }
+
+      const selectedCurricula = await Promise.all(
+        selectedIds.map((id) => dataClient.curricula.get(id)),
+      );
+      const sourceLabel = selectedCurricula
+        .filter(Boolean)
+        .map((c) => c.title)
+        .join(' + ');
 
       setStatus(`Aligning ${parsed.objectives.length} objectives…`);
       const tagResults = await tagAssignmentToStandards({
@@ -72,13 +99,14 @@ export default function AlignPanel({ assignmentId, navigation, onAligned }) {
         grade: assignment?.grade || parsed.grade,
         subject: assignment?.subject || parsed.subject,
         assignmentName: assignment?.name || parsed.title,
+        standardsSourceLabel: sourceLabel,
       });
 
       const merged = mergeTagResults(parsed.objectives, tagResults);
-      const curriculum = await dataClient.curricula.get(curriculumId);
       await dataClient.assignments.saveAlignment(assignmentId, {
-        curriculum_id: curriculumId,
-        curriculum_title: curriculum?.title,
+        curriculum_id: selectedIds[0],
+        curriculum_ids: selectedIds,
+        curriculum_title: sourceLabel,
         objectives: merged.objectives,
         n_total: merged.n_total,
         n_aligned: merged.n_aligned,
@@ -86,7 +114,7 @@ export default function AlignPanel({ assignmentId, navigation, onAligned }) {
 
       setStatus('');
       toast.show(
-        `Aligned ${merged.n_aligned}/${merged.n_total} objectives`,
+        `Aligned ${merged.n_aligned}/${merged.n_total} objectives using ${selectedIds.length} standards set(s)`,
         { tone: 'success' },
       );
       onAligned && onAligned();
@@ -102,8 +130,9 @@ export default function AlignPanel({ assignmentId, navigation, onAligned }) {
     <View style={styles.panel}>
       <Text style={styles.title}>Align to standards</Text>
       <Text style={styles.body}>
-        This EduSperience is uploaded but not tagged yet. Choose a standards
-        set, then run AI alignment.
+        This EduSperience is uploaded but not tagged yet. Choose one or more
+        standards sets (e.g. ELA + Math for cross-disciplinary work), then run
+        AI alignment.
       </Text>
 
       {!hasGeminiConfigured() ? (
@@ -117,7 +146,7 @@ export default function AlignPanel({ assignmentId, navigation, onAligned }) {
         </TouchableOpacity>
       ) : null}
 
-      <Text style={styles.label}>Standards set</Text>
+      <Text style={styles.label}>Standards sets (select one or more)</Text>
       {loadingCurricula ? (
         <ActivityIndicator color={colors.primary} />
       ) : curricula.length === 0 ? (
@@ -126,29 +155,42 @@ export default function AlignPanel({ assignmentId, navigation, onAligned }) {
         </Text>
       ) : (
         <View style={styles.options}>
-          {curricula.map((c) => (
-            <TouchableOpacity
-              key={c.id}
-              style={[
-                styles.option,
-                curriculumId === c.id && styles.optionSelected,
-              ]}
-              onPress={() => setCurriculumId(c.id)}
-            >
-              <Text
-                style={[
-                  styles.optionText,
-                  curriculumId === c.id && styles.optionTextSelected,
-                ]}
+          {curricula.map((c) => {
+            const selected = selectedIds.includes(c.id);
+            return (
+              <TouchableOpacity
+                key={c.id}
+                style={[styles.option, selected && styles.optionSelected]}
+                onPress={() => toggleCurriculum(c.id)}
               >
-                {c.title}
-                {c.is_seed !== false ? ' · SAMPLE' : ''}
-                {c.standards_count ? ` · ${c.standards_count} stds` : ''}
-              </Text>
-            </TouchableOpacity>
-          ))}
+                <View style={styles.optionRow}>
+                  <View style={[styles.check, selected && styles.checkOn]}>
+                    {selected ? (
+                      <Text style={styles.checkMark}>{'\u2713'}</Text>
+                    ) : null}
+                  </View>
+                  <Text
+                    style={[
+                      styles.optionText,
+                      selected && styles.optionTextSelected,
+                    ]}
+                  >
+                    {c.title}
+                    {c.is_seed !== false ? ' · SAMPLE' : ''}
+                    {c.standards_count ? ` · ${c.standards_count} stds` : ''}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
         </View>
       )}
+
+      {selectedIds.length > 0 ? (
+        <Text style={styles.selectedHint}>
+          {`${selectedIds.length} set${selectedIds.length === 1 ? '' : 's'} selected — standards are merged for tagging.`}
+        </Text>
+      ) : null}
 
       {status ? (
         <View style={styles.statusRow}>
@@ -160,10 +202,10 @@ export default function AlignPanel({ assignmentId, navigation, onAligned }) {
       <TouchableOpacity
         style={[
           styles.runBtn,
-          (running || !curriculumId) && styles.runBtnDisabled,
+          (running || !selectedIds.length) && styles.runBtnDisabled,
         ]}
         onPress={handleRun}
-        disabled={running || !curriculumId}
+        disabled={running || !selectedIds.length}
       >
         {running ? (
           <ActivityIndicator color="#fff" />
@@ -205,16 +247,45 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
     borderRadius: 8,
-    paddingHorizontal: 14,
-    paddingVertical: 11,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
     backgroundColor: colors.white,
   },
   optionSelected: {
     borderColor: colors.primary,
     backgroundColor: colors.primaryLight,
   },
-  optionText: { fontSize: 14, color: colors.textPrimary },
+  optionRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  check: {
+    width: 20,
+    height: 20,
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: colors.border,
+    backgroundColor: colors.white,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  checkOn: {
+    borderColor: colors.primary,
+    backgroundColor: colors.primary,
+  },
+  checkMark: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: '800',
+  },
+  optionText: { flex: 1, fontSize: 14, color: colors.textPrimary },
   optionTextSelected: { color: colors.primaryDark, fontWeight: '600' },
+  selectedHint: {
+    fontSize: 12,
+    color: colors.textSecondary,
+    fontStyle: 'italic',
+  },
   statusRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   statusText: { fontSize: 13, color: colors.textSecondary },
   runBtn: {

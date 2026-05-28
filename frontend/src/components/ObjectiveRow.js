@@ -2,12 +2,13 @@
 // and description. Right column: the StandardChip stack with expandable
 // source-match panels.
 
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useMemo, useState } from 'react';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import StandardChip from './StandardChip';
 import ExpandableText from './ExpandableText';
 import { stripHtml } from '../lib/htmlText';
 import { sourceExcerptForAlignment } from '../lib/sourceExcerpt';
+import { isLikelyNonStudentObjective } from '../lib/alignmentScope';
 import { colors, typography } from '../theme';
 
 const FALLBACK_BY_SUBJECT = {
@@ -20,13 +21,16 @@ export default function ObjectiveRow({
   objective,
   subject = 'ela',
   showStandardText = true,
+  standardTextByCode = null,
   hasSource = false,
   onJumpToSource,
   onOpenInCurriculum,
+  onSaveAlignments,
 }) {
   const o = objective || {};
   const alignments = o.alignments || [];
   const fallback = FALLBACK_BY_SUBJECT[subject] || 'No standard applies.';
+  const nonStudent = isLikelyNonStudentObjective(o);
   const title = o.title || o.objective_title || '';
   const description = stripHtml(o.description || o.objective_description || '');
 
@@ -36,6 +40,23 @@ export default function ObjectiveRow({
     path: o.path || '',
     sectionTitle: o.section_title || '',
     sectionDescription: o.section_description || '',
+  };
+  const [draftCodes, setDraftCodes] = useState('');
+  const codeHint = useMemo(
+    () => alignments.map((a) => a.code).filter(Boolean).join(', '),
+    [alignments],
+  );
+  const applyCodes = () => {
+    if (!onSaveAlignments) return;
+    const codes = (draftCodes || '')
+      .split(',')
+      .map((c) => c.trim())
+      .filter(Boolean);
+    const next = [...new Set(codes)].map((code) => {
+      const existing = alignments.find((a) => a.code === code);
+      return existing || { code };
+    });
+    onSaveAlignments(next);
   };
 
   return (
@@ -57,7 +78,11 @@ export default function ObjectiveRow({
       <View style={styles.right}>
         {alignments.length === 0 ? (
           <View style={styles.empty}>
-            <Text style={styles.emptyText}>{o.note || fallback}</Text>
+            <Text style={styles.emptyText}>
+              {o.note || (nonStudent
+                ? 'Not a student learning task (logistics, grading, or educator-only).'
+                : fallback)}
+            </Text>
           </View>
         ) : (
           alignments.map((a, i) => {
@@ -67,6 +92,7 @@ export default function ObjectiveRow({
               key={i}
               alignment={a}
               showText={showStandardText}
+              standardTextByCode={standardTextByCode}
               objectiveContext={objectiveContext}
               sourceExcerpt={sourceExcerpt}
               onJumpToSource={
@@ -81,6 +107,21 @@ export default function ObjectiveRow({
             );
           })
         )}
+        {!nonStudent ? (
+        <View style={styles.editRow}>
+          <Text style={styles.editLabel}>Edit codes (comma separated)</Text>
+          <TextInput
+            style={styles.editInput}
+            value={draftCodes}
+            onChangeText={setDraftCodes}
+            placeholder={codeHint || 'e.g. RST.9-10.3, RST.9-10.4'}
+            placeholderTextColor={colors.textLight}
+          />
+          <TouchableOpacity style={styles.editBtn} onPress={applyCodes}>
+            <Text style={styles.editBtnText}>Save alignments</Text>
+          </TouchableOpacity>
+        </View>
+        ) : null}
       </View>
     </View>
   );
@@ -135,5 +176,39 @@ const styles = StyleSheet.create({
     color: colors.textSecondary,
     fontStyle: 'italic',
     fontSize: 13,
+  },
+  editRow: {
+    marginTop: 8,
+    borderTopWidth: 1,
+    borderTopColor: colors.border,
+    paddingTop: 8,
+    gap: 6,
+  },
+  editLabel: {
+    fontSize: 11,
+    color: colors.textSecondary,
+    fontWeight: '600',
+  },
+  editInput: {
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    fontSize: 13,
+    color: colors.textPrimary,
+    backgroundColor: colors.background,
+  },
+  editBtn: {
+    alignSelf: 'flex-start',
+    backgroundColor: colors.primary,
+    borderRadius: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+  },
+  editBtnText: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: '700',
   },
 });

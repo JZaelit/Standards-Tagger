@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   View,
   Text,
@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import TopNav from '../components/TopNav';
 import { useToast } from '../components/Toast';
+import { dataClient } from '../lib/dataClient';
 import {
   getGeminiApiKey,
   setGeminiApiKey,
@@ -31,10 +32,15 @@ export default function SettingsScreen({ navigation }) {
   const [showKey, setShowKey] = useState(false);
   const [testing, setTesting] = useState(false);
   const [testResult, setTestResult] = useState(null);
+  const [reviewQueue, setReviewQueue] = useState([]);
   const toast = useToast();
   const saved = hasGeminiApiKey();
   const savedFp = saved ? fingerprintGeminiApiKey() : null;
   const fileRef = useRef(null);
+
+  useEffect(() => {
+    dataClient.review.listCurricula().then((rows) => setReviewQueue(rows || []));
+  }, []);
 
   const applyKey = (raw, source = 'paste') => {
     const trimmed = (raw || '').trim();
@@ -121,6 +127,25 @@ export default function SettingsScreen({ navigation }) {
       <TopNav navigation={navigation} currentRoute="Settings" />
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}>Settings</Text>
+
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>Curriculum review queue</Text>
+          <Text style={styles.body}>
+            Curricula submitted for developer review/approval are listed here.
+          </Text>
+          {reviewQueue.length === 0 ? (
+            <Text style={styles.hint}>No submissions yet.</Text>
+          ) : (
+            reviewQueue.slice(0, 8).map((row) => (
+              <View key={row.id} style={styles.savedRow}>
+                <Text style={styles.savedLabel}>{row.status?.toUpperCase() || 'PENDING'}</Text>
+                <Text style={styles.savedValue}>
+                  {`${row.title} · Grade ${row.grade}${row.subject ? ` · ${row.subject}` : ''}`}
+                </Text>
+              </View>
+            ))
+          )}
+        </View>
 
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>Gemini API key</Text>
