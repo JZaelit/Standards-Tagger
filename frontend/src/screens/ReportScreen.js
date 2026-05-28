@@ -9,6 +9,10 @@ import {
   Platform,
 } from 'react-native';
 import { dataClient } from '../lib/dataClient';
+import {
+  countsTowardAlignmentCoverage,
+  shouldShowInAlignmentReport,
+} from '../lib/alignmentScope';
 import TopNav from '../components/TopNav';
 import StandardCodeLink from '../components/StandardCodeLink';
 import { strandColor } from '../lib/strandColor';
@@ -41,7 +45,6 @@ export default function ReportScreen({ route, navigation }) {
   const assignmentId = route?.params?.assignmentId;
   const [detail, setDetail] = useState(null);
   const [curriculum, setCurriculum] = useState(null);
-  const [standardTextByCode, setStandardTextByCode] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -52,15 +55,15 @@ export default function ReportScreen({ route, navigation }) {
         return;
       }
       const d = await dataClient.assignments.detail(assignmentId);
-      const cId = d?.alignment_curriculum_id || d?.curriculum_id;
-      const [c, texts] = await Promise.all([
-        cId ? dataClient.curricula.get(cId) : null,
-        cId ? dataClient.standards.textByCode(cId) : null,
-      ]);
+      const cIds = d?.alignment_curriculum_ids?.length
+        ? d.alignment_curriculum_ids
+        : (d?.alignment_curriculum_id || d?.curriculum_id
+            ? [d.alignment_curriculum_id || d.curriculum_id]
+            : []);
+      const c = cIds[0] ? await dataClient.curricula.get(cIds[0]) : null;
       if (!cancelled) {
         setDetail(d);
         setCurriculum(c);
-        setStandardTextByCode(texts);
         setLoading(false);
       }
     };
@@ -90,9 +93,10 @@ export default function ReportScreen({ route, navigation }) {
   const objectives = detail.objectives || [];
   const excluded = new Set(detail.excluded_sections || []);
   const includedObjectives = objectives.filter((o) => !excluded.has(o.section_idx));
-  const tagged = includedObjectives.filter((o) => (o.alignments || []).length > 0);
+  const tagged = includedObjectives.filter(shouldShowInAlignmentReport);
   const confMix = { high: 0, medium: 0, low: 0 };
   for (const o of includedObjectives) {
+    if (!countsTowardAlignmentCoverage(o)) continue;
     for (const al of o.alignments || []) {
       if (confMix[al.confidence] != null) confMix[al.confidence] += 1;
     }
@@ -151,7 +155,7 @@ export default function ReportScreen({ route, navigation }) {
             </View>
           </View>
           <Text style={styles.meta}>
-            {`Standards: ${curriculum?.title || 'Unknown'} · Grade ${detail.grade || '—'}`}
+            {`Standards: ${detail?.curriculum_title || curriculum?.title || 'Unknown'} · Grade ${detail.grade || '—'}`}
           </Text>
           {detail.tagged_at ? (
             <Text style={styles.meta}>{`Tagged ${new Date(detail.tagged_at).toLocaleString()}`}</Text>
@@ -172,22 +176,16 @@ export default function ReportScreen({ route, navigation }) {
               );
             }
             const o = row.data;
-            if (!(o.alignments || []).length) return null;
+            if (!shouldShowInAlignmentReport(o)) return null;
             return (
               <View key={row.key} style={styles.objCard}>
                 <Text style={styles.objPath}>{o.path}</Text>
                 <Text style={styles.objDesc}>{o.objective_description}</Text>
-                {(o.alignments || []).map((al) => {
-                  const standardDescription =
-                    (al.text || '').trim()
-                    || (standardTextByCode && al.code ? standardTextByCode[al.code] : '')
-                    || '';
-                  return (
+                {(o.alignments || []).map((al) => (
                   <View key={al.code} style={styles.alignRow}>
                     <View style={styles.alignHeader}>
                       <StandardCodeLink
                         code={al.code}
-                        standardText={standardDescription}
                         color={strandColor(al.code, al.badge || al.strand)}
                         onPress={
                           curriculum
@@ -203,8 +201,7 @@ export default function ReportScreen({ route, navigation }) {
                     </View>
                     <Text style={styles.rationale}>{al.rationale}</Text>
                   </View>
-                  );
-                })}
+                ))}
               </View>
             );
           })

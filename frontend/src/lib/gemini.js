@@ -16,31 +16,39 @@ export const MODEL_CANDIDATES = [
 
 const PARSE_EDUSPERIENCE_PROMPT = `You are an expert at reading educational assignment documents (PDF, Word, etc.).
 
-Extract the assignment structure as JSON. Identify:
-- sections (e.g. Introduction, Body, Conclusion, or rubric categories)
-- objectives within each section (discrete gradable tasks or learning targets)
+Extract the assignment structure as JSON. Include only objectives that describe what the STUDENT must do or produce to demonstrate learning.
 
 Return ONLY valid JSON matching this schema:
 {
   "title": "string (assignment title if found, else infer from content)",
   "grade": "string (e.g. 9-10, 5th, K-12 — best guess from content)",
   "subject": "string (ela | math | history | science | other — lowercase)",
-  "description": "string (1-3 sentence summary)",
+  "description": "string (1-3 sentence summary of the student assignment)",
   "sections": [
     {
       "title": "Section name",
       "objectives": [
         {
           "description": "Full objective text as written or inferred",
-          "label": "short label optional"
+          "label": "short label optional",
+          "audience": "student | educator | platform (who this item is for)",
+          "evaluation_type": "optional: platform | ai | ai_assistant | teacher | student | null"
         }
       ]
     }
   ]
 }
 
-Rules:
-- Every gradable step, rubric criterion, or explicit task becomes an objective.
+DO NOT extract as objectives (omit entirely):
+- File naming conventions, headers, fonts, margins, submission/upload instructions
+- Due dates, point values, account or platform setup
+- Section breaks or tooling steps ("insert section break so GradeFlow can…")
+- Grading rubrics, scoring guides, or how work will be evaluated
+- AI evaluation / assistant configuration (for the tool or teacher, not the student task)
+- Teacher facilitation notes ("you will grade…", "the teacher should…")
+
+DO extract:
+- Reading, writing, analysis, argument, math, data, research, and other student academic tasks
 - Preserve wording from the document when possible.
 - If grade/subject unclear, use empty string for grade and "other" for subject.
 - Do not invent objectives not supported by the document.`;
@@ -69,9 +77,24 @@ Rules:
 - Include Mathematical Practices, anchor standards, and skills standards when present.
 - Do not skip standards visible in the document.`;
 
-const TAG_UNIVERSAL_PROMPT = `You are an expert curriculum aligner. Given an EduSperience (assignment objectives) and a standards database, tag each objective with 0–3 standards that genuinely apply.
+const TAG_UNIVERSAL_PROMPT = `You are an expert curriculum aligner. Given EduSperience objectives and a standards database, tag only objectives where a STUDENT demonstrates academic knowledge or skill.
 
-For each objective, pick standards where the student work described would demonstrate mastery. Be conservative: empty alignments are fine when nothing fits.
+## Golden rule
+Align student learning tasks only. If the item is for teachers, graders, AI tools, or platform housekeeping, return "alignments": [] and a brief "skip_reason".
+
+## SKIP — return empty alignments (with skip_reason)
+- File naming, MLA/header formatting, fonts, margins (unless the standard is explicitly about that skill)
+- Submission/upload instructions, due dates, point values, account setup
+- Platform mechanics (section breaks, "Data Test", setup verification)
+- Grading rubrics, scoring guides, or how work will be evaluated
+- AI evaluation / assistant instructions (for the tool or teacher)
+- Teacher facilitation notes or "you will grade…"
+- Generic effort/participation with no specific standard skill
+- Objectives marked audience educator/platform or evaluation_type ai/ai_assistant/teacher
+
+## DO align
+- Objectives asking students to read, write, argue, analyze, use math, cite evidence, analyze data, etc.
+- When nothing fits, return alignments: [] — do not force a weak match.
 
 Return ONLY valid JSON:
 {
@@ -83,9 +106,10 @@ Return ONLY valid JSON:
           "code": "standard code from the provided list ONLY",
           "confidence": "high | medium | low",
           "rationale": "one sentence explaining the fit",
-          "source_excerpt": "short quote copied verbatim from the objective text that best supports this alignment"
+          "source_excerpt": "short quote copied verbatim from the objective text"
         }
-      ]
+      ],
+      "skip_reason": "optional — short phrase if alignments is empty (e.g. logistical, educator-only, no standard fit)"
     }
   ]
 }
@@ -281,8 +305,11 @@ function compactStandards(records, maxChars = 280000) {
 function objectivesForPrompt(objectives) {
   return (objectives || []).map((o) => ({
     path: o.path,
+    title: o.title || o.label || null,
     section_title: o.section_title,
     description: o.objective_description || o.description,
+    evaluation_type: o.evaluation_type || null,
+    audience: o.audience || null,
   }));
 }
 
@@ -292,20 +319,24 @@ export async function tagAssignmentToStandards({
   grade,
   subject,
   assignmentName,
+  standardsSourceLabel = null,
 }) {
   const standards = compactStandards(standardsRecords);
   const objPayload = objectivesForPrompt(objectives);
+  const sourceLine = standardsSourceLabel
+    ? `Standards sources (merged): ${standardsSourceLabel}\n`
+    : '';
 
   const prompt = `${TAG_UNIVERSAL_PROMPT}
 
 Assignment: ${assignmentName || 'Untitled'}
 Grade context: ${grade || 'unknown'}
 Subject context: ${subject || 'unknown'}
-
-OBJECTIVES (tag every path listed):
+${sourceLine}
+OBJECTIVES (return one result per path listed — use skip_reason when not alignable):
 ${JSON.stringify(objPayload, null, 2)}
 
-STANDARDS DATABASE (${standards.length} records — use codes from this list only):
+STANDARDS DATABASE (${standards.length} records — use codes from this merged list only):
 ${JSON.stringify(standards)}`;
 
   const text = await withModelFallback((model) =>
@@ -354,7 +385,11 @@ export function normalizeParsedEdusperience(parsed) {
         section_idx: si,
         objective_idx: oi,
         section_title: sec.title || `Section ${si + 1}`,
+        title: obj.label || '',
         objective_description: obj.description || obj.label || '',
+        description: obj.description || obj.label || '',
+        evaluation_type: obj.evaluation_type || null,
+        audience: obj.audience || null,
         alignments: [],
       });
     });
@@ -372,11 +407,24 @@ export function normalizeParsedEdusperience(parsed) {
 
 export function mergeTagResults(objectives, tagResults) {
   const byPath = Object.fromEntries(
-    (tagResults || []).map((o) => [o.path, o.alignments || []]),
+    (tagResults || []).map((o) => [
+      o.path,
+      {
+        alignments: o.alignments || [],
+        skip_reason: (o.skip_reason || '').trim(),
+      },
+    ]),
   );
   const merged = (objectives || []).map((o) => {
-    const alignments = byPath[o.path] || [];
-    return { ...o, alignments };
+    const result = byPath[o.path];
+    if (!result) return o;
+    const alignments = result.alignments || [];
+    const skipReason = result.skip_reason;
+    const next = { ...o, alignments };
+    if (!alignments.length && skipReason) {
+      next.note = skipReason;
+    }
+    return next;
   });
   const nAligned = merged.filter((o) => (o.alignments || []).length > 0).length;
   return { objectives: merged, n_aligned: nAligned, n_total: merged.length };

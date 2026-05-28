@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -6,37 +6,19 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
-import { colors, shadows } from '../theme';
 
 export default function StandardCodeLink({
   code,
-  standardText,
   color,
   onPress,
 }) {
-  const [hover, setHover] = useState(false);
-  const showTip = hover && !!standardText?.trim();
-
-  const webHoverProps =
-    Platform.OS === 'web' && standardText
-      ? {
-          onMouseEnter: () => setHover(true),
-          onMouseLeave: () => setHover(false),
-        }
-      : {};
-
   return (
     <View style={styles.wrap}>
       <TouchableOpacity
         onPress={onPress}
         disabled={!onPress}
         accessibilityRole="link"
-        accessibilityLabel={
-          standardText
-            ? `${code}: ${standardText}`
-            : `Open ${code} in its curriculum`
-        }
-        {...webHoverProps}
+        accessibilityLabel={`Open ${code} in its curriculum`}
         style={[styles.codeBtn, onPress && styles.codeBtnLinked]}
         {...(Platform.OS === 'web' && onPress
           ? { onPressIn: (e) => e?.stopPropagation?.() }
@@ -52,13 +34,6 @@ export default function StandardCodeLink({
           {code}
         </Text>
       </TouchableOpacity>
-
-      {showTip ? (
-        <View style={styles.tooltip} pointerEvents="none">
-          <Text style={styles.tooltipLabel}>{code}</Text>
-          <Text style={styles.tooltipBody}>{standardText}</Text>
-        </View>
-      ) : null}
     </View>
   );
 }
@@ -66,8 +41,6 @@ export default function StandardCodeLink({
 const styles = StyleSheet.create({
   wrap: {
     position: 'relative',
-    zIndex: 1,
-    ...(Platform.OS === 'web' ? { overflow: 'visible' } : null),
   },
   codeBtn: {
     paddingHorizontal: 8,
@@ -85,36 +58,5 @@ const styles = StyleSheet.create({
   },
   codeTextLinked: {
     textDecorationLine: 'underline',
-  },
-  tooltip: {
-    position: 'absolute',
-    top: '100%',
-    left: 0,
-    marginTop: 6,
-    minWidth: 240,
-    maxWidth: 360,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 8,
-    zIndex: 1000,
-    ...shadows.card,
-    ...(Platform.OS === 'web'
-      ? { boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }
-      : null),
-  },
-  tooltipLabel: {
-    fontFamily: 'Menlo',
-    fontSize: 11,
-    fontWeight: '700',
-    color: colors.primary,
-    marginBottom: 4,
-  },
-  tooltipBody: {
-    fontSize: 12,
-    lineHeight: 17,
-    color: colors.textPrimary,
   },
 });

@@ -4,6 +4,15 @@ import { colors } from '../theme';
 
 const DEFAULT_MAX_CHARS = 160;
 
+function smartPreview(text, maxChars) {
+  const raw = (text || '').trim();
+  if (raw.length <= maxChars) return raw;
+  const slice = raw.slice(0, maxChars).trimEnd();
+  const lastWord = slice.lastIndexOf(' ');
+  const base = lastWord > Math.floor(maxChars * 0.6) ? slice.slice(0, lastWord) : slice;
+  return `${base.trimEnd()}…`;
+}
+
 export default function ExpandableText({
   text,
   style,
@@ -21,7 +30,7 @@ export default function ExpandableText({
     return <Text style={[styles.body, style, bodyStyle]}>{body}</Text>;
   }
 
-  const preview = `${body.slice(0, maxChars).trimEnd()}…`;
+  const preview = smartPreview(body, maxChars);
 
   return (
     <View style={style}>

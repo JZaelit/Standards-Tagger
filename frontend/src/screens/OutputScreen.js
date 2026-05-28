@@ -44,10 +44,14 @@ export default function OutputScreen({ route, navigation }) {
       setLoading(true);
     }
     const d = await dataClient.assignments.detail(assignment?.id);
-    const cId = d?.alignment_curriculum_id || d?.curriculum_id || assignment?.curriculum_id;
+    const cIds = d?.alignment_curriculum_ids?.length
+      ? d.alignment_curriculum_ids
+      : (d?.alignment_curriculum_id || d?.curriculum_id || assignment?.curriculum_id
+          ? [d.alignment_curriculum_id || d.curriculum_id || assignment.curriculum_id]
+          : []);
     const [c, texts] = await Promise.all([
-      cId ? dataClient.curricula.get(cId) : null,
-      cId ? dataClient.standards.textByCode(cId) : null,
+      cIds[0] ? dataClient.curricula.get(cIds[0]) : null,
+      cIds.length ? dataClient.standards.textByCodeForCurricula(cIds) : null,
     ]);
     setDetail(d);
     setCurriculum(c);
@@ -69,6 +73,15 @@ export default function OutputScreen({ route, navigation }) {
     const d = await dataClient.assignments.detail(assignment?.id);
     setDetail(d);
   }, [assignment?.id]);
+
+  const handleSaveAlignments = useCallback(async (sectionIdx, objectiveIdx, alignments) => {
+    await dataClient.assignments.updateObjectiveAlignments(assignment?.id, {
+      sectionIdx,
+      objectiveIdx,
+      alignments,
+    });
+    loadDetail({ showSpinner: false });
+  }, [assignment?.id, loadDetail]);
 
   if (loading && !detail) {
     return (
@@ -132,7 +145,10 @@ export default function OutputScreen({ route, navigation }) {
             />
             <StatPill
               label="Standards"
-              value={curriculum ? curriculum.title : 'Not set'}
+              value={
+                detail?.curriculum_title
+                || (curriculum ? curriculum.title : 'Not set')
+              }
             />
           </View>
           {detail?.file_name || assignment?.file_name ? (
@@ -256,14 +272,17 @@ export default function OutputScreen({ route, navigation }) {
                         });
                       }
                     }}
-                    onOpenInCurriculum={
-                      curriculum
-                        ? (code) =>
-                            navigation.navigate('CurriculumDetail', {
-                              curriculum,
-                              focusCode: code,
-                            })
-                        : undefined
+                    onOpenInCurriculum={(code) => {
+                      dataClient.standards.findByCode(code).then((found) => {
+                        if (!found) return;
+                        navigation.navigate('CurriculumDetail', {
+                          curriculum: found.curriculum,
+                          focusCode: code,
+                        });
+                      });
+                    }}
+                    onSaveAlignments={(alignments) =>
+                      handleSaveAlignments(o.section_idx, o.objective_idx, alignments)
                     }
                   />
                 ))}

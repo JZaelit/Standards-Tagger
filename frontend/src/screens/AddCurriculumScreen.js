@@ -44,6 +44,9 @@ export default function AddCurriculumScreen({ navigation, route }) {
   const [title, setTitle] = useState(editing?.title || '');
   const [grade, setGrade] = useState(editing?.grade || '');
   const [subject, setSubject] = useState(editing?.subject || '');
+  const [extraGrades, setExtraGrades] = useState((editing?.grade_tags || []).join(', '));
+  const [extraSubjects, setExtraSubjects] = useState((editing?.subject_tags || []).join(', '));
+  const [submitForReview, setSubmitForReview] = useState(!isEdit);
   const [file, setFile] = useState(null);
   const [existingFileName, setExistingFileName] = useState(
     editing?.file_name || null,
@@ -99,6 +102,14 @@ export default function AddCurriculumScreen({ navigation, route }) {
     setLoading(true);
     setStatus('Saving…');
     const fileName = file?.name ?? existingFileName ?? null;
+    const gradeTags = extraGrades
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const subjectTags = extraSubjects
+      .split(',')
+      .map((s) => s.trim().toLowerCase())
+      .filter(Boolean);
     try {
       let curriculumId = editing?.id;
       if (isEdit) {
@@ -106,6 +117,8 @@ export default function AddCurriculumScreen({ navigation, route }) {
           title: title.trim(),
           grade: grade.trim(),
           subject: subject || null,
+          grade_tags: gradeTags,
+          subject_tags: subjectTags,
           file_name: fileName,
           is_public: isPublic,
         });
@@ -116,6 +129,8 @@ export default function AddCurriculumScreen({ navigation, route }) {
           title: title.trim(),
           grade: grade.trim(),
           subject: subject || null,
+          grade_tags: gradeTags,
+          subject_tags: subjectTags,
           file_name: fileName,
           is_public: isPublic,
         });
@@ -135,11 +150,24 @@ export default function AddCurriculumScreen({ navigation, route }) {
           title: (parsed.title || title).trim(),
           grade: (parsed.grade || grade).trim(),
           subject: parsed.subject || subject || null,
+          grade_tags: gradeTags,
+          subject_tags: subjectTags,
           standards_count: records.length,
         });
         toast.show(`Saved — ${records.length} standards extracted`, { tone: 'success' });
       } else {
         toast.show('Saved changes', { tone: 'success' });
+      }
+      if (submitForReview) {
+        await dataClient.review.submitCurriculum({
+          curriculum_id: curriculumId,
+          title: title.trim(),
+          grade: grade.trim(),
+          subject: subject || null,
+          grade_tags: gradeTags,
+          subject_tags: subjectTags,
+          file_name: fileName,
+        });
       }
 
       setLoading(false);
@@ -258,6 +286,24 @@ export default function AddCurriculumScreen({ navigation, route }) {
             <Text style={styles.label}>Subject</Text>
             <SubjectPicker value={subject} onChange={setSubject} />
 
+            <Text style={styles.label}>Additional grades (optional)</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="e.g. 8th, 9th, 10th"
+              placeholderTextColor={colors.textLight}
+              value={extraGrades}
+              onChangeText={setExtraGrades}
+            />
+
+            <Text style={styles.label}>Additional subjects (optional)</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="e.g. science, engineering"
+              placeholderTextColor={colors.textLight}
+              value={extraSubjects}
+              onChangeText={setExtraSubjects}
+            />
+
             <Text style={styles.label}>Standards File *</Text>
             <FilePicker
               file={file}
@@ -284,6 +330,25 @@ export default function AddCurriculumScreen({ navigation, route }) {
                   {isPublic
                     ? 'Other teachers can find and use this curriculum'
                     : 'Only visible to you'}
+                </Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.toggleRow}
+              onPress={() => setSubmitForReview(!submitForReview)}
+            >
+              <View style={[styles.toggle, submitForReview && styles.toggleOn]}>
+                <View style={[styles.toggleThumb, submitForReview && styles.toggleThumbOn]} />
+              </View>
+              <View style={styles.toggleLabel}>
+                <Text style={styles.toggleTitle}>
+                  {submitForReview ? 'Submit for dev review' : 'Skip dev review queue'}
+                </Text>
+                <Text style={styles.toggleHint}>
+                  {submitForReview
+                    ? "Don't see your curriculum? Submit here for database review/approval."
+                    : 'This upload will only stay in your local library for now.'}
                 </Text>
               </View>
             </TouchableOpacity>

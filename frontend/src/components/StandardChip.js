@@ -34,7 +34,6 @@ export default function StandardChip({
       <View style={styles.topRow}>
         <StandardCodeLink
           code={a.code}
-          standardText={standardDescription}
           color={codeColor}
           onPress={onOpenInCurriculum || undefined}
         />
