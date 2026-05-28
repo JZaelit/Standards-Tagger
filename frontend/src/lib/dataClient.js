@@ -542,6 +542,15 @@ function standardsRecordsForCurriculum(curriculumId) {
   return SEED.standardsRecordsByCurriculumId[curriculumId] || [];
 }
 
+/** { [code]: description } for tooltips and inline standard text. */
+function standardsTextByCode(curriculumId) {
+  const map = {};
+  for (const r of standardsRecordsForCurriculum(curriculumId)) {
+    if (r.code && r.text) map[r.code] = r.text;
+  }
+  return map;
+}
+
 function standardsByCurriculum(curriculumId, opts = {}) {
   const records = standardsRecordsForCurriculum(curriculumId);
   let filtered = records;
@@ -799,6 +808,7 @@ export const dataClient = {
     summary: (id) => wait(standardsSummary(id)),
     usageMap: (id) => wait(standardsUsageMap(id)),
     findByCode: (code) => wait(findStandardByCode(code)),
+    textByCode: (curriculumId) => wait(standardsTextByCode(curriculumId)),
   },
   settings: {
     // Implemented in settings.js — screens import from there directly.

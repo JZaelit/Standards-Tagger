@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { dataClient } from '../lib/dataClient';
 import TopNav from '../components/TopNav';
+import StandardCodeLink from '../components/StandardCodeLink';
+import { strandColor } from '../lib/strandColor';
 import { colors, typography } from '../theme';
 
 const CONF_COLOR = {
@@ -39,6 +41,7 @@ export default function ReportScreen({ route, navigation }) {
   const assignmentId = route?.params?.assignmentId;
   const [detail, setDetail] = useState(null);
   const [curriculum, setCurriculum] = useState(null);
+  const [standardTextByCode, setStandardTextByCode] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -50,10 +53,14 @@ export default function ReportScreen({ route, navigation }) {
       }
       const d = await dataClient.assignments.detail(assignmentId);
       const cId = d?.alignment_curriculum_id || d?.curriculum_id;
-      const c = cId ? await dataClient.curricula.get(cId) : null;
+      const [c, texts] = await Promise.all([
+        cId ? dataClient.curricula.get(cId) : null,
+        cId ? dataClient.standards.textByCode(cId) : null,
+      ]);
       if (!cancelled) {
         setDetail(d);
         setCurriculum(c);
+        setStandardTextByCode(texts);
         setLoading(false);
       }
     };
@@ -170,15 +177,34 @@ export default function ReportScreen({ route, navigation }) {
               <View key={row.key} style={styles.objCard}>
                 <Text style={styles.objPath}>{o.path}</Text>
                 <Text style={styles.objDesc}>{o.objective_description}</Text>
-                {(o.alignments || []).map((al) => (
+                {(o.alignments || []).map((al) => {
+                  const standardDescription =
+                    (al.text || '').trim()
+                    || (standardTextByCode && al.code ? standardTextByCode[al.code] : '')
+                    || '';
+                  return (
                   <View key={al.code} style={styles.alignRow}>
                     <View style={styles.alignHeader}>
-                      <Text style={styles.code}>{al.code}</Text>
+                      <StandardCodeLink
+                        code={al.code}
+                        standardText={standardDescription}
+                        color={strandColor(al.code, al.badge || al.strand)}
+                        onPress={
+                          curriculum
+                            ? () =>
+                                navigation.navigate('CurriculumDetail', {
+                                  curriculum,
+                                  focusCode: al.code,
+                                })
+                            : undefined
+                        }
+                      />
                       <ConfidenceBadge level={al.confidence} />
                     </View>
                     <Text style={styles.rationale}>{al.rationale}</Text>
                   </View>
-                ))}
+                  );
+                })}
               </View>
             );
           })

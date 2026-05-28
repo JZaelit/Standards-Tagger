@@ -20,6 +20,7 @@ export default function ObjectiveRow({
   objective,
   subject = 'ela',
   showStandardText = true,
+  standardTextByCode = null,
   hasSource = false,
   onJumpToSource,
   onOpenInCurriculum,
@@ -67,6 +68,7 @@ export default function ObjectiveRow({
               key={i}
               alignment={a}
               showText={showStandardText}
+              standardTextByCode={standardTextByCode}
               objectiveContext={objectiveContext}
               sourceExcerpt={sourceExcerpt}
               onJumpToSource={

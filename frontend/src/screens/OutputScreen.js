@@ -32,6 +32,7 @@ export default function OutputScreen({ route, navigation }) {
   const { assignment } = route.params || {};
   const [detail, setDetail] = useState(null);
   const [curriculum, setCurriculum] = useState(null);
+  const [standardTextByCode, setStandardTextByCode] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showStandardText, setShowStandardText] = useState(true);
 
@@ -44,9 +45,13 @@ export default function OutputScreen({ route, navigation }) {
     }
     const d = await dataClient.assignments.detail(assignment?.id);
     const cId = d?.alignment_curriculum_id || d?.curriculum_id || assignment?.curriculum_id;
-    const c = cId ? await dataClient.curricula.get(cId) : null;
+    const [c, texts] = await Promise.all([
+      cId ? dataClient.curricula.get(cId) : null,
+      cId ? dataClient.standards.textByCode(cId) : null,
+    ]);
     setDetail(d);
     setCurriculum(c);
+    setStandardTextByCode(texts);
     setLoading(false);
   }, [assignment?.id, assignment?.curriculum_id]);
 
@@ -241,6 +246,7 @@ export default function OutputScreen({ route, navigation }) {
                     objective={o}
                     subject={subject}
                     showStandardText={showStandardText}
+                    standardTextByCode={standardTextByCode}
                     hasSource={!!detail?.source}
                     onJumpToSource={(alignment, sourceExcerpt) => {
                       if (sourceRef.current?.jumpTo) {

@@ -11,6 +11,7 @@ import { colors, shadows } from '../theme';
 export default function StandardChip({
   alignment,
   showText = true,
+  standardTextByCode = null,
   objectiveContext,
   sourceExcerpt = '',
   onJumpToSource,
@@ -19,6 +20,10 @@ export default function StandardChip({
   const [expanded, setExpanded] = useState(false);
   const a = alignment || {};
   const ctx = objectiveContext || {};
+  const standardDescription =
+    (a.text || '').trim()
+    || (standardTextByCode && a.code ? standardTextByCode[a.code] : '')
+    || '';
   const codeColor = strandColor(a.code, a.badge || a.strand);
   const conf = confidenceColors(a.confidence);
   const badgeText = a.badge || a.strand;
@@ -29,7 +34,7 @@ export default function StandardChip({
       <View style={styles.topRow}>
         <StandardCodeLink
           code={a.code}
-          standardText={a.text}
+          standardText={standardDescription}
           color={codeColor}
           onPress={onOpenInCurriculum || undefined}
         />
@@ -69,9 +74,9 @@ export default function StandardChip({
         ) : null}
       </View>
 
-      {showText && a.text ? (
+      {showText && standardDescription ? (
         <View style={styles.stdText}>
-          <Text style={styles.stdTextBody}>{a.text}</Text>
+          <Text style={styles.stdTextBody}>{standardDescription}</Text>
         </View>
       ) : null}
 
